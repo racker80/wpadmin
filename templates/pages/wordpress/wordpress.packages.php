@@ -4,7 +4,7 @@
 
 <section class="hbox stretch">
 
-	{% include 'elements/nav.sidebar.wordpress.php' %}
+	{% include 'pages/wordpress/nav.sidebar.wordpress.php' %}
 
 	<section id="content" class="">
 		<section class="hbox stretch">

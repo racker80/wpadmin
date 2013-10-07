@@ -71,7 +71,7 @@
 	                    	
 	                    </div>
 	                    <div class="tab-pane" id="plugin">
-	                    						<table class="table table-striped">
+	                    	<table class="table table-striped">
 						<tbody>
 							<tr>
 								<td style="padding:25px 10px;">

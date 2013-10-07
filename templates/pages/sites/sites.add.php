@@ -14,7 +14,7 @@
 					<p class="h4">Add a new site</p>
 				</section>
 				<section class="hbox stretch">
-					{% include 'elements/site.new.sidebar.php' %}
+					{% include 'pages/sites/nav.sidebar.new.php' %}
 
 					<aside class="bg-white">
 						{% include 'ui/forms.wp.php' %}

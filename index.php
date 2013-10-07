@@ -73,6 +73,16 @@
         $app->render( 'pages/sites/sites.detail.php', array('nav'=>$nav) );
         
     });
+
+
+
+
+
+
+
+
+
+
     $app->get('/users', function() use($app) {
         $nav = array(
             'allsites'=>'active',
@@ -83,6 +93,14 @@
         $app->render( 'pages/users/users.list.php', array('nav'=>$nav) );
         
     });
+
+
+
+
+
+
+
+
 
     $app->get('/wordpress/packages', function() use($app) {
         $nav = array(
@@ -97,6 +115,7 @@
     $app->get('/wordpress/themes', function() use($app) {
         $nav = array(
             'themes'=>'active',
+             'class'=>'only-icon nav-vertical',
                         'globalnav'=>array(
                             'wordpress'=>'active'
                             )
@@ -107,7 +126,8 @@
     $app->get('/wordpress/plugins', function() use($app) {
         $nav = array(
             'plugins'=>'active',
-                        'globalnav'=>array(
+                  'class'=>'only-icon nav-vertical',
+                   'globalnav'=>array(
                             'wordpress'=>'active'
                             )
             );
