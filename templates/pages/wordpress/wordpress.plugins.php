@@ -58,7 +58,7 @@
 										<div>
 											<a href="http://profiles.wordpress.org/joshhartman/">
 											<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-												<img src="{{ urlbase }}/todo/images/avatar.jpg">
+												<img src="{{ baseurl }}/todo/images/avatar.jpg">
 											</span> Josh Hartman
 											</a>
 										</div>
@@ -83,7 +83,7 @@
 										<div>
 											<a href="http://profiles.wordpress.org/joshhartman/">
 											<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-												<img src="{{ urlbase }}/todo/images/avatar.jpg">
+												<img src="{{ baseurl }}/todo/images/avatar.jpg">
 											</span> Josh Hartman
 											</a>
 										</div>
@@ -108,7 +108,7 @@
 										<div>
 											<a href="http://profiles.wordpress.org/joshhartman/">
 											<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-												<img src="{{ urlbase }}/todo/images/avatar.jpg">
+												<img src="{{ baseurl }}/todo/images/avatar.jpg">
 											</span> Josh Hartman
 											</a>
 										</div>
@@ -134,7 +134,7 @@
 										<div>
 											<a href="http://profiles.wordpress.org/joshhartman/">
 											<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-												<img src="{{ urlbase }}/todo/images/avatar.jpg">
+												<img src="{{ baseurl }}/todo/images/avatar.jpg">
 											</span> Josh Hartman
 											</a>
 										</div>

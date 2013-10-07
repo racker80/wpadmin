@@ -104,7 +104,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle aside-sm dker" data-toggle="dropdown">
 						<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-							<img src="{{ urlbase }}/todo/images/avatar.jpg">
+							<img src="{{ baseurl }}/todo/images/avatar.jpg">
 						</span>
 						John.Smith <b class="caret"></b>
 					</a>
