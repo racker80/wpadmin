@@ -21,7 +21,6 @@
 									<tr>
 										<th width="50">Status</th>
 										<th width="350">Url</th>                    
-										<th>Monthly Limit</th>                    
 										<th></th>
 									</tr>
 								</thead>

@@ -30,11 +30,7 @@
 			</a>
 		<a href="{{ baseurl }}/sites/mysite">Myawesomesite.com</a>
 	</td>
-	<td class="v-middle">
-		<div class="progress progress-xs progress-striped active m-b-sm">
-			<div class="progress-bar progress-bar-info" data-toggle="tooltip" data-original-title="32.5%" style="width: 32.5%"></div>
-		</div>
-	</td>
+
 	<td class="text-right v-middle">
 		{% if status == 'dev' %}
 			<a href="#" class="btn btn-success btn-sm"><i class="icon-cloud-upload"></i> Go Live</a>

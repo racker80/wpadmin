@@ -6,6 +6,7 @@
         <ul class="nav nav-tabs nav-stacked">
             <li class="active"><a href="#account" data-toggle="tab">Account</a></li>
             <li><a href="#activity" data-toggle="tab">WordPress</a></li>
+                      <li><a href="#devsite" data-toggle="tab">Development</a></li>
                       <li class=""><a href="#activity" data-toggle="tab">Backups</a></li>
                       <li class=""><a href="#activity" data-toggle="tab">DNS</a></li>
                       <li class=""><a href="#activity" data-toggle="tab">Email</a></li>
