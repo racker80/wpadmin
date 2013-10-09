@@ -66,7 +66,8 @@
     $app->get('/sites/(:id)', function($id) use($app) {
         $nav = array(
             'mysites'=>'active',
-             'globalnav'=>array(
+                 'class'=>'only-icon nav-vertical',
+               'globalnav'=>array(
                             'sites'=>'active'
                             )
         );

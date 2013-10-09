@@ -1,9 +1,22 @@
-<aside class="aside-lg bg-light lter b-r">
+<aside class="aside-lg bg-white b-r">
   <section class="vbox">
     <section class="scrollable">
+
+    <nav class="nav-primary hidden-xs">
+        <ul class="nav nav-tabs nav-stacked">
+            <li class="active"><a href="#account" data-toggle="tab">Account</a></li>
+            <li><a href="#activity" data-toggle="tab">WordPress</a></li>
+                      <li class=""><a href="#activity" data-toggle="tab">Backups</a></li>
+                      <li class=""><a href="#activity" data-toggle="tab">DNS</a></li>
+                      <li class=""><a href="#activity" data-toggle="tab">Email</a></li>
+                      <li class=""><a href="#events" data-toggle="tab">Users</a></li>
+                      <li class=""><a href="#interaction" data-toggle="tab">Billing</a></li>
+      </nav>
+
       <div class="wrapper">
+
                   
-        <div class="btn-group btn-group-justified m-b">
+<!--         <div class="btn-group btn-group-justified m-b">
           <a class="btn btn-success btn-rounded active"  data-toggle="button">
             <span class="text">
               <i class="icon-cloud-upload"></i> Live
@@ -22,11 +35,11 @@
           </a>
   
         </div>   
-            <div class="line"></div>
-
+            <div class="line"></div> -->
+          
 
         
-        <div>
+        <div class="hidden">
           <p class="clearfix"><span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
               <img src="/todo/images/avatar.jpg">
             </span> user.name</p>

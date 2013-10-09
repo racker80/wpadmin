@@ -13,7 +13,7 @@
 				<section class="scrollable">
 
 					<section class="bg-white">
-						<header class="header bg-white navbar">
+						<header class="header bg-white navbar" style="z-index:1;">
 							<div class="collapse navbar-collapse pull-in">
 								<form class="navbar-form navbar-left m-t-sm" role="search">
 									<div class="form-group">

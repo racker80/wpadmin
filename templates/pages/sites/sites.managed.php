@@ -9,8 +9,7 @@
 	<section id="content" class="">
 		<section class="hbox stretch">
 				<section>
-					<header class="header b-b">
-
+                    
 					<header class="header b-b">
 
 							<p class="h3">Sites I'm Managing</p>
