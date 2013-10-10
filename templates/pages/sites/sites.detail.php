@@ -1,10 +1,9 @@
 {% include 'partials/header.php' %}
 
-{% include 'elements/global.header.php' %}
 
 <section class="hbox stretch">
 
-	{% include 'partials/nav.sidebar.php' %}
+    {% include 'partials/nav.sidebar.php' %}
 
 
 	<section id="content">

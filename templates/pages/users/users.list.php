@@ -1,10 +1,10 @@
 {% include 'partials/header.php' %}
 
-{% include 'elements/global.header.php' %}
 
-<section class="hbox stretch bg-white">
+<section class="hbox stretch">
 
-	{% include 'partials/nav.sidebar.php' %}
+    {% include 'partials/nav.sidebar.php' %}
+
 
 
 	<section id="content">
@@ -15,7 +15,7 @@
                     <li class="active"><a href="#messages-1" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Managers</a></li>
                     <li><a href="#profile-1" data-toggle="tab"><i class="icon-user text-default"></i> Site Owners</a></li>
                     <li><a href="#settings-1" data-toggle="tab"><i class="icon-cog text-default"></i> Activity</a></li>
-                    <li class="pull-right bg-success"><a href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New User</a></li>
+                    <li class=""><a href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New User</a></li>
                 </ul>
 
             </header>

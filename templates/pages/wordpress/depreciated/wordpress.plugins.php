@@ -145,7 +145,7 @@
 
 							</tr>														
 						</tbody>
-					</table>
+						</table>
 					</section>
 
 				</section>

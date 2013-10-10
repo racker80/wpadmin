@@ -7,9 +7,9 @@
 										</a>
 									</td>
 									<td class="col-md-6">
-										<h2 class="m-n">Product</h2>
+										<h3 class="">Product</h3>
 										<strong class="block m-b-sm">by: Jewelleries</strong>
-										<p class="lead">
+										<p>
 											product® responsive wordpress theme is best way to present your product. period. Theme is modern, clean, fully responsive with a lot of features …
 
 										</p>
@@ -29,15 +29,15 @@
 										</a>
 									</td>
 									<td class="col-md-6">
-										<h2 class="m-n">PoliticalPress</h2>
+										<h3 class="">PoliticalPress</h3>
 										<strong class="block m-b-sm">by: Jewelleries</strong>
-										<p class="lead">
+										<p>
 											product® responsive wordpress theme is best way to present your product. period. Theme is modern, clean, fully responsive with a lot of features …
 
 										</p>
 
 									</td>
-									<td class="text-right">
+									<td class="text-right v-middle">
 										<a href="#" class="text-danger m-r"><i class="icon-trash"></i> remove</a>
 										<a href="#" class="btn btn-white">build from template <i class="icon-chevron-right"></i></a>
 										
@@ -51,15 +51,15 @@
 										</a>
 									</td>
 									<td class="col-md-6">
-										<h2 class="m-n">Hitched</h2>
+										<h3 class="">Hitched</h3>
 										<strong class="block m-b-sm">by: Jewelleries</strong>
-										<p class="lead">
+										<p>
 											product® responsive wordpress theme is best way to present your product. period. Theme is modern, clean, fully responsive with a lot of features …
 
 										</p>
 
 									</td>
-									<td class="text-right">
+									<td class="text-right v-middle">
 										<a href="#" class="text-danger m-r"><i class="icon-trash"></i> remove</a>
 										<a href="#" class="btn btn-white">build from template <i class="icon-chevron-right"></i></a>
 
@@ -72,15 +72,15 @@
 										</a>
 									</td>
 									<td class="col-md-6">
-										<h2 class="m-n">Product</h2>
+										<h3 class="">Sales Theme</h3>
 										<strong class="block m-b-sm">by: Jewelleries</strong>
-										<p class="lead">
+										<p>
 											product® responsive wordpress theme is best way to present your product. period. Theme is modern, clean, fully responsive with a lot of features …
 
 										</p>
 
 									</td>
-									<td class="text-right">
+									<td class="text-right v-middle">
 										<a href="#" class="text-danger m-r"><i class="icon-trash"></i> remove</a>
 										<a href="#" class="btn btn-white">build from template <i class="icon-chevron-right"></i></a>
 
@@ -96,15 +96,15 @@
 										</a>
 									</td>
 									<td class="col-md-6">
-										<h2 class="m-n">Product</h2>
+										<h3 class="">Product</h3>
 										<strong class="block m-b-sm">by: Jewelleries</strong>
-										<p class="lead">
+										<p>
 											product® responsive wordpress theme is best way to present your product. period. Theme is modern, clean, fully responsive with a lot of features …
 
 										</p>
 
 									</td>
-									<td class="text-right">
+									<td class="text-right v-middle">
 										<a href="#" class="text-danger m-r"><i class="icon-trash"></i> remove</a>
 										<a href="#" class="btn btn-white">build from template <i class="icon-chevron-right"></i></a>
 
