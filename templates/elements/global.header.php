@@ -9,62 +9,7 @@
 			</a>
 		</div>
 		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="dropdown {{ nav.globalnav.sites }}">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<i class="icon-sitemap  text-white"></i>
-						<span class="text-white">Sites</span> <b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu">                
-						<li>
-							<a href="{{ baseurl }}"><b class="badge pull-right">35</b>All</a>
-						</li>
 
-						<li>
-							<a href="{{ baseurl }}"><b class="badge pull-right">20</b>My Sites</a>
-						</li>
-						<li>
-							<a href="{{ baseurl }}">
-								<b class="badge bg-primary pull-right">10</b>Managed Sites
-							</a>
-						</li>
-
-					</ul>
-				</li>
-				<li class="{{ nav.globalnav.users }}">
-					<a href="{{ baseurl }}/users">
-						<i class="icon-user text-white"></i>
-						<span class="text-white">Users</span>
-					</a>
-				</li>
-				<li class="dropdown {{ nav.globalnav.wordpress }}">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<i class="icon-gears  text-white"></i>
-						<span class="text-white">WordPress</span> <b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu">                
-						<li>
-							<a href="{{ baseurl }}/wordpress/packages">Packages</a>
-						</li>
-
-						<li>
-							<a href="{{ baseurl }}/wordpress/themes">Themes</a>
-						</li>
-						<li>
-							<a href="{{ baseurl }}/wordpress/plugins">
-								Plugins
-							</a>
-						</li>
-
-					</ul>
-				</li>
-				<li>
-					<a href="#">
-						<i class="icon-usd text-white"></i>
-						<span class="text-white">Billing</span>
-					</a>
-				</li>				
-			</ul>
 			
 			<ul class="nav navbar-nav navbar-right">
 				<li class="hidden-xs">

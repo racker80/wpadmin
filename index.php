@@ -103,7 +103,7 @@
 
 
 
-    $app->get('/wordpress/packages', function() use($app) {
+    $app->get('/wordpress', function() use($app) {
         $nav = array(
             'packages'=>'active',
                         'globalnav'=>array(

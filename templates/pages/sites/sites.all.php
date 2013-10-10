@@ -4,11 +4,55 @@
 
 <section class="hbox stretch bg-white">
 
-	{% include 'pages/sites/nav.sidebar.php' %}
+	{% include 'partials/nav.sidebar.php' %}
 
-	<section id="content" class="">
-		<section class="hbox stretch">
-				<section>
+	<section id="content">
+        <section class="panel">
+            <header class="panel-heading bg-light">
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#messages-1" data-toggle="tab"><i class="icon-bar-chart text-default"></i> My Sites</a></li>
+                    <li><a href="#profile-1" data-toggle="tab"><i class="icon-user text-default"></i> Managed</a></li>
+                    <li><a href="#settings-1" data-toggle="tab"><i class="icon-cog text-default"></i> Activity</a></li>
+                    <li class="pull-right bg-success"><a href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New Site</a></li>
+                </ul>
+
+            </header>
+            <div class="panel-body no-padder">
+                <div class="tab-content">              
+                    <div class="tab-pane active" id="messages-1">
+
+                        {% include 'pages/sites/sites.list.php' %}
+
+
+                    </div>
+                    <div class="tab-pane" id="profile-1">
+
+                        {% include 'pages/sites/sites.list.managed.php' %}
+
+
+                    </div>
+                    <div class="tab-pane" id="settings-1">settings</div>
+                    <div class="tab-pane" id="new-site">
+                        <section class="hbox stretch">
+                            {% include 'pages/sites/nav.sidebar.new.php' %}
+
+                            <aside class="bg-white">
+                                {% include 'ui/forms.wp.php' %}
+                            </aside>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+				<section class="hidden">
 					<header class="header b-b">
 						<div class="btn-group pull-right">
 							<a href="{{ baseurl }}/sites/new" class="btn btn-success"><i class="icon-plus-sign-alt"></i> New Site</a>
@@ -171,7 +215,6 @@
 
 				</section>
 
-		</section>
 	</section><!-- content -->
 </section>
 

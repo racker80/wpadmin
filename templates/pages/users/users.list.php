@@ -4,9 +4,64 @@
 
 <section class="hbox stretch bg-white">
 
-	{% include 'elements/nav.sidebar.users.php' %}
+	{% include 'partials/nav.sidebar.php' %}
 
-	<section id="content" class="">
+
+	<section id="content">
+        <section class="panel">
+            <header class="panel-heading bg-light">
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#messages-1" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Managers</a></li>
+                    <li><a href="#profile-1" data-toggle="tab"><i class="icon-user text-default"></i> Site Owners</a></li>
+                    <li><a href="#settings-1" data-toggle="tab"><i class="icon-cog text-default"></i> Activity</a></li>
+                    <li class="pull-right bg-success"><a href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New User</a></li>
+                </ul>
+
+            </header>
+            <div class="panel-body no-padder">
+                <div class="tab-content">              
+                    <div class="tab-pane active" id="messages-1">
+                    	<section class="hbox stretch">
+                            
+                    		{% include 'pages/users/users.list.managers.php' %}
+                            <aside class="bg-white col-sm-4">
+                            	<div class="wrapper">
+				                    		{% include 'pages/users/user.card.php' %}
+
+                            	</div>
+                            	
+                            </aside>
+
+                        </section>
+                    	
+                    </div>
+                    <div class="tab-pane" id="profile-1">
+                    	<section class="hbox stretch">
+
+                    		{% include 'pages/users/users.list.owners.php' %}
+                    		<aside class="bg-white col-sm-4">
+                    			<div class="wrapper">
+                    				{% include 'pages/users/user.card.php' %}
+
+                    			</div>
+
+                    		</aside>
+
+                    	</section>
+
+
+                    </div>
+                    <div class="tab-pane" id="settings-1">settings</div>
+                    <div class="tab-pane" id="new-site">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+	<section id="content" class="hidden">
 		<section class="hbox stretch">
 				<section>
 					<header class="header b-b">

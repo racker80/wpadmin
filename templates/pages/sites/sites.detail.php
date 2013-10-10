@@ -4,9 +4,94 @@
 
 <section class="hbox stretch">
 
-	{% include 'pages/sites/nav.sidebar.php' %}
+	{% include 'partials/nav.sidebar.php' %}
 
-	<section id="content" class="">
+
+	<section id="content">
+        <section class="panel">
+								<table class="table m-n">
+						<tbody>
+							<tr>
+								<td class="aside-lg text-center padder-n" style="padding:0;">
+									<div style="height:100px; overflow:hidden;">
+										<img src="{{ baseurl }}/images/screenshot1.png" style="display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-50px">
+									</div>
+
+								</td>
+								<td class="v-middle">
+									<p class="h3">MyAwesomeSite.com</p>
+									<p class="clearfix">
+										<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
+											<img src="/todo/images/avatar.jpg">
+										</span> 
+										user.name
+									</p>
+								</td>
+								
+								<td width="300" class="v-middle">
+									<div class="btn-group btn-group-justified m-b">
+										<a class="btn btn-success btn-rounded active"  data-toggle="button">
+											<span class="text">
+												<i class="icon-cloud-upload"></i> Live
+											</span>
+											<span class="text-active">
+												<i class="icon-ok"></i> Live
+											</span>
+										</a>
+										<a class="btn btn-default btn-rounded" data-toggle="button">
+											<span class="text">
+												<i class="icon-eye-open"></i> Priavate
+											</span>
+											<span class="text-active">
+												<i class="icon-eye-open"></i> Priavate
+											</span>
+										</a>
+
+									</div>   									
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+            <header class="panel-heading bg-light">
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#account" data-toggle="tab">Account</a></li>
+            			<li><a href="#wordpress" data-toggle="tab">WordPress</a></li>
+                      <li><a href="#devsite" data-toggle="tab">Development</a></li>
+                      <li class=""><a href="#activity" data-toggle="tab">Backups</a></li>
+                      <li class=""><a href="#activity" data-toggle="tab">Domain & Email</a></li>
+                </ul>
+
+            </header>
+            <div class="panel-body no-padder">
+                <div class="tab-content">              
+                	<div class="tab-pane  active" id="account">
+                		<div class="wrapper">
+
+							{% include 'pages/sites/detail/account.php' %}
+
+                		</div>
+                	</div>
+                    <div class="tab-pane" id="wordpress">
+
+							{% include 'pages/sites/detail/wordpress.php' %}
+
+
+                    </div>
+                    <div class="tab-pane" id="devsite">
+                    	{% include 'pages/sites/detail/dev.php' %}
+
+                    </div>
+                    <div class="tab-pane" id="new-site">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+	<section id="content" class="hidden">
 		<section class="vbox">
 			<section class="scrollable">
 				<section class="panel m-n bg-light">
@@ -362,11 +447,6 @@
 			              					</div>
 			              					<br>
 			              				</section>								
-
-			              				
-
-
-
 			              			</div>
 			              		</div>
 

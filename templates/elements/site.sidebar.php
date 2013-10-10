@@ -8,10 +8,7 @@
             <li><a href="#activity" data-toggle="tab">WordPress</a></li>
                       <li><a href="#devsite" data-toggle="tab">Development</a></li>
                       <li class=""><a href="#activity" data-toggle="tab">Backups</a></li>
-                      <li class=""><a href="#activity" data-toggle="tab">DNS</a></li>
-                      <li class=""><a href="#activity" data-toggle="tab">Email</a></li>
-                      <li class=""><a href="#events" data-toggle="tab">Users</a></li>
-                      <li class=""><a href="#interaction" data-toggle="tab">Billing</a></li>
+                      <li class=""><a href="#activity" data-toggle="tab">Domain & Email</a></li>
       </nav>
 
       <div class="wrapper">
