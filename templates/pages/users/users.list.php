@@ -7,7 +7,7 @@
 
 
 
-	<section id="content">
+	<section id="content" class="bg-white">
         <section class="panel">
             <header class="panel-heading bg-light">
 

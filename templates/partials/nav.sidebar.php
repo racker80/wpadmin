@@ -10,9 +10,6 @@
           </a>
         </header>
 
-		<section class="">
-
-		</section>
 		<footer class="footer bg-gradient hidden-xs">
 			<a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
 				<i class="icon-reorder"></i>
@@ -112,13 +109,21 @@
 							<span>My WordPress</span>
 						</a>
 					</li>
+					<li class="">
+						<a href="#">
+							<i class="icon-gear"></i>
+							<span>Account Settings</span>
+						</a>
+					</li>
+					<li class="">
+						<a href="#">
+							<i class="icon-comments"></i>
+							<span>Support</span>
+						</a>
+					</li>
 				</ul>
 			</nav>
-					<footer class="footer bg-gradient hidden-xs">
-			<a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
-				<i class="icon-reorder"></i>
-			</a>
-		</footer>
+
         </section>
 
 
