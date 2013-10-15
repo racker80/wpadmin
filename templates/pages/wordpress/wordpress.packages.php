@@ -13,10 +13,10 @@
             <header class="panel-heading bg-light">
 
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#themes" data-toggle="tab"><i class="icon-bar-chart text-default"></i> My Themes</a></li>
+                    <li><a href="#themes" data-toggle="tab"><i class="icon-bar-chart text-default"></i> My Themes</a></li>
                     <li><a href="#plugins" data-toggle="tab"><i class="icon-user text-default"></i> Plugins</a></li>
                     <li><a href="#packages" data-toggle="tab"><i class="icon-cog text-default"></i> Packages</a></li>
-                    <li><a href="#wp-settings" data-toggle="tab"><i class="icon-cog text-default"></i> WP Settings</a></li>
+                    <li class="active"><a href="#wp-settings" data-toggle="tab"><i class="icon-cog text-default"></i> WP Settings</a></li>
                 </ul>
 
             </header>
@@ -24,7 +24,7 @@
                 <div class="tab-content">              
                     
 
-                    <div class="tab-pane active" id="themes">
+                    <div class="tab-pane" id="themes">
                     	<div class="wrapper">
                     		<p class="h4">Add themes</p>
                     		{% include 'pages/wordpress/includes/upload.theme.php' %}
@@ -71,8 +71,11 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane" id="wp-settings">
-
+                    <div class="tab-pane active" id="wp-settings">
+                        <div class="wrapper">
+                            {% include 'forms/wp.php' %}
+                        </div>
+                        
                     </div>
                 </div>
             </div>

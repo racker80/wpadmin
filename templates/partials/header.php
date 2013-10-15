@@ -9,7 +9,19 @@
   <link rel="stylesheet" href="{{ baseurl }}/todo/css/animate.css" type="text/css" />
   <link rel="stylesheet" href="{{ baseurl }}/todo/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="{{ baseurl }}/todo/css/font.css" type="text/css" cache="false" />
+
+
+<link rel="stylesheet" href="{{ baseurl }}/todo/js/select2/select2.css" type="text/css">
+<link rel="stylesheet" href="{{ baseurl }}/todo/js/fuelux/fuelux.css" type="text/css">
+<link rel="stylesheet" href="{{ baseurl }}/todo/js/datepicker/datepicker.css" type="text/css">
+<link rel="stylesheet" href="{{ baseurl }}/todo/js/slider/slider.css" type="text/css">
+
+
+<link rel="stylesheet" href="{{ baseurl }}/todo/js/nestable/nestable.css" type="text/css" cache="false">
+
   <link rel="stylesheet" href="{{ baseurl }}/todo/css/plugin.css" type="text/css" />
+
+
   <link rel="stylesheet" href="{{ baseurl }}/todo/css/app.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="{{ baseurl }}/todo/js/ie/respond.min.js" cache="false"></script>
