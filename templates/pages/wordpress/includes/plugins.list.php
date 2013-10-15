@@ -27,7 +27,7 @@
 									</td>
 
 									<td width="500" class="v-middle">
-										<div id="MyPillbox" class="pillbox clearfix">
+										<div id="" class=" clearfix">
 											<ul>
 												<li class="label bg-white">default bundle</li>
 												<li class="label" >
@@ -74,7 +74,7 @@
 										</div>
 									</td>	
 									<td width="500" class="v-middle">
-										<div id="MyPillbox" class="pillbox clearfix">
+										<div id="" class=" clearfix">
 											<ul>
 												<li class="label bg-white">default bundle</li>
 												<li class="label" >
@@ -121,7 +121,7 @@
 										</div>
 									</td>								
 									<td width="500" class="v-middle">
-										<div id="MyPillbox" class="pillbox clearfix">
+										<div id="" class=" clearfix">
 											<ul>
 												<li class="label" >
 													<div class="btn-group btn-sm">
@@ -168,7 +168,7 @@
 										</div>
 									</td>								
 									<td width="500" class="v-middle">
-										<div id="MyPillbox" class="pillbox clearfix">
+										<div id="" class=" clearfix">
 											<ul>
 												<li class="label" >
 													<div class="btn-group btn-sm">

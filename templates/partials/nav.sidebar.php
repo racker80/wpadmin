@@ -97,12 +97,12 @@
 							<span>Sites</span>
 						</a>
 					</li>
-					<li class="{{ nav.globalnav.users }}">
+<!-- 					<li class="{{ nav.globalnav.users }}">
 						<a href="{{ baseurl }}/users">
 							<i class="icon-group"></i>
 							<span>Users</span>
 						</a>
-					</li>
+					</li> -->
 					<li class="{{ nav.globalnav.wordpress }}">
 						<a href="{{ baseurl }}/wordpress">
 							<i class="icon-th-list"></i>

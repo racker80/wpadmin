@@ -319,7 +319,7 @@ PERMALINKS
 
 <?php
 /************************************************************************************
-READING
+Pages
 *************************************************************************************/
 ?>
 <section class="panel">
@@ -366,6 +366,110 @@ READING
 </section>
 
 
+
+
+<?php
+/************************************************************************************
+plugins
+*************************************************************************************/
+?>
+<section class="panel">
+  <header class="panel-heading font-bold">
+    Default Plugins
+  </header>
+  <div class="panel-body">
+    <form class="form-horizontal" method="get">
+      <div class="form-group">
+
+        <label class="col-sm-2 control-label">Add These Plugin bundles</label>
+        <div class="col-sm-10">
+          
+          <div class="table-responsive">
+                                   <table class="table table-striped b-t m-n text-sm table-bordered">
+                                        <thead>
+                                             <tr>
+                                                  <th width="20"><input type="checkbox"></th>
+                                                  <th class="th-sortable" data-toggle="class">Bundle Name
+                                                       <span class="th-sort">
+                                                            <i class="icon-sort-down text"></i>
+                                                            <i class="icon-sort-up text-active"></i>
+                                                            <i class="icon-sort"></i>
+                                                       </span>
+                                                  </th>
+                                                  <th width="100">plugins</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             <tr>
+                                                  <td><input type="checkbox" name="post[]" value="2"></td>
+                                                  <td>Default Bundle</td>
+                                                  <td>6</td>
+
+                                             </tr>
+                                             <tr>
+                                                  <td><input type="checkbox" name="post[]" value="2"></td>
+                                                  <td>Security</td>
+                                                  <td>4</td>
+
+                                             </tr>
+                                             <tr>
+                                                  <td><input type="checkbox" name="post[]" value="2"></td>
+                                                  <td>Buddy Press</td>
+                                                  <td>1</td>
+
+                                             </tr>
+                                             <tr>
+                                                  <td><input type="checkbox" name="post[]" value="2"></td>
+                                                  <td>Awesome Bundle</td>
+                                                  <td>1</td>
+  
+                                             </tr>      
+                                             <tr>
+                                                  <td><input type="checkbox" name="post[]" value="2"></td>
+                                                  <td>email Bundle</td>
+                                                  <td>1</td>
+
+                                             </tr>    
+                                        </tbody>
+
+                                   </table>
+                              </div>
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+
+<?php
+/************************************************************************************
+plugins
+*************************************************************************************/
+?>
+<section class="panel">
+  <header class="panel-heading font-bold">
+    Default Themes
+  </header>
+  <div class="panel-body">
+    <form class="form-horizontal" method="get">
+      <div class="form-group">
+
+        <label class="col-sm-2 control-label">Add Themes</label>
+        <div class="col-sm-10">
+          
+            {% include 'pages/wordpress/includes/defaults.theme.list.php' %}
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>
 
 
 
