@@ -10,7 +10,7 @@
         <div>
             <p class="clearfix">
               <span class="thumb avatar pull-left m-t-n-xs m-r-xs">
-              <img src="/todo/images/avatar.jpg"> <span class="h5 m-l-sm">user.name</span>
+              <img src="{{ baseurl }}/todo/images/avatar.jpg"> <span class="h5 m-l-sm">user.name</span>
             </span> 
             
           </p>

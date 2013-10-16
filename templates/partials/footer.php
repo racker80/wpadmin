@@ -31,8 +31,9 @@
 
 
   <script src="{{ baseurl }}/bower_components/angular/angular.js"></script>
+  <script src="{{ baseurl }}/js/script.js"></script>
 
-  <script src="{{ baseurl }}/js/script.js"></script>  
+  <script src="{{ baseurl }}/js/angular.local.storage.js"></script>
 
 </body>
 </html>

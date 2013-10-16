@@ -11,7 +11,7 @@
 
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#messages-1" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Your Sites</a></li>
-                    <li><a href="#profile-1" data-toggle="tab"><i class="icon-cog text-default"></i> Sites you manage</a></li>
+                    <li><a href="#profile-1" data-toggle="tab"><i class="icon-cog text-default"></i> Sites You Manage</a></li>
                     <li><a href="#settings-1" data-toggle="tab"><i class="icon-user text-default"></i> Collaborators</a></li>
                     <li class=""><a href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New Site</a></li>
                 </ul>
@@ -37,6 +37,8 @@
                     <div class="tab-pane" id="settings-1">
                         
                         {% include 'pages/users/users.list.managers.php' %}
+
+
                     </div>
                     <div class="tab-pane " id="new-site">
                             {% include 'pages/sites/includes/new.site.php' %}

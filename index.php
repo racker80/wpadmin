@@ -20,6 +20,14 @@
 
     $app->get('/', function() use($app) {
         $nav = array(
+            
+        );
+        $app->render( 'login.php', array('nav'=>$nav) );
+        
+    });
+
+    $app->get('/sites', function() use($app) {
+        $nav = array(
             'allsites'=>'active',
             'globalnav'=>array(
                             'sites'=>'active'
@@ -29,39 +37,6 @@
         
     });
 
-    $app->get('/sites/new', function() use($app) {
-        $nav = array(
-            'mysites'=>'active',
-             'class'=>'only-icon nav-vertical',
-                         'globalnav'=>array(
-                            'sites'=>'active'
-                            )
-      );
-        $app->render( 'pages/sites/sites.add.php', array('nav'=>$nav) );
-        
-    });
-
-    $app->get('/sites/my-sites', function() use($app) {
-        $nav = array(
-            'mysites'=>'active',
-             'globalnav'=>array(
-                            'sites'=>'active'
-                            )
-      );
-        $app->render( 'pages/sites/sites.my.php', array('nav'=>$nav) );
-        
-    });
-
-    $app->get('/sites/managed', function() use($app) {
-        $nav = array(
-            'managed'=>'active',
-             'globalnav'=>array(
-                            'sites'=>'active'
-                            )
-      );
-        $app->render( 'pages/sites/sites.managed.php', array('nav'=>$nav) );
-        
-    });    
 
     $app->get('/sites/(:id)', function($id) use($app) {
         $nav = array(

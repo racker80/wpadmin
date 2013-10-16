@@ -22,6 +22,12 @@
                 			</label>
                 		</div>
                 	</div>
+                	<div class="col-sm-3">
+                		<div class="text-right">
+                			<a href="#modal-invite" class="btn btn-sm btn-success" data-toggle="modal">Invite a Collaborator</a>
+                		</div>
+                		{% include 'modals/modal.invite.collab.html' %}
+                	</div>
                 	
                 </div>
 
@@ -57,9 +63,24 @@
 				<td class="v-middle">Manager, Account Admin</td>
 				<td class="v-middle">3</td>
 				<td class="text-right v-middle">
+					<span class="label label-warning">request pending...</span>
+				</td>
+			</tr>			
+			<tr>
+				<td class="v-middle"><input type="checkbox" name="post[]" value="2"></td>
+				<td class="v-middle">
+					<a href="#" class="thumb-sm">
+						<img src="{{ baseurl }}/todo/images/avatar.jpg" class="img-circle">
+					</a>
+				</td>
+				<td class="v-middle">User Name</td>
+				<td class="v-middle"><i class="icon-map-marker"></i>  Company Name</td>
+				<td class="v-middle">Manager, Account Admin</td>
+				<td class="v-middle">3</td>
+				<td class="text-right v-middle">
 					<div class="btn-group">
 						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-danger btn-xs text-xs"><i class="icon-remove icon-white"></i> remove</a>
-						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
+						<a href="#modal-user-details" data-toggle="modal" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
 					</div>
 				</td>
 			</tr>
@@ -77,7 +98,7 @@
 				<td class="text-right v-middle">
 					<div class="btn-group">
 						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-danger btn-xs text-xs"><i class="icon-remove icon-white"></i> remove</a>
-						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
+						<a href="#modal-user-details" data-toggle="modal" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
 					</div>
 				</td>
 			</tr>
@@ -96,7 +117,7 @@
 				<td class="text-right v-middle">
 					<div class="btn-group">
 						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-danger btn-xs text-xs"><i class="icon-remove icon-white"></i> remove</a>
-						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
+						<a href="#modal-user-details" data-toggle="modal" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
 					</div>
 				</td>
 			</tr>
@@ -115,7 +136,7 @@
 				<td class="text-right v-middle">
 					<div class="btn-group">
 						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-danger btn-xs text-xs"><i class="icon-remove icon-white"></i> remove</a>
-						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
+						<a href="#modal-user-details" data-toggle="modal" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
 					</div>
 				</td>
 			</tr>
@@ -134,7 +155,7 @@
 				<td class="text-right v-middle">
 					<div class="btn-group">
 						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-danger btn-xs text-xs"><i class="icon-remove icon-white"></i> remove</a>
-						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
+						<a href="#modal-user-details" data-toggle="modal" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
 					</div>
 				</td>
 			</tr>                    				                    				                    				
@@ -143,6 +164,7 @@
 	</table>
 </div>
 
+{% include 'modals/modal.user.details.html' %}
 
                 <footer class="panel-footer">
                   <div class="row">

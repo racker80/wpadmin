@@ -100,19 +100,36 @@
 	<div class="panel">
 		<header class="panel-heading"><p class="h3">Advanced Setup</p></header>
 		<div class="panel-body">
-			<div class="hbox stretch">
-				<section>
-					<div class="wrapper">
-						<p>You can optionally continue to customize this wordpress installation with advanced options
-						or just continue on.</p>
+
+			<form class="form-horizontal" method="get">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Settings</label>
+					<div class="col-sm-10">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value="" checked="checked">
+								You are using your <strong>default wordpress settings</strong>.
+							</label><br>
+							You can edit or configure those settings <a href="{{baseurl}}/wordpress" class="text-info u"><span class="text-info text-underline">here</span></a>
+						</div>	      		
+											
 					</div>
-				</section>
-				<aside class="aside aside-lg">
-					<div class="wrapper">
-						<button class="btn btn-info">View Advanced Options</button>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Advanced Setup</label>
+					<div class="col-sm-10">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value="">
+								Setup custom themes, plugins, users, import a database and other advanced options.
+							</label><br>
+						</div>	      		
+											
 					</div>
-				</aside>
-			</div>
+				</div>	
+			</form>
+
+			
 		</div>
 	</div>
 

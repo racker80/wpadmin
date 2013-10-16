@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="{{ baseurl }}/todo/css/bootstrap.css" type="text/css" />
   <link rel="stylesheet" href="{{ baseurl }}/todo/css/animate.css" type="text/css" />
-  <link rel="stylesheet" href="{{ baseurl }}/todo/css/font-awesome.min.css" type="text/css" />
+ <link rel="stylesheet" href="{{ baseurl }}/todo/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="{{ baseurl }}/todo/css/font.css" type="text/css" cache="false" />
 
 
@@ -29,4 +29,4 @@
     <script src="{{ baseurl }}/todo/js/ie/fix.js" cache="false"></script>
   <![endif]-->
 </head>
-<body>
+<body  ng-app="app">

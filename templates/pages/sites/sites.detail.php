@@ -21,7 +21,7 @@
 									<p class="h3">MyAwesomeSite.com</p>
 									<p class="clearfix">
 										<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-											<img src="/todo/images/avatar.jpg">
+											<img src="{{ baseurl }}/todo/images/avatar.jpg">
 										</span> 
 										user.name
 									</p>
@@ -107,7 +107,7 @@
 									<p class="h3">MyAwesomeSite.com</p>
 									<p class="clearfix">
 										<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-											<img src="/todo/images/avatar.jpg">
+											<img src="{{ baseurl }}/todo/images/avatar.jpg">
 										</span> 
 										user.name
 									</p>
@@ -148,7 +148,7 @@
 							<p class="h3">MyAwesomeSite.com</p>
 							<div>
 								<p class="clearfix"><span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-									<img src="/todo/images/avatar.jpg">
+									<img src="{{ baseurl }}/todo/images/avatar.jpg">
 								</span> user.name</p>
 								<div class="line"></div>
 
@@ -399,7 +399,7 @@
 			              							<tr>
 			              								<td>
 			              									<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-			              										<img src="/todo/images/avatar.jpg">
+			              										<img src="{{ baseurl }}/todo/images/avatar.jpg">
 			              									</span> user.name@email.com
 			              								</td>
 			              								<td>
@@ -413,7 +413,7 @@
 			              							<tr>
 			              								<td>
 			              									<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-			              										<img src="/todo/images/avatar.jpg">
+			              										<img src="{{ baseurl }}/todo/images/avatar.jpg">
 			              									</span> user.name@email.com
 			              								</td>
 			              								<td>
@@ -426,7 +426,7 @@
 			              							<tr>
 			              								<td>
 			              									<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-			              										<img src="/todo/images/avatar.jpg">
+			              										<img src="{{ baseurl }}/todo/images/avatar.jpg">
 			              									</span> user.name@email.com
 			              								</td>
 			              								<td>

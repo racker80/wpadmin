@@ -67,7 +67,7 @@
                   <div class="list-group">
                     <a href="#" class="media list-group-item">
                       <span class="pull-left thumb-sm">
-                        <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                        <img src="{{ baseurl }}/images/avatar.jpg" alt="John said" class="img-circle">
                       </span>
                       <span class="media-body block m-b-none">
                         Use awesome animate.css<br>
@@ -92,7 +92,7 @@
 			<nav class="nav-primary hidden-xs">
 				<ul class="nav">
 					<li class="{{ nav.globalnav.sites }}">
-						<a href="{{ baseurl }}">
+						<a href="{{ baseurl }}/sites">
 							<i class="icon-sitemap"></i>
 							<span>Sites</span>
 						</a>
