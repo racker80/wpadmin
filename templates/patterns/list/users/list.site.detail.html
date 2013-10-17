@@ -1,0 +1,58 @@
+
+<div class="table-responsive">
+	<table class="table table-striped text-sm b-t b-r m-n">
+		<thead>
+			<tr>
+				<th width="20"><input type="checkbox"></th>
+				<th width="80"></th>
+				<th class="th-sortable" data-toggle="class">Name
+					<span class="th-sort">
+						<i class="icon-sort-down text"></i>
+						<i class="icon-sort-up text-active"></i>
+						<i class="icon-sort"></i>
+					</span>
+				</th>
+				<th class="" >Company</th>
+				<th class="">Roles</th>
+				<th class="text-right" width="200">Manager Options</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="v-middle"><input type="checkbox" name="post[]" value="2"></td>
+				<td class="v-middle">
+					<a href="#" class="thumb-sm">
+						<img src="{{ baseurl }}/todo/images/avatar.jpg" class="img-circle">
+					</a>
+				</td>
+				<td class="v-middle">User Name</td>
+				<td class="v-middle"><i class="icon-map-marker"></i>  Company Name</td>
+				<td class="v-middle">Manager</td>
+				<td class="text-right v-middle">
+					<span class="label label-warning">request pending...</span>
+				</td>
+			</tr>			
+			<tr>
+				<td class="v-middle"><input type="checkbox" name="post[]" value="2"></td>
+				<td class="v-middle">
+					<a href="#" class="thumb-sm">
+						<img src="{{ baseurl }}/todo/images/avatar.jpg" class="img-circle">
+					</a>
+				</td>
+				<td class="v-middle">User Name</td>
+				<td class="v-middle"><i class="icon-map-marker"></i>  Company Name</td>
+				<td class="v-middle">Manager</td>
+				<td class="text-right v-middle">
+					<div class="btn-group">
+						<a href="{{ baseurl }}/sites/mysiteid" class="btn btn-danger btn-xs text-xs"><i class="icon-remove icon-white"></i> remove</a>
+						<a href="#modal-user-details" data-toggle="modal" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> details</a>
+					</div>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>
+
+{% include 'modals/modal.user.details.html' %}
+

@@ -30,7 +30,7 @@
                         </header>
 
                         <div class="wrapper">
-                    		{% include 'pages/wordpress/includes/upload.theme.php' %}
+                    		{% include 'patterns/upload.theme.html' %}
                     	</div>
     
                         <div class="line line-dashed line-lg pull-in"></div>
@@ -39,7 +39,7 @@
                         <header class="header wrapper">
                             <p class="h4 m-n">Your Themes</p>
                         </header>
-                    	{% include 'pages/wordpress/includes/theme.list.php' %}
+                    	{% include 'patterns/list/themes/theme.list.html' %}
                     </div>
 
 
@@ -48,7 +48,7 @@
                             <p class="h4 m-n">Add plugins</p>
                         </header>
                     	<div class="wrapper">
-                    		{% include 'pages/wordpress/includes/upload.plugins.php' %}
+                            {% include 'patterns/upload.plugins.html' %}
                     	</div>
 
                         <div class="line line-dashed line-lg pull-in"></div>
@@ -67,7 +67,7 @@
                         </header>
                 	
                     	
-                        {% include 'pages/wordpress/includes/plugins.list.php' %}
+                        {% include 'patterns/list/plugins/plugins.list.full.html' %}
 
                     </div>
 

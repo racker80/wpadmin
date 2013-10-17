@@ -1,4 +1,4 @@
-  <header class="panel-heading font-bold">
+<header class="header font-bold">
     Site Information
   </header>
 

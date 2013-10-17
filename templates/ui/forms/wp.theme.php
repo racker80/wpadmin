@@ -58,25 +58,11 @@
 	</form>
 </div>  	
 {% else %}
-<header class="panel-heading font-bold">
+<header class="header font-bold">
 	Theme
 </header>
 
 <div class="panel-body">
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="wrapper">
-				<img src="{{ baseurl }}/todo/images/screenshot.png" style="display:block; width:100%; height:auto;" alt="">
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<p class="h3 m-t">Theme Name</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, ea dolorum perspiciatis optio minus?</p>
-			<p>Author: <strong>Author Name</strong></p>
-			<p>Rating: <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i></p>
-			<p><a href="#">Visit site <i class="icon-chevron-right"></i></a></p>
-			<a href="#" class="btn btn-info">Change Theme <i class="icon-mail-forward"></i></a>
-		</div>
-	</div>	
+	{% include 'patterns/list/themes/theme.active.html' %}
 </div>
 {% endif %}

@@ -29,7 +29,7 @@
 </div>
 {% else %}
 
-<header class="panel-heading font-bold">
+<header class="header font-bold">
 	Manage your Database
 </header>
 

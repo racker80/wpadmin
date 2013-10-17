@@ -39,70 +39,14 @@
 {% else %}
 
 
-    <header class="panel-heading font-bold">
+    <header class="header font-bold">
     	WordPress Users
     	
 	</header>
 
     <div class="panel-body">
-		<table class="table table-striped">
-			<tbody>
-				<tr>
-					<td>
-						<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-							<img src="{{ baseurl }}/todo/images/avatar.jpg">
-						</span> user.name
-					</td>
-					<td>
-						administrator
-					</td>
-					<td>
-						user.name@email.com
-					</td>
-					<td>
-						<button class="btn btn-xs btn-white pull-right">
-							change
-						</button>
-					</td>
-				</tr>
-					<tr>
-					<td>
-						<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-							<img src="{{ baseurl }}/todo/images/avatar.jpg">
-						</span> user.name
-					</td>
-					<td>
-						editor
-					</td>
-					<td>
-						user.name@email.com
-					</td>
-					<td>
-						<button class="btn btn-xs btn-white pull-right">
-							change
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-							<img src="{{ baseurl }}/todo/images/avatar.jpg">
-						</span> user.name
-					</td>
-					<td>
-						subscriber
-					</td>
-					<td>
-						user.name@email.com
-					</td>
-					<td>
-						<button class="btn btn-xs btn-white pull-right">
-							change
-						</button>
-					</td>
-				</tr>				
-			</tbody>
-		</table>
+
+		{% include 'patterns/list/users/list.wordpress.html' %}
 	</div>
 
 

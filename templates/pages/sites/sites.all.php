@@ -21,22 +21,20 @@
                 <div class="tab-content">              
                     <div class="tab-pane active" id="messages-1">
 
-                        {% include 'pages/sites/first.sites.php' %}
 
-
-                        {% include 'pages/sites/sites.list.php' %}
+                        {% include 'patterns/list/sites/list.html' %}
 
 
                     </div>
                     <div class="tab-pane" id="profile-1">
 
-                        {% include 'pages/sites/sites.list.managed.php' %}
+                        {% include 'patterns/list/sites/list.managed.html' %}
 
 
                     </div>
                     <div class="tab-pane" id="settings-1">
                         
-                        {% include 'pages/users/users.list.managers.php' %}
+                        {% include 'patterns/list/users/list.html' %}
 
 
                     </div>
