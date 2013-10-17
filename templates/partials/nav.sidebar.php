@@ -109,8 +109,8 @@
 							<span>My WordPress</span>
 						</a>
 					</li>
-					<li class="">
-						<a href="#">
+					<li class="{{ nav.globalnav.account }}">
+						<a href="{{baseurl}}/account">
 							<i class="icon-gear"></i>
 							<span>Account Settings</span>
 						</a>

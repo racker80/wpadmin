@@ -105,6 +105,20 @@
 
 
 
+    $app->get('/account', function() use($app) {
+        $nav = array(
+            'allsites'=>'active',
+                        'globalnav'=>array(
+                            'account'=>'active'
+                            )
+            );
+        $app->render( 'pages/account/account.php', array('nav'=>$nav) );
+        
+    });
+
+
+
+
 
 
 
