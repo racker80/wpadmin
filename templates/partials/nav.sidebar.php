@@ -4,7 +4,7 @@
           <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
             <i class="icon-reorder"></i>
           </a>
-          <a href="#" class="nav-brand" data-toggle="fullscreen">WP Sites</a>
+          <a href="{{baseurl}}/sites" class="nav-brand" >Sites</a>
           <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
             <i class="icon-comment-alt"></i>
           </a>

@@ -26,17 +26,49 @@
         
     });
 
+    $app->get('/signup', function() use($app) {
+        $nav = array(
+            
+        );
+        $app->render( 'signup.php', array('nav'=>$nav) );
+        
+
+    });    
+    $app->get('/signup/activate', function() use($app) {
+        $nav = array(
+            
+        );
+        $app->render( 'signup.activate.php', array('nav'=>$nav) );
+        
+    }); 
+
+
+
+
+
+
+
     $app->get('/sites', function() use($app) {
         $nav = array(
             'allsites'=>'active',
             'globalnav'=>array(
-                            'sites'=>'active'
-                            )
+                'sites'=>'active'
+                )
         );
         $app->render( 'pages/sites/sites.all.php', array('nav'=>$nav) );
         
     });
 
+    $app->get('/sites/new', function() use($app) {
+        $nav = array(
+            'allsites'=>'active',
+            'globalnav'=>array(
+                'sites'=>'active'
+                )
+        );
+        $app->render( 'pages/sites/sites.new.php', array('nav'=>$nav) );
+        
+    });
 
     $app->get('/sites/(:id)', function($id) use($app) {
         $nav = array(
@@ -49,8 +81,6 @@
         $app->render( 'pages/sites/sites.detail.php', array('nav'=>$nav) );
         
     });
-
-
 
 
 
