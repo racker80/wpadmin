@@ -1,0 +1,20 @@
+@import '../todo/less/app.less';
+
+.modal {
+  display:block!important;
+}
+
+.active-arrow {
+	position:absolute;
+	top:50%;
+	right:-1px;
+	display:none;
+}
+
+.nav {
+	li.active {
+		.active-arrow {
+			display:block;
+		}
+	}
+}

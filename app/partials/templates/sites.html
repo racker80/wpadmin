@@ -1,0 +1,40 @@
+
+
+        <section class="panel">
+            <header class="panel-heading bg-light">
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a bs href="#my-sites" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Your Sites</a></li>
+                    <li><a bs href="#managed" data-toggle="tab"><i class="icon-cog text-default"></i> Sites You Manage</a></li>
+                    <li><a bs href="#collaborators" data-toggle="tab"><i class="icon-user text-default"></i> Collaborators</a></li>
+                    <li class=""><a bs href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New Site</a></li>
+                </ul>
+
+            </header>
+            <div class="panel-body no-padder">
+                <div class="tab-content">              
+                    <div class="tab-pane active" id="my-sites">
+
+                        <ng-include src="'partials/patterns/list/sites/list.html'"></ng-include>
+
+                    </div>
+
+                    <div class="tab-pane" id="managed">
+
+                        <ng-include src="'partials/patterns/list/sites/list.managed.html'"></ng-include>
+
+
+                    </div>
+                    <div class="tab-pane" id="collaborators">
+
+                        <div ng-include src="'partials/patterns/list/users/list.html'"></div>
+
+
+                    </div>
+                    <div class="tab-pane " id="new-site">
+                        <div ng-include src="'partials/templates/sites/new.site.html'"></div>
+                    </div>                    
+                    
+                </div>
+            </div>
+        </section>

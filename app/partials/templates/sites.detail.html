@@ -1,0 +1,84 @@
+        <section class="panel">
+        	<table class="table m-n">
+        		<tbody>
+        			<tr>
+        				<td class="aside-lg text-center padder-n" style="padding:0;">
+        					<div style="height:100px; overflow:hidden;">
+        						<img src="img/screenshot1.png" style="display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-50px">
+        					</div>
+
+        				</td>
+        				<td class="v-middle">
+        					<p class="h3">MyAwesomeSite.com</p>
+        					<p class="clearfix">
+        						<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
+        							<img src="img/avatar.jpg">
+        						</span> 
+        						user.name
+        					</p>
+        				</td>
+
+        				<td width="300" class="v-middle">
+        					<div class="btn-group btn-group-justified m-b">
+        						<a class="btn btn-success btn-rounded active"  data-toggle="button">
+        							<span class="text">
+        								<i class="icon-cloud-upload"></i> Live
+        							</span>
+        							<span class="text-active">
+        								<i class="icon-ok"></i> Live
+        							</span>
+        						</a>
+        						<a class="btn btn-default btn-rounded" data-toggle="button">
+        							<span class="text">
+        								<i class="icon-eye-open"></i> Priavate
+        							</span>
+        							<span class="text-active">
+        								<i class="icon-eye-open"></i> Priavate
+        							</span>
+        						</a>
+
+        					</div>   									
+        				</td>
+        			</tr>
+        		</tbody>
+        	</table>
+
+        	<header class="panel-heading bg-light">
+
+        		<ul class="nav nav-tabs">
+        			<li class="active"><a bs href="#account" data-toggle="tab">Account</a></li>
+        			<li><a bs href="#wordpress" data-toggle="tab">WordPress</a></li>
+        			<li><a bs href="#devsite" data-toggle="tab">Development</a></li>
+        			<li class=""><a bs href="#activity" data-toggle="tab">Backups</a></li>
+        			<li class=""><a bs href="#activity" data-toggle="tab">Domain & Email</a></li>
+        		</ul>
+
+        	</header>
+
+
+            <div class="panel-body no-padder">
+                <div class="tab-content">              
+                	<div class="tab-pane  active" id="account">
+                		<div class="wrapper">
+
+							<ng-include src="'partials/templates/sites/detail.account.html'"></ng-include>
+
+                		</div>
+                	</div>
+                    <div class="tab-pane" id="wordpress">
+
+							<ng-include src="'partials/templates/sites/detail.wordpress.html'"></ng-include>
+
+
+                    </div>
+                    <div class="tab-pane" id="devsite">
+							<ng-include src="'partials/templates/sites/detail.dev.html'"></ng-include>
+
+                    </div>
+                    <div class="tab-pane" id="new-site">
+                        
+                    </div>
+                </div>
+            </div>        	
+
+        </section>
