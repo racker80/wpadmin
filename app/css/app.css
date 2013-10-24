@@ -2806,9 +2806,6 @@ fieldset[disabled] .btn-gplus.active {
     display: inherit !important;
   }
 }
-.modal {
-  display: block!important;
-}
 .active-arrow {
   position: absolute;
   top: 50%;

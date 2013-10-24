@@ -1,0 +1,29 @@
+<form class="form-horizontal" method="get">
+      <div class="form-group">
+
+        <label class="col-sm-2 control-label">Create these pages automatically</label>
+        <div class="col-sm-10">
+          
+          <div class="dd" id="nestable3">
+            <ol class="dd-list">
+              <li class="dd-item dd3-item" data-id="{{$index}}" ng-repeat="page in pages">
+                <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">{{page}}</div>
+              </li>              
+            </ol>
+          </div>
+          <br>
+          <div class="row">
+            <div class="input-group col-md-7" page-directive >
+              <input type="text" ng-model="pageName" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-white" type="button" ng-click="addPage()">Add Page</button>
+              </span>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </form>

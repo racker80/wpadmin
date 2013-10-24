@@ -11,7 +11,7 @@ angular.module('myApp.directives', []).
     };
   }])
   
-  .directive('bs', function() {
+  .directive('bs', function($location) {
     return {
         restrict: 'A',
         link: function(scope, elem, attrs) {
@@ -20,6 +20,19 @@ angular.module('myApp.directives', []).
                 });
         }
     };
+  })
+
+  .directive('pageDirective', function(Data) {
+    return {
+        restrict:'A',
+        link:function(scope, elm, attrs) {
+            scope.pages = Data.pages;
+            scope.addPage = function(){
+                scope.pages.push(scope.pageName);
+                return true;
+            }
+        }
+    }
   })
 
 

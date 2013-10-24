@@ -2,7 +2,7 @@
 <section class="hbox stretch bg-white-only">
   <!-- .aside -->
   <aside class="aside aside b-r">
-    <section class="vbox">
+    <section class="">
       <nav class="nav-primary hidden-xs">
         <ul class="nav">
           <li class="active" style="position:relative;">
@@ -18,6 +18,18 @@
            </a>
           </li>
           <li class="">
+            <a bs href="#widget-setup-database" data-toggle="tab">
+              <span>Database</span>
+               <div class="active-arrow"><span class="arrow left"></span></div>
+           </a>
+          </li>    
+          <li class="">
+            <a bs href="#widget-setup-users" data-toggle="tab">
+              <span>Users</span>
+               <div class="active-arrow"><span class="arrow left"></span></div>
+           </a>
+          </li>                
+          <li class="">
             <a bs href="#widget-setup-pages" data-toggle="tab">
               <span>Pages</span>
               <div class="active-arrow"><span class="arrow left"></span></div>
@@ -29,6 +41,12 @@
               <div class="active-arrow"><span class="arrow left"></span></div>
             </a>
           </li>
+          <li class="">
+            <a bs href="#widget-setup-settings" data-toggle="tab">
+              <span>Settings</span>
+              <div class="active-arrow"><span class="arrow left"></span></div>
+            </a>
+          </li>          
         </ul>
       </nav>
     </section>
@@ -46,18 +64,37 @@
           </header>
           <section class="wrapper">
             <div ng-include src="'partials/patterns/list/themes/defaults.theme.list.html'"></div>
-
           </section>
+        </div>
 
-        </div>
         <div class="tab-pane " id="widget-setup-plugins">
-          
+          <header class="header bg-white pos-rlt navbar navbar-default show">
+            <p class="h4">Add Plugins</p>
+          </header>
+          <section class="wrapper">
+            <div ng-include src="'partials/patterns/list/plugins/plugins.list.html'"></div>
+          </section>          
         </div>
-        <div class="tab-pane " id="widget-setup-pages">
+
+        <div class="tab-pane " id="widget-setup-database">
+          <div class="text-center" style="margin-top:100px;">
+            <button class="btn btn-info">Import Database</button>
+          </div>
           
+        </div>           
+
+        <div class="tab-pane " id="widget-setup-users">
+          <div ng-include src="'partials/patterns/forms/wp.adminuser.html'"></div>
+          <br>
+          <div class="wrapper">
+            <button class="btn btn-default">Add another user</button>
+          </div>
         </div>        
-        <div class="tab-pane " id="widget-setup-nav">
-          
+        
+
+        <div class="tab-pane " id="widget-setup-pages">
+              <div ng-include src="'partials/patterns/forms/wp.add.pages.html'"></div>
+
         </div>        
       </div>
 
