@@ -6,9 +6,9 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('myApp.services', []).
-  value('version', '0.1');
+  value('version', '0.1')
 
-  myApp.service('toggleStateService', function(){
+  .service('toggleStateService', function(){
   	this.state = [];
 
   	this.toggle = function(value) {
@@ -19,31 +19,7 @@ angular.module('myApp.services', []).
   		}
   	}
 
-  });
-
-  myApp.service('formService', function(){
+  })
+  .service('formService', function(){
   	this.formService = {};
-  });
-
-  myApp.service('Data', function(){
-  	
-  	this.themes = [
-  		{
-  			name:'eCommerce',
-  			image:'img/theme1.jpg'
-  		},
-  		{
-  			name:'Blogger',
-  			image:'img/theme2.png'
-  		}
-  	]
-
-  	this.pages = ['Home', 'About', 'Contact'];
-
-  	this.menus = [
-  		{
-  			name:'Menu',
-  			items:[]
-  		}
-  	];
   });

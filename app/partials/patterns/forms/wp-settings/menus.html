@@ -17,7 +17,7 @@ Menus
 
           <div class="dd" id="nestable2">
             <ol class="dd-list">
-              <li ng-repeat="menu in Data.menus" class="dd-item" data-id="{{$index}}"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>                    
+              <li ng-repeat="menu in Data.newsite.defaults.menus" class="dd-item" data-id="{{$index}}"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>                    
                 <div class="dd-handle">
                   <div class="pull-right"><span class="label label-info" ng-click="toggleState.toggle('addPage')">+ pages</span></div>
                   {{menu.name}}
@@ -51,7 +51,7 @@ Menus
             <div class="panel-body m-n no-padder">
               <table class="table table-striped m-n">
                 <tbody>
-                  <tr ng-repeat="page in Data.pages">
+                  <tr ng-repeat="page in Data.wordpress.defaults.pages">
                     <td width="40"><input type="checkbox" ng-click="addPageToMenu(page)"></td>
                     <td>{{page}}</td>
                   </tr>

@@ -169,7 +169,7 @@
 
                                             <hr><br>
 
-                                            <button class="btn btn-primary">Save Advanced Settings</button>
+                                            <button class="btn btn-primary" ng-click="toggleState.toggle('advancedSetup')">Save Advanced Settings</button>
                                             <!-- <div ng-include src="'partials/patterns/widgets/wp.options.html'"></div> -->
                                         </div>
                                     </form>
@@ -182,9 +182,16 @@
                             <div class="wrapper text-center bg-success lter">
                                 <p class="lead m-n">
                                     <a href="#" class="text-danger"><i class="icon-trash"></i> cancel</a> 
-                                    <button class="btn btn-white btn-lg m-l">Create Site</button>       
+                                    <a class="btn btn-white btn-lg m-l" href="#/sites/build" >Create Site</a>       
                                 </p>
                             </div>
 
                             
                         </div>
+
+
+
+
+
+                        
+                                                

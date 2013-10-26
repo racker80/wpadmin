@@ -33,7 +33,7 @@
 <section class="hbox stretch">
 
   <aside class="bg-dark aside-lg" id="nav">
-    <ng-include src="'partials/templates/nav.sidebar.html'"></ng-include>
+    <ng-include src="'templates/nav.sidebar.html'"></ng-include>
   </aside>
 
   <section id="content" class=" bg-white">
@@ -44,11 +44,21 @@
 </section>
 
 
+
+
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
   <script src="js/vendor/bower_components/jquery/jquery.js"></script>
-  <script src="js/vendor/bootstrap.js"></script>
+    <script src="todo/js/bootstrap.js"></script>
+  <script src="todo/js/app.js"></script>
+  <script src="todo/js/app.plugin.js"></script>
+  <script src="todo/js/app.data.js"></script>
+    <script src="todo/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="todo/js/select2/select2.min.js"></script>
+
+
+
 
 
 
@@ -72,5 +82,6 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <script src="js/data.js"></script>
 </body>
 </html>

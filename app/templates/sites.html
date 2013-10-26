@@ -15,24 +15,29 @@
                 <div class="tab-content">              
                     <div class="tab-pane active" id="my-sites">
 
-                        <ng-include src="'partials/patterns/list/sites/list.html'"></ng-include>
+                        <ng-include src="'partials/tables/sites.html'"></ng-include>
 
                     </div>
 
                     <div class="tab-pane" id="managed">
 
-                        <ng-include src="'partials/patterns/list/sites/list.managed.html'"></ng-include>
+                        <ng-include src="'partials/tables/sites-managed.html'"></ng-include>
 
 
                     </div>
                     <div class="tab-pane" id="collaborators">
+                        <div class="text-right">
+                            <button href="#modal-invite" class="btn btn-sm btn-success" data-toggle="modal">Invite a Collaborator</button>
+                        </div>
 
-                        <div ng-include src="'partials/patterns/list/users/list.html'"></div>
+                        <div ng-include="'partials/modals/modal.invite.collab.html'"></div>
+                        <ng-include src="'partials/tables/collaborators.html'"></ng-include>
+                        <div ng-include="'partials/modals/modal.user.details.html'"></div>
 
 
                     </div>
                     <div class="tab-pane " id="new-site">
-                        <div ng-include src="'partials/templates/sites/new.site.html'"></div>
+                        <div ng-include src="'templates/sites/new.site.html'"></div>
                     </div>                    
                     
                 </div>

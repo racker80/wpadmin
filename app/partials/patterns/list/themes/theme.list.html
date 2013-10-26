@@ -1,17 +1,16 @@
 <table class="table table-striped">
 	<tbody>
-		<tr>
+		<tr ng-repeat="theme in Data.wordpress.themes">
 			<td class="col-md-2">
 				<a href="#" class="thumbnail">
-					<img src="img/theme1.jpg" alt="">
+					<img src="{{theme.image}}" alt="">
 				</a>
 			</td>
 			<td class="col-md-6">
-				<h3 class="">Product</h3>
-				<strong class="block m-b-sm">by: Jewelleries</strong>
+				<h3 class="">{{theme.name}}</h3>
+				<strong class="block m-b-sm">by: {{theme.author}}</strong>
 				<p>
-					product® responsive wordpress theme is best way to present your product. period. Theme is modern, clean, fully responsive with a lot of features …
-
+					{{theme.description}}
 				</p>
 
 
@@ -22,7 +21,16 @@
 			</td>
 		</tr>
 
-		<tr>
+
+
+		
+	</tbody>
+</table>	
+
+
+
+<div class="hidden">
+			<tr>
 			<td class="col-md-2">
 				<a href="#" class="thumbnail">
 					<img src="img/theme2.png" alt="">
@@ -110,7 +118,4 @@
 
 			</td>
 		</tr>
-
-		
-	</tbody>
-</table>	
+</div>

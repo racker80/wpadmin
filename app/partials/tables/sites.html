@@ -1,0 +1,41 @@
+<div class="table-responsive">
+	
+	<table class="table table-striped">
+		<thead>
+			<th width="20"><input type="checkbox"></th>
+			<th width="80"></th>
+			<th class="th-sortable" data-toggle="class">Site
+				<span class="th-sort">
+					<i class="icon-sort-down text"></i>
+					<i class="icon-sort-up text-active"></i>
+					<i class="icon-sort"></i>
+				</span>
+			</th>
+			<th class="text-center" width="100">Status</th>
+			<th class="text-center" width="100">Wp-Admin</th>
+			<th class="text-right" width="200">Options</th>			
+		</thead>
+		<tbody>
+			<tr ng-repeat="site in Data.sites.mySites">
+				<td class="v-middle"><input type="checkbox" name="" value=""></td>
+				<td class="v-middle"><img src="{{site.image}}" class="thumb" alt=""></td>
+				<td class="v-middle">{{site.url}}</td>
+				<td class="text-center v-middle" ng-switch="site.status">
+
+					<span class="text-success" ng-switch-when="live"><i class="icon-ok"></i></span>
+					<span class="text-default" ng-switch-when="private"><i class="icon-eye-open"></i></span>
+					<span class="text-warning" ng-switch-when="maintainence"><i class="icon-beaker"></i></span>
+
+				</td>
+				<td class="text-center v-middle"><a href="#">Login</i></a></td>
+				<td class="text-right v-middle">
+					<div class="btn-group" ng-switch="site.status">
+						<a bs href="#" class="btn btn-success btn-xs text-xs" ng-switch-when="maintainence"><i class="icon-cloud-upload icon-white"></i> go live</a>
+						<a href="#/sites/detail" class="btn btn-white btn-xs text-xs"><i class="icon-pencil icon-white"></i> edit</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
