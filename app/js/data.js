@@ -9,6 +9,8 @@ angular.module('myApp.data', [])
 
   .service('Data', function(){
     
+    var ths = this;
+
     this.sites = {
       mySites: [
         {
@@ -274,7 +276,9 @@ angular.module('myApp.data', [])
           bundles:[]
         },
       ],
-      packages: [],
+      packages: [
+        
+      ],
       bundles: ['default', 'ecommerce', 'security', 'social'],
       defaults: {
         pages:['Home', 'About', 'Contact'],
@@ -292,6 +296,29 @@ angular.module('myApp.data', [])
 
     this.newsite = {
       defaults: angular.copy(this.wordpress.defaults),
+    }
+
+    this.newpackage = {
+      name: '',
+      themes: [],
+      bundles:[],
+      plugins: [],
+    }
+
+
+    this.addToPackage = function(key, value){
+      ths.newpackage[key].push(value);
+      return;
+    }
+    this.saveNewPackage = function() {
+      ths.wordpress.packages.push(ths.newpackage);
+      console.log(ths.wordpress.packages)
+      this.newpackage = {
+        name: '',
+        themes: [],
+        bundles:[],
+        plugins: [],
+      }
     }
 
 

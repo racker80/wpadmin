@@ -108,7 +108,7 @@ myApp.directive('wpSearch', function($http, $rootScope, $q, Data){
             // scope.myPlugins = angular.fromJson(localStorageService.get('myPlugins'));
 
             scope.search = function(){
-                $http.get('search.php', {
+                $http.get('app/search.php', {
                     params: {
                         type:'search',
                         value:scope.searchField,
