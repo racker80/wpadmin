@@ -11,28 +11,61 @@
                 </ul>
 
             </header>
-            <div class="panel-body no-padder">
+            <div class="panel-body">
                 <div class="tab-content">              
                     <div class="tab-pane active" id="my-sites">
 
+                        <div class="message-area">
+                            <div class="alert alert-success m-t m-b-lg">
+                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                you did it
+                            </div>
+                        </div>
+
+                        <div class="navbar m-n">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active">
+                                    <button type="button" href="#modal-invite" data-toggle="modal" class="btn btn-default btn-sm navbar-btn">New Site</button>
+                                </li>
+                            </ul>
+                        </div>
+
                         <ng-include src="'partials/tables/sites.html'"></ng-include>
+
 
                     </div>
 
                     <div class="tab-pane" id="managed">
+
+                        <div class="message-area">
+                            <div class="alert alert-success m-t m-b-lg">
+                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                You have a request pending
+                            </div>
+                        </div>                        
 
                         <ng-include src="'partials/tables/sites-managed.html'"></ng-include>
 
 
                     </div>
                     <div class="tab-pane" id="collaborators">
-                        <div class="text-right">
-                            <button href="#modal-invite" class="btn btn-sm btn-success" data-toggle="modal">Invite a Collaborator</button>
+
+                        <div class="message-area">
+                            <div class="alert alert-success m-t m-b-lg">
+                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                You have a request pending
+                            </div>
+                        </div>  
+
+                        <div class="navbar m-n">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active">
+                                    <button type="button" href="#modal-invite" data-toggle="modal" class="btn btn-default btn-sm navbar-btn">Invite Collaborator</button>
+                                </li>
+                            </ul>
                         </div>
 
-                        <div ng-include="'partials/modals/modal.invite.collab.html'"></div>
                         <ng-include src="'partials/tables/collaborators.html'"></ng-include>
-                        <div ng-include="'partials/modals/modal.user.details.html'"></div>
 
 
                     </div>
@@ -43,3 +76,8 @@
                 </div>
             </div>
         </section>
+
+
+
+        <div ng-include="'partials/modals/modal.invite.collab.html'"></div>
+        <div ng-include="'partials/modals/modal.user.details.html'"></div>
