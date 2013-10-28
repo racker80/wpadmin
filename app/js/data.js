@@ -13,7 +13,7 @@ angular.module('myApp.data', [])
       mySites: [
         {
           url:'examplesite.com',
-          image:'img/theme1.jpg',          
+          image:'app/img/theme1.jpg',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -21,7 +21,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'anotherexamplesite.com',
-          image:'img/theme2.png',          
+          image:'app/img/theme2.png',          
           status:'private',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -29,7 +29,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'someothersite.com',
-          image:'img/theme3.jpg',          
+          image:'app/img/theme3.jpg',          
           status:'maintainence',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -37,7 +37,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'agreateecommrcesite.com',
-          image:'img/theme4.jpg',          
+          image:'app/img/theme4.jpg',          
           status:'maintainence',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -45,7 +45,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'news.google.com',
-          image:'img/screenshot1.png',          
+          image:'app/img/screenshot1.png',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -53,7 +53,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'pennyarcade.com',
-          image:'img/theme1.jpg',          
+          image:'app/img/theme1.jpg',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -61,7 +61,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'believeitornot.net',
-          image:'img/theme3.jpg',          
+          image:'app/img/theme3.jpg',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -69,7 +69,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'youknowtoomuch.com',
-          image:'img/theme4.jpg',          
+          image:'app/img/theme4.jpg',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -77,7 +77,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'angularjs.com',
-          image:'img/theme4.jpg',          
+          image:'app/img/theme4.jpg',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -87,7 +87,7 @@ angular.module('myApp.data', [])
       managed: [
         {
           url:'managedsite.com',
-          image:'img/theme2.png',
+          image:'app/img/theme2.png',
           status:'live',
           adminUrl:'managedsite.com/wp-admin',
           managers:[],
@@ -95,7 +95,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'believeitornot.net',
-          image:'img/theme3.jpg',          
+          image:'app/img/theme3.jpg',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -103,7 +103,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'youknowtoomuch.com',
-          image:'img/theme4.jpg',          
+          image:'app/img/theme4.jpg',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -111,7 +111,7 @@ angular.module('myApp.data', [])
         },
         {
           url:'angularjs.com',
-          image:'img/theme4.jpg',          
+          image:'app/img/theme4.jpg',          
           status:'live',
           adminUrl:'example.com/wp-admin',
           managers:[],
@@ -124,7 +124,7 @@ angular.module('myApp.data', [])
           slug:'user-name',
           company: 'company name',
           email:'email@email.com',
-          image:'img/avatar.jpg',
+          image:'app/img/avatar.jpg',
           roles:['manager', 'account admin'],
           status:'pending',
         },
@@ -133,7 +133,7 @@ angular.module('myApp.data', [])
           slug:'user-name',
           company: 'company name',
           email:'email@email.com',
-          image:'img/avatar.jpg',
+          image:'app/img/avatar.jpg',
           roles:['manager'],
           status:'active',
         },
@@ -145,31 +145,31 @@ angular.module('myApp.data', [])
       themes: [
         {
           name:'Product',
-          image:'img/theme1.jpg',
+          image:'app/img/theme1.jpg',
           author:'ThemeAuthor',
           description:'product® responsive wordpress theme is best way to present your product. period. Theme is modern, clean, fully responsive with a lot of features …'
         },
         {
           name:'Blogger',
-          image:'img/theme2.png',
+          image:'app/img/theme2.png',
            author:'ThemeAuthor',
          description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, pariatur, inventore, ut nobis animi voluptatum modi assumenda repellendus facere voluptate atque illo!'
         },
         {
           name:'PoliticalPress',
-          image:'img/theme3.jpg',
+          image:'app/img/theme3.jpg',
            author:'ThemeAuthor',
           description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, dicta maxime voluptatibus optio id neque expedita ipsa fugit.'
        },
         {
           name:'Sales Theme',
-          image:'img/theme4.jpg',
+          image:'app/img/theme4.jpg',
            author:'ThemeAuthor',
          description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, maiores soluta amet impedit dolorem. Ullam.'
         },
         {
           name:'Hitched',
-          image:'img/screenshot1.png',
+          image:'app/img/screenshot1.png',
            author:'ThemeAuthor',
          description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim officiis nulla quae expedita dolore eveniet vero.'
         }            

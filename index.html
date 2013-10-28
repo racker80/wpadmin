@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="app/todo/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="app/todo/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="app/todo/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="app/todo/css/font.css" type="text/css" cache="false" />
+
+  <link rel="stylesheet" href="app/todo/js/select2/select2.css" type="text/css">
+  <link rel="stylesheet" href="app/todo/js/fuelux/fuelux.css" type="text/css">
+  <link rel="stylesheet" href="app/todo/js/datepicker/datepicker.css" type="text/css">
+  <link rel="stylesheet" href="app/todo/js/slider/slider.css" type="text/css">
+
+
+  <link rel="stylesheet" href="app/todo/js/nestable/nestable.css" type="text/css" cache="false">
+
+  <link rel="stylesheet" href="app/todo/css/plugin.css" type="text/css" />
+
+
+  <link rel="stylesheet" href="app/css/app.css" type="text/css" />  
+
+    <script src="app/js/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+</head>
+<body>
+
+
+
+
+
+<section class="hbox stretch">
+
+  <aside class="bg-dark aside-lg" id="nav">
+    <ng-include src="'app/templates/nav.sidebar.html'"></ng-include>
+  </aside>
+
+  <section id="content" class=" bg-white">
+    <div ng-view></div>
+    
+  </section><!-- content -->
+
+</section>
+
+
+
+
+  <!-- In production use:
+  <script src="app///ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+  <script src="app/js/vendor/bower_components/jquery/jquery.js"></script>
+    <script src="app/todo/js/bootstrap.js"></script>
+  <script src="app/todo/js/app.js"></script>
+  <script src="app/todo/js/app.plugin.js"></script>
+  <script src="app/todo/js/app.data.js"></script>
+    <script src="app/todo/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="app/todo/js/select2/select2.min.js"></script>
+
+
+
+
+
+
+  <script src="app/lib/angular/angular.js"></script>
+  <script src="app/lib/angular/angular-route.js"></script>
+  <script src="app/lib/angular/angular-sanitize.js"></script>
+
+
+  <script src="app/js/vendor/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+  <script src="app/js/vendor/ng-grid/ng-grid.js"></script>
+
+
+  <script src="app/js/vendor/angularstrap/angular-strap.min.js"></script>
+  <script src="app/js/vendor/angularstrap/bootstrap-datepicker.js"></script>
+  <script src="app/js/vendor/angularstrap/bootstrap-timepicker.js"></script>
+
+
+  <script src="app/js/app.js"></script>
+  <script src="app/js/services.js"></script>
+  <script src="app/js/controllers.js"></script>
+  <script src="app/js/filters.js"></script>
+  <script src="app/js/directives.js"></script>
+  <script src="app/js/data.js"></script>
+</body>
+</html>

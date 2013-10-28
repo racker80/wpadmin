@@ -25,25 +25,25 @@ myApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function (
   // $routeProvider.otherwise({redirectTo: '/view1'});
 
 
-  $routeProvider.when('/', {templateUrl: 'templates/login.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/', {templateUrl: 'app/templates/login.html', controller: 'MyCtrl1'});
 
-  $routeProvider.when('/signup', {templateUrl: 'templates/signup.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/signup', {templateUrl: 'app/templates/signup.html', controller: 'MyCtrl1'});
 
-  $routeProvider.when('/activate', {templateUrl: 'templates/activate.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/activate', {templateUrl: 'app/templates/activate.html', controller: 'MyCtrl1'});
 
 
 
-  $routeProvider.when('/sites', {templateUrl: 'templates/sites.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/sites', {templateUrl: 'app/templates/sites.html', controller: 'MyCtrl1'});
 
-  $routeProvider.when('/sites/build', {templateUrl: 'templates/sites.build.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/sites/build', {templateUrl: 'app/templates/sites.build.html', controller: 'MyCtrl1'});
 
-  $routeProvider.when('/sites/new', {templateUrl: 'templates/sites.new.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/sites/new', {templateUrl: 'app/templates/sites.new.html', controller: 'MyCtrl1'});
 
-  $routeProvider.when('/sites/detail', {templateUrl: 'templates/sites.detail.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/sites/detail', {templateUrl: 'app/templates/sites.detail.html', controller: 'MyCtrl1'});
   
-  $routeProvider.when('/wordpress', {templateUrl: 'templates/wordpress.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/wordpress', {templateUrl: 'app/templates/wordpress.html', controller: 'MyCtrl1'});
   
-  $routeProvider.when('/account', {templateUrl: 'templates/account.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/account', {templateUrl: 'app/templates/account.html', controller: 'MyCtrl1'});
 
 
   $routeProvider.when('/test', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
