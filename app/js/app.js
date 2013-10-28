@@ -49,6 +49,8 @@ myApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function (
   $routeProvider.when('/test', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
 
 
+  $routeProvider.otherwise({redirectTo: '/'});
+
 }]);
 
 
