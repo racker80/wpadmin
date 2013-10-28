@@ -2815,3 +2815,16 @@ fieldset[disabled] .btn-gplus.active {
 .nav li.active .active-arrow {
   display: block;
 }
+.navbar {
+  border-bottom: 0;
+}
+.navbar li:hover a {
+  text-decoration: underline;
+}
+.navbar li.active {
+  background: #fff;
+}
+.navbar li.active:hover a {
+  text-decoration: none;
+  background: #fff;
+}

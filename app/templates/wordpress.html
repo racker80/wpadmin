@@ -1,15 +1,25 @@
-        <section class="panel">
-            <header class="panel-heading bg-light">
+        <section class="heading bg-light">
 
-                <ul class="nav nav-tabs">
-                    <li class="active"><a bs href="#themes" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Your Themes</a></li>
-                    <li><a bs href="#plugins" data-toggle="tab"><i class="icon-user text-default"></i> Plugins</a></li>
-                    <li><a bs href="#packages" data-toggle="tab"><i class="icon-cog text-default"></i> Packages</a></li>
-                    <li><a bs href="#wp-settings" data-toggle="tab"><i class="icon-cog text-default"></i> WP Settings</a></li>
-                </ul>
 
-            </header>
-            <div class="panel-body no-padder">
+                <div class="navbar navbar-light">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a bs href="#themes" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Your Themes</a></li>
+                        <li><a bs href="#plugins" data-toggle="tab"><i class="icon-user text-default"></i> Plugins</a></li>
+                        <li><a bs href="#packages" data-toggle="tab"><i class="icon-cog text-default"></i> Packages</a></li>
+                        <li><a bs href="#wp-settings" data-toggle="tab"><i class="icon-cog text-default"></i> WP Settings</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right hidden">
+                        <li>
+                            <button type="button" href="#modal-invite" data-toggle="modal" class="btn btn-default btn-sm navbar-btn">New Site</button>
+                        </li>
+                    </ul>
+                </div>                
+
+            </section>
+
+
+            <div class="padder">
                 <div class="tab-content">              
                     
 
@@ -47,9 +57,8 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        
+
                             <div ng-include src="'partials/modals/modal.upload.html'"></div>
                             <div ng-include src="'partials/modals/modal.github.html'"></div>
                             <div ng-include src="'partials/modals/modal.dropbox.html'"></div>

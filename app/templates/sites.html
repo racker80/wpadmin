@@ -1,24 +1,32 @@
 
 
-        <section class="panel">
-            <header class="panel-heading bg-light">
+            <section class="heading bg-light">
 
-                <ul class="nav nav-tabs">
-                    <li class="active"><a bs href="#my-sites" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Your Sites</a></li>
-                    <li><a bs href="#managed" data-toggle="tab"><i class="icon-cog text-default"></i> Sites You Manage</a></li>
-                    <li><a bs href="#collaborators" data-toggle="tab"><i class="icon-user text-default"></i> Collaborators</a></li>
-                    <li class=""><a bs href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New Site</a></li>
-                </ul>
 
-            </header>
-            <div class="panel-body">
+                <div class="navbar navbar-light">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a bs href="#my-sites" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Your Sites</a></li>
+                        <li><a bs href="#managed" data-toggle="tab"><i class="icon-cog text-default"></i> Sites You Manage</a></li>
+                        <li><a bs href="#collaborators" data-toggle="tab"><i class="icon-user text-default"></i> Collaborators</a></li>
+                        <li class=""><a bs href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New Site</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right hidden">
+                        <li>
+                            <button type="button" href="#modal-invite" data-toggle="modal" class="btn btn-default btn-sm navbar-btn">New Site</button>
+                        </li>
+                    </ul>
+                </div>                
+
+            </section>
+            <div class="padder">
                 <div class="tab-content">              
                     <div class="tab-pane active" id="my-sites">
 
                         <div class="message-area">
                             <div class="alert alert-success m-t m-b-lg">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                you did it
+                                <p>This is the message are where we can update you on things that are happening.</p>
                             </div>
                         </div>
 
@@ -38,9 +46,9 @@
                     <div class="tab-pane" id="managed">
 
                         <div class="message-area">
-                            <div class="alert alert-success m-t m-b-lg">
+                            <div class="alert alert-info m-t m-b-lg">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                You have a request pending
+                                You have a request pending to manage <a href="#" bs>http://managemysite.com</a>.  <button class="btn btn-sm btn-white">details</button> <button class="btn btn-sm btn-white" data-dismiss="alert">accept</button>
                             </div>
                         </div>                        
 
@@ -51,9 +59,9 @@
                     <div class="tab-pane" id="collaborators">
 
                         <div class="message-area">
-                            <div class="alert alert-success m-t m-b-lg">
+                            <div class="alert alert-warning m-t m-b-lg">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                You have a request pending
+                                You have a request pending from <a href="" bs>User@username.com</a> to become a collaborator.  <button class="btn btn-sm btn-white" href="#modal-user-details" data-toggle="modal">details</button> <button class="btn btn-sm btn-white" data-dismiss="alert">accept</button>
                             </div>
                         </div>  
 
@@ -75,7 +83,6 @@
                     
                 </div>
             </div>
-        </section>
 
 
 
