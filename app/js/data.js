@@ -296,6 +296,19 @@ angular.module('myApp.data', [])
 
     this.newsite = {
       defaults: angular.copy(this.wordpress.defaults),
+      addPage: function(page){
+        this.defaults.pages.push(page);
+        page = "";
+      },
+      addMenu: function(menu) {
+        this.defaults.menus.push(menu);
+        menu="";
+      },
+      addThemes: function(list) {
+        angular.each(list, function(value, index, context){
+          console.log(value);
+        })
+      }
     }
 
     this.newpackage = {
