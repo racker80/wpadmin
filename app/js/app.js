@@ -10,6 +10,7 @@ var myApp = angular.module('myApp', [
   'myApp.directives',
   'myApp.controllers',
   'myApp.data',
+  'myApp.newsite',
   'ngGrid', // angular grid
   'ui.bootstrap' //bootstrap
 ]);

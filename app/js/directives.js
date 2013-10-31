@@ -63,7 +63,6 @@ angular.module('myApp.directives', []).
           if (setup) elem.prop('checked', true);
           else scope.list.splice(index, 1);
         }
-        console.log(Data.newsite.defaults.themes)
       };
       
       var setupHandler = handler.bind(null, true);
@@ -130,6 +129,38 @@ angular.module('myApp.directives', []).
         }
     }
   })
+
+// .directive('newSite', function(){
+//     return {
+//         restrict:'A',
+//         scope: {},
+//         controller:function($scope, $element, $attrs, Data){
+//             $scope.Data = Data;
+//             $scope.newsite = angular.copy(Data.wordpress.defaults);
+
+
+//             $scope.addItem = function(item, location){
+//                 location.push(item);
+//                 item = "";
+//             }            
+
+//             $scope.addThemes = function(list) {
+//                 angular.each(list, function(value, index, context){
+//                   console.log(value);
+//               });
+//             }
+//         },
+//         link:function(scope){
+//             angular.forEach(scope.Data.modal, function(value, key){
+//                 scope.$watch('Data.modal.'+key, function(v){
+//                   scope.newsite[key] = angular.copy(scope.Data.modal[key]);
+//                   console.log(scope.Data.modal[key])
+
+//                 }, true);
+//             });
+//         }
+//     }
+// });
 
 myApp.directive('wpSearch', function($http, $rootScope, $q, Data){
     return {

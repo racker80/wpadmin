@@ -1,7 +1,7 @@
+<div  new-site>
 
 <section>
-    
-    <form class="form-horizontal" role="form">
+   <form class="form-horizontal" role="form">
         <div class="form-group">
             <label for="inputEmail1" class="col-lg-2 control-label h4">Basic WordPress Setup</label>
             <div class="col-lg-10">
@@ -121,13 +121,13 @@
             <div class="form-group padder-v">
                 <label for="inputEmail1" class="col-lg-2 control-label ">Themes</label>
                 <div class="col-lg-10">
-
-                    <section ng-show="Data.newsite.defaults.themes.length > 0">
+                       
+                    <section ng-show="options.themes.length > 0">
                         <div class="row">
                             <div class="col-lg-6">
                                 <table class="table table-striped">
                                     <tbody>
-                                        <tr ng-repeat="theme in Data.newsite.defaults.themes">
+                                        <tr ng-repeat="theme in options.themes">
                                             <td width="80"><img src="{{theme.image}}" alt="" class="thumb"></td>
                                             <td>{{theme.name}}</td>
                                         </tr>
@@ -141,7 +141,12 @@
                     <section>
 
                         <div>
-                            <button class="btn btn-white  navbar-btn" data-toggle="modal" href="#modal-your-themes">
+                            <button class="btn btn-white  navbar-btn" 
+                            modal-directive 
+                            output="options" 
+                            modal-id="modal-your-themes" 
+                            template="app/partials/modals/modal.your.themes.html" 
+                            title="my modal">
                                 <i class="icon-bar-chart text"></i> Your Themes
                             </button> 
                             <button class="btn btn-white  navbar-btn" data-toggle="modal" href="#modal-upload">
@@ -163,12 +168,12 @@
                 <label for="inputEmail1" class="col-lg-2 control-label ">Plugins</label>
                 <div class="col-lg-10">
 
-                    <section ng-show="Data.newsite.defaults.plugins.length > 0">
+                    <section ng-show="newsite.plugins.length > 0">
                         <div class="row">
                             <div class="col-lg-6">
                                 <table class="table table-striped">
                                     <tbody>
-                                        <tr ng-repeat="plugin in Data.newsite.defaults.plugins">
+                                        <tr ng-repeat="plugin in newsite.plugins">
                                             <td>{{plugin.name}}</td>
                                         </tr>
                                     </tbody>
@@ -241,6 +246,21 @@
                 <label for="inputEmail1" class="col-lg-2 control-label">Additional Users</label>
                 <div class="col-lg-10">
 
+                    <section ng-show="newsite.wpuser.length > 0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr ng-repeat="user in newsite.wpuser">
+                                            <td>{{user.username}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>                                
+                            </div>
+                        </div>
+                        
+                    </section>
+
                     <section>
 
                         <button class="btn btn-white  navbar-btn" data-toggle="modal" href="#modal-new-wp-user">
@@ -275,16 +295,16 @@
                     <section>
                         <div class="row">
                             <div class="input-group col-md-6">
-                                <input type="text" ng-model="pageName" class="form-control">
+                                <input type="text" ng-model="page.title" class="form-control">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-white" type="button" ng-click="Data.newsite.addPage(pageName)">Add Page</button>
+                                    <button class="btn btn-white" type="button" ng-click="addItem(page, newsite.pages)">Add Page</button>
                                 </span>
                             </div>
                         </div>
                         <div class="dd col-md-6" id="nestable3">
                             <ol class="dd-list">
-                                <li class="dd-item dd3-item" data-id="{{$index}}" ng-repeat="page in Data.newsite.defaults.pages">
-                                    <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">{{page}}</div>
+                                <li class="dd-item dd3-item" data-id="{{$index}}" ng-repeat="page in newsite.pages">
+                                    <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">{{page.title}}</div>
                                 </li>              
                             </ol>
                         </div>
@@ -301,13 +321,19 @@
 
                         <div class="row">
                             <div class="input-group col-md-6">
-                                <input type="text" ng-model="menuName" class="form-control">
+                                <input type="text" ng-model="menu.name" class="form-control">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-white" type="button" ng-click="Data.newsite.addMenu(menuName)">Add Menu</button>
+                                    <button class="btn btn-white" type="button" ng-click="addItem(menu, newsite.menus)">Add Menu</button>
                                 </span>
                             </div>
                         </div>
-
+                        <div class="dd col-md-6" id="nestable3">
+                            <ol class="dd-list">
+                                <li class="dd-item dd3-item" data-id="{{$index}}" ng-repeat="menu in newsite.menus">
+                                    <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">{{menu.name}}</div>
+                                </li>              
+                            </ol>
+                        </div>
                     </section> 
                 </div>
             </div> 
@@ -419,130 +445,5 @@
 <br>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="wrapper hidden">
-
-
-
-
-
-                            <div class="panel">
-                                <header class="panel-heading"><p class="h3">Basic Setup</p></header>
-                                <div class="panel-body">
-                                    <div ng-include src="'app/partials/patterns/wp.setup.html'"></div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="panel">
-                                <header class="panel-heading"><p class="h3">Advanced Setup</p></header>
-                                <div class="panel-body">
-
-                                    <form class="form-horizontal" method="get">
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Settings</label>
-                                            <div class="col-sm-10">
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="radio">
-                                                        Create a new installation with the standard WordPress default settings.
-                                                    </label>
-                                                </div>
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="radio"  checked="checked">
-                                                        Use your <a href="#/wordpress">custom wordpress settings</a> to start this project.
-                                                    </label>
-                                                </div>     
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Advanced Setup</label>
-                                            <div class="col-sm-10">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="1" ng-model="toggleState.advancedSetup">
-                                                        Setup custom themes, plugins, users, import a database and other advanced options.
-                                                    </label><br>
-                                                </div>              
-                                            </div>
-                                        </div>  
-                                        <div ng-show="toggleState.advancedSetup">
-
-<!--                                             <div class="form-group">
-                                                <label class="col-sm-2 control-label">Advanced Setup</label>
-                                                <div class="col-sm-10">
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input type="checkbox" value="1" ng-model="toggleState.advancedSetup">
-                                                            Setup custom themes, plugins, users, import a database and other advanced options.
-                                                        </label><br>
-                                                    </div>              
-                                                </div>
-                                            </div> -->
-
-
-
-<div ng-include src="'app/partials/patterns/forms/wp-settings/themes.html'"></div>
-
-<div ng-include src="'app/partials/patterns/forms/wp-settings/plugins.html'"></div>
-
-<div ng-include src="'app/partials/patterns/forms/wp-settings/admin.html'"></div>
-
-<div ng-include src="'app/partials/patterns/forms/wp-settings/users.html'"></div>
-
-<div ng-include src="'app/partials/patterns/forms/wp-settings/database.html'"></div>
-
-<div ng-include src="'app/partials/patterns/forms/wp-settings/pages.html'"></div>
-
-<div ng-include src="'app/partials/patterns/forms/wp-settings/menus.html'"></div>
-
-
-
-
-
-                                            <hr><br>
-
-                                            <button class="btn btn-primary" ng-click="toggleState.toggle('advancedSetup')">Save Advanced Settings</button>
-                                            <!-- <div ng-include src="'app/partials/patterns/widgets/wp.options.html'"></div> -->
-                                        </div>
-                                    </form>
-
-
-                                    
-                                </div>
-                            </div>
-
-                            <div class="wrapper text-center bg-success lter">
-                                <p class="lead m-n">
-                                    <a href="#" class="text-danger"><i class="icon-trash"></i> cancel</a> 
-                                    <a class="btn btn-white btn-lg m-l" href="#/sites/build" >Create Site</a>       
-                                </p>
-                            </div>
-
-                            
-                        </div>
-
-
-
-
-
-                        
                                                 
+</div>

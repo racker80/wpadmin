@@ -281,8 +281,25 @@ angular.module('myApp.data', [])
       ],
       bundles: ['default', 'ecommerce', 'security', 'social'],
       defaults: {
-        pages:['Home', 'About', 'Contact'],
-        themes:[],
+        pages:[
+          {
+            title:'Home'
+          },
+          {
+            title:"About"
+          },
+          {
+            title:"Contact"
+          }
+        ],
+        themes:[
+        {
+          name:'Sales Theme',
+          image:'app/img/theme4.jpg',
+          author:'ThemeAuthor',
+          description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, maiores soluta amet impedit dolorem. Ullam.'
+        },
+        ],
         plugins:[],
         users:[],
         menus:[
@@ -291,6 +308,7 @@ angular.module('myApp.data', [])
             items:[]
           }
         ],
+        options:[],
       }
     }
 
@@ -311,9 +329,17 @@ angular.module('myApp.data', [])
       }
     }
 
+
     this.newpackage = {
       name: '',
-      themes: [],
+      themes: [
+              {
+          name:'Sales Theme',
+          image:'app/img/theme4.jpg',
+           author:'ThemeAuthor',
+         description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, maiores soluta amet impedit dolorem. Ullam.'
+        },
+      ],
       bundles:[],
       plugins: [],
     }
@@ -336,5 +362,19 @@ angular.module('myApp.data', [])
 
 
 
+    this.modal = {
+      themes: [],
+      plugins:[],
+      wpuser:[],
+    }
+
     
   });
+
+
+
+angular.module('myApp.dataFactory', [])
+.factory('DataFactory', function(Data){
+
+
+});

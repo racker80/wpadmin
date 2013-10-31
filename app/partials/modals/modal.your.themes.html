@@ -1,4 +1,4 @@
-<div class="modal" id="modal-your-themes" aria-hidden="false">
+<div class="modal" aria-hidden="false">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -12,7 +12,6 @@
 						<thead>
 							<tr>
 								<th width="20"><input type="checkbox"></th>
-								<th width=""></th>
 								<th width="80"></th>
 								<th class="th-sortable" data-toggle="class">Theme
 									<span class="th-sort">
@@ -27,18 +26,7 @@
 						<tbody>
 
 							<tr ng-repeat="theme in Data.wordpress.themes">
-								<td class="v-middle"><input type="checkbox" value="{{theme}}" check-list="Data.newsite.defaults.themes"></td>
-								<td class="v-middle">
-									<div class="btn-group">
-										<button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"><i class="icon-gear"></i></button>
-										<ul class="dropdown-menu" style="left:100%; bottom:inherit; top:-10px;">
-											<li><a href="#">Delete</a></li>
-											<li><a href="#">Build from template</a></li>
-											<li><a href="#">Add to Package</a></li>
-
-										</ul>
-									</div>
-								</td>          
+								<td class="v-middle"><input type="checkbox" value="{{theme}}" check-list="output.themes"></td>
 								<td class="v-middle"><img src="{{theme.image}}" class="thumb" alt=""></td>
 								<td class="v-middle"><h5>{{theme.name}}</h5></td>
 								<td class="v-middle">{{theme.description}}</td>
