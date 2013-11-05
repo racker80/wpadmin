@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
-  <link rel="stylesheet" href="app/todo/css/bootstrap.css" type="text/css" />
   <link rel="stylesheet" href="app/todo/css/animate.css" type="text/css" />
   <link rel="stylesheet" href="app/todo/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="app/todo/css/font.css" type="text/css" cache="false" />
@@ -24,24 +23,41 @@
     <script src="app/js/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
 </head>
-<body>
+<body ng-controller="MyCtrl1">
 
 
-
-
-
-<section class="hbox stretch">
+<section id="site-container" class="hbox stretch">
 
   <aside class="bg-dark aside-lg" id="nav">
     <ng-include src="'app/templates/nav.sidebar.html'"></ng-include>
   </aside>
 
-  <section id="content" class=" bg-white">
+  <section id="content" class="bg-white" ng-class="contentClass()">
     <div ng-view></div>
     
+
+    <div off-canvas id="offCanvasContainer">
+        <div id="offCanvasSlider" class="canvasSlider" ng-class="{showOffCanvas:offCanvas.showOffCanvas, sidebar:sidebar}">
+          <button class="btn btn-primary" ng-click="sidebar=!sidebar">full</button>
+            <button class="btn btn-primary" ng-click="offCanvas.showOffCanvas=!offCanvas.showOffCanvas">close</button>
+          <div id="offCanvasContent" ng-class="{sidebar:sidebar}">
+            
+          </div>
+
+          <div id="offCanvasSidebar" ng-class="{sidebar:sidebar}">
+            <button class="btn btn-primary" ng-click="sidebar=!sidebar">close</button>
+          </div>
+
+        </div>
+    </div>
+
+
+
   </section><!-- content -->
 
+
 </section>
+
 
 
 
@@ -65,6 +81,7 @@
   <script src="app/lib/angular/angular.js"></script>
   <script src="app/lib/angular/angular-route.js"></script>
   <script src="app/lib/angular/angular-sanitize.js"></script>
+  <script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
 
 
   <script src="app/js/vendor/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -84,5 +101,6 @@
   <script src="app/js/directives.js"></script>
   <script src="app/js/data.js"></script>
   <script src="app/js/modules/newsite.js"></script>
+  <script src="app/js/modules/offcanvas.js"></script>
 </body>
 </html>

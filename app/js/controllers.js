@@ -3,10 +3,21 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('MyCtrl1', function($scope, $modal, $rootScope, toggleStateService, Data, formService) {
-  	$rootScope.toggleState = toggleStateService;
+  controller('MyCtrl1', function($scope, $modal, $rootScope, toggleStateService, Data, offCanvasService) {
+  	$scope.toggleState = toggleStateService;
   	$rootScope.Data = Data;
-  	$rootScope.formService = formService;
+
+    $rootScope.offCanvas = offCanvasService;
+
+    $scope.$watch('offCanvas.showOffCanvas', function(){
+       
+    })
+
+    $scope.contentClass = function(){
+      return {
+        showOffCanvas: $scope.offCanvas.showOffCanvas
+      }
+    }
 
 
   	$scope.updateSelection = function(value){

@@ -1,3 +1,4 @@
+@import 'bootstrap/bootstrap.less';
 @import '../todo/less/app.less';
 
 .active-arrow {
@@ -8,6 +9,7 @@
 }
 
 .nav {
+	z-index:100;
 	li.active {
 		.active-arrow {
 			display:block;
@@ -16,6 +18,7 @@
 }
 
 .navbar {
+	z-index:100;
 	border-bottom:0;
 	li {
 		&:hover {
@@ -35,3 +38,355 @@
 
 	}
 }
+
+table.table.table-bordered {
+	thead {
+		th {
+			border-bottom:none;
+			.font-thin;
+		}
+	}
+}
+
+
+.main-nav {
+	padding:10px 20px;
+	.nav {
+		li {
+			/*margin-right:20px;*/
+			a {
+				/*font-size:1.4em;*/
+				.font-thin;
+				color:#999;
+			}
+			&.active {
+				a {
+					background:transparent;
+					color:#000;
+				}
+			}
+			a:hover {
+				text-decoration:none;
+				background:transparent;
+					color:#000;
+
+			}
+		}
+	}
+}
+
+
+
+
+@transitionTime: .2s;
+
+.translate3d {
+	-webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+
+/*    -webkit-transition: -webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
+
+/*    -webkit-transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+
+    -webkit-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
+}
+
+.afterClass {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: rgba(0,0,0,0.4);
+	content: '';
+	opacity: 0;
+	z-index:500;
+	-webkit-transition: opacity @transitionTime;
+	transition: opacity @transitionTime;
+	
+}
+.afterClassAdd {
+	opacity:1;
+	width:100%;
+	height:100%;
+}
+.afterClassRemove {
+	opacity:0;
+}
+
+/*
+SETUP THE CONTENT MASK
+*/
+#content {
+	.translate3d;
+	&::before {
+		.afterClass;
+	}
+	&.showOffCanvas-add,
+	&.showOffCanvas {
+		&::before {
+			.afterClassAdd;
+		}
+	}
+	&.showOffCanvas.showOffCanvas-remove {
+		&::before {
+			.afterClassAdd;
+		}
+	}
+}
+
+#offCanvasContainer {
+	position:absolute;
+	top:0;
+	left:100%;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.4);
+	z-index:999;
+	.canvasSlider {
+		position:relative;
+		padding-left:100px;
+		height:100%;
+		.translate3d;		
+		&.showOffCanvas,
+		&.showOffCanvas-add {
+			-webkit-transform: translate3d(-100%, 0px, 0);
+		}		
+		&.showOffCanvas.showOffCanvas-remove {
+			-webkit-transform: translate3d(0%, 0px, 0);
+		}
+		
+		&.sidebar,
+		&.sidebar-add {
+			padding:0;
+			.test {
+				width:100%;
+			}
+		}
+
+
+		#offCanvasContent {
+			position:relative;
+			height:100%;
+			width:100%;
+			background:#fff;
+			overflow:auto;
+
+			.translate3d;
+			&::after {
+				.afterClass;
+			}
+			&.sidebar-add,
+			&.sidebar {
+				width:100%;
+			}
+			&.sidebar-remove {
+				
+			}
+		}
+
+
+		#offCanvasSidebar {
+			position:absolute;
+			z-index:999;
+			top:0;
+			right:-400px;
+			width:400px;
+			height:100%;
+			overflow:auto;
+			background:#eaeaea;
+			.translate3d;
+			&.sidebar-add,
+			&.sidebar {
+				-webkit-transform: translate3d(-400px, 0px, 0);
+			}
+
+			&.sidebar.sidebar-remove {
+				-webkit-transform: translate3d(400px, 0px, 0);	
+			}
+		}		
+
+
+
+	}
+	.test {
+		background:rgba(0,0,0,0.4);
+	}
+}
+
+#offCanvas {
+	position:fixed;
+	top:0;
+	right:0;
+	width:0px;
+	height:100%;
+	background:#fff;
+	z-index:9999;
+	overflow:hidden;
+	.translate3d;
+
+	&.showOffCanvas,
+	&.showOffCanvas-add {
+		width:800px;
+	}
+
+	&.ng-enter {
+		-webkit-transform: translate3d(800px, 0px, 0);
+	}
+	&.ng-enter.ng-enter-active {
+		-webkit-transform: translate3d(0%, 0px, 0);
+	}
+	
+	&.ng-leave {
+		-webkit-transform: translate3d(0%, 0px, 0);
+	}
+	&.ng-leave.ng-leave-active {
+		-webkit-transform: translate3d(800px, 0px, 0);
+	}
+
+	.offCanvasWrapper {
+		position:relative;
+		height:100%;
+		.translate3d;
+	}
+
+	#offCanvasContent {
+		position:relative;
+		height:100%;
+		.translate3d;
+		&::after {
+			.afterClass;
+		}
+		&.sidebar-add,
+		&.sidebar {
+			-webkit-transform: translate3d(-50px, 0px, 0);
+			&::after {
+				.afterClassAdd;
+			}
+		}
+		&.sidebar-remove {
+			-webkit-transform: translate3d(0px, 0px, 0);
+			&::after {
+				.afterClassRemove;
+			}
+		}
+	}
+	#offCanvasSidebar {
+		position:absolute;
+		z-index:999;
+		top:0;
+		right:0;
+		width:400px;
+		height:100%;
+		background:#eaeaea;
+		-webkit-transform: translate3d(400px, 0px, 0);	
+		.translate3d;
+		&.sidebar-add,
+		&.sidebar {
+			-webkit-transform: translate3d(0px, 0px, 0);
+		}
+
+		&.sidebar.sidebar-remove {
+			-webkit-transform: translate3d(400px, 0px, 0);	
+		}
+	}
+
+}
+
+
+
+
+
+.mask {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	opacity:0.8;
+	background:#000;
+	z-index:9998;
+	cursor:pointer;
+	
+	-webkit-transition: 0.2s linear all;
+	transition: 0.2s linear all;
+
+	&.ng-leave {
+		opacity:0;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.relative {
+	position:relative;
+}
+#content {
+	position:relative;
+}
+.page-overlay {
+	position:fixed;
+	top:0;
+	right:0;
+	width:70%;
+	height:100%;
+	background:rgba(0,0,0,.7);
+	z-index:9999;
+	opacity:1;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;	
+
+	/*set the default as zero*/
+	-webkit-transform: translate3d(0%, 0px, 0);
+	transform: translate3d(0%, 0px, 0);
+
+	&.ng-enter,
+	&.ng-hide-remove {
+		-webkit-transform: translate3d(100%, 00, 0);
+		transform: translate3d(100%, 0px, 0);	
+		display:block!important;
+	}
+
+	&.ng-enter-active,
+	&.ng-hide-add-active {
+
+	}
+
+	&.ng-leave,
+	&.ng-hide-add {
+	-webkit-transition: 1s;
+	transition: 1s;		
+		-webkit-transform: translate3d(200%, 0, 0);
+		transform: translate3d(200%, 0, 0);
+		opacity:0;
+	}
+
+	&.ng-leave-active {}
+}
+
+
+
+
+
+
+body {
+	position:relative;
+	height:100%;
+}
+

@@ -10,6 +10,44 @@ angular.module('myApp.directives', []).
       elm.text(version);
     };
   }])
+
+  .directive('modalDirective', function($http, $compile, Data){
+    return {
+        restrict:"A",
+        scope:{
+            template:"@",
+            title:"@",
+            modalId:"@",
+            output:"="
+        },
+        link:function(scope, element, attrs){
+            scope.Data = Data;
+
+            element.click(function(){
+                var template;
+                var modal = scope.template;
+            
+                $http.get(modal).then(function(tmpl) {
+                    template = $compile(tmpl.data)(scope);
+                    template.attr('id', scope.modalId)
+                    // element.after(template);
+                    angular.element('body').append(template);
+
+                    var theModal = $('#'+template.attr('id')).modal('show');
+
+                    theModal.on('hidden.bs.modal', function(){
+                        theModal.remove();
+                    });
+
+                });
+            })
+
+        }
+    }
+})
+
+
+
   
   .directive('bs', function($location) {
     return {

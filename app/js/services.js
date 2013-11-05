@@ -10,7 +10,6 @@ angular.module('myApp.services', []).
 
   .service('toggleStateService', function(){
   	this.state = [];
-
   	this.toggle = function(value) {
   		if(this[value]) {
   			delete this[value]
@@ -19,7 +18,4 @@ angular.module('myApp.services', []).
   		}
   	}
 
-  })
-  .service('formService', function(){
-  	this.formService = {};
   });

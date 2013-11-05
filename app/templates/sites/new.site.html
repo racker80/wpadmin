@@ -1,5 +1,9 @@
 <div  new-site>
 
+<div class="jumbotron">
+    <h2>Create a new site</h2>
+</div>
+
 <section>
    <form class="form-horizontal" role="form">
         <div class="form-group">
@@ -101,10 +105,12 @@
                             </label>
                         </div>  
                     </div>
-                </div>
+                </div>                        <button ng-click="toggleState.offCanvasModal = !toggleState.offCanvasModal">toggle modal</button>
+
                 <div class="row m-b">
                     <div class="col-lg-10">
                         <label for="exampleInputEmail1">Custom Configuration</label>
+
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" value="1" ng-model="toggleState.advancedSetup">
@@ -143,19 +149,34 @@
                         <div>
                             <button class="btn btn-white  navbar-btn" 
                             modal-directive 
-                            output="options" 
+                            output="options.themes" 
                             modal-id="modal-your-themes" 
                             template="app/partials/modals/modal.your.themes.html" 
                             title="my modal">
                                 <i class="icon-bar-chart text"></i> Your Themes
                             </button> 
-                            <button class="btn btn-white  navbar-btn" data-toggle="modal" href="#modal-upload">
+                            <button class="btn btn-white  navbar-btn" 
+                            modal-directive 
+                            output="options" 
+                            modal-id="modal-uploads" 
+                            template="app/partials/modals/modal.upload.html" 
+                            title="my modal">
                                 <i class="icon-cloud-upload text"></i> upload
                             </button> 
-                            <button class="btn btn-white navbar-btn " data-toggle="modal" href="#modal-github">
+                            <button class="btn btn-white  navbar-btn" 
+                            modal-directive 
+                            output="options" 
+                            modal-id="modal-github" 
+                            template="app/partials/modals/modal.github.html" 
+                            title="my modal">
                                 <i class="icon-github text"></i> github
                             </button> 
-                            <button class="btn btn-white navbar-btn " data-toggle="modal" href="#modal-dropbox">
+                            <button class="btn btn-white  navbar-btn" 
+                            modal-directive 
+                            output="options" 
+                            modal-id="modal-dropbox" 
+                            template="app/partials/modals/modal.dropbox.html" 
+                            title="my modal">
                                 <i class="icon-dropbox text"></i> dropbox
                             </button>
                         </div>
@@ -186,16 +207,36 @@
                     <section>
 
                         <div>
-                            <button class="btn btn-white  navbar-btn" data-toggle="modal" href="#modal-your-plugins">
+                            <button class="btn btn-white  navbar-btn" 
+                            modal-directive 
+                            output="options.plugins" 
+                            modal-id="modal-your-plugins" 
+                            template="app/partials/modals/modal.your.plugins.html" 
+                            title="my modal">
                                 <i class="icon-bar-chart text"></i> Your Bundles and Plugins
                             </button> 
-                            <button class="btn btn-white  navbar-btn" data-toggle="modal" href="#modal-upload">
+                            <button class="btn btn-white  navbar-btn" 
+                            modal-directive 
+                            output="options" 
+                            modal-id="modal-uploads" 
+                            template="app/partials/modals/modal.upload.html" 
+                            title="my modal">
                                 <i class="icon-cloud-upload text"></i> upload
                             </button> 
-                            <button class="btn btn-white navbar-btn " data-toggle="modal" href="#modal-github">
+                            <button class="btn btn-white  navbar-btn" 
+                            modal-directive 
+                            output="options" 
+                            modal-id="modal-github" 
+                            template="app/partials/modals/modal.github.html" 
+                            title="my modal">
                                 <i class="icon-github text"></i> github
                             </button> 
-                            <button class="btn btn-white navbar-btn " data-toggle="modal" href="#modal-dropbox">
+                            <button class="btn btn-white  navbar-btn" 
+                            modal-directive 
+                            output="options" 
+                            modal-id="modal-dropbox" 
+                            template="app/partials/modals/modal.dropbox.html" 
+                            title="my modal">
                                 <i class="icon-dropbox text"></i> dropbox
                             </button>
                         </div>

@@ -1,0 +1,20 @@
+<div id="offCanvas" ng-class="{showOffCanvas:showOffCanvas}">
+      <div class="offCanvasWrapper" ng-class="{sidebar:sidebar, noSidebar:!sidebar}">
+        
+        <div id="offCanvasContent" ng-class="{sidebar:sidebar}">
+          <button class="btn btn-primary" ng-click="sidebar=!sidebar">options</button>
+          <button class="btn btn-primary" ng-click="$parent.showOffCanvas=!$parent.showOffCanvas">close</button>
+
+          
+          <div ng-include src="'app/templates/sites/new.site.html'"></div>
+          
+          
+        </div>
+        
+        <div id="offCanvasSidebar" ng-class="{sidebar:sidebar}">
+          <button class="btn btn-primary" ng-click="sidebar=!sidebar">close</button>
+
+        </div>
+      
+      </div>
+    </div>

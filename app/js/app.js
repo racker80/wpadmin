@@ -5,12 +5,14 @@
 var myApp = angular.module('myApp', [
   'ngRoute',
   'ngSanitize',
+  'ngAnimate',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
   'myApp.controllers',
   'myApp.data',
   'myApp.newsite',
+  'myApp.offcanvas',
   'ngGrid', // angular grid
   'ui.bootstrap' //bootstrap
 ]);
