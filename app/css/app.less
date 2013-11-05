@@ -95,7 +95,7 @@ table.table.table-bordered {
 }
 
 .afterClass {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 	background: rgba(0,0,0,0.4);
@@ -148,10 +148,13 @@ SETUP THE CONTENT MASK
 		position:relative;
 		padding-left:100px;
 		height:100%;
+		overflow:hidden;
+
 		.translate3d;		
 		&.showOffCanvas,
 		&.showOffCanvas-add {
 			-webkit-transform: translate3d(-100%, 0px, 0);
+			cursor:pointer;
 		}		
 		&.showOffCanvas.showOffCanvas-remove {
 			-webkit-transform: translate3d(0%, 0px, 0);
@@ -159,7 +162,7 @@ SETUP THE CONTENT MASK
 		
 		&.sidebar,
 		&.sidebar-add {
-			padding:0;
+			
 			.test {
 				width:100%;
 			}
@@ -172,17 +175,24 @@ SETUP THE CONTENT MASK
 			width:100%;
 			background:#fff;
 			overflow:auto;
-
+			cursor:auto;
 			.translate3d;
-			&::after {
+			&::before {
 				.afterClass;
 			}
 			&.sidebar-add,
 			&.sidebar {
-				width:100%;
+				cursor:pointer!important;
+				overflow:hidden;
+				-webkit-transform: translate3d(-120px, 0px, 0);			
+				&::before {
+					.afterClassAdd;
+
+				}
+
 			}
-			&.sidebar-remove {
-				
+			&.sidebar.sidebar-remove {
+				-webkit-transform: translate3d(0px, 0px, 0);	
 			}
 		}
 
@@ -191,19 +201,21 @@ SETUP THE CONTENT MASK
 			position:absolute;
 			z-index:999;
 			top:0;
-			right:-400px;
-			width:400px;
+			right:-700px;
+			width:700px;
 			height:100%;
 			overflow:auto;
-			background:#eaeaea;
+			background:#fff;
+			cursor:auto;
+
 			.translate3d;
 			&.sidebar-add,
 			&.sidebar {
-				-webkit-transform: translate3d(-400px, 0px, 0);
+				-webkit-transform: translate3d(-700px, 0px, 0);
 			}
 
 			&.sidebar.sidebar-remove {
-				-webkit-transform: translate3d(400px, 0px, 0);	
+				-webkit-transform: translate3d(0px, 0px, 0);	
 			}
 		}		
 
@@ -215,84 +227,7 @@ SETUP THE CONTENT MASK
 	}
 }
 
-#offCanvas {
-	position:fixed;
-	top:0;
-	right:0;
-	width:0px;
-	height:100%;
-	background:#fff;
-	z-index:9999;
-	overflow:hidden;
-	.translate3d;
 
-	&.showOffCanvas,
-	&.showOffCanvas-add {
-		width:800px;
-	}
-
-	&.ng-enter {
-		-webkit-transform: translate3d(800px, 0px, 0);
-	}
-	&.ng-enter.ng-enter-active {
-		-webkit-transform: translate3d(0%, 0px, 0);
-	}
-	
-	&.ng-leave {
-		-webkit-transform: translate3d(0%, 0px, 0);
-	}
-	&.ng-leave.ng-leave-active {
-		-webkit-transform: translate3d(800px, 0px, 0);
-	}
-
-	.offCanvasWrapper {
-		position:relative;
-		height:100%;
-		.translate3d;
-	}
-
-	#offCanvasContent {
-		position:relative;
-		height:100%;
-		.translate3d;
-		&::after {
-			.afterClass;
-		}
-		&.sidebar-add,
-		&.sidebar {
-			-webkit-transform: translate3d(-50px, 0px, 0);
-			&::after {
-				.afterClassAdd;
-			}
-		}
-		&.sidebar-remove {
-			-webkit-transform: translate3d(0px, 0px, 0);
-			&::after {
-				.afterClassRemove;
-			}
-		}
-	}
-	#offCanvasSidebar {
-		position:absolute;
-		z-index:999;
-		top:0;
-		right:0;
-		width:400px;
-		height:100%;
-		background:#eaeaea;
-		-webkit-transform: translate3d(400px, 0px, 0);	
-		.translate3d;
-		&.sidebar-add,
-		&.sidebar {
-			-webkit-transform: translate3d(0px, 0px, 0);
-		}
-
-		&.sidebar.sidebar-remove {
-			-webkit-transform: translate3d(400px, 0px, 0);	
-		}
-	}
-
-}
 
 
 

@@ -36,16 +36,14 @@
     <div ng-view></div>
     
 
-    <div off-canvas id="offCanvasContainer">
-        <div id="offCanvasSlider" class="canvasSlider" ng-class="{showOffCanvas:offCanvas.showOffCanvas, sidebar:sidebar}">
-          <button class="btn btn-primary" ng-click="sidebar=!sidebar">full</button>
-            <button class="btn btn-primary" ng-click="offCanvas.showOffCanvas=!offCanvas.showOffCanvas">close</button>
-          <div id="offCanvasContent" ng-class="{sidebar:sidebar}">
+    <div off-canvas="offCanvas" id="offCanvasContainer">
+        <div id="offCanvasSlider" class="canvasSlider" ng-class="{showOffCanvas:offCanvas.showOffCanvas, sidebar:offCanvas.showSidebar}">
+          <div off-canvas-content id="offCanvasContent" ng-class="{sidebar:offCanvas.showSidebar}">
             
           </div>
 
-          <div id="offCanvasSidebar" ng-class="{sidebar:sidebar}">
-            <button class="btn btn-primary" ng-click="sidebar=!sidebar">close</button>
+          <div off-canvas-sidebar id="offCanvasSidebar" ng-class="{sidebar:offCanvas.showSidebar}">
+            <button class="btn btn-primary" ng-click="offCanvas.showSidebar=!offCanvas.showSidebar">close</button>
           </div>
 
         </div>

@@ -16,12 +16,15 @@ angular.module('myApp.newsite', [])
 
 
 .directive('newSite', function($http, $compile, wpOptions, Data, toggleStateService) {
-    return function(scope, element, attrs) {
-    	scope.Data = Data;
-      	scope.options = wpOptions;
+    return {
+      restrict:"A",
+      scope:{},
+      link: function(scope, element, attrs) {
+        scope.Data = Data;
+        scope.options = wpOptions;
 
-        scope.$watch('toggleState.offCanvasModal', function(){
-        })
-    };
-  
+        console.log(scope)
+      }
+    
+    }
   });

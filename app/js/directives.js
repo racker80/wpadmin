@@ -101,6 +101,7 @@ angular.module('myApp.directives', []).
           if (setup) elem.prop('checked', true);
           else scope.list.splice(index, 1);
         }
+        console.log(scope.list);
       };
       
       var setupHandler = handler.bind(null, true);

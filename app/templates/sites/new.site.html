@@ -147,18 +147,24 @@
                     <section>
 
                         <div>
-                            <button class="btn btn-white  navbar-btn" 
+<!--                             <button class="btn btn-white  navbar-btn" 
                             modal-directive 
                             output="options.themes" 
                             modal-id="modal-your-themes" 
                             template="app/partials/modals/modal.your.themes.html" 
                             title="my modal">
                                 <i class="icon-bar-chart text"></i> Your Themes
-                            </button> 
+                            </button>  -->
                             <button class="btn btn-white  navbar-btn" 
-                            modal-directive 
+                            sidebar-directive 
+                            output="options.themes" 
+                            template="app/partials/modals/test.html" 
+                            title="my modal">
+                                <i class="icon-bar-chart text"></i> Your Themes
+                            </button>                             
+                            <button class="btn btn-white  navbar-btn" 
+                            sidebar-directive 
                             output="options" 
-                            modal-id="modal-uploads" 
                             template="app/partials/modals/modal.upload.html" 
                             title="my modal">
                                 <i class="icon-cloud-upload text"></i> upload
