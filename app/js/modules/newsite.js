@@ -15,14 +15,14 @@ angular.module('myApp.newsite', [])
 
 
 
-.directive('newSite', function($http, $compile, wpOptions, Data, toggleStateService) {
+.directive('newSite', function($http, $compile, wpOptions, Data, toggleStateService, offCanvasService) {
     return {
       restrict:"A",
       scope:{},
       link: function(scope, element, attrs) {
         scope.Data = Data;
         scope.options = wpOptions;
-
+        scope.offCanvasService = offCanvasService;
         console.log(scope)
       }
     

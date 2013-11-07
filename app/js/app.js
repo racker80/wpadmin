@@ -40,7 +40,7 @@ myApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function (
 
   $routeProvider.when('/sites/build', {templateUrl: 'app/templates/sites.build.html', controller: 'MyCtrl1'});
 
-  $routeProvider.when('/sites/new', {templateUrl: 'app/templates/sites.new.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/sites/new', {templateUrl: 'app/templates/sites/new.site.html', controller: 'MyCtrl1'});
 
   $routeProvider.when('/sites/detail', {templateUrl: 'app/templates/sites.detail.html', controller: 'MyCtrl1'});
   

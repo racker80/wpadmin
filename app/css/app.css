@@ -9695,7 +9695,7 @@ table.table.table-bordered thead th {
 
 }
 .afterClass {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -9730,7 +9730,7 @@ SETUP THE CONTENT MASK
 
 }
 #content::before {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -9747,9 +9747,7 @@ SETUP THE CONTENT MASK
   height: 100%;
 }
 #content.showOffCanvas.showOffCanvas-remove::before {
-  opacity: 1;
-  width: 100%;
-  height: 100%;
+  opacity: 0;
 }
 #offCanvasContainer {
   position: absolute;
@@ -9809,7 +9807,7 @@ SETUP THE CONTENT MASK
 
 }
 #offCanvasContainer .canvasSlider #offCanvasContent::before {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.4);
