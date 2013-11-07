@@ -37,16 +37,27 @@
     
 
     <div off-canvas="offCanvas" id="offCanvasContainer">
-        <div id="offCanvasSlider" class="canvasSlider" ng-class="{showOffCanvas:offCanvas.showOffCanvas, sidebar:offCanvas.showSidebar}">
-          <div off-canvas-content id="offCanvasContent" ng-class="{sidebar:offCanvas.showSidebar}">
-            
-          </div>
+      
+      <div off-canvas-content id="offCanvasContent" ng-class="{showDetail:showDetail, showOption:showOption}">
+        {{test}}
+        <button class="btn btn-primary" 
+        oc-show-option 
+        template=""
+        output="test"
+        >options</button>
 
-          <div off-canvas-sidebar id="offCanvasSidebar" ng-class="{sidebar:offCanvas.showSidebar}">
-            <button class="btn btn-primary" ng-click="offCanvas.showSidebar=!offCanvas.showSidebar">close</button>
-          </div>
+                            <button type="button" class="btn btn-white navbar-btn rounded"
+                            oc-show-option 
+                            template="app/partials/modals/test.html" 
+                            output="output">
+                                <i class="icon-plus"></i> option
+                            </button> 
+      </div>
 
-        </div>
+      <div off-canvas-sidebar id="offCanvasSidebar" ng-class="{showOption:showOption}">
+        <button class="btn btn-primary" oc-show-option template="">close</button>
+      </div>
+
     </div>
 
 

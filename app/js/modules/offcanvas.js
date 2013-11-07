@@ -3,98 +3,104 @@ angular.module('myApp.offcanvas', [])
 
   .service('offCanvasService', function(){
     var ths = this;
-    this.template = '';
-    this.output;
+    this.detail = {};
+    this.option = {};
+    this.showDetail = false;
+    this.toggleDetail = function(object){
+        ths.detail = object;
+        ths.showDetail = !ths.showDetail;
+        
+    }
 
-    this.show = function(template) {
-      ths.showOffCanvas = !ths.showOffCanvas;
-      ths.template = template;
-    }
-    this.sidebar = function(template, output) {
-        console.log(output)
-        ths.showSidebar = !ths.showSidebar;
-        ths.sidebarTemplate = template;
-        ths.output = output;
-    }
+
+
   })
 
+.controller('offCanvasController', function($animate, $scope, $rootScope, $http, $compile, $window, offCanvasService, Data){
+    $scope.Data = Data;
 
+
+})
 .directive('offCanvas', function($animate, $rootScope, $http, $compile, $window, offCanvasService, Data){
     return {
         restrict:"A",
         scope: {
-            offCanvas:"="
         },
-        controller: function($scope) {
-            $scope.offCanvasService = offCanvasService;
-            $scope.output = [];
-            $scope.Data = Data;
-        },
-        link:function(scope, element, attrs) {
-             console.log($window.innerHeight)
+        controller: "offCanvasController",
+        link:function(scope, element, attrs, controller) {
              var h;
              angular.element(window).on('resize',function(){
                 h = $window.innerHeight;
-                console.log(h)
              })
 
-            var offCanvasSlider = element.find('#offCanvasSlider').height(h);            
             var offCanvasContent = element.find('#offCanvasContent').height(h);
             var offCanvasSidebar = element.find('#offCanvasSidebar').height(h);
 
 
-            scope.$watch('offCanvasService.showOffCanvas', function(){
-                if(scope.offCanvasService.showOffCanvas == true) {
-                    $('#offCanvasSlider').bind('click', function(e){
-                        if(e.target === angular.element('#offCanvasSlider')[0]) {
-                            scope.offCanvasService.showOffCanvas = false;
+            var contentClick = function(){
+                $('#content').addClass('showOffCanvas').bind('click', function(e){
+                        if(e.target === angular.element('#content')[0]) {
+                            offCanvasService.showDetail = false;
+                            offCanvasService.showOption = false;
+                            $('#content').removeClass('showOffCanvas').unbind('click');
                             scope.$apply();
                         }
 
                     })
-                } 
-                if(scope.offCanvasService.showOffCanvas == false) { 
-                    $('#offCanvasSlider').unbind('click');
-                    scope.sidebar = false;
+            }
+            var canvasContentClick = function() {
+                $('#offCanvasContent').bind('click', function(e){
+                        if(e.target === angular.element('#offCanvasContent')[0]) {
+                            offCanvasService.showOption = false;
+                            $('#offCanvasContent').unbind('click');
+                            scope.$apply();
+                        }
+
+                    })
+            }
+
+            scope.$watch(function(){return offCanvasService.showDetail}, function(d){
+                scope.showDetail = d;
+
+                if(d == true) {
+                    contentClick();                
                 }
+
+            })
+            scope.$watch(function(){return offCanvasService.showOption}, function(d){
+                scope.showOption = d;
+                if(d == true && offCanvasService.showDetail == true) {
+                      canvasContentClick();                    
+                }
+                if(d == true && offCanvasService.showDetail == false) {
+                    contentClick();      
+                }                
             });
    
         }
     }
 })
-.directive('offCanvasContent', function($http, $compile){
-    return function(scope, element, attrs){
 
-        scope.$watch('offCanvasService.template', function(){
-                if(scope.offCanvasService.template) {
-                    $http.get(scope.offCanvasService.template).then(function(tmpl) {
-                       var template = $compile(tmpl.data)(scope);
-                       element.html(template);
-                   });
-                }
-
+.directive('ocShowDetail', function(offCanvasService){
+    return {
+        restrict:"A",
+        scope:{
+            output:"=",
+            template:"@",
+        },
+        link:function(scope, element, attrs, controller) {
+            
+            element.click(function(){
+                offCanvasService.showDetail = !offCanvasService.showDetail;
+                offCanvasService.detail.template = scope.template;
+                scope.$apply();
             })
+        }
 
-        scope.$watch('offCanvasService.showSidebar', function(){
-                if(scope.offCanvasService.showSidebar == true) {
-
-                    $('#offCanvasContent').bind('click', function(e){
-                        console.log(e.target)
-                        if(e.target === angular.element('#offCanvasContent')[0]) {
-                            scope.offCanvasService.showSidebar = false;
-                            scope.$apply();
-                        }
-
-                    })
-                } 
-                if(scope.offCanvasService.showSidebar == false) { 
-                    $('#offCanvasContent').unbind('click');
-                    
-                }
-            });
     }
 })
-.directive('sidebarDirective', function(offCanvasService){
+
+.directive('ocShowOption', function(offCanvasService){
     return {
         restrict:"A",
         scope:{
@@ -102,30 +108,90 @@ angular.module('myApp.offcanvas', [])
             template:"@",
         },
         link:function(scope, element, attrs) {
-            scope.offCanvasService = offCanvasService;
-            console.log(scope)
+            
             element.click(function(){
-                offCanvasService.showSidebar = !offCanvasService.showSidebar;
-                offCanvasService.sidebarTemplate = scope.template;
-                offCanvasService.output = scope.output;
-                scope.$apply()
+                offCanvasService.showOption = !offCanvasService.showOption;
+                offCanvasService.option.template = scope.template;
+                scope.$apply();
             })
         }
 
     }
 })
-.directive('offCanvasSidebar', function($http, $compile){
-    return function(scope, element, attrs){
 
-        scope.$watch('offCanvasService.sidebarTemplate', function(){
-                if(scope.offCanvasService.sidebarTemplate) {
-                    $http.get(scope.offCanvasService.sidebarTemplate).then(function(tmpl) {
+.directive('offCanvasContent', function($http, $compile, offCanvasService){
+    return {
+        link: function(scope, element, attrs){
+            scope.output = [];
+
+            scope.$watch(function(){
+                return offCanvasService.detail.template
+            }, function(t) {
+                if(t)
+                    $http.get(t).then(function(tmpl) {
                        var template = $compile(tmpl.data)(scope);
                        element.html(template);
-                       scope.output = scope.offCanvasService.output;
                    });
-                }
+            });
 
-            })
+        }
+    }
+})
+
+.directive('offCanvasSidebar', function($http, $compile, offCanvasService){
+    return function(scope, element, attrs){
+
+        scope.$watch(function(){
+            return offCanvasService.option.template
+        }, function(t) {
+            if(t)
+                $http.get(t).then(function(tmpl) {
+                   var template = $compile(tmpl.data)(scope);
+                   element.html(template);
+               });
+        });
+
+
     }
 });
+
+
+
+
+
+
+
+
+
+        // scope.$watch('offCanvasService.showSidebar', function(){
+        //         if(scope.offCanvasService.showSidebar == true) {
+
+        //             $('#offCanvasContent').bind('click', function(e){
+        //                 console.log(e.target)
+        //                 if(e.target === angular.element('#offCanvasContent')[0]) {
+        //                     scope.offCanvasService.showSidebar = false;
+        //                     scope.$apply();
+        //                 }
+
+        //             })
+        //         } 
+        //         if(scope.offCanvasService.showSidebar == false) { 
+        //             $('#offCanvasContent').unbind('click');
+                    
+        //         }
+        //     });
+
+
+
+
+
+                // if(scope.oc.detail.show == true) {
+                //     console.log(oc)
+                //     $('#content').bind('click', function(e){
+                //         if(e.target === angular.element('#offCanvasSlider')[0]) {
+                //             scope.oc.detail = {};
+                //             scope.$apply();
+                //         }
+
+                //     })
+                // }

@@ -9728,6 +9728,7 @@ SETUP THE CONTENT MASK
     -webkit-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
     transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
 
+  overflow: hidden;
 }
 #content::before {
   position: absolute;
@@ -9758,6 +9759,89 @@ SETUP THE CONTENT MASK
   background: rgba(0, 0, 0, 0.4);
   z-index: 999;
 }
+#offCanvasContainer #offCanvasContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 800px;
+  background: #fff;
+  overflow: auto;
+  cursor: auto;
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  /*    -webkit-transition: -webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
+
+  /*    -webkit-transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+
+    -webkit-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
+
+}
+#offCanvasContainer #offCanvasContent::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  content: '';
+  opacity: 0;
+  z-index: 500;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+#offCanvasContainer #offCanvasContent.showDetail,
+#offCanvasContainer #offCanvasContent.showDetail-add {
+  -webkit-transform: translate3d(-800px, 0px, 0);
+}
+#offCanvasContainer #offCanvasContent.showDetail-add.showOption-add,
+#offCanvasContainer #offCanvasContent.showDetail.showOption {
+  cursor: pointer!important;
+  overflow: hidden;
+  -webkit-transform: translate3d(-1200px, 0px, 0);
+  /*-webkit-transform: translate3d(-100%, 0px, 0);			*/
+
+}
+#offCanvasContainer #offCanvasContent.showDetail-add.showOption-add::before,
+#offCanvasContainer #offCanvasContent.showDetail.showOption::before {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+#offCanvasContainer #offCanvasContent.showDetail.showDetail-remove {
+  -webkit-transform: translate3d(0, 0px, 0);
+}
+#offCanvasContainer #offCanvasSidebar {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100%;
+  overflow: auto;
+  background: #fff;
+  cursor: auto;
+  -webkit-transform: translate3d(0, 0px, 0);
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  /*    -webkit-transition: -webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
+
+  /*    -webkit-transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+
+    -webkit-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
+
+}
+#offCanvasContainer #offCanvasSidebar.showOption-add,
+#offCanvasContainer #offCanvasSidebar.showOption {
+  -webkit-transform: translate3d(-400px, 0px, 0);
+}
+#offCanvasContainer #offCanvasSidebar.showOption.showOption-remove {
+  -webkit-transform: translate3d(0px, 0px, 0);
+}
 #offCanvasContainer .canvasSlider {
   position: relative;
   padding-left: 100px;
@@ -9786,80 +9870,6 @@ SETUP THE CONTENT MASK
 #offCanvasContainer .canvasSlider.sidebar .test,
 #offCanvasContainer .canvasSlider.sidebar-add .test {
   width: 100%;
-}
-#offCanvasContainer .canvasSlider #offCanvasContent {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background: #fff;
-  overflow: auto;
-  cursor: auto;
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
-  /*    -webkit-transition: -webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-    transition: transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
-
-  /*    -webkit-transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-    transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-
-    -webkit-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-    transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
-
-}
-#offCanvasContainer .canvasSlider #offCanvasContent::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.4);
-  content: '';
-  opacity: 0;
-  z-index: 500;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-}
-#offCanvasContainer .canvasSlider #offCanvasContent.sidebar-add,
-#offCanvasContainer .canvasSlider #offCanvasContent.sidebar {
-  cursor: pointer!important;
-  overflow: hidden;
-  -webkit-transform: translate3d(-120px, 0px, 0);
-}
-#offCanvasContainer .canvasSlider #offCanvasContent.sidebar-add::before,
-#offCanvasContainer .canvasSlider #offCanvasContent.sidebar::before {
-  opacity: 1;
-  width: 100%;
-  height: 100%;
-}
-#offCanvasContainer .canvasSlider #offCanvasContent.sidebar.sidebar-remove {
-  -webkit-transform: translate3d(0px, 0px, 0);
-}
-#offCanvasContainer .canvasSlider #offCanvasSidebar {
-  position: absolute;
-  z-index: 999;
-  top: 0;
-  right: -700px;
-  width: 700px;
-  height: 100%;
-  overflow: auto;
-  background: #fff;
-  cursor: auto;
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
-  /*    -webkit-transition: -webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-    transition: transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
-
-  /*    -webkit-transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-    transition: padding cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-
-    -webkit-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-    transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
-
-}
-#offCanvasContainer .canvasSlider #offCanvasSidebar.sidebar-add,
-#offCanvasContainer .canvasSlider #offCanvasSidebar.sidebar {
-  -webkit-transform: translate3d(-700px, 0px, 0);
-}
-#offCanvasContainer .canvasSlider #offCanvasSidebar.sidebar.sidebar-remove {
-  -webkit-transform: translate3d(0px, 0px, 0);
 }
 #offCanvasContainer .test {
   background: rgba(0, 0, 0, 0.4);

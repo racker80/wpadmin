@@ -120,6 +120,7 @@ SETUP THE CONTENT MASK
 */
 #content {
 	.translate3d;
+	overflow:hidden;
 	&::before {
 		.afterClass;
 	}
@@ -136,6 +137,9 @@ SETUP THE CONTENT MASK
 	}
 }
 
+
+@detailWidth: 800px;
+@optionWidth:400px;
 #offCanvasContainer {
 	position:absolute;
 	top:0;
@@ -144,6 +148,78 @@ SETUP THE CONTENT MASK
 	height:100%;
 	background:rgba(0,0,0,0.4);
 	z-index:999;
+
+
+
+
+
+		#offCanvasContent {
+			position:absolute;
+			top:0;
+			left:0;
+			height:100%;
+			width:@detailWidth;
+			background:#fff;
+			overflow:auto;
+			cursor:auto;
+			.translate3d;
+			&::before {
+				.afterClass;
+			}
+
+			&.showDetail,
+			&.showDetail-add {
+				-webkit-transform: translate3d(-@detailWidth, 0px, 0);	
+			}
+
+
+			&.showDetail-add.showOption-add,
+			&.showDetail.showOption {
+				cursor:pointer!important;
+				overflow:hidden;
+				-webkit-transform: translate3d(-(@detailWidth+@optionWidth), 0px, 0);			
+				/*-webkit-transform: translate3d(-100%, 0px, 0);			*/
+				&::before {
+					.afterClassAdd;
+
+				}
+			}
+			&.showDetail.showDetail-remove {
+				-webkit-transform: translate3d(0, 0px, 0);
+			}
+
+
+		}
+
+
+		#offCanvasSidebar {
+			position:absolute;
+			z-index:999;
+			top:0;
+			left:0;
+			width:@optionWidth;
+			height:100%;
+			overflow:auto;
+			background:#fff;
+			cursor:auto;
+				-webkit-transform: translate3d(0, 0px, 0);
+
+			.translate3d;
+			&.showOption-add,
+			&.showOption {
+				-webkit-transform: translate3d(-@optionWidth, 0px, 0);
+			}
+
+			&.showOption.showOption-remove {
+				-webkit-transform: translate3d(0px, 0px, 0);	
+			}
+		}	
+
+
+
+
+
+
 	.canvasSlider {
 		position:relative;
 		padding-left:100px;
@@ -167,57 +243,7 @@ SETUP THE CONTENT MASK
 				width:100%;
 			}
 		}
-
-
-		#offCanvasContent {
-			position:relative;
-			height:100%;
-			width:100%;
-			background:#fff;
-			overflow:auto;
-			cursor:auto;
-			.translate3d;
-			&::before {
-				.afterClass;
-			}
-			&.sidebar-add,
-			&.sidebar {
-				cursor:pointer!important;
-				overflow:hidden;
-				-webkit-transform: translate3d(-120px, 0px, 0);			
-				&::before {
-					.afterClassAdd;
-
-				}
-
-			}
-			&.sidebar.sidebar-remove {
-				-webkit-transform: translate3d(0px, 0px, 0);	
-			}
-		}
-
-
-		#offCanvasSidebar {
-			position:absolute;
-			z-index:999;
-			top:0;
-			right:-700px;
-			width:700px;
-			height:100%;
-			overflow:auto;
-			background:#fff;
-			cursor:auto;
-
-			.translate3d;
-			&.sidebar-add,
-			&.sidebar {
-				-webkit-transform: translate3d(-700px, 0px, 0);
-			}
-
-			&.sidebar.sidebar-remove {
-				-webkit-transform: translate3d(0px, 0px, 0);	
-			}
-		}		
+	
 
 
 

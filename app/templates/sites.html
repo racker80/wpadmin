@@ -15,9 +15,19 @@
                             <button type="button" href="#new-site" ng-click="offCanvas.show('app/templates/sites/new.site.html')" class="btn btn-white navbar-btn rounded">
                                 <i class="icon-plus"></i> New Site
                             </button>    
-                            <button type="button" href="#new-site" ng-click="offCanvas.show('app/templates/sites.detail.html')" class="btn btn-white navbar-btn rounded">
+                            <button type="button" class="btn btn-white navbar-btn rounded"
+                            oc-show-detail 
+                            template="" 
+                            output="">
                                 <i class="icon-plus"></i> details
                             </button> 
+
+                            <button type="button" class="btn btn-white navbar-btn rounded"
+                            oc-show-option 
+                            template="app/partials/modals/test.html" 
+                            output="">
+                                <i class="icon-plus"></i> option
+                            </button>                             
                         </li>
 
                     </ul>
