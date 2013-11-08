@@ -12,22 +12,9 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
-                            <button ng-click="" class="btn btn-white rounded">
+                            <button ng-click="go('/sites/new')" class="btn btn-white rounded navbar-btn">
                                 <i class="icon-plus"></i> New Site
                             </button>    
-                            <button type="button" class="btn btn-white navbar-btn rounded"
-                            oc-show-detail 
-                            template="" 
-                            output="">
-                                <i class="icon-plus"></i> details
-                            </button> 
-
-                            <button type="button" class="btn btn-white navbar-btn rounded"
-                            oc-show-option 
-                            template="app/partials/modals/test.html" 
-                            output="">
-                                <i class="icon-plus"></i> option
-                            </button>                             
                         </li>
 
                     </ul>
@@ -71,14 +58,14 @@
                             <div class="alert alert-warning m-t m-b-lg">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 You have a request pending from <a href="" bs>User@username.com</a> to become a collaborator.  
-                                <button class="btn btn-sm btn-white" modal-directive template="app/partials/modals/modal.user.details.html" modal-id="modal-user-details">details</button> <button class="btn btn-sm btn-white" data-dismiss="alert">accept</button>
+                                <button class="btn btn-sm btn-white" oc-show-option template="app/partials/offcanvas/user.details.html">details</button> <button class="btn btn-sm btn-white" data-dismiss="alert">accept</button>
                             </div>
                         </div>  
 
                         <div class="navbar m-n">
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active">
-                                    <button type="button" ng-click="offCanvas.show('app/partials/modals/modal.invite.collab.html')" class="btn btn-default btn-sm navbar-btn">Invite Collaborator</button>
+                                    <button type="button" oc-show-option template="app/partials/offcanvas/invite.collab.html" class="btn btn-default btn-sm navbar-btn">Invite Collaborator</button>
                                 </li>
                             </ul>
                         </div>

@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('MyCtrl1', function($scope, $modal, $rootScope, toggleStateService, Data, offCanvasService) {
+  controller('MyCtrl1', function($scope, $modal, $rootScope, $location, toggleStateService, Data, offCanvasService) {
   	$scope.toggleState = toggleStateService;
   	$rootScope.Data = Data;
 
@@ -12,6 +12,10 @@ angular.module('myApp.controllers', []).
     $scope.$watch('offCanvas.showOffCanvas', function(){
        
     })
+
+    $rootScope.go = function ( path ) {
+      $location.path( path );
+    };
 
     $scope.contentClass = function(){
       return {

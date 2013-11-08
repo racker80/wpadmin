@@ -32,7 +32,7 @@
 						<img src="app/img/avatar.jpg" class="img-circle">
 					</a>
 				</td>
-				<td class="v-middle"><a bs href="#modal-user-details" data-toggle="modal" class="block">{{user.name}}</a></td>
+				<td class="v-middle"><a bs oc-show-option template="app/partials/offcanvas/user.details.html" input="Data" output="" text="{{user.name}}" href="#modal-user-details" class="block">{{user.name}}</a></td>
 				<td class="v-middle"><i class="icon-map-marker"></i>  {{user.company}}</td>
 				<td class="v-middle"><span ng-repeat="role in user.roles">{{role}},</span></td>
 				<td class="text-center v-middle" ng-switch="user.status">

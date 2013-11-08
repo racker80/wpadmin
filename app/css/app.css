@@ -9751,7 +9751,7 @@ SETUP THE CONTENT MASK
   opacity: 0;
 }
 #offCanvasContainer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 100%;
   width: 100%;
@@ -9760,11 +9760,11 @@ SETUP THE CONTENT MASK
   z-index: 999;
 }
 #offCanvasContainer #offCanvasContent {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   height: 100%;
-  width: 800px;
+  width: 960px;
   background: #fff;
   overflow: auto;
   cursor: auto;
@@ -9793,13 +9793,13 @@ SETUP THE CONTENT MASK
 }
 #offCanvasContainer #offCanvasContent.showDetail,
 #offCanvasContainer #offCanvasContent.showDetail-add {
-  -webkit-transform: translate3d(-800px, 0px, 0);
+  -webkit-transform: translate3d(-960px, 0px, 0);
 }
 #offCanvasContainer #offCanvasContent.showDetail-add.showOption-add,
 #offCanvasContainer #offCanvasContent.showDetail.showOption {
   cursor: pointer!important;
   overflow: hidden;
-  -webkit-transform: translate3d(-1200px, 0px, 0);
+  -webkit-transform: translate3d(-1260px, 0px, 0);
   /*-webkit-transform: translate3d(-100%, 0px, 0);			*/
 
 }
@@ -9808,6 +9808,7 @@ SETUP THE CONTENT MASK
   opacity: 1;
   width: 100%;
   height: 100%;
+  height: 1900px;
 }
 #offCanvasContainer #offCanvasContent.showDetail.showDetail-remove {
   -webkit-transform: translate3d(0, 0px, 0);
@@ -9817,7 +9818,7 @@ SETUP THE CONTENT MASK
   z-index: 999;
   top: 0;
   left: 0;
-  width: 400px;
+  width: 600px;
   height: 100%;
   overflow: auto;
   background: #fff;
@@ -9837,7 +9838,7 @@ SETUP THE CONTENT MASK
 }
 #offCanvasContainer #offCanvasSidebar.showOption-add,
 #offCanvasContainer #offCanvasSidebar.showOption {
-  -webkit-transform: translate3d(-400px, 0px, 0);
+  -webkit-transform: translate3d(-600px, 0px, 0);
 }
 #offCanvasContainer #offCanvasSidebar.showOption.showOption-remove {
   -webkit-transform: translate3d(0px, 0px, 0);

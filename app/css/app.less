@@ -138,10 +138,10 @@ SETUP THE CONTENT MASK
 }
 
 
-@detailWidth: 800px;
-@optionWidth:400px;
+@detailWidth: 960px;
+@optionWidth:600px;
 #offCanvasContainer {
-	position:absolute;
+	position:fixed;
 	top:0;
 	left:100%;
 	width:100%;
@@ -154,7 +154,7 @@ SETUP THE CONTENT MASK
 
 
 		#offCanvasContent {
-			position:absolute;
+			position:relative;
 			top:0;
 			left:0;
 			height:100%;
@@ -177,11 +177,11 @@ SETUP THE CONTENT MASK
 			&.showDetail.showOption {
 				cursor:pointer!important;
 				overflow:hidden;
-				-webkit-transform: translate3d(-(@detailWidth+@optionWidth), 0px, 0);			
+				-webkit-transform: translate3d(-((@detailWidth+@optionWidth)-(@optionWidth/2)), 0px, 0);			
 				/*-webkit-transform: translate3d(-100%, 0px, 0);			*/
 				&::before {
 					.afterClassAdd;
-
+					height:1900px;
 				}
 			}
 			&.showDetail.showDetail-remove {

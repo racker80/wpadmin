@@ -29,7 +29,7 @@
 					</div>
 				</td>
 				<td class="v-middle"><img src="{{site.image}}" class="thumb" alt=""></td>
-				<td class="v-middle"><a bs href="#/sites/detail" ng-click="offCanvas.show('app/templates/sites.detail.html')" class="block">{{site.url}}</a></td>
+				<td class="v-middle"><a oc-show-detail template="app/templates/sites.detail.html" output="site" text="{{site.url}}" bs href="#/sites/detail" class="block">{{site.url}}</a></td>
 				<td class="text-center v-middle" ng-switch="site.status">
 
 					<span class="text-success" ng-switch-when="live"><i class="icon-ok"></i></span>
@@ -37,7 +37,7 @@
 					<span class="text-warning" ng-switch-when="maintainence"><i class="icon-beaker"></i></span>
 
 				</td>
-				<td class="text-center v-middle"><a href="#">Login</i></a></td>
+				<td class="text-center v-middle"><a href="#" oc-show-detail template="app/templates/sites.wpadmin.html" output="site" bs>Login</i></a></td>
 				<td class="text-right v-middle">
 					<div class="btn-group" ng-switch="site.status">
 						<a bs href="#" class="btn btn-success btn-xs text-xs" ng-switch-when="maintainence"><i class="icon-cloud-upload icon-white"></i> go live</a>

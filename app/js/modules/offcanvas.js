@@ -33,7 +33,6 @@ angular.module('myApp.offcanvas', [])
                 h = $window.innerHeight;
              })
 
-            var offCanvasContent = element.find('#offCanvasContent').height(h);
             var offCanvasSidebar = element.find('#offCanvasSidebar').height(h);
 
 
@@ -86,10 +85,15 @@ angular.module('myApp.offcanvas', [])
         restrict:"A",
         scope:{
             output:"=",
+            input:"=",
             template:"@",
+            text:"@"
         },
         link:function(scope, element, attrs, controller) {
-            
+            console.log(scope.text)
+            if(scope.text) {
+                element.empty().append(scope.text)
+            }
             element.click(function(){
                 offCanvasService.showDetail = !offCanvasService.showDetail;
                 offCanvasService.detail.template = scope.template;
@@ -105,13 +109,21 @@ angular.module('myApp.offcanvas', [])
         restrict:"A",
         scope:{
             output:"=",
+            input:"=",
             template:"@",
+            text:"@"            
         },
         link:function(scope, element, attrs) {
-            
+            if(scope.text) {
+                element.empty().append(scope.text)
+            }
             element.click(function(){
                 offCanvasService.showOption = !offCanvasService.showOption;
-                offCanvasService.option.template = scope.template;
+                offCanvasService.option = {
+                    template: scope.template,
+                    output:scope.output,
+                    input:scope.input,
+                }
                 scope.$apply();
             })
         }
@@ -127,6 +139,9 @@ angular.module('myApp.offcanvas', [])
             scope.$watch(function(){
                 return offCanvasService.detail.template
             }, function(t) {
+                element.html('');
+                scope.output = offCanvasService.detail.output;
+                scope.input = offCanvasService.detail.input;
                 if(t)
                     $http.get(t).then(function(tmpl) {
                        var template = $compile(tmpl.data)(scope);
@@ -140,10 +155,12 @@ angular.module('myApp.offcanvas', [])
 
 .directive('offCanvasSidebar', function($http, $compile, offCanvasService){
     return function(scope, element, attrs){
-
         scope.$watch(function(){
             return offCanvasService.option.template
         }, function(t) {
+            scope.output = offCanvasService.option.output;
+            scope.input = offCanvasService.option.input;
+
             if(t)
                 $http.get(t).then(function(tmpl) {
                    var template = $compile(tmpl.data)(scope);
