@@ -1,0 +1,87 @@
+<div class="wrapper">
+	
+	<header class="heading ">
+		<p class="h4">Add WordPress Users</p>
+		<p class="thin">In addition to your admin user, these users will be able to login.</p>
+	</header>
+
+<hr>
+	<section>
+
+        <div class="row m-b-lg">
+          <div class="col-lg-6">
+            <label class="control-label">User Name</label>
+            <input type="text" class="form-control" placeholder="username" ng-model="user.username">
+          </div>
+        </div>
+        <div class="row m-b-lg">
+          <div class="col-lg-12">
+            <label class="control-label">Email</label>
+            <input type="email" class="form-control" placeholder="your@email.address.com" ng-model="user.email">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="" checked="checked">
+                email this person their login information.
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row m-b-lg">
+          <div class="col-lg-6">
+
+            <label class="control-label">Password</label>
+            <input type="password" class="form-control" value="Password">
+            <span class="help-block m-b-none">We've auto generated a password.  You can change it if you'd like.</span>  
+          </div>
+          <div class="col-lg-6">
+
+            <label class="control-label">Password (again)</label>
+            <input type="password" class="form-control" value="Password">
+          </div>  
+
+                                  
+
+        </div>
+
+
+            <form class="form-inline m-b-lg" role="form">
+              <div class="form-group">
+                <label class="" for="exampleInputEmail2">Role</label>
+                <select name="account" class="form-control m-b" ng-model="Data.modal.wpuser.role">
+                <option value="subscriber">Subscriber</option>
+                <option  value="editor">Editor</option>
+                <option value="author">Author</option>
+                <option value="admin">Admin</option>
+                </select>
+              </div>
+            </form>
+
+
+        <br>
+
+
+	</section>
+  <button class="btn btn-primary" ng-click="addWPUser(user)">Add User</button>        
+	<button class="btn btn-primary" ng-click="close()">Done</button>
+  
+  <div ng-show="output.length > 0">
+    <hr>
+    <div class="table-responsive">
+      <table class="table table-striped text-sm table-bordered">
+        <tbody>
+
+          <tr ng-repeat="item in output">
+            <td class="v-middle">{{item.username}}</td>
+            <td class="v-middle"><h5>{{item.email}}</h5></td>
+            <td class="v-middle">subscriber</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>

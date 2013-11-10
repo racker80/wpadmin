@@ -1,90 +1,426 @@
+<div new-site>
 
-            <section class="heading main-nav">
+<div class="jumbotron">
+    <h2>Create a new site</h2>
+</div>
 
-
-                <div class="navbar m-n no-border">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a bs href="#my-sites" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Your Sites</a></li>
-                        <li><a bs href="#managed" data-toggle="tab"><i class="icon-cog text-default"></i> Sites You Manage</a></li>
-                        <li><a bs href="#collaborators" data-toggle="tab"><i class="icon-user text-default"></i> Collaborators</a></li>
-                        <!-- <li class=""><a bs href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New Site</a></li> -->
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="">
-                            <button type="button" href="#new-site" ng-click="offCanvas.show('app/templates/sites/new.site.html')" class="btn btn-white navbar-btn rounded">
-                                <i class="icon-plus"></i> New Site
-                            </button>    
-                            <button type="button" href="#new-site" ng-click="offCanvas.show('app/templates/sites.detail.html')" class="btn btn-white navbar-btn rounded">
-                                <i class="icon-plus"></i> details
-                            </button> 
-                        </li>
-
-                    </ul>
-                </div>                
-
-            </section>
-
-
-            <div class="padder relative">
-                <div class="tab-content">              
-                    <div class="tab-pane active" id="my-sites">
-
-                        <div class="message-area">
-                            <div class="alert alert-success m-t m-b-lg">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <p>This is the message are where we can update you on things that are happening.</p>
-                            </div>
-                        </div>
-
-                        <ng-include src="'app/partials/tables/sites.html'"></ng-include>
-
-
+<section>
+   <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputEmail1" class="col-lg-2 control-label h4">Basic WordPress Setup</label>
+            <div class="col-lg-10">
+                <br>
+                <div class="row m-b">
+                    <div class="col-lg-6">
+                        <label for="exampleInputEmail1">Site Title</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter title">
                     </div>
-
-                    <div class="tab-pane" id="managed">
-
-                        <div class="message-area">
-                            <div class="alert alert-info m-t m-b-lg">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                You have a request pending to manage <a href="#" bs>http://managemysite.com</a>.  <button class="btn btn-sm btn-white">details</button> <button class="btn btn-sm btn-white" data-dismiss="alert">accept</button>
-                            </div>
-                        </div>                        
-
-                        <ng-include src="'app/partials/tables/sites-managed.html'"></ng-include>
-
-
+                </div>
+                <div class="row m-b">
+                    <div class="col-lg-6">
+                        <label for="exampleInputEmail1">Description</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Site Description">                        
                     </div>
-                    <div class="tab-pane" id="collaborators">
-
-                        <div class="message-area">
-                            <div class="alert alert-warning m-t m-b-lg">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                You have a request pending from <a href="" bs>User@username.com</a> to become a collaborator.  
-                                <button class="btn btn-sm btn-white" modal-directive template="app/partials/modals/modal.user.details.html" modal-id="modal-user-details">details</button> <button class="btn btn-sm btn-white" data-dismiss="alert">accept</button>
-                            </div>
-                        </div>  
-
-                        <div class="navbar m-n">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active">
-                                    <button type="button" ng-click="offCanvas.show('app/partials/modals/modal.invite.collab.html')" class="btn btn-default btn-sm navbar-btn">Invite Collaborator</button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <ng-include src="'app/partials/tables/collaborators.html'"></ng-include>
-
-
-                    </div>
-                    <div class="tab-pane " id="new-site">
-                        <div ng-include src="'app/templates/sites/new.site.html'"></div>
-                    </div>                    
-                    
                 </div>
 
+                
+            </div>
+        </div>
+    </form>
+
+</section>
+
+
+
+<section>
+    
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputEmail1" class="col-lg-2 control-label h4">Advanced Setup</label>
+            <div class="col-lg-10">
+                <br>
+                <div class="row m-b">
+                    <div class="col-lg-10">
+                        <label for="exampleInputEmail1">Default Settings</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radio">
+                                Create a new installation with the standard WordPress default settings.
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radio"  checked="checked">
+                                Use your <a href="#/wordpress">custom wordpress settings</a> to start this project.
+                            </label>
+                        </div>  
+                    </div>
+                </div>                        
+
+                <div class="row m-b">
+                    <div class="col-lg-10">
+                        <label for="exampleInputEmail1">Custom Configuration</label>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="1" ng-model="toggleState.advancedSetup">
+                                Setup custom themes, plugins, users, import a database and other advanced options.
+                            </label><br>
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+
+            <div class="form-group padder-v">
+                <label for="inputEmail1" class="col-lg-2 control-label ">Themes</label>
+                <div class="col-lg-10">
+                       
+                    <section ng-show="options.themes.length > 0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr ng-repeat="theme in options.themes">
+                                            <td width="80"><img src="{{theme.image}}" alt="" class="thumb"></td>
+                                            <td>{{theme.name}}</td>
+                                            <td width="120"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>                                
+                            </div>
+                        </div>
+                        
+                    </section>
+
+                    <section>
+
+                        <div>
+                            <button class="btn btn-white  navbar-btn" 
+                            oc-show-option 
+                            output="options.themes" 
+                            input="Data"
+                            template="app/templates/modals/add.themes.html" 
+                            title="my modal">
+                                <i class="icon-bar-chart text"></i> Your Themes
+                            </button>
+                                                       
+                            <button class="btn btn-white  navbar-btn" 
+                            oc-show-option 
+                            output="options.themes" 
+                            template="app/templates/modals/upload.themes.html" 
+                            title="my modal">
+                                <i class="icon-cloud-upload text"></i> upload
+                            </button> 
+                            
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+<div class="line line-dashed line-lg pull-in"></div>
+            <div class="form-group padder-v">
+                <label for="inputEmail1" class="col-lg-2 control-label ">Plugins</label>
+                <div class="col-lg-10">
+
+                    <section ng-show="options.plugins.length > 0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr ng-repeat="plugin in options.plugins">
+                                            <td>{{plugin.name}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>                                
+                            </div>
+                        </div>
+                        
+                    </section>                    
+
+                    <section>
+
+                        <div>
+                            <button class="btn btn-white  navbar-btn" 
+                            oc-show-option 
+                            output="options.plugins" 
+                            template="app/templates/modals/add.plugins.html" 
+                            title="my modal">
+                                <i class="icon-bar-chart text"></i> Your Plugins
+                            </button> 
+                            <button class="btn btn-white  navbar-btn" 
+                            oc-show-option 
+                            output="options.plugins" 
+                            template="app/templates/modals/upload.plugins.html" 
+                            title="my modal">
+                                <i class="icon-cloud-upload text"></i> upload
+                            </button> 
+                            
+                        </div>
+
+                    </section> 
+                </div>
+            </div>     
+<div class="line line-dashed line-lg pull-in"></div>                   
+            <div class="form-group padder-v">
+                <label for="inputEmail1" class="col-lg-2 control-label ">Setup Admin User</label>
+                <div class="col-lg-10">
+
+                    <section>
+
+                        <div class="row m-b-lg">
+                            <div class="col-lg-3">
+                                <label class="control-label">Admin User Name</label>
+                                <input type="text" class="form-control" placeholder="admin">
+                            </div>
+                        </div>
+                        <div class="row m-b-lg">
+                            <div class="col-lg-6">
+                                <label class="control-label">Email</label>
+                                <input type="email" class="form-control" placeholder="your@email.address.com">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" value="" checked="checked">
+                                        email this person their login information.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-b-lg">
+                            <div class="col-lg-3">
+
+                                <label class="control-label">Password</label>
+                                <input type="password" class="form-control" value="Password">
+                                <span class="help-block m-b-none">We've auto generated a password.  You can change it if you'd like.</span>  
+
+                            </div>
+                            <div class="col-lg-3">
+
+                                <label class="control-label">Password (again)</label>
+                                <input type="password" class="form-control" value="Password">
+                            </div>                            
+
+                        </div>
+
+                    </section> 
+                </div>
+            </div>
+<div class="line line-dashed line-lg pull-in"></div>             
+            <div class="form-group padder-v">
+                <label for="inputEmail1" class="col-lg-2 control-label">Additional Users</label>
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <section ng-show="options.wpusers.length > 0">
+                                <div class="table-responsive">
+                                    <table class="table table-striped text-sm table-bordered">
+                                        <tbody>
+
+                                            <tr ng-repeat="item in options.wpusers">
+                                                <td class="v-middle">{{item.username}}</td>
+                                                <td class="v-middle"><h5>{{item.email}}</h5></td>
+                                                <td class="v-middle">subscriber</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                            <section>
+
+                                <button class="btn btn-white  navbar-btn" oc-show-option template="app/templates/modals/add.wp.user.html" output="options.wpusers">
+                                    <i class="icon-user text"></i> Add an aditional WordPress user
+                                </button> 
+
+                            </section>                            
+                        </div>
+                    </div>
+ 
+                </div>
+            </div> 
+<div class="line line-dashed line-lg pull-in"></div>
+            <div class="form-group padder-v">
+                <label for="inputEmail1" class="col-lg-2 control-label">Database</label>
+                <div class="col-lg-10">
+
+                    <section>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Upload a database file">
+
+                            </div>
+                        </div>
+
+
+                    </section> 
+                </div>
+            </div>             
+<div class="line line-dashed line-lg pull-in"></div>
+            <div class="form-group padder-v">
+                <label for="inputEmail1" class="col-lg-2 control-label">Custom Pages</label>
+                <div class="col-lg-10">
+
+                    <section>
+                        <div class="row">
+                            <div class="input-group col-md-6">
+                                <input type="text" ng-model="page.title" class="form-control">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-white" type="button" ng-click="addItem(page, options.pages)">Add Page</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row" ng-show="options.pages.length>0">
+                            <div class="col-md-6">
+                                <hr>
+                                <div class="table-responsive">
+                                    <table class="table table-striped text-sm table-bordered">
+                                        <tbody>
+                                            <tr ng-repeat="item in options.pages">
+                                                <td class="v-middle">{{item.title}}</td>
+                                                <td class="v-middle text-right" width="80"><button class="btn-white btn btn-sm">Edit Content</button></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section> 
+                </div>
+            </div> 
+<div class="line line-dashed line-lg pull-in"></div>
+            <div class="form-group padder-v">
+                <label for="inputEmail1" class="col-lg-2 control-label">Menus</label>
+                <div class="col-lg-10">
+
+                    <section>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" ng-model="menu.name" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-white" type="button" ng-click="addItem(menu, options.menus)">Add Menu</button>
+                                    </span>
+                                </div>
+                                <span class="help-block m-b-none">You can create navigation menus here and add pages to them.</span>  
+                            </div>
+                            
+                        </div>
+
+                        <div class="row" ng-show="options.menus.length>0">
+                            <div class="col-md-6">
+                                <hr>
+                                <div class="table-responsive">
+                                    <table class="table table-striped text-sm table-bordered">
+                                        <tbody>
+
+                                            <tr ng-repeat="item in options.menus">
+                                                <td class="v-middle">{{item.name}}</td>
+                                                <td class="v-middle text-right" width="80"><button class="btn-white btn btn-sm">Add Pages</button></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section> 
+                </div>
+            </div> 
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+
+
+
+            <div class="form-group padder-v">
+                    <div class="col-lg-12">
+                        <label for="exampleInputEmail1" class="col-lg-2 control-label">Permalinks</label>
+                        <div class="col-lg-10">
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                <span style="width:150px; display:inline-block;">Default</span> http://projects.wp/?p=123
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                <span style="width:150px; display:inline-block;">Day and name</span> http://projects.wp/2013/10/15/sample-post/
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                <span style="width:150px; display:inline-block;">Month and name</span> http://projects.wp/2013/10/sample-post/
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                <span style="width:150px; display:inline-block;">Numeric</span> http://projects.wp/archives/123
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                <span style="width:150px; display:inline-block;">Post name</span> http://projects.wp/sample-post/
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                <span style="width:150px; display:inline-block;">Custom Structure</span> http://projects.wp/ <input type="text">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                </div>
             </div>
 
+        </div>
 
 
+    </form>
 
+</section>
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+
+<form class="form-horizontal" role="form">
+    <div class="form-group padder-v">
+        <div class="col-lg-12">
+            <label for="exampleInputEmail1" class="col-lg-2 control-label">You're Done!</label>
+            <div class="col-lg-10">
+                <section>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a class="btn btn-success btn-lg" href="#/sites/build" >Create Site</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</form>
+
+<br>
+<br>
+<br>
+
+
+                                                
+</div>

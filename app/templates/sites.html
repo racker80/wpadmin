@@ -7,7 +7,6 @@
                         <li class="active"><a bs href="#my-sites" data-toggle="tab"><i class="icon-bar-chart text-default"></i> Your Sites</a></li>
                         <li><a bs href="#managed" data-toggle="tab"><i class="icon-cog text-default"></i> Sites You Manage</a></li>
                         <li><a bs href="#collaborators" data-toggle="tab"><i class="icon-user text-default"></i> Collaborators</a></li>
-                        <!-- <li class=""><a bs href="#new-site" data-toggle="tab" class=""><i class="icon-plus text-default"></i> New Site</a></li> -->
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -27,50 +26,24 @@
                 <div class="tab-content">              
                     <div class="tab-pane active" id="my-sites">
 
-                        <div class="message-area">
-                            <div class="alert alert-success m-t m-b-lg">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <p>This is the message are where we can update you on things that are happening.</p>
-                            </div>
-                        </div>
 
-                        <ng-include src="'app/partials/tables/sites.html'"></ng-include>
+
+                        <ng-include src="'app/templates/pages/my.sites.html'"></ng-include>
 
 
                     </div>
 
                     <div class="tab-pane" id="managed">
+                 
 
-                        <div class="message-area">
-                            <div class="alert alert-info m-t m-b-lg">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                You have a request pending to manage <a href="#" bs>http://managemysite.com</a>.  <button class="btn btn-sm btn-white">details</button> <button class="btn btn-sm btn-white" data-dismiss="alert">accept</button>
-                            </div>
-                        </div>                        
-
-                        <ng-include src="'app/partials/tables/sites-managed.html'"></ng-include>
+                        <ng-include src="'app/templates/pages/managed.sites.html'"></ng-include>
 
 
                     </div>
                     <div class="tab-pane" id="collaborators">
 
-                        <div class="message-area">
-                            <div class="alert alert-warning m-t m-b-lg">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                You have a request pending from <a href="" bs>User@username.com</a> to become a collaborator.  
-                                <button class="btn btn-sm btn-white" oc-show-option template="app/partials/offcanvas/user.details.html">details</button> <button class="btn btn-sm btn-white" data-dismiss="alert">accept</button>
-                            </div>
-                        </div>  
 
-                        <div class="navbar m-n">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active">
-                                    <button type="button" oc-show-option template="app/partials/offcanvas/invite.collab.html" class="btn btn-default btn-sm navbar-btn">Invite Collaborator</button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <ng-include src="'app/partials/tables/collaborators.html'"></ng-include>
+                        <ng-include src="'app/templates/pages/collaborators.html'"></ng-include>
 
 
                     </div>
@@ -81,10 +54,4 @@
                 </div>
 
             </div>
-
-
-
-
-
-
 
