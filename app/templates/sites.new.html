@@ -12,14 +12,20 @@
                 <br>
                 <div class="row m-b">
                     <div class="col-lg-6">
+                        <label for="exampleInputEmail1">Site URL</label>
+                        <input type="text" ng-model="options.url" class="form-control" id="exampleInputEmail1" placeholder="Site Url">
+                    </div>
+                </div>                
+                <div class="row m-b">
+                    <div class="col-lg-6">
                         <label for="exampleInputEmail1">Site Title</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter title">
+                        <input type="text" ng-model="options.siteTitle" class="form-control" id="exampleInputEmail1" placeholder="Enter title">
                     </div>
                 </div>
                 <div class="row m-b">
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Description</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Site Description">                        
+                        <input type="text" ng-model="options.description" class="form-control" id="exampleInputEmail1" placeholder="Site Description">                        
                     </div>
                 </div>
 
@@ -85,10 +91,14 @@
                             <div class="col-lg-6">
                                 <table class="table table-striped">
                                     <tbody>
-                                        <tr ng-repeat="theme in options.themes">
-                                            <td width="80"><img src="{{theme.image}}" alt="" class="thumb"></td>
-                                            <td>{{theme.name}}</td>
-                                            <td width="120"></td>
+                                        <tr ng-repeat="item in options.themes" ng-class="{active:item.active}">
+                                            <td width="80"><img src="{{item.image}}" alt="" class="thumb"></td>
+                                            <td>{{item.name}}</td>
+                                            <td width="120" ng-switch="item.active">
+                                                <button ng-switch-default class="btn btn-sm btn-white" ng-click="item.active = !item.active">activate</button>
+                                                <span ng-switch-when="true">activated!</span>
+                                            </td>
+
                                         </tr>
                                     </tbody>
                                 </table>                                
@@ -175,13 +185,13 @@
                         <div class="row m-b-lg">
                             <div class="col-lg-3">
                                 <label class="control-label">Admin User Name</label>
-                                <input type="text" class="form-control" placeholder="admin">
+                                <input type="text" ng-model="options.admin.username" class="form-control" placeholder="admin">
                             </div>
                         </div>
                         <div class="row m-b-lg">
                             <div class="col-lg-6">
                                 <label class="control-label">Email</label>
-                                <input type="email" class="form-control" placeholder="your@email.address.com">
+                                <input type="email" ng-model="options.admin.email" class="form-control" placeholder="your@email.address.com">
                                     <div class="checkbox">
                                       <label>
                                         <input type="checkbox" value="" checked="checked">
@@ -408,7 +418,7 @@
                 <section>
                     <div class="row">
                         <div class="col-lg-6">
-                            <a class="btn btn-success btn-lg" href="#/sites/build" >Create Site</a>
+                            <a class="btn btn-success btn-lg" href="#/sites/" ng-click="createSite()">Create Site</a>
                         </div>
                     </div>
                 </section>

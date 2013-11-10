@@ -9780,6 +9780,20 @@ table.table.table-bordered thead th {
   border-bottom: none;
   font-weight: 300;
 }
+table.table tr.active {
+  background-color: #92cf5c;
+}
+table.table tr.active[href]:hover,
+table.table tr.active[href]:focus {
+  background-color: #78c038;
+}
+table.table tr.active td {
+  background-color: #92cf5c;
+}
+table.table tr.active td[href]:hover,
+table.table tr.active td[href]:focus {
+  background-color: #78c038;
+}
 table.table.table-list thead,
 table.table.table-list th,
 table.table.table-list td {
