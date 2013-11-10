@@ -1,47 +1,26 @@
-        <section class="panel">
-        	<table class="table m-n">
+<div class="wrapper">
+        <section class="">
+        	<table class="table m-n no-border" style="">
         		<tbody>
         			<tr>
-        				<td class="aside-lg text-center padder-n" style="padding:0;">
+        				<td class="aside-lg text-center padder-n" style="padding:0; border:0;">
         					<div style="height:100px; overflow:hidden;">
-        						<img src="app/img/screenshot1.png" style="display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-50px">
+        						<img src="{{input.image}}" style="display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-20px">
         					</div>
 
         				</td>
-        				<td class="v-middle">
-        					<p class="h3">MyAwesomeSite.com</p>
-        					<p class="clearfix">
-        						<span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-        							<img src="app/img/avatar.jpg">
-        						</span> 
-        						user.name
-        					</p>
+        				<td class="v-middle" style=" border:0;">
+        					<p class="h1">{{input.url}}</p>
+        					
         				</td>
 
-        				<td width="300" class="v-middle">
-        					<div class="btn-group btn-group-justified m-b">
-        						<a class="btn btn-success btn-rounded active"  data-toggle="button">
-        							<span class="text">
-        								<i class="icon-cloud-upload"></i> Live
-        							</span>
-        							<span class="text-active">
-        								<i class="icon-ok"></i> Live
-        							</span>
-        						</a>
-        						<a class="btn btn-default btn-rounded" data-toggle="button">
-        							<span class="text">
-        								<i class="icon-eye-open"></i> Priavate
-        							</span>
-        							<span class="text-active">
-        								<i class="icon-eye-open"></i> Priavate
-        							</span>
-        						</a>
-
-        					</div>   									
-        				</td>
+        				
         			</tr>
         		</tbody>
         	</table>
+
+            <hr>
+
 
         	<header class="panel-heading bg-light">
 
@@ -82,3 +61,4 @@
             </div>        	
 
         </section>
+    </div>

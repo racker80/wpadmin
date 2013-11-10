@@ -29,7 +29,9 @@
 					</div>
 				</td>
 				<td class="v-middle"><img src="{{site.image}}" class="thumb" alt=""></td>
-				<td class="v-middle"><a oc-show-detail template="app/templates/sites.detail.html" output="site" text="{{site.url}}" bs href="#/sites/detail" class="block">{{site.url}}</a></td>
+				<td class="v-middle">
+					<a oc-show-detail template="app/templates/sites.detail.html" output="site" input="site" text="{{site.url}}" bs href="#/sites/detail" class="block">{{site.url}}</a>
+				</td>
 				<td class="text-center v-middle" ng-switch="site.status">
 
 					<span class="text-success" ng-switch-when="live"><i class="icon-ok"></i></span>

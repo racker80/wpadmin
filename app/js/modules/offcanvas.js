@@ -90,13 +90,15 @@ angular.module('myApp.offcanvas', [])
             text:"@"
         },
         link:function(scope, element, attrs, controller) {
-            console.log(scope.text)
             if(scope.text) {
                 element.empty().append(scope.text)
             }
+
             element.click(function(){
                 offCanvasService.showDetail = !offCanvasService.showDetail;
                 offCanvasService.detail.template = scope.template;
+                offCanvasService.detail.input = scope.input;
+                offCanvasService.detail.output = scope.output;
                 scope.$apply();
             })
         }
@@ -134,16 +136,17 @@ angular.module('myApp.offcanvas', [])
 .directive('offCanvasContent', function($http, $compile, offCanvasService){
     return {
         link: function(scope, element, attrs){
-            scope.output = [];
+            
 
             scope.$watch(function(){
-                return offCanvasService.detail.template
+                return offCanvasService.detail.output
             }, function(t) {
+                console.log(t)
                 element.html('');
                 scope.output = offCanvasService.detail.output;
                 scope.input = offCanvasService.detail.input;
-                if(t)
-                    $http.get(t).then(function(tmpl) {
+                if(offCanvasService.detail.template)
+                    $http.get(offCanvasService.detail.template).then(function(tmpl) {
                        var template = $compile(tmpl.data)(scope);
                        element.html(template);
                    });

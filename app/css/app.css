@@ -9659,6 +9659,19 @@ table.table.table-bordered thead th {
   border-bottom: none;
   font-weight: 300;
 }
+table.table.table-list thead,
+table.table.table-list th,
+table.table.table-list td {
+  border: 0;
+}
+table.table.table-list tbody tr td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+table.table.table-list tbody tr td img.thumb {
+  height: 100px;
+  width: auto;
+}
 .main-nav {
   padding: 10px 20px;
 }
