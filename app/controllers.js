@@ -18,6 +18,15 @@ angular.module('myApp.controllers', []).
       }
     }
 
+    $rootScope.viewNewSite = function(){
+
+          offCanvasService.showDetail = !offCanvasService.showDetail;
+          offCanvasService.detail.template = 'app/templates/modals/site.detail.html';
+          offCanvasService.detail.input = angular.copy(Data.sites.mySites[Data.sites.mySites.length-1]);
+          offCanvasService.detail.output = [];
+          scope.$apply();
+    }
+
 
   });
 

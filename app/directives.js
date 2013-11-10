@@ -115,7 +115,7 @@ angular.module('myApp.directives', []).
   };
 })
 
-  .directive('easyPie', function($location){
+  .directive('easyPie', function($location, $rootScope){
     return {
         restrict:'A',
         link:function($scope, elm, attrs) {
@@ -128,8 +128,9 @@ angular.module('myApp.directives', []).
                 };
 
                 var viewDetail = function(){
-                    $location.url('/sites/detail');
+                    $location.url('/sites/');
                     $scope.$apply();
+                    $rootScope.viewNewSite();
                 }
 
                 $('.easypiechart').each(function(){

@@ -44,13 +44,8 @@ angular.module('myApp.newsite', [])
 
 
 
-          offCanvasService.showDetail = !offCanvasService.showDetail;
-          offCanvasService.detail.template = 'app/templates/modals/site.detail.html';
-          offCanvasService.detail.input = angular.copy(scope.options);
-          offCanvasService.detail.output = [];
-          scope.$apply();
 
-                    scope.options = angular.copy(wpOptions);
+          scope.options = angular.copy(wpOptions);
 
 
         }
