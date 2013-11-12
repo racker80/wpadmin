@@ -39,25 +39,12 @@
 
     <div off-canvas="offCanvas" id="offCanvasContainer">
 
-        <div off-canvas-content id="offCanvasContent" ng-class="{showDetail:showDetail, showOption:showOption}">
+        <div off-canvas-content id="offCanvasContent" ng-style="contentStyle" ng-class="{showDetail:showDetail, showOption:showOption}">
 
-            <button class="btn btn-primary" 
-            oc-show-option 
-            template=""
-            output="test"
-            >options
-            </button>
-
-            <button type="button" class="btn btn-white navbar-btn rounded"
-            oc-show-option 
-            template="app/partials/modals/test.html" 
-            output="output">
-            <i class="icon-plus"></i> option
-            </button> 
         </div>
 
         <div off-canvas-sidebar id="offCanvasSidebar" ng-class="{showOption:showOption}">
-            <button class="btn btn-primary" oc-show-option template="">close</button>
+            
         </div>
 
     </div>
@@ -84,6 +71,7 @@
         <script src="todo/js/app.plugin.js"></script>
         <script src="todo/js/app.data.js"></script>
         <script src="todo/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+        <script src="todo/js/charts/sparkline/jquery.sparkline.min.js"></script>
         <script src="todo/js/select2/select2.min.js"></script>
 
 

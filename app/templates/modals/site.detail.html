@@ -40,7 +40,18 @@
                 	<div class="tab-pane  active" id="account">
                 		<div class="wrapper">
 
-							<ng-include src="'app/templates/sites/detail.account.html'"></ng-include>
+							<ng-include src="'app/templates/pages/site.account.html'"></ng-include>
+
+
+                            <button class="btn btn-white  navbar-btn" 
+                            oc-show-option 
+                            output="options.themes" 
+                            input="Data"
+                            template="app/templates/modals/add.themes.html" 
+                            title="my modal">
+                                <i class="icon-bar-chart text"></i> Your Themes
+                            </button>
+
 
                 		</div>
                 	</div>

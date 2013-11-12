@@ -9794,6 +9794,9 @@ table.table tr.active td[href]:hover,
 table.table tr.active td[href]:focus {
   background-color: #78c038;
 }
+table.table.table-invoice td {
+  font-size: 1.2em;
+}
 table.table.table-list thead,
 table.table.table-list th,
 table.table.table-list td {

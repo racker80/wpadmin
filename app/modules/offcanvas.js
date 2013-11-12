@@ -28,7 +28,9 @@ angular.module('myApp.offcanvas', [])
         },
         controller: "offCanvasController",
         link:function(scope, element, attrs, controller) {
+
              var h;
+             var contentWidth;
              angular.element(window).on('resize',function(){
                 h = $window.innerHeight;
              })
@@ -132,11 +134,63 @@ angular.module('myApp.offcanvas', [])
 
     }
 })
+// .animation('.showDetail', function(offCanvasService) {
+//     var x = function(){
+//         console.log($('#content'))
+//         return $('#content').width()-180;
+//     }
+//   return {
+//     enter : function(element, done) {
+//       // jQuery(element).css({
+//       //   color:'#FF0000'
+//       // });
+//       // jQuery(element).animate({
+//       //   color:'#0000FF'
+//       // }, done);
+//       return function(cancelled) {
+//         /* this (optional) function is called when the animation is complete
+//            or when the animation has been cancelled (which is when
+//            another animation is started on the same element while the
+//            current animation is still in progress). */
+//         if(cancelled) {
+//           jQuery(element).stop();
+//         }
+//       }
+//     },
 
+//     leave : function(element, done) { done(); },
+//     move : function(element, done) { done(); },
+//     addClass : function(element, className, done) { 
+//         console.log(this.x)
+//         element.scope().contentStyle = {
+//             'width':this.x,
+//             '-webkit-transform': 'translate3d(-'+this.x+'px, 0px, 0)'
+//         } 
+        
+//         done(); 
+//     },
+//     removeClass : function(element, className, done) { 
+
+//         element.scope().contentStyle = {
+//             'width':this.x,            
+//             '-webkit-transform': 'translate3d(0px, 0px, 0)'
+//         }         
+//         done(); 
+//     }
+//   };
+// })
 .directive('offCanvasContent', function($http, $compile, offCanvasService){
     return {
         link: function(scope, element, attrs){
-            
+
+            var w = function(){
+                return $('#content').width()-180;
+            };
+            element.width(w);
+             angular.element(window).on('resize',function(){
+                element.width(w);
+                console.log(element.width())
+             });
 
             scope.$watch(function(){
                 return offCanvasService.detail.output
@@ -152,6 +206,15 @@ angular.module('myApp.offcanvas', [])
                    });
             });
 
+        }
+    }
+})
+.directive('sparkline', function(){
+    return {
+        restrict:"C",
+        link:function(scope, element, attrs){
+            var $data = element.data();
+            element.sparkline( $data.data || "html", $data);
         }
     }
 })
