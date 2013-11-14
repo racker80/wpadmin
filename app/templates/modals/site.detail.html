@@ -1,75 +1,72 @@
 <div class="wrapper">
-        <section class="">
-        	<table class="table m-n no-border" style="">
-        		<tbody>
-        			<tr>
-        				<td class="aside-lg text-center padder-n" style="padding:0; border:0;">
-        					<div style="height:100px; overflow:hidden;">
-        						<img src="{{input.image}}" style="display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-20px">
-        					</div>
-
-        				</td>
-        				<td class="v-middle" style=" border:0;">
-        					<p class="h1">{{input.url}}</p>
-        					
-        				</td>
-
-        				
-        			</tr>
-        		</tbody>
-        	</table>
-
-            <hr>
-
-
-        	<header class="panel-heading bg-light">
-
-        		<ul class="nav nav-tabs">
-        			<li class="active"><a bs href="#account" data-toggle="tab">Account</a></li>
-        			<li><a bs href="#wordpress" data-toggle="tab">WordPress</a></li>
-        			<li><a bs href="#devsite" data-toggle="tab">Development</a></li>
-        			<li class=""><a bs href="#activity" data-toggle="tab">Backups</a></li>
-        			<li class=""><a bs href="#activity" data-toggle="tab">Domain & Email</a></li>
-        		</ul>
-
-        	</header>
-
-
-            <div class="panel-body no-padder">
-                <div class="tab-content">              
-                	<div class="tab-pane  active" id="account">
-                		<div class="wrapper">
-
-							<ng-include src="'app/templates/pages/site.account.html'"></ng-include>
-
-
-                            <button class="btn btn-white  navbar-btn" 
-                            oc-show-option 
-                            output="options.themes" 
-                            input="Data"
-                            template="app/templates/modals/add.themes.html" 
-                            title="my modal">
-                                <i class="icon-bar-chart text"></i> Your Themes
-                            </button>
-
-
-                		</div>
-                	</div>
-                    <div class="tab-pane" id="wordpress">
-
-							<ng-include src="'app/templates/sites/detail.wordpress.html'"></ng-include>
-
-
+    <table class="table m-n no-border" style="">
+        <tbody>
+            <tr>
+                <td class="aside-lg text-center padder-n" style="padding:0; border:0;">
+                    <div style="height:100px; overflow:hidden;">
+                        <img src="{{input.image}}" style="display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-20px">
                     </div>
-                    <div class="tab-pane" id="devsite">
-							<ng-include src="'app/templates/sites/detail.dev.html'"></ng-include>
 
-                    </div>
-                    <div class="tab-pane" id="new-site">
-                        
-                    </div>
+                </td>
+                <td class="v-middle" style=" border:0;">
+                    <p class="h1">{{input.url}}</p>
+
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+
+    <header class="panel-heading bg-light">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a bs href="#account" data-toggle="tab">Account</a></li>
+            <li><a bs href="#wordpress" data-toggle="tab">WordPress</a></li>
+            <li><a bs href="#devsite" data-toggle="tab">Development</a></li>
+            <li class=""><a bs href="#activity" data-toggle="tab">Backups</a></li>
+            <li class=""><a bs href="#activity" data-toggle="tab">Domain & Email</a></li>
+        </ul>
+
+    </header>
+
+
+    <div class="panel-body no-padder">
+        <div class="tab-content">              
+            <div class="tab-pane  active" id="account">
+                <div class="wrapper">
+
+                    <ng-include src="'app/templates/pages/site.account.html'"></ng-include>
+
+
+                    <button class="btn btn-white  navbar-btn" 
+                    oc-show-option 
+                    output="options.themes" 
+                    input="Data"
+                    template="app/templates/modals/add.themes.html">
+                        <i class="icon-bar-chart text"></i> Your Themes
+                    </button>
+
+
                 </div>
-            </div>        	
+            </div>
+            <div class="tab-pane" id="wordpress">
 
-        </section>
-    </div>
+                <ng-include src="'app/templates/sites/detail.wordpress.html'"></ng-include>
+
+
+            </div>
+            <div class="tab-pane" id="devsite">
+                <ng-include src="'app/templates/sites/detail.dev.html'"></ng-include>
+
+            </div>
+            <div class="tab-pane" id="new-site">
+
+            </div>
+        </div>
+    </div>        	
+
+</div>

@@ -119,11 +119,18 @@ table.table.table-list {
 
 
 
-@transitionTime: .2s;
+@transitionTime: .5s;
 
 .translate3d {
-	-webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
-    transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+
+
+	-webkit-transition: -webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+
+	-webkit-transition: left cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+    transition: left cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
+
+
 
 /*    -webkit-transition: -webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;
     transition: transform cubic-bezier(0.250, 0.460, 0.450, 0.940) @transitionTime;*/
@@ -138,14 +145,11 @@ table.table.table-list {
 .afterClass {
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 	background: rgba(0,0,0,0.4);
 	content: '';
-	opacity: 0;
+	opacity: 1;
 	z-index:500;
-	-webkit-transition: opacity @transitionTime;
-	transition: opacity @transitionTime;
-	
 }
 .afterClassAdd {
 	opacity:1;
@@ -154,39 +158,74 @@ table.table.table-list {
 }
 .afterClassRemove {
 	opacity:0;
+	width:100%;
+	height:100%;
 }
 
 /*
 SETUP THE CONTENT MASK
 */
 #content {
-	.translate3d;
-	overflow:hidden;
-	&::before {
+	position:relative;
+	z-index:2;
+	&::after {
 		.afterClass;
 	}
+
+	overflow:hidden;
+
+
+	&.showOffCanvas,
 	&.showOffCanvas-add,
-	&.showOffCanvas {
-		&::before {
+	&.showOffCanvas-remove {
+		.translate3d;
+		
+	}
+
+	&.showOffCanvas,
+	&.showOffCanvas-remove,
+	&.showOffCanvas-add.showOffCanvas-add-active {
+		&::after {
 			.afterClassAdd;
 		}
-	}
-	&.showOffCanvas.showOffCanvas-remove {
-		&::before {
+	}	
+	
+	&.showOffCanvas.showOffCanvas-remove,
+	&.showOffCanvas-remove.showOffCanvas-remove-active {
+		&::after {
 			.afterClassRemove;
 		}
 	}
+
+
+
 }
+
+
+
+
+
+
 
 
 @detailWidth: 960px;
 @optionWidth:600px;
+
+
+#site-container {
+	position:relative;
+	z-index:1;
+}
+
+
+
 #offCanvasContainer {
-	position:fixed;
-	top:0;
+	position:relative;
+/*	top:0;
 	left:100%;
 	width:100%;
-	height:100%;
+	height:100%;*/
+	overflow:visible;
 	background:rgba(0,0,0,0.4);
 	z-index:999;
 
@@ -195,103 +234,127 @@ SETUP THE CONTENT MASK
 
 
 		#offCanvasContent {
-			position:relative;
+			position:fixed;
+			z-index:9999;
 			top:0;
-			left:0;
+			left:100%;
 			height:100%;
-			width:@detailWidth;
 			background:#fff;
 			overflow:auto;
 			cursor:auto;
-			.translate3d;
-			&::before {
+			width:100%;
+			.wrapper {
+				max-width:960px;
+			}
+			&::after {
 				.afterClass;
 			}
 
-			&.showDetail,
-			&.showDetail-add {
-				-webkit-transform: translate3d(-@detailWidth, 0px, 0);	
+			&.toggle-detail-animation {
+				left:430px;
+				width:100%;
+			}
+
+			&.toggle-detail-animation.ng-enter,
+			&.toggle-detail-animation.ng-leave {
+				.translate3d;
+				left:100%;
+			}
+
+			&.toggle-detail-animation.ng-enter.ng-enter-active{
+				left:430px;
+
+			}
+			&.toggle-detail-animation.ng-leave {
+				left:430px;
+
+			}
+			&.toggle-detail-animation.ng-leave.ng-leave-active{
+				left:100%;
+
 			}
 
 
-			&.showDetail-add.showOption-add,
-			&.showDetail.showOption {
+
+			&.showOption-add,
+			&.showOption-remove {
+				.translate3d;
+			}
+
+			&.showOption,
+			&.showOption-remove,
+			&.showOption-add.showOption-add-active {
+				left:250px;
 				cursor:pointer!important;
-				overflow:hidden;
-				-webkit-transform: translate3d(-((@detailWidth+@optionWidth)-(@optionWidth/2)), 0px, 0);			
-				/*-webkit-transform: translate3d(-100%, 0px, 0);			*/
-				&::before {
+				&::after {
 					.afterClassAdd;
-					height:1900px;
 				}
 			}
-			&.showDetail.showDetail-remove {
-				-webkit-transform: translate3d(0, 0px, 0);
-			}
 
+
+			&.showOption-remove.showOption-remove-active {
+				left:430px;
+				&::after {
+					.afterClassRemove;
+				}				
+			}
+			
 
 		}
 
 
+
+
+
+
 		#offCanvasSidebar {
-			position:absolute;
-			z-index:999;
+			position:fixed;
+			z-index:9999;
 			top:0;
-			left:0;
+			left:100%;
 			width:@optionWidth;
 			height:100%;
 			overflow:auto;
 			background:#fff;
 			cursor:auto;
-				-webkit-transform: translate3d(0, 0px, 0);
 
-			.translate3d;
-			&.showOption-add,
-			&.showOption {
-				-webkit-transform: translate3d(-@optionWidth, 0px, 0);
-			}
+			.wrapper {
+				max-width:760px;
 
-			&.showOption.showOption-remove {
-				-webkit-transform: translate3d(0px, 0px, 0);	
 			}
+				/*-webkit-transform: translate3d(0, 0px, 0);*/
+			
+				&.toggle-option-animation {
+					/*.translate3d;*/
+					/*-webkit-transform: translate3d(-100%, 0px, 0);*/
+					left:630px;
+					width:100%;
+				}
+
+				&.toggle-option-animation.ng-enter,
+				&.toggle-option-animation.ng-leave {
+					.translate3d;
+					left:100%;
+				}
+
+				&.toggle-option-animation.ng-enter.ng-enter-active{
+					/*-webkit-transform: translate3d(-100%, 0px, 0);	*/
+					left:630px;
+
+				}
+				&.toggle-option-animation.ng-leave {
+					/*-webkit-transform: translate3d(-100%, 0px, 0);	*/
+					left:630px;
+
+				}
+				&.toggle-option-animation.ng-leave.ng-leave-active{
+					/*-webkit-transform: translate3d(0, 0px, 0);*/
+					left:100%;
+
+				}
 		}	
 
 
-
-
-
-
-	.canvasSlider {
-		position:relative;
-		padding-left:100px;
-		height:100%;
-		overflow:hidden;
-
-		.translate3d;		
-		&.showOffCanvas,
-		&.showOffCanvas-add {
-			-webkit-transform: translate3d(-100%, 0px, 0);
-			cursor:pointer;
-		}		
-		&.showOffCanvas.showOffCanvas-remove {
-			-webkit-transform: translate3d(0%, 0px, 0);
-		}
-		
-		&.sidebar,
-		&.sidebar-add {
-			
-			.test {
-				width:100%;
-			}
-		}
-	
-
-
-
-	}
-	.test {
-		background:rgba(0,0,0,0.4);
-	}
 }
 
 
@@ -300,25 +363,6 @@ SETUP THE CONTENT MASK
 
 
 
-.mask {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	opacity:0.8;
-	background:#000;
-	z-index:9998;
-	cursor:pointer;
-	
-	-webkit-transition: 0.2s linear all;
-	transition: 0.2s linear all;
-
-	&.ng-leave {
-		opacity:0;
-	}
-
-}
 
 
 
@@ -338,48 +382,7 @@ SETUP THE CONTENT MASK
 	position:relative;
 }
 #content {
-	position:relative;
 }
-.page-overlay {
-	position:fixed;
-	top:0;
-	right:0;
-	width:70%;
-	height:100%;
-	background:rgba(0,0,0,.7);
-	z-index:9999;
-	opacity:1;
-	-webkit-transition: 0.5s;
-	transition: 0.5s;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;	
 
-	/*set the default as zero*/
-	-webkit-transform: translate3d(0%, 0px, 0);
-	transform: translate3d(0%, 0px, 0);
-
-	&.ng-enter,
-	&.ng-hide-remove {
-		-webkit-transform: translate3d(100%, 00, 0);
-		transform: translate3d(100%, 0px, 0);	
-		display:block!important;
-	}
-
-	&.ng-enter-active,
-	&.ng-hide-add-active {
-
-	}
-
-	&.ng-leave,
-	&.ng-hide-add {
-	-webkit-transition: 1s;
-	transition: 1s;		
-		-webkit-transform: translate3d(200%, 0, 0);
-		transform: translate3d(200%, 0, 0);
-		opacity:0;
-	}
-
-	&.ng-leave-active {}
-}
 
 

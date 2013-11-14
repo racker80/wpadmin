@@ -32,22 +32,11 @@
     <ng-include src="'app/templates/sidebar.html'"></ng-include>
   </aside>
 
-  <section id="content" class="bg-white" ng-class="contentClass()">
-    
+  <section id="content" class="bg-white" ng-class="{showOffCanvas:showOffCanvas}" off-canvas-overlay>
     <div ng-view></div>
     
 
-    <div off-canvas="offCanvas" id="offCanvasContainer">
 
-        <div off-canvas-content id="offCanvasContent" ng-style="contentStyle" ng-class="{showDetail:showDetail, showOption:showOption}">
-
-        </div>
-
-        <div off-canvas-sidebar id="offCanvasSidebar" ng-class="{showOption:showOption}">
-            
-        </div>
-
-    </div>
 
   </section><!-- content -->
 
@@ -57,7 +46,17 @@
 
 
 
+    <div off-canvas-container id="offCanvasContainer">
+        
+        <div off-canvas-content id="offCanvasContent" ng-class="{showOption:optionIn}" ng-style="style" ng-if="showDetail==true" class="toggle-detail-animation">
 
+        </div>
+
+        <div off-canvas-sidebar id="offCanvasSidebar" ng-if="showOption==true" class="toggle-option-animation">
+            
+        </div>
+
+    </div>
 
 
 
@@ -66,6 +65,7 @@
 
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/jquery.transit/jquery.transit.js"></script>
 
         <script src="todo/js/app.js"></script>
         <script src="todo/js/app.plugin.js"></script>
@@ -80,7 +80,7 @@
         <script src="bower_components/unstable-angular-complete/angular.js"></script>
         <script src="bower_components/unstable-angular-complete/angular-route.js"></script>
         <script src="bower_components/unstable-angular-complete/angular-sanitize.js"></script>
-        <script src="bower_components/unstable-angular-complete/angular-animate.min.js"></script>
+        <script src="bower_components/unstable-angular-complete/angular-animate.js"></script>
 
 
         <script src="app/app.js"></script>
