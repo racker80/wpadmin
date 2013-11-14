@@ -164,7 +164,58 @@ angular.module('myApp.directives', []).
                   });
                 });
 
+        }
+    }
+  })
+  .directive('easyPieDev', function($location, $rootScope){
+    return {
+        restrict:'A',
+        link:function($scope, elm, attrs) {
 
+                // easypie
+                var updatePie = function($that) {
+                    var $this = $that, 
+                    $newValue = Math.round(100*Math.random());      
+                    $this.data('easyPieChart').update($newValue);
+                };
+
+                var viewDetail = function(){
+                    $location.url('/sites/');
+                    $scope.$apply();
+                    $rootScope.viewNewSite();
+                }
+
+                $('.easypiechart').each(function(){
+                    var $barColor = $(this).data("barColor") || function($percent) {
+                        $percent /= 100;
+                        return "rgb(" + Math.round(255 * (1-$percent)) + ", " + Math.round(255 * $percent) + ", 125)";
+                    },
+                    $trackColor = $(this).data("trackColor") || "#c8d2db",
+                    $scaleColor = $(this).data("scaleColor"),
+                    $lineWidth = $(this).data("lineWidth") || 12,
+                    $size = $(this).data("size") || 130,
+                    $animate = $(this).data("animate") || 5000;
+
+                    $(this).easyPieChart({
+                        barColor: $barColor,
+                        trackColor: $trackColor,
+                        scaleColor: $scaleColor,
+                        lineCap: 'butt',
+                        lineWidth: $lineWidth,
+                        size: $size,
+                        animate: $animate,
+                        onStop: function(){
+                            var $this = this.$el;
+                            $this.data("loop") && setTimeout(function(){ $this.data("loop") && updatePie($this) }, 6000);  
+                            $scope.$parent.dev="done";
+                            $scope.$apply();
+                            
+                        },
+                        onStep: function(value) {
+                          this.$el.find('span').text(parseInt(value));
+                      }
+                  });
+                });
 
         }
     }

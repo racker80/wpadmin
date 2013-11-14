@@ -1,5 +1,21 @@
 
-<section class="panel">
+
+<section class="panel m-t-lg">
+	<header class="panel-heading">
+		<p class="h4 m-n">Site Actions</p>
+	</header>
+	<div class="panel-body text-center">              
+		<button class="btn btn-white btn-lg" oc-show-option template="app/templates/modals/comingsoon.html">Contact Support</button>	
+		<button class="btn btn-white btn-lg" oc-show-option template="app/templates/modals/comingsoon.html">Change Plan</button>	
+		<button class="btn btn-white btn-lg" oc-show-option template="app/templates/modals/comingsoon.html">Transfer Ownership</button>	
+		<button class="btn btn-white btn-lg" oc-show-option template="app/templates/modals/comingsoon.html">Delete Site</button>	
+		
+	</div>
+</section>
+
+
+
+<section class="panel m-t-lg">
 	<header class="panel-heading">
 		<p class="h4 m-n">Your Activity This Month</p>
 	</header>
@@ -44,8 +60,16 @@
 					<td width="120">Jan 1st</td>
 					<td width="120"><span class="label label-success">Basic Plan</span></td>
 					<td width="120">$19.00</td>
-					<td class="text-right">	<button class="btn btn-white btn-sm"><i class="icon-dollar"></i> change plan</button></td>
-					<td class="text-right"><button class="btn btn-sm btn-white">past invoices <i class="icon-chevron-right"></i></button></td>
+					<td class="text-right">	
+						<button class="btn btn-white btn-sm"
+						oc-show-option 
+						template="app/templates/modals/comingsoon.html"><i class="icon-dollar"></i> change plan</button>
+					</td>
+					<td class="text-right">
+						<button class="btn btn-sm btn-white"
+						oc-show-option 
+						template="app/templates/modals/comingsoon.html">past invoices <i class="icon-chevron-right"></i></button>
+					</td>
 				</tr>
 			</tbody>
 		</table>		
@@ -54,3 +78,65 @@
 		
 	</div>
 </section>
+
+
+
+
+
+
+
+
+<section class="panel m-t-lg">
+	<header class="panel-heading">
+		<p class="h4 m-n">Site Managers</p>
+	</header>
+	<div class="panel-body text-center no-padder" ng-init="showSiteManagers=false">              
+
+		<table class="table table-striped m-n" ng-show="showSiteManagers==true">
+
+			<tbody>
+				<tr ng-repeat="user in Data.sites.collaborators">
+					<td class="v-middle">
+						<div class="btn-group">
+							<button class="btn btn-white btn-xs dropdown-toggle" data-toggle="dropdown"><i class="icon-gear"></i></button>
+							<ul class="dropdown-menu" style="left:100%; bottom:inherit; top:-10px;">
+								<li><a href="#"><i class="icon-beaker"></i> Delete User</a></li>
+							</ul>
+						</div>
+					</td>				
+					<td class="v-middle">
+						<a href="#" class="thumb-sm">
+							<img src="app/img/avatar.jpg" class="img-circle">
+						</a>
+					</td>
+					<td class="v-middle"><a bs oc-show-detail template="app/templates/modals/user.detail.html" input="Data" output="user" text="{{user.name}}" href="#modal-user-details" class="block">{{user.name}}</a></td>
+					<td class="v-middle"><i class="icon-map-marker"></i>  {{user.company}}</td>
+					<td class="v-middle"><span ng-repeat="role in user.roles">{{role}},</span></td>
+					<td class="text-center v-middle" ng-switch="user.status">
+						<span class="label label-warning" ng-switch-when="pending">request pending...</span>
+						<span class="label label-success" ng-switch-when="active">active</span>
+
+					</td>				
+				</tr>
+			</tbody>
+		</table>		
+		
+		<div class="message empty" ng-hide="showSiteManagers==true">
+			<h3 class="text-thin">You don't have any Site Managers.</h3>
+			<p>A site manager can have access to sites you asign them.  Adding someone as a site manager is agreat way 
+				for your web developer to do site maintence.</p>
+				
+				<button class="btn btn-sm btn-white" ng-click="showSiteManagers=!showSiteManagers" oc-show-option template="app/templates/modals/comingsoon.html">Add a site manager</button>
+		</div>
+	
+
+	</div>
+</section>
+
+
+
+
+
+
+
+

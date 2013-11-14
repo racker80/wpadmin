@@ -1,0 +1,95 @@
+<div class="wrap">
+<div id="icon-options-general" class="icon32"><br></div><h2>Writing Settings</h2>
+
+<form method="post" action="options.php">
+<input type="hidden" name="option_page" value="writing"><input type="hidden" name="action" value="update"><input type="hidden" id="_wpnonce" name="_wpnonce" value="83c22402cf"><input type="hidden" name="_wp_http_referer" value="/wp-admin/options-writing.php">
+<table class="form-table">
+<tbody><tr valign="top">
+<th scope="row">Formatting</th>
+<td><fieldset><legend class="screen-reader-text"><span>Formatting</span></legend>
+<label for="use_smilies">
+<input name="use_smilies" type="checkbox" id="use_smilies" value="1" checked="checked">
+Convert emoticons like <code>:-)</code> and <code>:-P</code> to graphics on display</label><br>
+<label for="use_balanceTags"><input name="use_balanceTags" type="checkbox" id="use_balanceTags" value="1"> WordPress should correct invalidly nested XHTML automatically</label>
+</fieldset></td>
+</tr>
+<tr valign="top">
+<th scope="row"><label for="default_category">Default Post Category</label></th>
+<td>
+<select name="default_category" id="default_category" class="postform">
+	<option class="level-0" value="1" selected="selected">blog</option>
+</select>
+</td>
+</tr>
+<tr valign="top">
+<th scope="row"><label for="default_post_format">Default Post Format</label></th>
+<td>
+	<select name="default_post_format" id="default_post_format">
+		<option value="0">Standard</option>
+		<option value="aside">Aside</option>
+		<option value="chat">Chat</option>
+		<option value="gallery">Gallery</option>
+		<option value="link">Link</option>
+		<option value="image">Image</option>
+		<option value="quote">Quote</option>
+		<option value="status">Status</option>
+		<option value="video">Video</option>
+		<option value="audio">Audio</option>
+	</select>
+</td>
+</tr>
+
+</tbody></table>
+
+<h3 class="title">Press This</h3>
+<p>Press This is a bookmarklet: a little app that runs in your browser and lets you grab bits of the web.</p>
+<p>Use Press This to clip text, images and videos from any web page. Then edit and add more straight from Press This before you save or publish it in a post on your site.</p>
+<p>Drag-and-drop the following link to your bookmarks bar or right click it and add it to your favorites for a posting shortcut.</p>
+<p class="pressthis"><a onclick="return false;" oncontextmenu="if(window.navigator.userAgent.indexOf('WebKit')!=-1||window.navigator.userAgent.indexOf('MSIE')!=-1){jQuery('.pressthis-code').show().find('textarea').focus().select();return false;}" href="javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='http://projects.wp/wp-admin/press-this.php',l=d.location,e=encodeURIComponent,u=f+'?u='+e(l.href)+'&t='+e(d.title)+'&s='+e(s)+'&v=4';a=function(){if(!w.open(u,'t','toolbar=0,resizable=1,scrollbars=1,status=1,width=720,height=570'))l.href=u;};if (/Firefox/.test(navigator.userAgent)) setTimeout(a, 0); else a();void(0)"><span>Press This</span></a></p>
+<div class="pressthis-code" style="display:none;">
+	<p class="description">If your bookmarks toolbar is hidden: copy the code below, open your Bookmarks manager, create new bookmark, type Press This into the name field and paste the code into the URL field.</p>
+	<p><textarea rows="5" cols="120" readonly="readonly">javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='http://projects.wp/wp-admin/press-this.php',l=d.location,e=encodeURIComponent,u=f+'?u='+e(l.href)+'&amp;t='+e(d.title)+'&amp;s='+e(s)+'&amp;v=4';a=function(){if(!w.open(u,'t','toolbar=0,resizable=1,scrollbars=1,status=1,width=720,height=570'))l.href=u;};if (/Firefox/.test(navigator.userAgent)) setTimeout(a, 0); else a();void(0)</textarea></p>
+</div>
+
+<h3 class="title">Post via e-mail</h3>
+<p>To post to WordPress by e-mail you must set up a secret e-mail account with POP3 access. Any mail received at this address will be posted, so it’s a good idea to keep this address very secret. Here are three random strings you could use: <kbd>rebenYsk</kbd>, <kbd>QSBFhUhm</kbd>, <kbd>jVO38PIu</kbd>.</p>
+
+<table class="form-table">
+<tbody><tr valign="top">
+<th scope="row"><label for="mailserver_url">Mail Server</label></th>
+<td><input name="mailserver_url" type="text" id="mailserver_url" value="mail.example.com" class="regular-text code">
+<label for="mailserver_port">Port</label>
+<input name="mailserver_port" type="text" id="mailserver_port" value="110" class="small-text">
+</td>
+</tr>
+<tr valign="top">
+<th scope="row"><label for="mailserver_login">Login Name</label></th>
+<td><input name="mailserver_login" type="text" id="mailserver_login" value="login@example.com" class="regular-text ltr"></td>
+</tr>
+<tr valign="top">
+<th scope="row"><label for="mailserver_pass">Password</label></th>
+<td>
+<input name="mailserver_pass" type="text" id="mailserver_pass" value="password" class="regular-text ltr">
+</td>
+</tr>
+<tr valign="top">
+<th scope="row"><label for="default_email_category">Default Mail Category</label></th>
+<td>
+<select name="default_email_category" id="default_email_category" class="postform">
+	<option class="level-0" value="1" selected="selected">blog</option>
+</select>
+</td>
+</tr>
+</tbody></table>
+
+<h3 class="title">Update Services</h3>
+
+
+<p><label for="ping_sites">When you publish a new post, WordPress automatically notifies the following site update services. For more about this, see <a href="http://codex.wordpress.org/Update_Services">Update Services</a> on the Codex. Separate multiple service <abbr title="Universal Resource Locator">URL</abbr>s with line breaks.</label></p>
+
+<textarea name="ping_sites" id="ping_sites" class="large-text code" rows="3">http://rpc.pingomatic.com/</textarea>
+
+
+
+<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p></form>
+</div>

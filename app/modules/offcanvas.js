@@ -108,9 +108,8 @@ angular.module('myApp.offcanvas', [])
    				scope.showOffCanvas = showOffCanvas;
    			})
 
-   			scope.$watch('showOffCanvas', function(showOffCanvas){
-   				if(showOffCanvas == true) {
-   					element.bind('click', function(e){
+            var bind = function(){
+                element.bind('click', function(e){
                         if(e.target === angular.element('#content')[0]) {
                             offCanvasService.showDetail = false;
                             offCanvasService.showOption = false;
@@ -120,7 +119,12 @@ angular.module('myApp.offcanvas', [])
                             scope.$apply();
                         }
 
-                    })
+                    });
+            }
+
+   			scope.$watch('showOffCanvas', function(showOffCanvas){
+   				if(showOffCanvas == true) {
+   					bind();
    				} else {
 
    				}
@@ -161,11 +165,11 @@ angular.module('myApp.offcanvas', [])
         		}	
         	})
 
-        	scope.$watch(function(){
-        		return offCanvasService.contentWidth
-        	}, function(w) {
+        	// scope.$watch(function(){
+        	// 	return offCanvasService.contentWidth
+        	// }, function(w) {
 
-        	});
+        	// });
 
         	scope.$watch('showOption', function(result){
         		if(result==true) {
@@ -188,13 +192,19 @@ angular.module('myApp.offcanvas', [])
         restrict:"C",
         link:function(scope, element, attrs){
             var $data = element.data();
-            element.sparkline( $data.data || $data);
+            element.sparkline( $data.data || element, $data);
         }
     }
 })
 
 .directive('offCanvasSidebar', function($http, $compile, offCanvasService){
     return function(scope, element, attrs){
+        scope.close = function(){
+            offCanvasService.showOption=false;
+            
+            scope.$apply();
+        }
+
         scope.$watch('showOption', function(showOption){
             var load = function(){
                 scope.output = offCanvasService.option.output;
