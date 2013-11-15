@@ -23,33 +23,28 @@
 
 
             <div class="padder relative">
-                <div class="tab-content">              
-                    <div class="tab-pane active" id="my-sites">
-
-
-
+                <div class="tab-content" ng-switch="toggleState.currentTab" ng-init="toggleState.currentTab='#my-sites'">              
+                    <div ng-switch-when="#my-sites" class="tab-pane active" id="my-sites">
+                        
                         <ng-include src="'app/templates/pages/my.sites.html'"></ng-include>
-
 
                     </div>
 
-                    <div class="tab-pane" id="managed">
+                    <div ng-switch-when="#managed" class="tab-pane active" id="managed">
                  
 
                         <ng-include src="'app/templates/pages/managed.sites.html'"></ng-include>
 
 
                     </div>
-                    <div class="tab-pane" id="collaborators">
+                    <div ng-switch-when="#collaborators" class="tab-pane active" id="collaborators">
 
 
                         <ng-include src="'app/templates/pages/collaborators.html'"></ng-include>
 
 
                     </div>
-                    <div class="tab-pane " id="new-site">
-                        <div ng-include src="'app/templates/sites/new.site.html'"></div>
-                    </div>                    
+                  
                     
                 </div>
 

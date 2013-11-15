@@ -45,7 +45,7 @@ angular.module('myApp.offcanvas', [])
         	if(scope.text) {
                 element.empty().append(scope.text)
             }
-        	element.click(function(){
+        	element.click(function(e){
                 offCanvasService.showDetail = !offCanvasService.showDetail;
                 offCanvasService.showOffCanvas = true;
         		offCanvasService.detail = {
@@ -54,6 +54,8 @@ angular.module('myApp.offcanvas', [])
         			template:scope.template
         		}
         		scope.$apply();
+                e.preventDefault();
+
         	});
         }
 
@@ -74,7 +76,7 @@ angular.module('myApp.offcanvas', [])
         		element.empty().append(scope.text)
         	}
 
-        	element.click(function(){
+        	element.click(function(e){
         		offCanvasService.showOption = !offCanvasService.showOption;
                 offCanvasService.showOffCanvas = true;
         		offCanvasService.option = {
@@ -83,6 +85,8 @@ angular.module('myApp.offcanvas', [])
         			template:scope.template
         		}
         		scope.$apply();
+                e.preventDefault();
+
         	});
         }
 
@@ -201,6 +205,7 @@ angular.module('myApp.offcanvas', [])
     return function(scope, element, attrs){
         scope.close = function(){
             offCanvasService.showOption=false;
+            offCanvasService.showOffCanvas=false;
             
             scope.$apply();
         }

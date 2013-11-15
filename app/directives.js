@@ -49,11 +49,14 @@ angular.module('myApp.directives', []).
 
 
   
-  .directive('bs', function($location) {
+  .directive('bs', function($location, $rootScope) {
     return {
         restrict: 'A',
         link: function(scope, elem, attrs) {
                 elem.on('click', function(e){
+                    console.log(scope.toggleState)
+                    scope.toggleState.currentTab=attrs.href;
+                    scope.$apply();
                     e.preventDefault();
                 });
         }
@@ -260,9 +263,9 @@ myApp.directive('wpSearch', function($http, $rootScope, $q, Data){
 
         },
         link:function(scope, element, attrs) {
-            // scope.myPlugins = angular.fromJson(localStorageService.get('myPlugins'));
 
             scope.search = function(){
+                delete scope.plugins;
                 $http.get('app/search.php', {
                     params: {
                         type:'search',
@@ -275,6 +278,9 @@ myApp.directive('wpSearch', function($http, $rootScope, $q, Data){
                 });
 
             }
+            console.log(scope.searchField)
+            scope.search();
+
 
             scope.add = function(plugin){
                 Data.wordpress.plugins.push(plugin);

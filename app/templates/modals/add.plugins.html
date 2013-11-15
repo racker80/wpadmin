@@ -8,28 +8,26 @@
 <hr>
 	<section>
         <div class="table-responsive">
-          <table class="table table-striped text-sm table-bordered">
-            <thead>
-              <tr>
-                <th width="20"><input type="checkbox"></th>
-                <th width="200" class="th-sortable" data-toggle="class">Theme
-                  <span class="th-sort">
-                    <i class="icon-sort-down text"></i>
-                    <i class="icon-sort-up text-active"></i>
-                    <i class="icon-sort"></i>
-                  </span>
-                </th>
-                <th>description</th>
-              </tr>
-            </thead>
-            <tbody>
+          <table class="table table-striped text-sm">
 
+            <tbody>
               <tr ng-repeat="item in Data.wordpress.plugins">
+                <td class="v-middle"><input type="checkbox" value="{{item}}" check-list="output"></td>
+                <td width="250">
+                  <h4 class="m-n font-thin">{{item.name}}</h4>
+                  <small>by: <span ng-bind-html-unsafe='{item.author}'></span></small>
+                </td>
+                <td>
+                  <p class="font-thin">{{item.short_description}}</p>
+                </td>
+              </tr>
+              <!-- <tr ng-repeat="item in Data.wordpress.plugins">
+
                 <td class="v-middle"><input type="checkbox" value="{{item}}" check-list="output"></td>
                 <td class="v-middle"><h5>{{item.name}}</h5></td>
                 <td class="v-middle">{{item.short_description}}</td>
 
-              </tr>
+              </tr> -->
 
             </tbody>
           </table>

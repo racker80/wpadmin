@@ -178,7 +178,7 @@ angular.module('myApp.data', [])
       ],
       plugins: [
         {
-          author: "<a href=\"http://www.seodesignsolutions.com/\">SEO Design Solutions</a>",
+          author: '<a href="http://www.seodesignsolutions.com/">SEO Design Solutions</a>',
           author_profile: "http://profiles.wordpress.org/seo-design-solutions",
           homepage: "http://www.seodesignsolutions.com/wordpress-seo/",
           name: "Jetpack by wordpress",
@@ -192,7 +192,7 @@ angular.module('myApp.data', [])
           bundles:['default']
         },     
         {
-          author: "<a href=\"http://www.seodesignsolutions.com/\">SEO Design Solutions</a>",
+          author: '<a href="http://www.seodesignsolutions.com/">SEO Design Solutions</a>',
           author_profile: "http://profiles.wordpress.org/seo-design-solutions",
           homepage: "http://www.seodesignsolutions.com/wordpress-seo/",
           name: "SEO Ultimate",
@@ -206,7 +206,7 @@ angular.module('myApp.data', [])
           bundles:[]
         },
         {
-          author: "<a href=\"http://www.seodesignsolutions.com/\">SEO Design Solutions</a>",
+          author: '<a href="http://www.seodesignsolutions.com/">SEO Design Solutions</a>',
           author_profile: "http://profiles.wordpress.org/seo-design-solutions",
           homepage: "http://www.seodesignsolutions.com/wordpress-seo/",
           name: "W3 Total Cache",
@@ -220,7 +220,7 @@ angular.module('myApp.data', [])
           bundles:[]
         },
         {
-          author: "<a href=\"http://www.seodesignsolutions.com/\">SEO Design Solutions</a>",
+          author: '<a href="http://www.seodesignsolutions.com/">SEO Design Solutions</a>',
           author_profile: "http://profiles.wordpress.org/seo-design-solutions",
           homepage: "http://www.seodesignsolutions.com/wordpress-seo/",
           name: "WordPress SEO by Yoast",
@@ -234,7 +234,7 @@ angular.module('myApp.data', [])
           bundles:[]
         },
         {
-          author: "<a href=\"http://www.seodesignsolutions.com/\">SEO Design Solutions</a>",
+          author: '<a href="http://www.seodesignsolutions.com/">SEO Design Solutions</a>',
           author_profile: "http://profiles.wordpress.org/seo-design-solutions",
           homepage: "http://www.seodesignsolutions.com/wordpress-seo/",
           name: "Limit Login Attempts",
@@ -248,7 +248,7 @@ angular.module('myApp.data', [])
           bundles:[]
         },
         {
-          author: "<a href=\"http://www.seodesignsolutions.com/\">SEO Design Solutions</a>",
+          author: '<a href="http://www.seodesignsolutions.com/">SEO Design Solutions</a>',
           author_profile: "http://profiles.wordpress.org/seo-design-solutions",
           homepage: "http://www.seodesignsolutions.com/wordpress-seo/",
           name: "Akismet",
@@ -262,7 +262,7 @@ angular.module('myApp.data', [])
           bundles:[]
         },
         {
-          author: "<a href=\"http://www.seodesignsolutions.com/\">SEO Design Solutions</a>",
+          author: '<a href="http://www.seodesignsolutions.com/">SEO Design Solutions</a>',
           author_profile: "http://profiles.wordpress.org/seo-design-solutions",
           homepage: "http://www.seodesignsolutions.com/wordpress-seo/",
           name: "TablePress",

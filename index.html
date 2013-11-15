@@ -17,31 +17,35 @@
         <script src="lib/js/vendor/modernizr-2.6.2.min.js"></script>
         -->
     </head>
-    <body>
+    <body ng-switch="location.path()">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
 
-
-
-
-<section id="site-container" class="hbox stretch">
-
-  <aside class="bg-dark aside-lg" id="nav">
-    <ng-include src="'app/templates/sidebar.html'"></ng-include>
-  </aside>
-
-  <section id="content" class="bg-white" ng-class="{showOffCanvas:showOffCanvas}" off-canvas-overlay>
-    <div ng-view></div>
     
+    <section id="site-container" class="hbox stretch"ng-switch-when="/">
+        <div ng-view></div>
+    </section>
 
 
+    <section id="site-container" class="hbox stretch"ng-switch-when="/signup">
+        <div ng-view></div>
+    </section>  
 
-  </section><!-- content -->
+    <section id="site-container" class="hbox stretch" ng-switch-default>
+
+      <aside class="bg-dark aside-lg" id="nav">
+        <ng-include src="'app/templates/sidebar.html'"></ng-include>
+      </aside>
+
+      <section id="content" class="bg-white" ng-class="{showOffCanvas:showOffCanvas}" off-canvas-overlay>
+        <div ng-view></div>
+        
+      </section><!-- content -->
 
 
-</section>
+    </section>
 
 
 

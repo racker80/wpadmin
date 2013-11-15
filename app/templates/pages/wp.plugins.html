@@ -1,0 +1,47 @@
+    <div class="navbar m-n">
+    	<form class="navbar-form navbar-left">
+    		<div class="form-group">
+    			<input type="text" class="input-sm form-control" placeholder="WordPress Plugin" ng-model="pluginSearchTerm">
+    		</div>
+    		<button class="btn btn-sm btn-white" oc-show-option template="app/templates/modals/wp.plugin.search.html" input="pluginSearchTerm" output="Data.wordpress.plugins">Search</button>
+    	</form>
+    	
+    	<ul class="nav navbar-nav navbar-right">
+    		<li>
+    			<button class="btn btn-white  navbar-btn" oc-show-option template="app/templates/modals/comingsoon.html">
+    				<i class="icon-cloud-upload text"></i> upload a plugin
+    			</button> 
+    			
+    		</li>
+
+    	</ul>
+    </div> 
+
+    <div class="table-responsive">
+
+    	<table class="table table-striped">
+    		<tbody>
+    			<tr ng-repeat="item in Data.wordpress.plugins">
+    				<td width="250">
+    					<h4 class="m-n font-thin">{{item.name}}</h4>
+    					<small>by: <span ng-bind-html-unsafe='{item.author}'></span></small>
+    				</td>
+    				<td>
+    					<p class="font-thin">{{item.short_description}}</p>
+    				</td>
+    				<td class="text-right v-middle" width="150"><span><i class="icon-remove"></i> remove</span></td>
+    			</tr>
+				<!-- <tr>
+					<td width="100">
+						<img src="app/img/screenshot1.png" alt="" class="thumb thumb-lg">
+					</td>
+					<td>
+						<h3>HTML5 blank theme</h3>
+						<small>by: <a href="#">Anon</a></small>
+					</td>
+					<td class="text-right v-middle"><a bs href="#">activate</a></td>
+				</tr>	 -->			
+			</tbody>
+		</table>
+
+	</div>

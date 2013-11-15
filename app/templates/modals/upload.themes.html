@@ -6,22 +6,15 @@
 	</header>
 
 <hr>
-	<section>
+	<section ng-init="addFile=false">
       
-      <div ng-hide="addFile">
-        <button class="btn btn-white" ng-click="uploadFile()">Select a file to upload</button>
+      <div ng-hide="addFile==true">
+        <button class="btn btn-white" ng-click="addFile=true">Select a file to upload</button>
 
-        <div class="form-group">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="" checked="checked">
-              Save this theme to My Themes
-            </label>
-          </div>
-        </div>
+
       </div>
       
-      <div ng-show="addFile">
+      <div ng-show="addFile==true">
         <div class="table-responsive">
           <table class="table table-striped text-sm table-bordered">
 
@@ -35,13 +28,6 @@
             </tbody>
           </table>
         </div>
-        <button class="btn btn-danger" ng-click="close()">Cancel and Delete</button>
-        <button class="btn btn-primary" ng-click="close()">Done</button>
-
-        <hr>
-
-        <button class="btn btn-white">Select another file to upload</button>
-
         <div class="form-group">
           <div class="checkbox">
             <label>
@@ -50,6 +36,10 @@
             </label>
           </div>
         </div>
+        <button class="btn btn-primary" ng-click="close()">Save and Close</button>
+        <button class="btn btn-danger" ng-click="close()">Cancel and Delete</button>
+
+        
       </div>
 
         

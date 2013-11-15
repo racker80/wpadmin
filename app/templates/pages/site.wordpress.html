@@ -63,6 +63,7 @@
 
 <section class="panel m-t-lg">
 	<header class="panel-heading">
+		<span oc-show-option template="app/templates/modals/add.themes.html" class="label label-default pull-right">Add</span>
 		<p class="h4 m-n">Themes</p>
 	</header>
 	<div class="panel-body no-padder">              
@@ -242,7 +243,7 @@
 	<header class="panel-heading">
 		<p class="h4 m-n">Options</p>
 	</header>
-	<div class="panel-body" ng-switch="wpoptions" ng-init="wpoptions">
+	<div class="panel-body" ng-switch="wpoptions" ng-init="wpoptions='general'">
 		<div>
 			<button class="btn btn-white btn-sm" ng-click="wpoptions='general'">general</button>
 			<button class="btn btn-white btn-sm" ng-click="wpoptions='writing'">writing</button>

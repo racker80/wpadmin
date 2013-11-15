@@ -22,11 +22,11 @@ var directives = angular.module('myApp.directives', []);
 myApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
 
 
-  $routeProvider.when('/', {templateUrl: 'app/templates/sites.html', controller: ''});
+  $routeProvider.when('/', {templateUrl: 'app/templates/login.html', controller: 'appCtrl'});
 
-  $routeProvider.when('/signup', {templateUrl: 'app/templates/signup.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/signup', {templateUrl: 'app/templates/signup.html', controller: 'appCtrl'});
 
-  $routeProvider.when('/activate', {templateUrl: 'app/templates/activate.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/activate', {templateUrl: 'app/templates/activate.html', controller: 'appCtrl'});
 
 
 
@@ -53,6 +53,5 @@ myApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function (
 
 // this is run after angular is instantiated and bootstrapped
 myApp.run(function ($rootScope, $location, $http, $timeout) {
-
-
+  $rootScope.location = $location;
 });

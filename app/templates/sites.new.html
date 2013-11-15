@@ -92,12 +92,23 @@
                                 <table class="table table-striped">
                                     <tbody>
                                         <tr ng-repeat="item in options.themes" ng-class="{active:item.active}">
-                                            <td width="80"><img src="{{item.image}}" alt="" class="thumb"></td>
+                                            <td width="100">
+                                              <img src="{{item.image}}" alt="" class="thumb thumb-lg">
+                                          </td>
+                                          <td width="200">
+                                              <h4 class="m-n m-b font-thin">{{item.name}}</h4>
+                                              <small>by: <a href="#">{{item.author}}</a></small>
+                                          </td>
+                                          <td width="120" ng-switch="item.active">
+                                                <button ng-switch-default class="btn btn-sm btn-white" ng-click="item.active = !item.active">activate</button>
+                                                <span ng-switch-when="true">activated!</span>
+                                            </td>
+<!--                                             <td width="80"><img src="{{item.image}}" alt="" class="thumb"></td>
                                             <td>{{item.name}}</td>
                                             <td width="120" ng-switch="item.active">
                                                 <button ng-switch-default class="btn btn-sm btn-white" ng-click="item.active = !item.active">activate</button>
                                                 <span ng-switch-when="true">activated!</span>
-                                            </td>
+                                            </td> -->
 
                                         </tr>
                                     </tbody>

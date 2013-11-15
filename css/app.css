@@ -10024,6 +10024,9 @@ table.table.table-list tbody tr td img.thumb {
   position: relative;
   z-index: 1;
 }
+#content > div {
+  max-width: 1100px;
+}
 .message {
   padding: 15px;
   text-align: center;
