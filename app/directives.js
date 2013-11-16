@@ -121,7 +121,7 @@ angular.module('myApp.directives', []).
   .directive('easyPie', function($location, $rootScope){
     return {
         restrict:'A',
-        link:function($scope, elm, attrs) {
+        link:function($scope, element, attrs) {
 
                 // easypie
                 var updatePie = function($that) {
@@ -131,12 +131,12 @@ angular.module('myApp.directives', []).
                 };
 
                 var viewDetail = function(){
-                    $location.url('/sites/');
+                    $location.path( '/sites/' );
                     $scope.$apply();
                     $rootScope.viewNewSite();
                 }
 
-                $('.easypiechart').each(function(){
+                
                     var $barColor = $(this).data("barColor") || function($percent) {
                         $percent /= 100;
                         return "rgb(" + Math.round(255 * (1-$percent)) + ", " + Math.round(255 * $percent) + ", 125)";
@@ -145,9 +145,9 @@ angular.module('myApp.directives', []).
                     $scaleColor = $(this).data("scaleColor"),
                     $lineWidth = $(this).data("lineWidth") || 12,
                     $size = $(this).data("size") || 130,
-                    $animate = $(this).data("animate") || 5000;
+                    $animate = $(this).data("animate") || 1000;
 
-                    $(this).easyPieChart({
+                    element.easyPieChart({
                         barColor: $barColor,
                         trackColor: $trackColor,
                         scaleColor: $scaleColor,
@@ -156,16 +156,17 @@ angular.module('myApp.directives', []).
                         size: $size,
                         animate: $animate,
                         onStop: function(){
-                            var $this = this.$el;
-                            $this.data("loop") && setTimeout(function(){ $this.data("loop") && updatePie($this) }, 6000);  
+                            // var $this = this.$el;
                             viewDetail();
-                            
+                            // $this.data("loop") && setTimeout(function(){ 
+                            //     $this.data("loop") && updatePie($this) 
+                            // }, 6000);  
                         },
                         onStep: function(value) {
                           this.$el.find('span').text(parseInt(value));
                       }
                   });
-                });
+                
 
         }
     }

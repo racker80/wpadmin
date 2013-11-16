@@ -13,11 +13,12 @@ var myApp = angular.module('myApp', [
   'myApp.data',
   'myApp.newsite',
   'myApp.offcanvas',
+  'LocalStorageModule'
 ]);
 
 var filters = angular.module('myApp.filters', []);
 var directives = angular.module('myApp.directives', []);
-
+angular.module('LocalStorageModule').value('prefix', 'wpsites');
 
 myApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
 
@@ -32,7 +33,7 @@ myApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function (
 
   $routeProvider.when('/sites', {templateUrl: 'app/templates/sites.html', controller: 'appCtrl'});
 
-  $routeProvider.when('/sites/build', {templateUrl: 'app/templates/sites.build.html', controller: 'appCtrl'});
+  $routeProvider.when('/sites/build', {templateUrl: 'app/templates/sites.build.html', controller: ''});
 
   $routeProvider.when('/sites/new', {templateUrl: 'app/templates/sites.new.html', controller: 'appCtrl'});
 
@@ -52,6 +53,7 @@ myApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function (
 
 
 // this is run after angular is instantiated and bootstrapped
-myApp.run(function ($rootScope, $location, $http, $timeout) {
+myApp.run(function ($rootScope, $location, $http, $timeout, localStorageService) {
   $rootScope.location = $location;
+
 });

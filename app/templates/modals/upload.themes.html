@@ -19,10 +19,11 @@
           <table class="table table-striped text-sm table-bordered">
 
             <tbody>
-              <tr ng-repeat="theme in Data.wordpress.themes | limitTo:1">
+              <tr ng-repeat="theme in Data.data.wordpress.themes">
                 <td class="v-middle"><img src="{{theme.image}}" class="thumb" alt=""></td>
                 <td class="v-middle"><h5>{{theme.name}}</h5></td>
                 <td class="v-middle">{{theme.description}}</td>
+                <td class="v-middle"><button class="btn btn-sm btn-white" ng-click="output.push(theme)">add</button></td>
               </tr>
 
             </tbody>

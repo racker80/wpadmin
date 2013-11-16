@@ -1,22 +1,63 @@
+<section ng-hide="Data.wordpress.plugins.length>0">
+    <div class="text-center empty">
+            <h2 class="text-thin">Automatically add and activate your most used plugins on every site</h2>
+            <p class="h4 font-thin">Yes!  you can store all of your most used plugins here and we'll install and activate them for you each time you create a new site.  It's pretty sweet.</p>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="wrapper">
+                        <h4>Search for your favorite pluins</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia! </p>                       
+                        <div class="form-group">
+                            <input type="text" class="input-sm form-control" placeholder="WordPress Plugin" ng-model="pluginSearchTerm">
+                        </div>
+                        <button class="btn btn-sm btn-white" oc-show-option template="app/templates/modals/wp.plugin.search.html" input="pluginSearchTerm" output="Data.wordpress.plugins">
+                            Search
+                        </button>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wrapper">
+                        <h4>Upload a custom plugin</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia!</p>
+                        <button class="btn btn-white  navbar-btn" oc-show-option template="app/templates/modals/comingsoon.html">
+                            <i class="icon-cloud-upload text"></i> upload a plugin
+                        </button> 
+                    </div>
+                </div>
+              
+            </div>
+            <br>
+
+
+            <br><br>
+            <span style="cursor:pointer" ng-click="haveSites=true">or pretend you have a lot of plugins</span>
+        </div>
+
+</section>
+
+
+
+<section ng-show="Data.wordpress.plugins.length>0">
     <div class="navbar m-n">
-    	<form class="navbar-form navbar-left">
-    		<div class="form-group">
-    			<input type="text" class="input-sm form-control" placeholder="WordPress Plugin" ng-model="pluginSearchTerm">
-    		</div>
-    		<button class="btn btn-sm btn-white" oc-show-option template="app/templates/modals/wp.plugin.search.html" input="pluginSearchTerm" output="Data.wordpress.plugins">Search</button>
-    	</form>
-    	
-    	<ul class="nav navbar-nav navbar-right">
-    		<li>
-    			<button class="btn btn-white  navbar-btn" oc-show-option template="app/templates/modals/comingsoon.html">
-    				<i class="icon-cloud-upload text"></i> upload a plugin
-    			</button> 
-    			
-    		</li>
+        <form class="navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" class="input-sm form-control" placeholder="WordPress Plugin" ng-model="pluginSearchTerm">
+            </div>
+            <button class="btn btn-sm btn-white" oc-show-option template="app/templates/modals/wp.plugin.search.html" input="pluginSearchTerm" output="Data.wordpress.plugins">Search</button>
+        </form>
+        
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <button class="btn btn-white  navbar-btn" oc-show-option template="app/templates/modals/comingsoon.html">
+                    <i class="icon-cloud-upload text"></i> upload a plugin
+                </button> 
+                
+            </li>
 
-    	</ul>
-    </div> 
-
+        </ul>
+    </div>     
     <div class="table-responsive">
 
     	<table class="table table-striped">
@@ -29,7 +70,7 @@
     				<td>
     					<p class="font-thin">{{item.short_description}}</p>
     				</td>
-    				<td class="text-right v-middle" width="150"><span><i class="icon-remove"></i> remove</span></td>
+    				<td class="text-right v-middle" width="150" style="cursor:pointer;" ng-click="Data.wordpress.plugins.splice($index, 1)"><span><i class="icon-remove"></i> remove</span></td>
     			</tr>
 				<!-- <tr>
 					<td width="100">
@@ -45,3 +86,4 @@
 		</table>
 
 	</div>
+</section>

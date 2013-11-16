@@ -1,4 +1,32 @@
-    <div class="navbar m-n">
+<section ng-hide="Data.wordpress.themes.length>0">
+    <div class="text-center empty">
+            <h2 class="text-thin">Save your most used themes and roll out sites faster</h2>
+            <p class="h4 font-thin">Yes!  upload your themes and we'll automatically install and activate them.</p>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrapper">
+                        <h4>Upload a theme</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia!</p>
+                        <button class="btn btn-white  navbar-btn" oc-show-option output="Data.wordpress.themes" template="app/templates/modals/upload.themes.html">
+                            <i class="icon-cloud-upload text"></i> upload a theme
+                        </button> 
+                    </div>
+                </div>
+              
+            </div>
+            <br>
+
+
+            <br><br>
+            <span style="cursor:pointer" ng-click="haveSites=true">or pretend you have a lot of plugins</span>
+        </div>
+
+</section>
+
+
+ <section ng-show="Data.wordpress.themes.length>0">
+   <div class="navbar m-n">
     	<form class="navbar-form navbar-left">
     		<div class="form-group">
     			<input type="text" class="input-sm form-control" placeholder="WordPress.org Theme Database">
@@ -17,7 +45,6 @@
     	</ul>
     </div>
 
-
     <div class="table-responsive">
 
     	<table class="table table-striped">
@@ -33,9 +60,10 @@
     				<td>
     					<p class="font-thin">{{item.description}}</p>
     				</td>
-    				<td class="text-right v-middle" width="150"><span><i class="icon-remove"></i> remove</span></td>
+    				<td class="text-right v-middle" width="150" style="cursor:pointer;" ng-click="Data.wordpress.themes.splice($index, 1)"><span><i class="icon-remove"></i> remove</span></td>
     			</tr>
 			</tbody>
 		</table>
 
 	</div>
+</section>
