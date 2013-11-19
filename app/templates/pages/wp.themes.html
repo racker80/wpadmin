@@ -1,6 +1,6 @@
 <section ng-hide="Data.wordpress.themes.length>0">
     <div class="text-center empty">
-            <h2 class="text-thin">Save your most used themes and roll out sites faster</h2>
+            <h2 class="text-thin">Upload and Save your favorite themes here</h2>
             <p class="h4 font-thin">Yes!  upload your themes and we'll automatically install and activate them.</p>
             <br>
             <div class="row">
@@ -19,7 +19,7 @@
 
 
             <br><br>
-            <span style="cursor:pointer" ng-click="haveSites=true">or pretend you have a lot of plugins</span>
+            <span style="cursor:pointer" ng-click="haveSites=true">or pretend you have a lot of themes already</span>
         </div>
 
 </section>
@@ -51,7 +51,7 @@
     		<tbody>
     			<tr ng-repeat="item in Data.wordpress.themes">
     				<td width="100">
-    					<img src="{{item.image}}" alt="" class="thumb thumb-lg">
+    					<img ng-src="{{item.image}}" alt="" class="thumb thumb-lg">
     				</td>
     				<td width="200">
     					<h4 class="m-n m-b font-thin">{{item.name}}</h4>
@@ -66,4 +66,12 @@
 		</table>
 
 	</div>
+
+    <section ng-hide="Data.wordpress.plugins.length>0">
+        <br><br>
+        <div class="text-center">
+            <p class="h4 font-thin">It looks like you haven't saved any plugins yet.</p>
+            <a bs href="#wp-plugins" data-toggle="tab" class="btn btn-white">Add your top plugins now!</a>
+        </div>
+    </section>
 </section>

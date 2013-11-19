@@ -24,9 +24,9 @@
 
             <div class="padder relative">
                 <div class="tab-content" ng-switch="toggleState.currentTab" ng-init="toggleState.currentTab='#my-sites'">              
-                    <div ng-switch-when="#my-sites" class="tab-pane active" id="my-sites">
+                    <div ng-if="toggleState.currentTab=='#my-sites'" class="tab-pane active" id="my-sites">
                         
-                        <ng-include src="'app/templates/pages/my.sites.html'"></ng-include>
+                        <ng-include src="'app/templates/pages/my.sites.html'" ng-controller="sitesCtrl"></ng-include>
 
                     </div>
 

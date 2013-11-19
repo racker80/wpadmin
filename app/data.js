@@ -11,9 +11,12 @@ angular.module('myApp.data', ['LocalStorageModule'])
     var ths = this;
 
 
-    var localArray = function(key){
+    var localArray = function(key, value){
       var ths = this;
       var arr = [];
+      if(value) {
+        arr = value;
+      }
       if(localStorageService.get(key)) {
         arr = localStorageService.get(key);
       }

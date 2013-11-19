@@ -220,11 +220,19 @@ angular.module('myApp.offcanvas', [])
                 });
             }
 
-                if(showOption==true){
-                    console.log('showOption '+showOption)
-                    load();
-                }   
-            })
+            if(showOption==true){
+                console.log('showOption '+showOption)
+                load();
+            }  
+
+        })
+            
+        scope.addWPUser = function(obj){
+          console.log(scope)
+          scope.output.push(obj);
+          scope.user = {};
+      }
+
     }
 });
 

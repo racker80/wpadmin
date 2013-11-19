@@ -10,7 +10,7 @@ angular.module('myApp.controllers', []).
       $location.path( path );
     };
 
-
+    console.log('appctrl')
     $rootScope.viewNewSite = function(){
 
           offCanvasService.showDetail = true;
@@ -23,6 +23,12 @@ angular.module('myApp.controllers', []).
     }
 
 
-  });
+  })
+.controller('sitesCtrl', function($scope){
+  
+})
+.controller('wpCtrl', function($scope){
+
+});
 
 

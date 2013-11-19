@@ -1,4 +1,42 @@
+<section ng-hide="Data.sites.collaborators.length>0">
+	<div class="text-center empty">
+			<h2 class="text-thin">People You Collaborate With</h2>
+			<p class="h4 font-thin">Here is where you find all the people that are linked to your account.  They could be people managing some of your sites, or people who's sites you manage.  This is where you can keep track of it all.</p>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
 
+					<div class="wrapper">
+						<h4>Let someone manage one of your sites</h4>
+						<h4>-or-</h4>
+						<h4>Allow someone to manage your account</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia! </p>						
+
+					</div>
+
+					<br>
+					<button class="btn btn-lg btn-success" ng-click="">Send an invite</button>
+				</div>
+		
+				<div class="col-md-6">
+					<div class="wrapper">
+						<h4>Get added to other sites and accounts as a manager</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia! </p>		
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.  </p>					
+
+					</div>
+					<br>
+					<br>
+					<button class="btn btn-lg btn-success" ng-click="">Request Access</button>
+				</div>					
+			</div>
+
+			<br>
+			<span style="cursor:pointer" ng-click="Data.sites.collaborators=Data.data.sites.collaborators">or pretend you have some collaborators</span>
+		</div>
+</section>
+
+<section ng-show="Data.sites.collaborators.length>0">
 <div class="message-area">
 	<div class="alert alert-warning m-t m-b-lg">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -61,3 +99,4 @@
 		</tbody>
 	</table>
 </div>
+</section>

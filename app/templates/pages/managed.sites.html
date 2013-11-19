@@ -1,4 +1,49 @@
+<section ng-hide="Data.sites.managed.length>0">
+	<div class="text-center empty">
+			<h2 class="font-thin">Manage Client Sites</h2>
+			<p class="h4 font-thin">Managed sites are perfect for freelancers or agencies who need access to a client's site to monitor activity or make updates.</p>
+			<br>
+			<hr>
 
+					<div class="wrapper">
+						<h3 class="font-thin">Request to manage an existing site</h4>
+						<p>You can send a request to an existing site owner to add you as a site manager.</p>
+
+						<div class="input-group" style="width:50%; margin:0 auto;">
+							<input type="text" class="form-control" placeholder="search by site url">
+							<span class="input-group-btn">
+								<button class="btn btn-success" type="button">Find a site</button>
+							</span>
+						</div>
+
+						<!-- <button class="btn btn-lg btn-success" ng-click="">Find a site</button> -->
+
+					</div>
+			<br>
+
+			<hr>
+
+					<div class="wrapper">
+						<h3 class="font-thin">Invite someone to signup and create a site</h4>
+						<p>Do you know someone who needs a site you want to manage?  Invite them to cloud sites.</p>						
+						<div class="input-group" style="width:50%; margin:0 auto;">
+							<input type="text" class="form-control" placeholder="email address">
+							<span class="input-group-btn">
+								<button class="btn btn-success" type="button">Preview invite</button>
+							</span>
+						</div>
+
+					</div>
+
+			<br>
+			<hr>
+
+			<br>
+			<span style="cursor:pointer" ng-click="Data.sites.managed=Data.data.sites.managed">or pretend you have some managed sites</span>
+		</div>
+</section>
+
+<section ng-show="Data.sites.managed.length>0">
 <div class="message-area">
 	<div class="alert alert-info m-t m-b-lg">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -9,7 +54,6 @@
 </div>       
 
 <div class="table-responsive">
-	
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
@@ -39,7 +83,7 @@
 						</ul>
 					</div>
 				</td>				
-				<td class="v-middle"><img src="{{site.image}}" class="thumb" alt=""></td>
+				<td class="v-middle"><img ng-src="{{site.image}}" class="thumb" alt=""></td>
 				<td class="v-middle">
 					<a oc-show-detail template="app/templates/modals/site.detail.html" output="site" input="site" text="{{site.url}}" href="#/sites/detail" class="block">{{site.url}}</a>
 				</td>				
@@ -51,3 +95,6 @@
 	</table>
 
 </div>
+	<span style="cursor:pointer" ng-click="Data.sites.managed.length=0">clear managed sites</span>
+
+</section>

@@ -5,7 +5,18 @@
 		<p class="thin">Your themes will be added to this installation.</p>
 	</header>
 
-	<section>
+  <section ng-hide="Data.wordpress.themes.length>0">
+    <div class="message-area">
+      <div class="alert alert-warning m-t m-b-lg">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <p class="h4 font-thin">You haven't uploaded any themes!</p>
+        <p>Dont' worry, it's easy.  Once you upload a theme, you'll have quick access to it here.</p>
+      </div>
+    </div>
+  
+  
+  </section>
+	<section ng-show="Data.wordpress.themes.length>0">
         <div class="table-responsive">
 
           <table class="table table-striped">
@@ -13,7 +24,7 @@
               <tr ng-repeat="item in Data.wordpress.themes">
                 <td class="v-middle" width="20"><input type="checkbox" value="{{item}}" check-list="output"></td>
                 <td width="100">
-                  <img src="{{item.image}}" alt="" class="thumb thumb-lg">
+                  <img ng-src="{{item.image}}" alt="" class="thumb thumb-lg">
                 </td>
                 <td width="200">
                   <h4 class="m-n m-b font-thin">{{item.name}}</h4>
