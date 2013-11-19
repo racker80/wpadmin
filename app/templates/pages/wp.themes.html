@@ -1,24 +1,19 @@
 <section ng-hide="Data.wordpress.themes.length>0">
     <div class="text-center empty">
-            <h2 class="text-thin">Upload and Save your favorite themes here</h2>
+            <br>
+            <p class="h2 font-thin">Upload and Save your favorite themes here</p>
             <p class="h4 font-thin">Yes!  upload your themes and we'll automatically install and activate them.</p>
             <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="wrapper">
-                        <h4>Upload a theme</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia!</p>
-                        <button class="btn btn-white  navbar-btn" oc-show-option output="Data.wordpress.themes" template="app/templates/modals/upload.themes.html">
+            
+            <div style="width:75%; margin:0 auto;"><button class="btn btn-success btn-block btn-lg  navbar-btn" oc-show-option output="Data.wordpress.themes" template="app/templates/modals/upload.themes.html">
                             <i class="icon-cloud-upload text"></i> upload a theme
-                        </button> 
-                    </div>
-                </div>
-              
-            </div>
+                        </button> </div>
+
             <br>
+            <p class="font-thin">It's pretty self explanitory</p>
 
 
-            <br><br>
+            <br><hr><br>
             <span style="cursor:pointer" ng-click="haveSites=true">or pretend you have a lot of themes already</span>
         </div>
 
