@@ -35,7 +35,7 @@
 /*
 SETUP THE CONTENT MASK
 */
-#content {
+/*#content {
 	position:relative;
 	z-index:2;
 	&::after {
@@ -69,8 +69,20 @@ SETUP THE CONTENT MASK
 
 
 
+}*/
+#content {
+	position:relative;
 }
-
+#contentOverlay, #detailOverlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:#000;
+	opacity:0;
+	z-index:999;
+}
 
 
 
@@ -94,10 +106,11 @@ SETUP THE CONTENT MASK
 			overflow:auto;
 			cursor:auto;
 			width:100%;
+			/*box-shadow: -5px 0px 10px 0px rgba(0,0,0,.1);*/
 			.wrapper {
 				max-width:960px;
 			}
-			&::after {
+/*			&::after {
 				.afterClass;
 			}
 
@@ -148,7 +161,7 @@ SETUP THE CONTENT MASK
 				&::after {
 					.afterClassRemove;
 				}				
-			}
+			}*/
 			
 
 		}
@@ -163,11 +176,12 @@ SETUP THE CONTENT MASK
 			z-index:9999;
 			top:0;
 			left:100%;
-			width:@optionWidth;
 			height:100%;
 			overflow:auto;
 			background:#fff;
 			cursor:auto;
+			width:100%;
+			/*box-shadow: -5px 0px 10px 0px rgba(0,0,0,.1);*/
 
 			.wrapper {
 				max-width:760px;
@@ -175,9 +189,7 @@ SETUP THE CONTENT MASK
 			}
 				/*-webkit-transform: translate3d(0, 0px, 0);*/
 			
-				&.toggle-option-animation {
-					/*.translate3d;*/
-					/*-webkit-transform: translate3d(-100%, 0px, 0);*/
+/*				&.toggle-option-animation {
 					left:630px;
 					width:100%;
 				}
@@ -189,20 +201,17 @@ SETUP THE CONTENT MASK
 				}
 
 				&.toggle-option-animation.ng-enter.ng-enter-active{
-					/*-webkit-transform: translate3d(-100%, 0px, 0);	*/
 					left:630px;
 
 				}
 				&.toggle-option-animation.ng-leave {
-					/*-webkit-transform: translate3d(-100%, 0px, 0);	*/
 					left:630px;
 
 				}
 				&.toggle-option-animation.ng-leave.ng-leave-active{
-					/*-webkit-transform: translate3d(0, 0px, 0);*/
 					left:100%;
 
-				}
+				}*/
 		}	
 
 

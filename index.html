@@ -40,7 +40,12 @@
       </aside>
 
       <section id="content" class="bg-white" ng-class="{showOffCanvas:showOffCanvas}" off-canvas-overlay>
-        <div ng-view></div>
+        <section class="vbox">
+            <section class="scrollable wrapper">
+                <div ng-view></div>
+            </section>
+        </section>
+        
         
       </section><!-- content -->
 
@@ -52,7 +57,7 @@
 
     <div off-canvas-container id="offCanvasContainer">
         
-        <div off-canvas-content id="offCanvasContent" ng-class="{showOption:optionIn}" ng-style="style" ng-if="showDetail==true" class="toggle-detail-animation">
+        <div off-canvas-content id="offCanvasContent" ng-class="{showOption:showOption}" ng-style="style" ng-if="showDetail==true" class="toggle-detail-animation">
 
         </div>
 
@@ -69,7 +74,7 @@
 
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/jquery.transit/jquery.transit.js"></script>
+        <script src="bower_components/TweenMax.js"></script>
 
         <script src="todo/js/app.js"></script>
         <script src="todo/js/app.plugin.js"></script>

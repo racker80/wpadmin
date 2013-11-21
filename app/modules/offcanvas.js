@@ -92,6 +92,178 @@ angular.module('myApp.offcanvas', [])
 
     }
 })
+.animation('.showOffCanvas', function($rootScope, offCanvasService){
+    var overlay = $('<div id="contentOverlay"></div>');
+    var t = .2;
+    var binding = function(e){
+        if(e.target === angular.element(overlay)[0]) {
+            offCanvasService.showDetail = false;
+            offCanvasService.showOption = false;
+            offCanvasService.showOffCanvas = false;
+            // offCanvasService.showOption = false;
+            overlay.unbind('click');
+            $rootScope.$apply();
+        }
+    }
+    return {
+        addClass: function(element, done){
+            
+            overlay.bind('click', function(e){binding(e)})
+            .appendTo(element);
+
+            TweenMax.fromTo(angular.element(overlay)[0], t, {
+                opacity:0,
+            }, {
+                opacity:.2, 
+                onComplete:function(){
+                    done;
+                }
+            });
+        },
+        removeClass: function(element, done){
+            TweenMax.fromTo(overlay, t, {
+                opacity:.2
+            }, {
+                opacity:0, 
+                onComplete:function(){
+                    overlay.remove();
+                    done;
+                }
+            });
+        }
+    }
+})
+.animation('.showOption', function($rootScope, offCanvasService){
+    var overlay = $('<div id="detailOverlay"></div>');
+    var t = .2;
+
+    var binding = function(e, element){
+        if(e.target === angular.element(overlay)[0]) {
+            offCanvasService.showOption = false;
+            overlay.unbind('click');
+            console.log(element.scope)
+        }
+    }
+    return {
+        addClass: function(element, done){
+            overlay.bind('click', function(e){
+                if(e.target === angular.element(overlay)[0]) {
+                    offCanvasService.showOption = false;
+                    overlay.unbind('click');
+                    $rootScope.$apply();
+                    // element.scope().$apply();
+                }
+
+            })
+            .appendTo(element);
+
+            TweenMax.fromTo(overlay, t, {
+                opacity:0,
+            }, {
+                opacity:.2, 
+                onComplete:function(){
+                    done;
+                }
+            });
+            TweenMax.to(element, t, {
+                transform:'translate3d(-180px, 0, 0)'
+            });
+        },
+        removeClass: function(element, done){
+            TweenMax.to(element, t, {
+                transform:'translate3d(0px, 0, 0)'
+            });
+            TweenMax.fromTo(overlay, t, {
+                opacity:.2
+            }, {
+                opacity:0, 
+                onComplete:function(){
+                    console.log('done')
+                    overlay.remove();
+                    done;
+                }});
+        }
+    }
+})
+.animation('.toggle-detail-animation', function($rootScope, offCanvasService){
+    var t = .2;
+    var l = function(){
+        return $('#content').width() - 180;
+    }
+    var lFixed = function(){
+        return $('#nav').width()+180;
+    }
+    return {
+        enter: function(element, done){
+            TweenMax.fromTo(element, t, {
+                transform:'translate3d(0, 0, 0)',
+            }, {
+                transform:'translate3d(-'+l()+'px, 0, 0)',
+                onComplete:function(){
+                    TweenMax.to(element, 0, {
+                        left:lFixed(),
+                        transform:'translate3d(0,0,0)',
+                        onComplete:done
+                    })
+                }
+            });
+        },
+        leave: function(element, done) {
+            TweenMax.fromTo(element, t, {
+                transform:'translate3d(0, 0, 0)'
+            }, {
+                transform:'translate3d(100%, 0, 0)',
+                onComplete:function(){
+                    TweenMax.to(element, t, {
+                        left:'100%',
+                        transform:'translate3d(0,0,0)',
+                        onComplete:done
+                    });
+                }
+            });
+        }
+    }
+})
+
+.animation('.toggle-option-animation', function($rootScope, offCanvasService){
+    var t = .2;
+    var l = function(){
+        return $('#content').width() - 380;
+    }
+    var lFixed = function(){
+        return $('#nav').width()+380;
+    }
+    return {
+        enter: function(element, done){
+            TweenMax.fromTo(element, t, {
+                transform:'translate3d(0, 0, 0)',
+            }, {
+                transform:'translate3d(-'+l()+'px, 0, 0)',
+                onComplete:function(){
+                    TweenMax.to(element, 0, {
+                        left:lFixed(),
+                        transform:'translate3d(0,0,0)',
+                        onComplete:done
+                    })
+                }
+            });
+        },
+        leave: function(element, done) {
+            TweenMax.fromTo(element, t, {
+                transform:'translate3d(0, 0, 0)'
+            }, {
+                transform:'translate3d(100%, 0, 0)',
+                onComplete:function(){
+                    TweenMax.to(element, t, {
+                        left:'100%',
+                        transform:'translate3d(0,0,0)',
+                        onComplete:done
+                    });
+                }
+            });
+        }
+    }
+})
 
 .directive('offCanvasOverlay', function(offCanvasService){
     return {
@@ -126,6 +298,7 @@ angular.module('myApp.offcanvas', [])
                     });
             }
 
+
    			scope.$watch('showOffCanvas', function(showOffCanvas){
    				if(showOffCanvas == true) {
    					bind();
@@ -136,6 +309,9 @@ angular.module('myApp.offcanvas', [])
         }
     }
 })
+
+
+
 .directive('offCanvasContent', function($http, $compile, $window, offCanvasService){
     return {
         link: function(scope, element, attrs){
@@ -153,13 +329,13 @@ angular.module('myApp.offcanvas', [])
         	}
 
             var binding = function(){
-                element.bind('click', function(e){
-                    if(e.target === angular.element('#offCanvasContent')[0]) {
-                        offCanvasService.showOption = false;
-                        element.unbind('click');
-                        scope.$apply();
-                    }
-                })
+                // element.bind('click', function(e){
+                //     if(e.target === angular.element('#offCanvasContent')[0]) {
+                //         offCanvasService.showOption = false;
+                //         element.unbind('click');
+                //         scope.$apply();
+                //     }
+                // })
             }
 
         	scope.$watch('showDetail', function(showDetail){
@@ -175,18 +351,24 @@ angular.module('myApp.offcanvas', [])
 
         	// });
 
-        	scope.$watch('showOption', function(result){
-        		if(result==true) {
-                    scope.optionIn = true;
-        			console.log('and show option')
-                    binding();
-        		} 
-                if(result==false) {
-                    scope.optionIn = false;
-        			console.log('turn it off!')
+        	// scope.$watch('showOption', function(result){
+
+        	// 	if(result==true) {
+         //            scope.showOption = true;
+        	// 		console.log('and show option')
+         //            // binding();
+        	// 	} 
+         //        if(result==false) {
+         //            scope.showOption = false;
+        	// 		console.log('turn it off!')
      			
-        		}
-        	});
+        	// 	}
+        	// });
+            scope.$watch(function(){
+                return offCanvasService.showOption;
+            }, function(showOption){
+                scope.showOption = showOption;
+            })
 
         }
     }
@@ -221,7 +403,6 @@ angular.module('myApp.offcanvas', [])
             }
 
             if(showOption==true){
-                console.log('showOption '+showOption)
                 load();
             }  
 
