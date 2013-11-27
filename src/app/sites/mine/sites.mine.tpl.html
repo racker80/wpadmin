@@ -1,0 +1,120 @@
+
+<!-- <div test-container number="pageTitle">
+	
+	<button ng-click="test()"></button>
+	<div test-a ng-if="number.test>4">
+		this is new scope: {{newnumber.test}}
+	</div>
+	<div test-b ng-if="number.test==6">
+		now this
+	</div>
+</div> -->
+
+
+<div my-sites sites="sites">
+
+<section ng-hide="sites.length>0">
+	<div class="text-center empty">
+<br><br>
+<p class="h2 font-thin">Do you need just one site?</p>
+<div style="width:75%; margin:0 auto;"><a href="#/sites/new" class="btn btn-block btn-success btn-lg m-t-lg m-b-lg">Create your first site now</a></div>
+<p class="font-thin">Setup is quick and easy and you'll be up and running in no time.</p>
+
+<br><br>
+<hr>
+<br><br>
+
+<p class="h2 font-thin">Do you build lots of WordPress sites?</p>
+<div style="width:75%; margin:0 auto;"><a href="#/wordpress/" class="btn btn-block btn-info btn-lg m-t-lg m-b-lg">Configure WordPress Themes, Plugins, and Options</a></div>
+<p class="font-thin">If you use the same themes and plugins on a regular basis, let us manage and install them for you each time.</p>
+
+<br>
+<hr>
+	<span style="cursor:pointer" ng-click="Data.sites.mySites=Data.data.sites.mySites">or pretend you have a lot of sites</span>
+
+</div>
+
+	<div class="text-center empty hidden">
+			<h2 class="text-thin">Welcome To Your WP Cloud Sites!</h2>
+			<p class="h4 font-thin">So, this is where all of your future WordPress sites will live.  We know, you're excited to get started, but here are some quick pointers:</p>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="wrapper">
+						<h4>Setup your themes and plugins</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia! </p>						
+						<p><a href="#/wordpress"><span class="text-info">Do that here!</span></a></p>
+
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="wrapper">
+						<h4>Add developers to your sites</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia!</p>
+						<p><a bs href="#"><span class="text-info">Learn More</span></a></p>
+					
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="wrapper">
+						<h4>Setup Payment information</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia! </p>						
+						<p><a bs href="#"><span class="text-info">You actually need to do this first</span></a></p>
+					</div>
+				</div>				
+			</div>
+			<br>
+			<p class="h4 font-thin">Ok, you get it...</p>
+
+			<a href="#/sites/new" class="btn btn-lg btn-success" ng-click="haveSites=!haveSites">Create your first site</a>
+			<br><br>
+			<span style="cursor:pointer" ng-click="Data.sites.mySites=Data.data.sites.mySites">or pretend you have a lot of sites</span>
+		</div>
+</section>
+
+<section ng-if="sites.length>0">
+	
+
+<div class="table-responsive">
+	
+	<table class="table table-striped table-bordered m-t-lg m-b-lg">
+		<!-- <thead>
+			<th width="20"></th>
+			<th width="80">Theme</th>
+			<th class="th-sortable" data-toggle="class">Site
+			</th>
+			<th class="text-center" width="100">Wp-Admin</th>
+			<th class="text-center" width="100">Options</th>			
+		</thead> -->
+		<tbody>
+			<tr  ng-repeat="site in sites">
+				<td class="v-middle" width="20">
+					<div class="btn-group">
+						<button class="btn btn-white btn-xs dropdown-toggle" data-toggle="dropdown"><i class="icon-gear"></i></button>
+						<ul class="dropdown-menu" style="left:100%; bottom:inherit; top:-10px;">
+							<li><a href="#"><i class="icon-beaker"></i> Maintence Mode</a></li>
+							<li><a href="#"><i class="icon-eye-open"></i> Private</a></li>
+							<li><a href ng-click="remove(site, sites, $index)"><i class="icon-remove"></i> Delete</a></li>
+
+						</ul>
+					</div>
+				</td>
+				<td class="v-middle" width="80"><img ng-src="{{site.attributes.image}}" class="thumb thumb-lg" alt=""></td>
+				<td class="v-middle">
+					<a template="app/templates/modals/site.detail.html" output="site" input="site" text="{{site.attributes.url}}" href="#/sites/my-sites/{{site.id}}/account" class="block">{{site.attributes.url}}</a>
+				</td>
+				<td width="100" class="text-center v-middle"><a href="#" oc-show-detail template="app/templates/sites.wpadmin.html" output="site" bs>Login</i></a></td>
+				<td width="100" class="text-right v-middle">
+					<div class="btn-group" ng-switch="site.status">
+						<a bs href="#" class="btn btn-success btn-xs text-xs" ng-switch-when="maintainence"><i class="icon-cloud-upload icon-white"></i> go live</a>
+					</div>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</div>
+
+
+</div>

@@ -1,0 +1,28 @@
+            <section class="heading main-nav">
+
+
+                <div class="navbar m-n no-border">
+                    <ul class="nav navbar-nav">
+                        <li ui-route="/sites/my-sites" ng-class="{active:$uiRoute}">
+                            <a href="#/sites/my-sites"><i class="icon-bar-chart text-default"></i> Your Sites</a>
+                        </li>
+                        <li ui-route="/sites/managed-sites" ng-class="{active:$uiRoute}">
+                            <a bs href="#/sites/managed-sites" data-toggle="tab"><i class="icon-cog text-default"></i> Sites You Manage</a>
+                        </li>
+                        <li ui-route="/sites/collaborators" ng-class="{active:$uiRoute}">
+                            <a bs href="#/sites/collaborators" data-toggle="tab"><i class="icon-user text-default"></i> Collaborators</a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ui-route="/sites/new">
+                            <a href="#/sites/new" class="btn btn-white rounded navbar-btn">
+                                <i class="icon-plus"></i> New Site
+                            </a>    
+                        </li>
+
+                    </ul>
+                </div>                
+
+            </section>

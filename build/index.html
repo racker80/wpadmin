@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html ng-app="ngBoilerplate" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@joshdmiller">
+    <meta name="twitter:title" content="ngBoilerplate">
+    <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+    <meta name="twitter:creator" content="@joshdmiller">
+    <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
+    <meta property="og:title" content="ngBoilerplate" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
+    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+    <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+
+    <!-- font awesome from BootstrapCDN -->
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+
+    <!-- compiled CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/ng-boilerplate-0.3.1.css" />
+     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+    <!-- compiled JavaScript -->
+    <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+    <script type="text/javascript" src="vendor/tweenmax/TweenMax.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="vendor/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="vendor/angular-ui-utils/modules/route/route.js"></script>
+    <script type="text/javascript" src="src/app/about/about.js"></script>
+    <script type="text/javascript" src="src/app/app.js"></script>
+    <script type="text/javascript" src="src/app/home/home.js"></script>
+    <script type="text/javascript" src="src/app/login/login.js"></script>
+    <script type="text/javascript" src="src/app/sites/collaborators/sites.collaborators.js"></script>
+    <script type="text/javascript" src="src/app/sites/detail/sites.detail.js"></script>
+    <script type="text/javascript" src="src/app/sites/managed/sites.managed.js"></script>
+    <script type="text/javascript" src="src/app/sites/mine/sites.mine.js"></script>
+    <script type="text/javascript" src="src/app/sites/new/sites.new.js"></script>
+    <script type="text/javascript" src="src/app/sites/sites.js"></script>
+    <script type="text/javascript" src="src/app/wordpress/plugins/wp.plugins.js"></script>
+    <script type="text/javascript" src="src/app/wordpress/settings/wp.settings.js"></script>
+    <script type="text/javascript" src="src/app/wordpress/themes/wp.themes.js"></script>
+    <script type="text/javascript" src="src/app/wordpress/wordpress.js"></script>
+    <script type="text/javascript" src="src/common/auth/auth.js"></script>
+    <script type="text/javascript" src="src/common/checklist/checklist.js"></script>
+    <script type="text/javascript" src="src/common/offcanvas/offcanvas.js"></script>
+    <script type="text/javascript" src="templates-common.js"></script>
+    <script type="text/javascript" src="templates-app.js"></script>
+
+
+  </head>
+  <body>
+
+
+    <section id="site-container" class="hbox stretch">
+
+      <aside class="bg-dark aside-lg" id="nav">
+        <section class="vbox">
+            <header class="bg-dark nav-bar">
+              <a bs class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+                <i class="icon-reorder"></i>
+              </a>
+              <a href="#/" class="nav-brand" >Sites</a>
+              <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
+                <i class="icon-comment-alt"></i>
+              </a>
+            </header>
+
+            <section class="w-f">
+              <div class="nav-user hidden-xs pos-rlt">            
+                <div class="nav-avatar pos-rlt">
+                  <a href class="thumb-sm avatar animated" ng-click="logOut()">
+                    <img src="assets/avatar.jpg" alt="" class="">
+                    <span class="m-l">Log Out</span>
+                  </a>
+                </div>
+              </div>
+              <nav class="nav-primary hidden-xs">
+                <ul class="nav">
+                  <li ui-route="/sites/my-sites" ng-class="{active:$uiRoute}">
+                    <a href="#/sites/my-sites">
+                      <span><i class="icon-sitemap"></i></span> Sites
+                    </a>
+                  </li>
+                  <li ui-route="/wordpress" ng-class="{active:$uiRoute}">
+                    <a href="#/wordpress">
+
+                      <span><i class="icon-th-list"></i></span> My WordPress
+                    </a>
+                  </li>
+                  <li class="">
+                    <a ng-href="#/account">
+                      <span><i class="icon-gear"></i> Account Settings</span>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a ng-href="#">
+                      <span><i class="icon-comments"></i> Support</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+            </section>
+        </section>
+      </aside>
+
+      <section id="content" class="bg-white" ng-class="{showOffCanvas:offCanvas.showOverlay==true}" off-canvas-overlay>
+        <section class="vbox">
+            <section class="scrollable wrapper">
+                <div  ui-view="main"></div>
+            </section>
+        </section>
+      </section><!-- content -->
+
+
+    </section>
+
+
+
+    <div off-canvas-container id="offCanvasContainer">
+      <div off-canvas-content id="offCanvasContent" ng-class="{showOption:options.showOption}" ng-style="style" ng-if="options.showDetail==true" class="toggle-detail-animation">
+      </div>
+
+      <div off-canvas-sidebar id="offCanvasSidebar" ng-if="options.showOption==true" class="toggle-option-animation">
+      </div>
+    </div>
+
+
+
+  </body>
+</html>

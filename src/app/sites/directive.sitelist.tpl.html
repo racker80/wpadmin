@@ -1,0 +1,25 @@
+<tr ng-repeat="site in sites">
+				<td class="v-middle" width="20">
+					<div class="btn-group">
+						<button class="btn btn-white btn-xs dropdown-toggle" data-toggle="dropdown"><i class="icon-gear"></i></button>
+						<ul class="dropdown-menu" style="left:100%; bottom:inherit; top:-10px;">
+							<li><a href="#"><i class="icon-beaker"></i> Maintence Mode</a></li>
+							<li><a href="#"><i class="icon-eye-open"></i> Private</a></li>
+							<li><a href="#"><i class="icon-remove"></i> Delete</a></li>
+
+						</ul>
+					</div>
+				</td>
+				<td class="v-middle" width="80">{{site.id}}</td>
+				<td class="v-middle" width="80"><img ng-src="{{site.attributes.image}}" class="thumb thumb-lg" alt=""></td>
+				<td class="v-middle">
+					<a oc-show-detail template="app/templates/modals/site.detail.html" output="site" input="site" text="{{site.attributes.url}}" href="#/sites/{{site.id}}" class="block">{{site.attributes.url}}</a>
+				</td>
+				
+				<td width="100" class="text-center v-middle"><a href="#" oc-show-detail template="app/templates/sites.wpadmin.html" output="site" bs>Login</i></a></td>
+				<td width="100" class="text-right v-middle">
+					<div class="btn-group" ng-switch="site.status">
+						<a bs href="#" class="btn btn-success btn-xs text-xs" ng-switch-when="maintainence"><i class="icon-cloud-upload icon-white"></i> go live</a>
+					</div>
+				</td>
+			</tr>

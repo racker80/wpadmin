@@ -1,0 +1,531 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'update',
+1 verbose cli   '-g',
+1 verbose cli   'bower' ]
+2 info using npm@1.3.8
+3 info using node@v0.11.6-pre
+4 verbose cache add [ 'bower', '*' ]
+5 verbose cache add name="bower" spec="*" args=["bower","*"]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: '*',
+6 verbose parsed url   path: '*',
+6 verbose parsed url   href: '*' }
+7 verbose addNamed [ 'bower', '*' ]
+8 verbose addNamed [ null, '*' ]
+9 silly lockFile b788227f-bower bower@*
+10 verbose lock bower@* /Users/eric5919/.npm/b788227f-bower.lock
+11 silly addNameRange { name: 'bower', range: '*', hasData: false }
+12 verbose url raw bower
+13 verbose url resolving [ 'https://registry.npmjs.org/', './bower' ]
+14 verbose url resolved https://registry.npmjs.org/bower
+15 info trying registry request attempt 1 at 11:44:08
+16 verbose etag "3QPEH1RUWTK7B0FOLASLCY1YI"
+17 http GET https://registry.npmjs.org/bower
+18 http 200 https://registry.npmjs.org/bower
+19 silly registry.get cb [ 200,
+19 silly registry.get   { vary: 'Accept',
+19 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+19 silly registry.get     etag: '"AMSYC098JG6VZQ0F7TY3I3YT1"',
+19 silly registry.get     date: 'Tue, 26 Nov 2013 17:44:09 GMT',
+19 silly registry.get     'content-type': 'application/json',
+19 silly registry.get     'content-length': '639968' } ]
+20 silly addNameRange number 2 { name: 'bower', range: '*', hasData: true }
+21 silly addNameRange versions [ 'bower',
+21 silly addNameRange   [ '0.1.0',
+21 silly addNameRange     '0.1.2',
+21 silly addNameRange     '0.1.3',
+21 silly addNameRange     '0.2.0',
+21 silly addNameRange     '0.3.0',
+21 silly addNameRange     '0.3.1',
+21 silly addNameRange     '0.3.2',
+21 silly addNameRange     '0.4.0',
+21 silly addNameRange     '0.5.0',
+21 silly addNameRange     '0.5.1',
+21 silly addNameRange     '0.6.0',
+21 silly addNameRange     '0.6.1',
+21 silly addNameRange     '0.6.2',
+21 silly addNameRange     '0.6.3',
+21 silly addNameRange     '0.6.4',
+21 silly addNameRange     '0.6.5',
+21 silly addNameRange     '0.6.6',
+21 silly addNameRange     '0.6.7',
+21 silly addNameRange     '0.6.8',
+21 silly addNameRange     '0.7.0',
+21 silly addNameRange     '0.7.1',
+21 silly addNameRange     '0.8.0',
+21 silly addNameRange     '0.8.1',
+21 silly addNameRange     '0.8.2',
+21 silly addNameRange     '0.8.3',
+21 silly addNameRange     '0.8.4',
+21 silly addNameRange     '0.8.5',
+21 silly addNameRange     '0.8.6',
+21 silly addNameRange     '0.9.0',
+21 silly addNameRange     '0.9.1',
+21 silly addNameRange     '0.9.2',
+21 silly addNameRange     '0.10.0',
+21 silly addNameRange     '1.0.0',
+21 silly addNameRange     '1.0.1',
+21 silly addNameRange     '1.0.2',
+21 silly addNameRange     '1.0.3',
+21 silly addNameRange     '1.1.0',
+21 silly addNameRange     '1.1.1',
+21 silly addNameRange     '1.1.2',
+21 silly addNameRange     '1.2.0',
+21 silly addNameRange     '1.2.1',
+21 silly addNameRange     '1.2.2',
+21 silly addNameRange     '1.2.3',
+21 silly addNameRange     '1.2.4',
+21 silly addNameRange     '1.2.5',
+21 silly addNameRange     '1.2.6',
+21 silly addNameRange     '1.2.7' ] ]
+22 verbose addNamed [ 'bower', '1.2.7' ]
+23 verbose addNamed [ '1.2.7', '1.2.7' ]
+24 silly lockFile d87c9af5-bower-1-2-7 bower@1.2.7
+25 verbose lock bower@1.2.7 /Users/eric5919/.npm/d87c9af5-bower-1-2-7.lock
+26 silly lockFile d87c9af5-bower-1-2-7 bower@1.2.7
+27 silly lockFile d87c9af5-bower-1-2-7 bower@1.2.7
+28 silly lockFile b788227f-bower bower@*
+29 silly lockFile b788227f-bower bower@*
+30 info outdated updating [ [ '/usr/local/lib', 'bower', '1.2.7', '1.2.7', '*' ] ]
+31 verbose install where,what [ '/usr/local/lib', [ 'bower@1.2.7' ] ]
+32 verbose cache add [ 'bower@1.2.7', null ]
+33 verbose cache add name=undefined spec="bower@1.2.7" args=["bower@1.2.7",null]
+34 verbose parsed url { protocol: null,
+34 verbose parsed url   slashes: null,
+34 verbose parsed url   auth: null,
+34 verbose parsed url   host: null,
+34 verbose parsed url   port: null,
+34 verbose parsed url   hostname: null,
+34 verbose parsed url   hash: null,
+34 verbose parsed url   search: null,
+34 verbose parsed url   query: null,
+34 verbose parsed url   pathname: 'bower@1.2.7',
+34 verbose parsed url   path: 'bower@1.2.7',
+34 verbose parsed url   href: 'bower@1.2.7' }
+35 verbose cache add name="bower" spec="1.2.7" args=["bower","1.2.7"]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: '1.2.7',
+36 verbose parsed url   path: '1.2.7',
+36 verbose parsed url   href: '1.2.7' }
+37 verbose addNamed [ 'bower', '1.2.7' ]
+38 verbose addNamed [ '1.2.7', '1.2.7' ]
+39 silly lockFile d87c9af5-bower-1-2-7 bower@1.2.7
+40 verbose lock bower@1.2.7 /Users/eric5919/.npm/d87c9af5-bower-1-2-7.lock
+41 verbose url raw bower/1.2.7
+42 verbose url resolving [ 'https://registry.npmjs.org/', './bower/1.2.7' ]
+43 verbose url resolved https://registry.npmjs.org/bower/1.2.7
+44 info trying registry request attempt 1 at 11:44:09
+45 http GET https://registry.npmjs.org/bower/1.2.7
+46 http 200 https://registry.npmjs.org/bower/1.2.7
+47 silly registry.get cb [ 200,
+47 silly registry.get   { vary: 'Accept',
+47 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+47 silly registry.get     etag: '"AMSYC098JG6VZQ0F7TY3I3YT1"',
+47 silly registry.get     date: 'Tue, 26 Nov 2013 17:44:09 GMT',
+47 silly registry.get     'content-type': 'application/json',
+47 silly registry.get     'content-length': '13800' } ]
+48 silly lockFile 1308ca41--npmjs-org-bower-bower-1-2-7-tgz https://registry.npmjs.org/bower/-/bower-1.2.7.tgz
+49 verbose lock https://registry.npmjs.org/bower/-/bower-1.2.7.tgz /Users/eric5919/.npm/1308ca41--npmjs-org-bower-bower-1-2-7-tgz.lock
+50 verbose addRemoteTarball [ 'https://registry.npmjs.org/bower/-/bower-1.2.7.tgz',
+50 verbose addRemoteTarball   '5b0505c8192bd61a752a7cf8b718d1b3054cd554' ]
+51 info retry fetch attempt 1 at 11:44:09
+52 verbose fetch to= /var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/tmp.tgz
+53 http GET https://registry.npmjs.org/bower/-/bower-1.2.7.tgz
+54 http 200 https://registry.npmjs.org/bower/-/bower-1.2.7.tgz
+55 verbose tar unpack /var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/tmp.tgz
+56 silly lockFile 8a632fbf-49801-0-3215386166702956-package tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package
+57 verbose lock tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package /Users/eric5919/.npm/8a632fbf-49801-0-3215386166702956-package.lock
+58 silly lockFile dd0758e7-49801-0-3215386166702956-tmp-tgz tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/tmp.tgz
+59 verbose lock tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/tmp.tgz /Users/eric5919/.npm/dd0758e7-49801-0-3215386166702956-tmp-tgz.lock
+60 silly gunzTarPerm modes [ '755', '644' ]
+61 silly gunzTarPerm extractEntry package.json
+62 silly gunzTarPerm extractEntry .npmignore
+63 silly gunzTarPerm extractEntry README.md
+64 silly gunzTarPerm extractEntry LICENSE
+65 silly gunzTarPerm extractEntry Gruntfile.js
+66 silly gunzTarPerm extractEntry CONTRIBUTING.md
+67 silly gunzTarPerm extractEntry .editorconfig
+68 silly gunzTarPerm extractEntry .jshintrc
+69 silly gunzTarPerm extractEntry .travis.yml
+70 silly gunzTarPerm extractEntry bin/bower
+71 silly gunzTarPerm extractEntry lib/config.js
+72 silly gunzTarPerm extractEntry lib/index.js
+73 silly gunzTarPerm extractEntry lib/commands/update.js
+74 silly gunzTarPerm extractEntry lib/commands/index.js
+75 silly gunzTarPerm extractEntry lib/commands/info.js
+76 silly gunzTarPerm extractEntry lib/commands/init.js
+77 silly gunzTarPerm extractEntry lib/commands/install.js
+78 silly gunzTarPerm extractEntry lib/commands/home.js
+79 silly gunzTarPerm extractEntry lib/commands/list.js
+80 silly gunzTarPerm extractEntry lib/commands/lookup.js
+81 silly gunzTarPerm extractEntry lib/commands/prune.js
+82 silly gunzTarPerm extractEntry lib/commands/register.js
+83 silly gunzTarPerm extractEntry lib/commands/search.js
+84 silly gunzTarPerm extractEntry lib/commands/help.js
+85 silly gunzTarPerm extractEntry lib/commands/uninstall.js
+86 silly gunzTarPerm extractEntry lib/commands/completion.js
+87 silly gunzTarPerm extractEntry lib/commands/link.js
+88 silly gunzTarPerm extractEntry lib/commands/cache/clean.js
+89 silly gunzTarPerm extractEntry lib/commands/cache/index.js
+90 silly gunzTarPerm extractEntry lib/commands/cache/list.js
+91 silly gunzTarPerm extractEntry lib/core/Manager.js
+92 silly gunzTarPerm extractEntry lib/core/PackageRepository.js
+93 silly gunzTarPerm extractEntry lib/core/Project.js
+94 silly gunzTarPerm extractEntry lib/core/ResolveCache.js
+95 silly gunzTarPerm extractEntry lib/core/resolverFactory.js
+96 silly gunzTarPerm extractEntry lib/core/resolvers/FsResolver.js
+97 silly gunzTarPerm extractEntry lib/core/resolvers/GitFsResolver.js
+98 silly gunzTarPerm extractEntry lib/core/resolvers/GitHubResolver.js
+99 silly gunzTarPerm extractEntry lib/core/resolvers/GitRemoteResolver.js
+100 silly gunzTarPerm extractEntry lib/core/resolvers/GitResolver.js
+101 silly gunzTarPerm extractEntry lib/core/resolvers/Resolver.js
+102 silly gunzTarPerm extractEntry lib/core/resolvers/UrlResolver.js
+103 silly gunzTarPerm extractEntry lib/core/resolvers/index.js
+104 silly gunzTarPerm extractEntry lib/renderers/JsonRenderer.js
+105 silly gunzTarPerm extractEntry lib/renderers/StandardRenderer.js
+106 silly gunzTarPerm extractEntry lib/renderers/index.js
+107 silly gunzTarPerm extractEntry lib/util/cli.js
+108 silly gunzTarPerm extractEntry lib/util/createError.js
+109 silly gunzTarPerm extractEntry lib/util/createLink.js
+110 silly gunzTarPerm extractEntry lib/util/download.js
+111 silly gunzTarPerm extractEntry lib/util/extract.js
+112 silly gunzTarPerm extractEntry lib/util/copy.js
+113 silly gunzTarPerm extractEntry lib/util/readJson.js
+114 silly gunzTarPerm extractEntry lib/util/removeIgnores.js
+115 silly gunzTarPerm extractEntry lib/util/rootCheck.js
+116 silly gunzTarPerm extractEntry lib/util/semver.js
+117 silly gunzTarPerm extractEntry lib/util/template.js
+118 silly gunzTarPerm extractEntry lib/util/cmd.js
+119 silly gunzTarPerm extractEntry lib/util/validLink.js
+120 silly gunzTarPerm extractEntry lib/util/md5.js
+121 silly gunzTarPerm extractEntry CHANGELOG.md
+122 silly gunzTarPerm extractEntry templates/helpers/colors.js
+123 silly gunzTarPerm extractEntry templates/helpers/condense.js
+124 silly gunzTarPerm extractEntry templates/helpers/indent.js
+125 silly gunzTarPerm extractEntry templates/helpers/index.js
+126 silly gunzTarPerm extractEntry templates/helpers/rpad.js
+127 silly gunzTarPerm extractEntry templates/helpers/sum.js
+128 silly gunzTarPerm extractEntry templates/json/help-list.json
+129 silly gunzTarPerm extractEntry templates/json/help-cache/clean.json
+130 silly gunzTarPerm extractEntry templates/json/help-cache/list.json
+131 silly gunzTarPerm extractEntry templates/json/help-home.json
+132 silly gunzTarPerm extractEntry templates/json/help-info.json
+133 silly gunzTarPerm extractEntry templates/json/help-init.json
+134 silly gunzTarPerm extractEntry templates/json/help-install.json
+135 silly gunzTarPerm extractEntry templates/json/help-link.json
+136 silly gunzTarPerm extractEntry templates/json/help-cache.json
+137 silly gunzTarPerm extractEntry templates/json/help-lookup.json
+138 silly gunzTarPerm extractEntry templates/json/help-prune.json
+139 silly gunzTarPerm extractEntry templates/json/help-register.json
+140 silly gunzTarPerm extractEntry templates/json/help-search.json
+141 silly gunzTarPerm extractEntry templates/json/help-uninstall.json
+142 silly gunzTarPerm extractEntry templates/json/help-update.json
+143 silly gunzTarPerm extractEntry templates/json/help.json
+144 silly gunzTarPerm extractEntry templates/std/conflict-resolved.std
+145 silly gunzTarPerm extractEntry templates/std/conflict.std
+146 silly gunzTarPerm extractEntry templates/std/help-cache.std
+147 silly gunzTarPerm extractEntry templates/std/help-generic.std
+148 silly gunzTarPerm extractEntry templates/std/help.std
+149 silly gunzTarPerm extractEntry templates/std/info.std
+150 silly gunzTarPerm extractEntry templates/std/lookup.std
+151 silly gunzTarPerm extractEntry templates/std/register.std
+152 silly gunzTarPerm extractEntry templates/std/search-results.std
+153 silly gunzTarPerm extractEntry templates/std/update-notice.std
+154 silly gunzTarPerm extractEntry test/packages.js
+155 silly gunzTarPerm extractEntry test/test.js
+156 silly gunzTarPerm extractEntry test/assets/package-tar.tar.gz
+157 silly gunzTarPerm extractEntry test/assets/package-zip-folder-single-file.zip
+158 silly gunzTarPerm extractEntry test/assets/package-zip-folder.zip
+159 silly gunzTarPerm extractEntry test/assets/package-zip-single-bower-json.zip
+160 silly gunzTarPerm extractEntry test/assets/package-zip-single-component-json.zip
+161 silly gunzTarPerm extractEntry test/assets/package-zip-single-file.zip
+162 silly gunzTarPerm extractEntry test/assets/package-zip.zip
+163 silly gunzTarPerm extractEntry test/assets/resolve-cache/list-json-1.json
+164 silly gunzTarPerm extractEntry test/assets/test-temp-dir/test-exception.js
+165 silly gunzTarPerm extractEntry test/assets/test-temp-dir/test.js
+166 silly gunzTarPerm extractEntry test/core/packageRepository.js
+167 silly gunzTarPerm extractEntry test/core/resolveCache.js
+168 silly gunzTarPerm extractEntry test/core/resolverFactory.js
+169 silly gunzTarPerm extractEntry test/core/resolvers/fsResolver.js
+170 silly gunzTarPerm extractEntry test/core/resolvers/gitFsResolver.js
+171 silly gunzTarPerm extractEntry test/core/resolvers/gitHubResolver.js
+172 silly gunzTarPerm extractEntry test/core/resolvers/gitRemoteResolver.js
+173 silly gunzTarPerm extractEntry test/core/resolvers/gitResolver.js
+174 silly gunzTarPerm extractEntry test/core/resolvers/resolver.js
+175 silly gunzTarPerm extractEntry test/core/resolvers/urlResolver.js
+176 silly gunzTarPerm extractEntry test/packages.json
+177 silly lockFile 8a632fbf-49801-0-3215386166702956-package tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package
+178 silly lockFile 8a632fbf-49801-0-3215386166702956-package tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package
+179 silly lockFile dd0758e7-49801-0-3215386166702956-tmp-tgz tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/tmp.tgz
+180 silly lockFile dd0758e7-49801-0-3215386166702956-tmp-tgz tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/tmp.tgz
+181 verbose tar pack [ '/Users/eric5919/.npm/bower/1.2.7/package.tgz',
+181 verbose tar pack   '/var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package' ]
+182 verbose tarball /Users/eric5919/.npm/bower/1.2.7/package.tgz
+183 verbose folder /var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package
+184 silly lockFile 8a632fbf-49801-0-3215386166702956-package tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package
+185 verbose lock tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package /Users/eric5919/.npm/8a632fbf-49801-0-3215386166702956-package.lock
+186 silly lockFile d5e790c6-5919-npm-bower-1-2-7-package-tgz tar:///Users/eric5919/.npm/bower/1.2.7/package.tgz
+187 verbose lock tar:///Users/eric5919/.npm/bower/1.2.7/package.tgz /Users/eric5919/.npm/d5e790c6-5919-npm-bower-1-2-7-package-tgz.lock
+188 silly lockFile 8a632fbf-49801-0-3215386166702956-package tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package
+189 silly lockFile 8a632fbf-49801-0-3215386166702956-package tar:///var/folders/3l/f4x3fhb17zj1vt1wfd7mh5hmfdrlmd/T/npm-61771-lCaFpR1S/1385487849801-0.3215386166702956/package
+190 silly lockFile d5e790c6-5919-npm-bower-1-2-7-package-tgz tar:///Users/eric5919/.npm/bower/1.2.7/package.tgz
+191 silly lockFile d5e790c6-5919-npm-bower-1-2-7-package-tgz tar:///Users/eric5919/.npm/bower/1.2.7/package.tgz
+192 silly lockFile 0acc60cd-eric5919-npm-bower-1-2-7-package /Users/eric5919/.npm/bower/1.2.7/package
+193 verbose lock /Users/eric5919/.npm/bower/1.2.7/package /Users/eric5919/.npm/0acc60cd-eric5919-npm-bower-1-2-7-package.lock
+194 silly lockFile 0acc60cd-eric5919-npm-bower-1-2-7-package /Users/eric5919/.npm/bower/1.2.7/package
+195 silly lockFile 0acc60cd-eric5919-npm-bower-1-2-7-package /Users/eric5919/.npm/bower/1.2.7/package
+196 verbose tar unpack /Users/eric5919/.npm/bower/1.2.7/package.tgz
+197 silly lockFile 36458fe6-eric5919-npm-bower-1-2-7-package tar:///Users/eric5919/.npm/bower/1.2.7/package
+198 verbose lock tar:///Users/eric5919/.npm/bower/1.2.7/package /Users/eric5919/.npm/36458fe6-eric5919-npm-bower-1-2-7-package.lock
+199 silly lockFile d5e790c6-5919-npm-bower-1-2-7-package-tgz tar:///Users/eric5919/.npm/bower/1.2.7/package.tgz
+200 verbose lock tar:///Users/eric5919/.npm/bower/1.2.7/package.tgz /Users/eric5919/.npm/d5e790c6-5919-npm-bower-1-2-7-package-tgz.lock
+201 silly gunzTarPerm modes [ '755', '644' ]
+202 silly gunzTarPerm extractEntry package.json
+203 silly gunzTarPerm extractEntry .npmignore
+204 silly gunzTarPerm extractEntry README.md
+205 silly gunzTarPerm extractEntry LICENSE
+206 silly gunzTarPerm extractEntry Gruntfile.js
+207 silly gunzTarPerm extractEntry CONTRIBUTING.md
+208 silly gunzTarPerm extractEntry .editorconfig
+209 silly gunzTarPerm extractEntry .jshintrc
+210 silly gunzTarPerm extractEntry .travis.yml
+211 silly gunzTarPerm extractEntry bin/bower
+212 silly gunzTarPerm extractEntry lib/config.js
+213 silly gunzTarPerm extractEntry lib/index.js
+214 silly gunzTarPerm extractEntry lib/commands/update.js
+215 silly gunzTarPerm extractEntry lib/commands/index.js
+216 silly gunzTarPerm extractEntry lib/commands/info.js
+217 silly gunzTarPerm extractEntry lib/commands/init.js
+218 silly gunzTarPerm extractEntry lib/commands/install.js
+219 silly gunzTarPerm extractEntry lib/commands/home.js
+220 silly gunzTarPerm extractEntry lib/commands/list.js
+221 silly gunzTarPerm extractEntry lib/commands/lookup.js
+222 silly gunzTarPerm extractEntry lib/commands/prune.js
+223 silly gunzTarPerm extractEntry lib/commands/register.js
+224 silly gunzTarPerm extractEntry lib/commands/search.js
+225 silly gunzTarPerm extractEntry lib/commands/help.js
+226 silly gunzTarPerm extractEntry lib/commands/uninstall.js
+227 silly gunzTarPerm extractEntry lib/commands/completion.js
+228 silly gunzTarPerm extractEntry lib/commands/link.js
+229 silly gunzTarPerm extractEntry lib/commands/cache/clean.js
+230 silly gunzTarPerm extractEntry lib/commands/cache/index.js
+231 silly gunzTarPerm extractEntry lib/commands/cache/list.js
+232 silly gunzTarPerm extractEntry lib/core/Manager.js
+233 silly gunzTarPerm extractEntry lib/core/PackageRepository.js
+234 silly gunzTarPerm extractEntry lib/core/Project.js
+235 silly gunzTarPerm extractEntry lib/core/ResolveCache.js
+236 silly gunzTarPerm extractEntry lib/core/resolverFactory.js
+237 silly gunzTarPerm extractEntry lib/core/resolvers/FsResolver.js
+238 silly gunzTarPerm extractEntry lib/core/resolvers/GitFsResolver.js
+239 silly gunzTarPerm extractEntry lib/core/resolvers/GitHubResolver.js
+240 silly gunzTarPerm extractEntry lib/core/resolvers/GitRemoteResolver.js
+241 silly gunzTarPerm extractEntry lib/core/resolvers/GitResolver.js
+242 silly gunzTarPerm extractEntry lib/core/resolvers/Resolver.js
+243 silly gunzTarPerm extractEntry lib/core/resolvers/UrlResolver.js
+244 silly gunzTarPerm extractEntry lib/core/resolvers/index.js
+245 silly gunzTarPerm extractEntry lib/renderers/JsonRenderer.js
+246 silly gunzTarPerm extractEntry lib/renderers/StandardRenderer.js
+247 silly gunzTarPerm extractEntry lib/renderers/index.js
+248 silly gunzTarPerm extractEntry lib/util/cli.js
+249 silly gunzTarPerm extractEntry lib/util/createError.js
+250 silly gunzTarPerm extractEntry lib/util/createLink.js
+251 silly gunzTarPerm extractEntry lib/util/download.js
+252 silly gunzTarPerm extractEntry lib/util/extract.js
+253 silly gunzTarPerm extractEntry lib/util/copy.js
+254 silly gunzTarPerm extractEntry lib/util/readJson.js
+255 silly gunzTarPerm extractEntry lib/util/removeIgnores.js
+256 silly gunzTarPerm extractEntry lib/util/rootCheck.js
+257 silly gunzTarPerm extractEntry lib/util/semver.js
+258 silly gunzTarPerm extractEntry lib/util/template.js
+259 silly gunzTarPerm extractEntry lib/util/cmd.js
+260 silly gunzTarPerm extractEntry lib/util/validLink.js
+261 silly gunzTarPerm extractEntry lib/util/md5.js
+262 silly gunzTarPerm extractEntry CHANGELOG.md
+263 silly gunzTarPerm extractEntry templates/helpers/colors.js
+264 silly gunzTarPerm extractEntry templates/helpers/condense.js
+265 silly gunzTarPerm extractEntry templates/helpers/indent.js
+266 silly gunzTarPerm extractEntry templates/helpers/index.js
+267 silly gunzTarPerm extractEntry templates/helpers/rpad.js
+268 silly gunzTarPerm extractEntry templates/helpers/sum.js
+269 silly gunzTarPerm extractEntry templates/json/help-list.json
+270 silly gunzTarPerm extractEntry templates/json/help-cache/clean.json
+271 silly gunzTarPerm extractEntry templates/json/help-cache/list.json
+272 silly gunzTarPerm extractEntry templates/json/help-home.json
+273 silly gunzTarPerm extractEntry templates/json/help-info.json
+274 silly gunzTarPerm extractEntry templates/json/help-init.json
+275 silly gunzTarPerm extractEntry templates/json/help-install.json
+276 silly gunzTarPerm extractEntry templates/json/help-link.json
+277 silly gunzTarPerm extractEntry templates/json/help-cache.json
+278 silly gunzTarPerm extractEntry templates/json/help-lookup.json
+279 silly gunzTarPerm extractEntry templates/json/help-prune.json
+280 silly gunzTarPerm extractEntry templates/json/help-register.json
+281 silly gunzTarPerm extractEntry templates/json/help-search.json
+282 silly gunzTarPerm extractEntry templates/json/help-uninstall.json
+283 silly gunzTarPerm extractEntry templates/json/help-update.json
+284 silly gunzTarPerm extractEntry templates/json/help.json
+285 silly gunzTarPerm extractEntry templates/std/conflict-resolved.std
+286 silly gunzTarPerm extractEntry templates/std/conflict.std
+287 silly gunzTarPerm extractEntry templates/std/help-cache.std
+288 silly gunzTarPerm extractEntry templates/std/help-generic.std
+289 silly gunzTarPerm extractEntry templates/std/help.std
+290 silly gunzTarPerm extractEntry templates/std/info.std
+291 silly gunzTarPerm extractEntry templates/std/lookup.std
+292 silly gunzTarPerm extractEntry templates/std/register.std
+293 silly gunzTarPerm extractEntry templates/std/search-results.std
+294 silly gunzTarPerm extractEntry templates/std/update-notice.std
+295 silly gunzTarPerm extractEntry test/packages.js
+296 silly gunzTarPerm extractEntry test/test.js
+297 silly gunzTarPerm extractEntry test/assets/package-tar.tar.gz
+298 silly gunzTarPerm extractEntry test/assets/package-zip-folder-single-file.zip
+299 silly gunzTarPerm extractEntry test/assets/package-zip-folder.zip
+300 silly gunzTarPerm extractEntry test/assets/package-zip-single-bower-json.zip
+301 silly gunzTarPerm extractEntry test/assets/package-zip-single-component-json.zip
+302 silly gunzTarPerm extractEntry test/assets/package-zip-single-file.zip
+303 silly gunzTarPerm extractEntry test/assets/package-zip.zip
+304 silly gunzTarPerm extractEntry test/assets/resolve-cache/list-json-1.json
+305 silly gunzTarPerm extractEntry test/assets/test-temp-dir/test-exception.js
+306 silly gunzTarPerm extractEntry test/assets/test-temp-dir/test.js
+307 silly gunzTarPerm extractEntry test/core/packageRepository.js
+308 silly gunzTarPerm extractEntry test/core/resolveCache.js
+309 silly gunzTarPerm extractEntry test/core/resolverFactory.js
+310 silly gunzTarPerm extractEntry test/core/resolvers/fsResolver.js
+311 silly gunzTarPerm extractEntry test/core/resolvers/gitFsResolver.js
+312 silly gunzTarPerm extractEntry test/core/resolvers/gitHubResolver.js
+313 silly gunzTarPerm extractEntry test/core/resolvers/gitRemoteResolver.js
+314 silly gunzTarPerm extractEntry test/core/resolvers/gitResolver.js
+315 silly gunzTarPerm extractEntry test/core/resolvers/resolver.js
+316 silly gunzTarPerm extractEntry test/core/resolvers/urlResolver.js
+317 silly gunzTarPerm extractEntry test/packages.json
+318 silly lockFile 36458fe6-eric5919-npm-bower-1-2-7-package tar:///Users/eric5919/.npm/bower/1.2.7/package
+319 silly lockFile 36458fe6-eric5919-npm-bower-1-2-7-package tar:///Users/eric5919/.npm/bower/1.2.7/package
+320 silly lockFile d5e790c6-5919-npm-bower-1-2-7-package-tgz tar:///Users/eric5919/.npm/bower/1.2.7/package.tgz
+321 silly lockFile d5e790c6-5919-npm-bower-1-2-7-package-tgz tar:///Users/eric5919/.npm/bower/1.2.7/package.tgz
+322 verbose chmod /Users/eric5919/.npm/bower/1.2.7/package.tgz 644
+323 verbose chown /Users/eric5919/.npm/bower/1.2.7/package.tgz [ 484200077, 1604020879 ]
+324 silly lockFile 1308ca41--npmjs-org-bower-bower-1-2-7-tgz https://registry.npmjs.org/bower/-/bower-1.2.7.tgz
+325 silly lockFile 1308ca41--npmjs-org-bower-bower-1-2-7-tgz https://registry.npmjs.org/bower/-/bower-1.2.7.tgz
+326 silly lockFile d87c9af5-bower-1-2-7 bower@1.2.7
+327 silly lockFile d87c9af5-bower-1-2-7 bower@1.2.7
+328 silly resolved [ { name: 'bower',
+328 silly resolved     version: '1.2.7',
+328 silly resolved     description: 'The browser package manager.',
+328 silly resolved     author: { name: 'Twitter' },
+328 silly resolved     licenses: [ [Object] ],
+328 silly resolved     repository: { type: 'git', url: 'git://github.com/bower/bower.git' },
+328 silly resolved     main: 'lib',
+328 silly resolved     homepage: 'http://bower.io',
+328 silly resolved     engines: { node: '>=0.8.0' },
+328 silly resolved     dependencies:
+328 silly resolved      { abbrev: '~1.0.4',
+328 silly resolved        archy: '0.0.2',
+328 silly resolved        'bower-config': '~0.5.0',
+328 silly resolved        'bower-endpoint-parser': '~0.2.0',
+328 silly resolved        'bower-json': '~0.4.0',
+328 silly resolved        'bower-logger': '~0.2.1',
+328 silly resolved        'bower-registry-client': '~0.1.4',
+328 silly resolved        cardinal: '~0.4.0',
+328 silly resolved        chalk: '~0.2.0',
+328 silly resolved        chmodr: '~0.1.0',
+328 silly resolved        fstream: '~0.1.22',
+328 silly resolved        'fstream-ignore': '~0.0.6',
+328 silly resolved        glob: '~3.2.1',
+328 silly resolved        'graceful-fs': '~2.0.0',
+328 silly resolved        handlebars: '~1.0.11',
+328 silly resolved        inquirer: '~0.3.0',
+328 silly resolved        junk: '~0.2.0',
+328 silly resolved        mkdirp: '~0.3.5',
+328 silly resolved        mout: '~0.7.0',
+328 silly resolved        nopt: '~2.1.1',
+328 silly resolved        'lru-cache': '~2.3.0',
+328 silly resolved        open: '~0.0.3',
+328 silly resolved        osenv: '0.0.3',
+328 silly resolved        promptly: '~0.2.0',
+328 silly resolved        q: '~0.9.2',
+328 silly resolved        request: '~2.27.0',
+328 silly resolved        'request-progress': '~0.3.0',
+328 silly resolved        retry: '~0.6.0',
+328 silly resolved        rimraf: '~2.2.0',
+328 silly resolved        semver: '~2.1.0',
+328 silly resolved        'stringify-object': '~0.1.4',
+328 silly resolved        'sudo-block': '~0.2.0',
+328 silly resolved        tar: '~0.1.17',
+328 silly resolved        tmp: '~0.0.20',
+328 silly resolved        unzip: '~0.1.7',
+328 silly resolved        'update-notifier': '~0.1.3',
+328 silly resolved        which: '~1.0.5' },
+328 silly resolved     devDependencies:
+328 silly resolved      { 'expect.js': '~0.2.0',
+328 silly resolved        grunt: '~0.4.1',
+328 silly resolved        'grunt-simple-mocha': '~0.4.0',
+328 silly resolved        'grunt-contrib-watch': '~0.5.0',
+328 silly resolved        'grunt-contrib-jshint': '~0.6.0',
+328 silly resolved        'grunt-exec': '~0.4.2',
+328 silly resolved        mocha: '~1.12.0',
+328 silly resolved        nock: '~0.22.0',
+328 silly resolved        istanbul: '~0.1.42',
+328 silly resolved        proxyquire: '~0.5.0' },
+328 silly resolved     scripts: { test: 'grunt test' },
+328 silly resolved     bin: { bower: 'bin/bower' },
+328 silly resolved     preferGlobal: true,
+328 silly resolved     readme: '# BOWER [![Build Status](https://secure.travis-ci.org/bower/bower.png?branch=master)](http://travis-ci.org/bower/bower)\n\nBower is a package manager for the web. It offers a generic, unopinionated\nsolution to the problem of **front-end package management**, while exposing the\npackage dependency model via an API that can be consumed by a more opinionated\nbuild stack. There are no system wide dependencies, no dependencies are shared\nbetween different apps, and the dependency tree is flat.\n\nBower runs over Git, and is package-agnostic. A packaged component can be made\nup of any type of asset, and use any type of transport (e.g., AMD, CommonJS,\netc.).\n\n[View all packages available through Bower\'s registry](http://sindresorhus.com/bower-components/).\n\n\n## Installing Bower\n\nBower depends on [Node](http://nodejs.org/) and [npm](http://npmjs.org/). It\'s\ninstalled globally using npm:\n\n```\nnpm install -g bower\n```\n\nAlso make sure that [git](http://git-scm.com/) is installed as some bower\npackages require it to be fetched and installed.\n\n\n## Usage\n\nMuch more information is available via `bower help` once it\'s installed. This\nis just enough to get you started.\n\n#### Warning\n\nOn `prezto` or `oh-my-zsh`, do not forget to `alias bower=\'noglob bower\'` or `bower install jquery\\#1.9.1`\n\n#### Running commands with sudo\n\nBower is a user command, there is no need to execute it with superuser permissions.\nHowever, if you still want to run commands with sudo, use `--allow-root` option.\n\n### Installing packages and dependencies\n\nBower offers several ways to install packages:\n\n```\n# Using the dependencies listed in the current directory\'s bower.json\nbower install\n# Using a local or remote package\nbower install <package>\n# Using a specific version of a package\nbower install <package>#<version>\n# Using a different name and a specific version of a package\nbower install <name>=<package>#<version>\n```\n\nWhere `<package>` can be any one of the following:\n\n* A name that maps to a package registered with Bower, e.g, `jquery`. ‡\n* A remote Git endpoint, e.g., `git://github.com/someone/some-package.git`. Can be\n  public or private. ‡\n* A local endpoint, i.e., a folder that\'s a Git repository. ‡\n* A shorthand endpoint, e.g., `someone/some-package` (defaults to GitHub). ‡\n* A URL to a file, including `zip` and `tar` files. Its contents will be\n  extracted.\n\n‡ These types of `<package>` might have versions available. You can specify a\n[semver](http://semver.org/) compatible version to fetch a specific release, and lock the\npackage to that version. You can also use ranges to specify a range of versions.\n\nAll package contents are installed in the `bower_components` directory by default.\nYou should **never** directly modify the contents of this directory.\n\nUsing `bower list` will show all the packages that are installed locally.\n\n**N.B.** If you aren\'t authoring a package that is intended to be consumed by\nothers (e.g., you\'re building a web app), you should always check installed\npackages into source control.\n\n### Finding packages\n\nTo search for packages registered with Bower:\n\n```\nbower search [<name>]\n```\n\nUsing just `bower search` will list all packages in the registry.\n\n### Using packages\n\nThe easiest approach is to use Bower statically, just reference the package\'s\ninstalled components manually using a `script` tag:\n\n```html\n<script src="/bower_components/jquery/index.js"></script>\n```\n\nFor more complex projects, you\'ll probably want to concatenate your scripts or\nuse a module loader. Bower is just a package manager, but there are plenty of\nother tools -- such as [Sprockets](https://github.com/sstephenson/sprockets)\nand [RequireJS](http://requirejs.org/) -- that will help you do this.\n\n### Registering packages\n\nTo register a new package:\n\n* There **must** be a valid manifest JSON in the current working directory.\n* Your package should use [semver](http://semver.org/) Git tags.\n* Your package **must** be available at a Git endpoint (e.g., GitHub); remember\n  to push your Git tags!\n\nThen use the following command:\n\n```\nbower register <my-package-name> <git-endpoint>\n```\n\nThe Bower registry does not have authentication or user management at this point\nin time. It\'s on a first come, first served basis. Think of it like a URL\nshortener. Now anyone can run `bower install <my-package-name>`, and get your\nlibrary installed.\n\nThere is no direct way to unregister a package yet. For now, you can [request a\npackage be unregistered](https://github.com/bower/bower/issues/120).\n\n### Uninstalling packages\n\nTo uninstall a locally installed package:\n\n```\nbower uninstall <package-name>\n```\n\n\n## Configuration\n\nBower can be configured using JSON in a `.bowerrc` file.\n\nThe current spec can be read\n[here](https://docs.google.com/document/d/1APq7oA9tNao1UYWyOm8dKqlRP2blVkROYLZ2fLIjtWc/edit#heading=h.4pzytc1f9j8k)\nin the `Configuration` section.\n\n\n## Defining a package\n\nYou must create a `bower.json` in your project\'s root, and specify all of its\ndependencies. This is similar to Node\'s `package.json`, or Ruby\'s `Gemfile`,\nand is useful for locking down a project\'s dependencies.\n\n*NOTE:* In versions of Bower before 0.9.0 the package metadata file was called\n`component.json` rather than `bower.json`. This has changed to avoid a name\nclash with another tool. You can still use `component.json` for now but it is\ndeprecated and the automatic fallback is likely to be removed in an upcoming\nrelease.\n\nYou can interactively create a `bower.json` with the following command:\n\n```\nbower init\n```\n\nThe `bower.json` defines several options:\n\n* `name` (required): The name of your package.\n* `version`: A semantic version number (see [semver](http://semver.org/)).\n* `main` [string|array]: The primary endpoints of your package.\n* `ignore` [array]: An array of paths not needed in production that you want\n  Bower to ignore when installing your package.\n* `dependencies` [hash]: Packages your package depends upon in production.\n* `devDependencies` [hash]: Development dependencies.\n* `private` [boolean]: Set to true if you want to keep the package private and \n  do not want to register the package in future.\n\n```json\n{\n  "name": "my-project",\n  "version": "1.0.0",\n  "main": "path/to/main.css",\n  "ignore": [\n    ".jshintrc",\n    "**/*.txt"\n  ],\n  "dependencies": {\n    "<name>": "<version>",\n    "<name>": "<folder>",\n    "<name>": "<package>"\n  },\n  "devDependencies": {\n    "<test-framework-name>": "<version>"\n  }\n}\n```\n\n\n## Consuming a package\n\nBower also makes available a source mapping. This can be used by build tools to\neasily consume Bower packages.\n\nIf you pass the `--paths` option to Bower\'s `list` command, you will get a\nsimple path-to-name mapping:\n\n```json\n{\n  "backbone": "bower_components/backbone/index.js",\n  "jquery": "bower_components/jquery/index.js",\n  "underscore": "bower_components/underscore/index.js"\n}\n```\n\nAlternatively, every command supports the `--json` option that makes bower\noutput JSON. Command result is outputted to `stdout` and error/logs to\n`stderr`.\n\n\n## Programmatic API\n\nBower provides a powerful, programmatic API. All commands can be accessed\nthrough the `bower.commands` object.\n\n```js\nvar bower = require(\'bower\');\n\nbower.commands\n.install([\'jquery\'], { save: true }, { /* custom config */ })\n.on(\'end\', function (installed) {\n    console.log(installed);\n});\n\nbower.commands\n.search(\'jquery\', {})\n.on(\'end\', function (results) {\n    console.log(results);\n});\n```\n\nCommands emit four types of events: `log`, `prompt`, `end`, `error`.\n\n* `log` is emitted to report the state/progress of the command.\n* `prompt` is emitted whenever the user needs to be prompted.\n* `error` will only be emitted if something goes wrong.\n* `end` is emitted when the command successfully ends.\n\nFor a better of idea how this works, you may want to check out [our bin\nfile](https://github.com/bower/bower/blob/master/bin/bower).\n\nWhen using bower programmatically, prompting is disabled by default. Though you can enable it when calling commands with `interactive: true` in the config.\nThis requires you to listen for the `prompt` event and handle the prompting yourself. The easiest way is to use the [inquirer](https://npmjs.org/package/inquirer) npm module like so:\n\n```js\nvar inquirer =  require(\'inquirer\');\n\nbower.commands\n.install([\'jquery\'], { save: true }, { interactive: true })\n// ..\n.on(\'prompt\', function (prompts, callback) {\n    inquirer.prompt(prompts, callback);\n});\n```\n\n\n## Completion (experimental)\n\n_NOTE_: Completion is still not implemented for the 1.0.0 release\n\nBower now has an experimental `completion` command that is based on, and works\nsimilarly to the [npm completion](https://npmjs.org/doc/completion.html). It is\nnot available for Windows users.\n\nThis command will output a Bash / ZSH script to put into your `~/.bashrc`,\n`~/.bash_profile`, or `~/.zshrc` file.\n\n```\nbower completion >> ~/.bash_profile\n```\n\n\n## A note for Windows users\n\nTo use Bower on Windows, you must install\n[msysgit](http://code.google.com/p/msysgit/) correctly. Be sure to check the\noption shown below:\n\n![msysgit](http://f.cl.ly/items/2V2O3i1p3R2F1r2v0a12/mysgit.png)\n\nNote that if you use TortoiseGit and if Bower keeps asking for your SSH\npassword, you should add the following environment variable: `GIT_SSH -\nC:\\Program Files\\TortoiseGit\\bin\\TortoisePlink.exe`. Adjust the `TortoisePlink`\npath if needed.\n\n\n## Contact\n\nHave a question?\n\n* [StackOverflow](http://stackoverflow.com/questions/tagged/bower)\n* [Mailinglist](http://groups.google.com/group/twitter-bower) - twitter-bower@googlegroups.com\n* [\\#bower](http://webchat.freenode.net/?channels=bower) on Freenode\n\n\n## Contributing to this project\n\nAnyone and everyone is welcome to contribute. Please take a moment to\nreview the [guidelines for contributing](CONTRIBUTING.md).\n\n* [Bug reports](CONTRIBUTING.md#bugs)\n* [Feature requests](CONTRIBUTING.md#features)\n* [Pull requests](CONTRIBUTING.md#pull-requests)\n\n\n## Authors\n\n* [@fat](https://github.com/fat)\n* [@maccman](https://github.com/maccman)\n* [@satazor](https://github.com/satazor)\n\nThanks for assistance and contributions:\n\n[@addyosmani](https://github.com/addyosmani),\n[@angus-c](https://github.com/angus-c),\n[@borismus](https://github.com/borismus),\n[@carsonmcdonald](https://github.com/carsonmcdonald),\n[@chriseppstein](https://github.com/chriseppstein),\n[@danwrong](https://github.com/danwrong),\n[@davidmaxwaterman](https://github.com/davidmaxwaterman),\n[@desandro](https://github.com/desandro),\n[@hemanth](https://github.com/hemanth),\n[@isaacs](https://github.com/isaacs),\n[@josh](https://github.com/josh),\n[@jrburke](https://github.com/jrburke),\n[@marcelombc](https://github.com/marcelombc),\n[@marcooliveira](https://github.com/marcooliveira),\n[@mklabs](https://github.com/mklabs),\n[@MrDHat](https://github.com/MrDHat),\n[@necolas](https://github.com/necolas),\n[@paulirish](https://github.com/paulirish),\n[@richo](https://github.com/richo),\n[@rvagg](https://github.com/rvagg),\n[@sindresorhus](https://github.com/sindresorhus),\n[@SlexAxton](https://github.com/SlexAxton),\n[@sstephenson](https://github.com/sstephenson),\n[@svnlto](https://github.com/svnlto),\n[@tomdale](https://github.com/tomdale),\n[@uzquiano](https://github.com/uzquiano),\n[@visionmedia](https://github.com/visionmedia),\n[@wagenet](https://github.com/wagenet),\n[@wibblymat](https://github.com/wibblymat),\n[@wycats](https://github.com/wycats)\n\n\n## License\n\nCopyright 2012 Twitter, Inc.\n\nLicensed under the MIT License\n',
+328 silly resolved     readmeFilename: 'README.md',
+328 silly resolved     bugs: { url: 'https://github.com/bower/bower/issues' },
+328 silly resolved     _id: 'bower@1.2.7',
+328 silly resolved     _from: 'bower@1.2.7',
+328 silly resolved     dist: { shasum: '0b2d4a95a8e9875ebf67db2e670f5712e502adcc' },
+328 silly resolved     _resolved: 'https://registry.npmjs.org/bower/-/bower-1.2.7.tgz' } ]
+329 info install bower@1.2.7 into /usr/local/lib
+330 info installOne bower@1.2.7
+331 info /usr/local/lib/node_modules/bower unbuild
+332 info preuninstall bower@1.2.7
+333 info uninstall bower@1.2.7
+334 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild bower@1.2.7
+335 verbose /usr/local/bin,[object Object] binRoot
+336 info postuninstall bower@1.2.7
+337 info /usr/local/lib/node_modules/bower unbuild
+338 info preuninstall bower@1.2.7
+339 info uninstall bower@1.2.7
+340 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild bower@1.2.7
+341 verbose /usr/local/bin,[object Object] binRoot
+342 info postuninstall bower@1.2.7
+343 error error rolling back Error: EACCES, unlink '/usr/local/lib/node_modules/bower/.editorconfig'
+343 error error rolling back  bower@1.2.7 { [Error: EACCES, unlink '/usr/local/lib/node_modules/bower/.editorconfig']
+343 error error rolling back   stack: 'Error: EACCES, unlink \'/usr/local/lib/node_modules/bower/.editorconfig\'',
+343 error error rolling back   errno: -13,
+343 error error rolling back   code: 'EACCES',
+343 error error rolling back   path: '/usr/local/lib/node_modules/bower/.editorconfig' }
+344 error Error: EACCES, unlink '/usr/local/lib/node_modules/bower/.jshintrc'
+344 error  { [Error: EACCES, unlink '/usr/local/lib/node_modules/bower/.jshintrc']
+344 error   stack: 'Error: EACCES, unlink \'/usr/local/lib/node_modules/bower/.jshintrc\'',
+344 error   errno: -13,
+344 error   code: 'EACCES',
+344 error   path: '/usr/local/lib/node_modules/bower/.jshintrc' }
+345 error Please try running this command again as root/Administrator.
+346 error System Darwin 12.5.0
+347 error command "/usr/local/bin/node" "/usr/local/bin/npm" "update" "-g" "bower"
+348 error cwd /Users/eric5919/Sites/projectmayhem/ng-boilerplate
+349 error node -v v0.11.6-pre
+350 error npm -v 1.3.8
+351 error path /usr/local/lib/node_modules/bower/.jshintrc
+352 error code EACCES
+353 error errno -13
+354 error stack Error: EACCES, unlink '/usr/local/lib/node_modules/bower/.jshintrc'
+355 verbose exit [ -13, true ]

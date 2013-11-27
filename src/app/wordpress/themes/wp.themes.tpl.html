@@ -1,0 +1,73 @@
+<section ng-hide="themes.length>0">
+    <div class="text-center empty">
+            <br>
+            <p class="h2 font-thin">Upload and Save your favorite themes here</p>
+            <p class="h4 font-thin">Yes!  upload your themes and we'll automatically install and activate them.</p>
+            <br>
+            
+            <div style="width:75%; margin:0 auto;"><button class="btn btn-success btn-block btn-lg  navbar-btn" oc-show-option output="themes" input="localThemes" template="templates/upload.themes.tpl.html">
+                            <i class="icon-cloud-upload text"></i> upload a theme
+                        </button> </div>
+
+            <br>
+            <p class="font-thin">It's pretty self explanitory</p>
+
+
+            <br><hr><br>
+            <span style="cursor:pointer" ng-click="haveSites=true">or pretend you have a lot of themes already</span>
+        </div>
+
+</section>
+
+
+ <section ng-show="themes.length>0">
+   <div class="navbar m-n">
+    	<form class="navbar-form navbar-left">
+    		<div class="form-group">
+    			<input type="text" class="input-sm form-control" placeholder="WordPress.org Theme Database">
+    		</div>
+    		<button class="btn btn-sm btn-white" oc-show-option template="app/templates/modals/wp.plugin.search.html">Search</button>
+    	</form>
+
+    	<ul class="nav navbar-nav navbar-right">
+    		<li>
+    			<button class="btn btn-white  navbar-btn" oc-show-option template="templates/upload.themes.tpl.html" output="themes" input="localThemes">
+    				<i class="icon-cloud-upload text"></i> upload a theme
+    			</button> 
+
+    		</li>
+
+    	</ul>
+    </div>
+
+    <div class="table-responsive">
+
+    	<table class="table table-striped">
+    		<tbody>
+    			<tr ng-repeat="item in themes">
+                    <td>{{item.attributes.userId}}</td>
+    				<td width="100">
+    					<img ng-src="{{item.attributes.image}}" alt="" class="thumb thumb-lg">
+    				</td>
+    				<td width="200">
+    					<h4 class="m-n m-b font-thin">{{item.attributes.name}}</h4>
+    					<small>by: <a href="#">{{item.attributes.author}}</a></small>
+    				</td>
+    				<td>
+    					<p class="font-thin">{{item.attributes.description}}</p>
+    				</td>
+    				<td class="text-right v-middle" width="150" style="cursor:pointer;" ng-click="User.destroy(item, themes, $index)"><span><i class="icon-remove"></i> remove</span></td>
+    			</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+    <section ng-hide="plugins.length>0">
+        <br><br>
+        <div class="text-center">
+            <p class="h4 font-thin">It looks like you haven't saved any plugins yet.</p>
+            <a bs href="#wp-plugins" data-toggle="tab" class="btn btn-white">Add your top plugins now!</a>
+        </div>
+    </section>
+</section>
