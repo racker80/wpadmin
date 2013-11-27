@@ -18,15 +18,14 @@ angular.module('myApp.newsite', [])
 
 
 
-.directive('newSite', function($http, $compile, wpOptions, Data, toggleStateService, offCanvasService) {
+.directive('newSite', function($http, $compile, $rootScope, wpOptions, Data, toggleStateService, offCanvasService) {
     return {
       restrict:"A",
       scope:{},
       link: function(scope, element, attrs) {
-
+        scope.currentUser = $rootScope.currentUser;
         scope.Data = Data;
         scope.options = angular.copy(wpOptions);
-        console.log(wpOptions)
         scope.offCanvasService = offCanvasService;
         console.log(scope)
 
@@ -38,17 +37,63 @@ angular.module('myApp.newsite', [])
         scope.createSite = function() {
           if(scope.options.themes[0])
           scope.options.image = scope.options.themes[0].image;
-          console.log(scope.options)
+          
+              var Site = Parse.Object.extend("Site");
+              var site = new Site();
 
-          Data.sites.mySites.push(angular.copy(scope.options));
+              site.save({
+                userID:$rootScope.currentUser.id,
+                url:scope.options.url,
+                image:scope.options.image,
+                themes:angular.copy(scope.options.themes),
+                plugins:angular.copy(scope.options.plugins),
+              }, {
+                success: function(site) {
+                // The object was saved successfully.
+                console.log(site)
+                $rootScope.go('/sites');
+              },
+              error: function(site, error) {
+                console.log(error)
+                // The save failed.
+                // error is a Parse.Error with an error code and description.
+              }
+            });
 
 
 
 
-          scope.options = angular.copy(wpOptions);
+          // console.log(scope.options)
+
+          // Data.sites.mySites.push(angular.copy(scope.options));
+
+
+
+
+          // scope.options = angular.copy(wpOptions);
 
 
         }
+
+
+
+
+      //         var GameScore = Parse.Object.extend("GameScore");
+      //         var gameScore = new GameScore();
+
+      //         gameScore.save({
+      //           score: 1337,
+      //           playerName: "Sean Plott",
+      //           cheatMode: false
+      //         }, {
+      //           success: function(gameScore) {
+      //     // The object was saved successfully.
+      //   },
+      //   error: function(gameScore, error) {
+      //     // The save failed.
+      //     // error is a Parse.Error with an error code and description.
+      //   }
+      // });
 
 
 

@@ -1,4 +1,7 @@
-<section ng-hide="Data.sites.mySites.length>0">
+<div my-sites>
+
+
+<section ng-hide="sites.length>0">
 	<div class="text-center empty">
 <br><br>
 <p class="h2 font-thin">Do you need just one site?</p>
@@ -57,7 +60,7 @@
 		</div>
 </section>
 
-<section ng-if="Data.sites.mySites.length>0">
+<section ng-if="sites.length>0">
 	
 
 <div class="table-responsive">
@@ -72,7 +75,7 @@
 			<th class="text-center" width="100">Options</th>			
 		</thead> -->
 		<tbody>
-			<tr  ng-repeat="site in Data.sites.mySites">
+			<tr  ng-repeat="site in sites">
 				<td class="v-middle" width="20">
 					<div class="btn-group">
 						<button class="btn btn-white btn-xs dropdown-toggle" data-toggle="dropdown"><i class="icon-gear"></i></button>
@@ -84,9 +87,9 @@
 						</ul>
 					</div>
 				</td>
-				<td class="v-middle" width="80"><img ng-src="{{site.image}}" class="thumb thumb-lg" alt=""></td>
+				<td class="v-middle" width="80"><img ng-src="{{site.attributes.image}}" class="thumb thumb-lg" alt=""></td>
 				<td class="v-middle">
-					<a oc-show-detail template="app/templates/modals/site.detail.html" output="site" input="site" text="{{site.url}}" href="#/sites" class="block">{{site.url}}</a>
+					<a oc-show-detail template="app/templates/modals/site.detail.html" output="site" input="site" text="{{site.attributes.url}}" href="#/sites" class="block">{{site.attributes.url}}</a>
 				</td>
 				
 				<td width="100" class="text-center v-middle"><a href="#" oc-show-detail template="app/templates/sites.wpadmin.html" output="site" bs>Login</i></a></td>
@@ -106,3 +109,5 @@
 
 <span style="cursor:pointer;" ng-click="Data.sites.mySites.clear()">clear sites</span>
 </section>
+
+</div>

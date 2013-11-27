@@ -25,13 +25,13 @@
 
             <tbody>
               <tr ng-repeat="item in Data.wordpress.plugins">
-                <td class="v-middle"><input type="checkbox" value="{{item}}" check-list="output"></td>
+                <td class="v-middle"><input type="checkbox" value="{{clean.$index}}" check-list="output"></td>
                 <td width="250">
-                  <h4 class="m-n font-thin">{{item.name}}</h4>
-                  <small>by: <span ng-bind-html-unsafe='{item.author}'></span></small>
+                  <h4 class="m-n font-thin" ng-init="clean.$index.name=item.name">{{item.name}}</h4>
+                  <small>by: <span ng-bind-html-unsafe='{item.author}' ng-init="clean.$index.author=item.author"></span></small>
                 </td>
                 <td>
-                  <p class="font-thin">{{item.short_description}}</p>
+                  <p class="font-thin" ng-init="clean.$index.short_description=item.short_description">{{item.short_description}}</p>
                 </td>
               </tr>
               <!-- <tr ng-repeat="item in Data.wordpress.plugins">

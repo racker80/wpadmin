@@ -197,8 +197,10 @@ angular.module('myApp.offcanvas', [])
         enter: function(element, done){
             TweenMax.fromTo(element, t, {
                 transform:'translate3d(0, 0, 0)',
+                transform:'scale(1)'
             }, {
                 transform:'translate3d(-'+l()+'px, 0, 0)',
+                transform:'scale(.4)',                
                 onComplete:function(){
                     TweenMax.to(element, 0, {
                         left:lFixed(),

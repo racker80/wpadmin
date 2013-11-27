@@ -11,6 +11,16 @@ angular.module('myApp.directives', []).
     };
   }])
 
+.directive('sidebar', function($http, $compile){
+    return function(scope, element, attrs){
+        var template;
+
+        $http.get('app/templates/sidebar.html').then(function(tmpl) {
+                    template = $compile(tmpl.data)(scope);
+                    element.empty().append(template);
+                });
+    }
+})
   .directive('modalDirective', function($http, $compile, Data){
     return {
         restrict:"A",

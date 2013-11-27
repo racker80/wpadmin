@@ -24,19 +24,24 @@
 
 
     
-    <section id="site-container" class="hbox stretch"ng-switch-when="/">
+    <section id="site-container" ng-controller="loginCtrl" class="hbox stretch" ng-switch-when="/">
         <div ng-view></div>
     </section>
 
 
-    <section id="site-container" class="hbox stretch"ng-switch-when="/signup">
+    <section id="site-container" class="hbox stretch" ng-switch-when="/signup">
         <div ng-view></div>
     </section>  
 
-    <section id="site-container" class="hbox stretch" ng-switch-default>
+
+
+
+    <section id="site-container" ng-controller="appCtrl" class="hbox stretch" ng-switch-default>
 
       <aside class="bg-dark aside-lg" id="nav">
-        <ng-include src="'app/templates/sidebar.html'"></ng-include>
+        <section class="vbox">
+            <ng-include src="'app/templates/sidebar.html'"></ng-include>
+        </section>
       </aside>
 
       <section id="content" class="bg-white" ng-class="{showOffCanvas:showOffCanvas}" off-canvas-overlay>
@@ -83,6 +88,8 @@
         <script src="todo/js/charts/sparkline/jquery.sparkline.min.js"></script>
         <script src="todo/js/select2/select2.min.js"></script>
 
+        <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
 
 
 
@@ -91,7 +98,7 @@
         <script src="bower_components/unstable-angular-complete/angular-sanitize.js"></script>
         <script src="bower_components/unstable-angular-complete/angular-animate.js"></script>
         <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
-
+        <script src="bower_components/angular-fire/angularFire.js"></script>
 
         <script src="app/app.js"></script>
         <script src="app/services.js"></script>
@@ -100,6 +107,8 @@
         <script src="app/directives.js"></script>
         <script src="app/data.js"></script>
         <script src="app/modules/newsite.js"></script>
+        <script src="app/modules/sites.js"></script>
+        <script src="app/modules/signup.js"></script>
         <script src="app/modules/offcanvas.js"></script>
 
  
