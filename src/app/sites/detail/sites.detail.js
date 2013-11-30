@@ -77,4 +77,34 @@ angular.module( 'ngBoilerplate.sites.detail', [
 
 })
 
+
+
+
+.directive('sparkline', function(){
+  return {
+    restrict:"C",
+    link:function(scope, element, attrs) {
+      var generateSparkline = function(){
+        var $data = element.data();
+        element.sparkline( $data.data || "html", $data);
+      };    
+
+      generateSparkline();
+
+        var sparkResize;
+        $(window).resize(function(e) {
+          clearTimeout(sparkResize);
+          sparkResize = setTimeout(function(){
+            generateSparkline();
+          }, 0);
+        });
+
+
+    }
+  };
+})
+
+
+
+
 ;

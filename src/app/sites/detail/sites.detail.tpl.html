@@ -1,4 +1,38 @@
-<div class="wrapper">
+
+<div class="hbox stretch">
+    <aside class="aside-lg">
+        <div style="height:100px; overflow:hidden;">
+            <img ng-src="assets/theme3.jpg" style="display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-20px">
+        </div>
+    </aside>
+    <section style="position:relative;">
+        <section class="" style="position:absolute; bottom:0; left:0; width:100%; padding-bottom:0;">
+                <p class="h1 m-l">{{site.url}}</p>
+                <header class="panel-heading bg-light m-l">
+
+                    <ul class="nav nav-tabs">
+                        <li ui-route="/sites/my-sites/{{site.id}}/account"  ng-class="{active:$uiRoute}"><a href="#/sites/my-sites/{{site.id}}/account">Account</a></li>
+                        <li ui-route="/sites/my-sites/{{site.id}}/wordpress" ng-class="{active:$uiRoute}"><a href="#/sites/my-sites/{{site.id}}/wordpress">Production Site</a></li>
+                        <li ui-route="/sites/my-sites/{{site.id}}/staging" ng-class="{active:$uiRoute}"><a href="#/sites/my-sites/{{site.id}}/account">Development</a></li>
+                        <li ui-route="/sites/my-sites/{{site.id}}/backups" ng-class="{active:$uiRoute}"><a href="#/sites/my-sites/{{site.id}}/account">Backups</a></li>        
+                        <li ui-route="/sites/my-sites/{{site.id}}/users" ng-class="{active:$uiRoute}"><a href="#/sites/my-sites/{{site.id}}/account">Users</a></li>
+                        <!-- <li class=""><a bs href="#activity" data-toggle="tab">Backups</a></li>
+                        <li class=""><a bs href="#activity" data-toggle="tab">Domain & Email</a></li> -->
+                    </ul>
+
+                </header>
+        </section>     
+    </section>    
+</div>
+
+<div class="hbox stretch">
+    <section>
+        <div ui-view="detailContent"></div>
+    </section>
+</div>
+
+
+<div class="wrapper hidden">
     <table class="table m-n no-border" style="">
         <tbody>
             <tr>

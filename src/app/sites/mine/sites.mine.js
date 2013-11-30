@@ -19,20 +19,13 @@ angular.module( 'ngBoilerplate.sites.mine', [
       auth: function(Auth) {
         Auth.isAuthenticated();
       },
-      sites: function($q, Auth){
-          var Site = Parse.Object.extend("Site");
-          var query = new Parse.Query(Site);
-          query.equalTo("userID", Parse.User.current().id);
-          var defer = $q.defer();
-          query.find({
-            success: function(results) {
-              defer.resolve(results);
-            },
-            error: function(error) {
-              alert("Error: " + error.code + " " + error.message);
-            }
-          });
-          return defer.promise;
+      sites: function(User){
+          if(User.resolved.sites === false) {
+              return User.update('Site');
+          } else {
+            return User.sites;
+          }
+
       }
     },
     data:{ pageTitle: 'Home' }

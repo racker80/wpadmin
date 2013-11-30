@@ -10,6 +10,9 @@ module.exports = function ( karma ) {
      */
     files: [
       'vendor/jquery/jquery.js',
+      'todo/js/charts/sparkline/jquery.sparkline.min.js',
+      'todo/js/app.data.js',
+      'vendor/underscore/underscore.js',
       'vendor/tweenmax/TweenMax.js',
       'vendor/angular/angular.js',
       'vendor/angular-animate/angular-animate.js',

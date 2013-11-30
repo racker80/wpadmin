@@ -18,7 +18,7 @@ angular.module( 'ngBoilerplate.wp.themes', [
     resolve: {
       themes: function($q, Auth, User){
           if(User.resolved.themes === false) {
-              return User.update.themes();
+              return User.update('Theme');
           } else {
             return User.themes;
           }
@@ -34,6 +34,5 @@ angular.module( 'ngBoilerplate.wp.themes', [
   Auth.isAuthenticated();
   $scope.themes = themes;
   $scope.localThemes = wpData.themes;
-
 })
 ;

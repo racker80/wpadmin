@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <table class="table m-n no-border" style="">
+        <tbody>
+            <tr>
+                <td class="aside-lg text-center padder-n" style="padding:0; border:0;">
+                    <div style="height:100px; overflow:hidden;">
+                        <img ng-src="{{site.image}}" style="display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-20px">
+                    </div>
+
+                </td>
+                <td class="v-middle" style=" border:0;">
+                    <p class="h1">{{site.url}}</p>
+                <button class="btn btn-white" oc-show-option template="app/templates/modals/add.themes.html">click</button>
+
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+
+    <header class="panel-heading bg-light">
+
+        <ul class="nav nav-tabs">
+            <li ui-route="/sites/my-sites/{{site.id}}/account"><a href="#/sites/my-sites/{{site.id}}/account">Account</a></li>
+            <li ui-route="/sites/my-sites/{{site.id}}/wordpress"><a href="#/sites/my-sites/{{site.id}}/wordpress">WordPress</a></li>
+            <li ui-route="/sites/my-sites/{{site.id}}/account"><a href="#/sites/my-sites/{{site.id}}/account">Development</a></li>
+            <!-- <li class=""><a bs href="#activity" data-toggle="tab">Backups</a></li>
+            <li class=""><a bs href="#activity" data-toggle="tab">Domain & Email</a></li> -->
+        </ul>
+
+    </header>
+
+
+    <div class="panel-body no-padder">
+        <div class="tab-content">              
+            <div class="tab-pane active">
+
+                
+                <div ui-view="detailContent"></div>
+
+            </div>
+
+        </div>
+    </div>        	
+
+</div>

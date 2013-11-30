@@ -545,26 +545,117 @@ angular.module("sites/collaborators/sites.collaborators.tpl.html", []).run(["$te
 
 angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("sites/detail/sites.detail.account.tpl.html",
+    "<div class=\"row\">\n" +
+    "	<div class=\"col-lg-8\">\n" +
+    "		<section class=\"panel m-t-lg\">\n" +
+    "			<header class=\"panel-heading\">\n" +
+    "				<p class=\"h4 m-n\">Your Activity For November</p>\n" +
+    "			</header>\n" +
+    "			<div class=\"panel-body\">              \n" +
     "\n" +
-    "<section class=\"panel m-t-lg\">\n" +
-    "	<header class=\"panel-heading\">\n" +
-    "		<p class=\"h4 m-n\">Site Actions</p>\n" +
-    "	</header>\n" +
-    "	<div class=\"panel-body text-center\">              \n" +
-    "		<button class=\"btn btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Contact Support</button>	\n" +
-    "		<button class=\"btn btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Change Plan</button>	\n" +
-    "		<button class=\"btn btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Transfer Ownership</button>	\n" +
-    "		<button class=\"btn btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Delete Site</button>	\n" +
-    "		\n" +
+    "				<table class=\"table\">\n" +
+    "					<tbody>\n" +
+    "						<tr>\n" +
+    "							<td>\n" +
+    "								Visits\n" +
+    "							</td>\n" +
+    "							<td width=\"80%\">\n" +
+    "								<div class=\"progress m-n\">\n" +
+    "									<div class=\"progress-bar progress-bar-warning\" data-toggle=\"tooltip\" data-original-title=\"40%\" style=\"width: 80%\"></div>\n" +
+    "								</div>\n" +
+    "							</td>\n" +
+    "							<td>\n" +
+    "								1,526\n" +
+    "							</td>\n" +
+    "						</tr>\n" +
+    "						<tr>\n" +
+    "							<td>\n" +
+    "								Bandwidth\n" +
+    "							</td>\n" +
+    "							<td width=\"80%\">\n" +
+    "								<div class=\"progress m-n\">\n" +
+    "									<div class=\"progress-bar progress-bar-danger\" data-toggle=\"tooltip\" data-original-title=\"40%\" style=\"width: 95%\"></div>\n" +
+    "								</div>\n" +
+    "							</td>\n" +
+    "							<td>\n" +
+    "								12.4GB\n" +
+    "							</td>\n" +
+    "						</tr>				\n" +
+    "						<tr>\n" +
+    "							<td>\n" +
+    "								Storage\n" +
+    "							</td>\n" +
+    "							<td width=\"80%\">\n" +
+    "								<div class=\"progress m-n\">\n" +
+    "									<div class=\"progress-bar progress-bar-success\" data-toggle=\"tooltip\" data-original-title=\"40%\" style=\"width: 17%\"></div>\n" +
+    "								</div>\n" +
+    "							</td>\n" +
+    "							<td>\n" +
+    "								1.2GB\n" +
+    "							</td>\n" +
+    "						</tr>\n" +
+    "					</tbody>\n" +
+    "				</table>\n" +
+    "\n" +
+    "			</div>\n" +
+    "\n" +
+    "\n" +
+    "		</section>\n" +
+    "\n" +
+    "		<section class=\"panel m-t-lg\">\n" +
+    "			<header class=\"panel-heading\">\n" +
+    "				<p class=\"h4 m-n\">Your Response Time For November</p>\n" +
+    "			</header>\n" +
+    "			<div class=\"panel-body\">              \n" +
+    "\n" +
+    "				<div class=\"row\">\n" +
+    "					<div class=\"col-md-8\">\n" +
+    "						<div class=\"sparkline\" data-type=\"line\" data-resize=\"true\" data-height=\"100\" data-width=\"100%\" data-line-width=\"1\" data-line-color=\"#afcf6f\" data-spot-color=\"#afcf6f\" data-fill-color=\"rgba(240,240,240,0.5)\" data-highlight-line-color=\"#e1e5e9\" data-spot-radius=\"4\" data-data=\"[120,250,200,325,400,380,250,320,345,250,250,250,200,325,300,365,250,210,200,180,150,160,250,250,250,200,300,310,330,250,320,205]\" data-composite-config=\"{&quot;lineColor&quot;:&quot;#dddddd&quot;,&quot;fillColor&quot;:&quot;#ffffff&quot;,&quot;spotColor&quot;:&quot;#dddddd&quot;,&quot;spotRadius&quot;:&quot;4&quot;}\" data-composite-data=\"[325,220,250,200,350,380,250,320,345,250,250,250,200,325,300,365,250,210,200,180,150,160,250,250,250,200,300,310,330,250,320,205]\">\n" +
+    "							<canvas style=\"display: inline-block; width: height: 100px; vertical-align: top;\" height=\"100\"></canvas>\n" +
+    "						</div>				\n" +
+    "					</div>\n" +
+    "					<div class=\"col-md-4 text-center\">\n" +
+    "						<h4 class=\"thin\">Average Response Time</h4>\n" +
+    "						<h2 class=\"text-success\">90ms</h2>\n" +
+    "					</div>\n" +
+    "				</div>\n" +
+    "			</div>\n" +
+    "\n" +
+    "\n" +
+    "		</section>\n" +
+    "\n" +
     "	</div>\n" +
-    "</section>\n" +
+    "	<div class=\"col-lg-4\">\n" +
+    "		<section class=\"panel m-t-lg\">\n" +
+    "			<header class=\"panel-heading\">\n" +
+    "				<p class=\"h4 m-n\">Your Last Month's Invoice - October</p>\n" +
+    "			</header>	\n" +
+    "			<div class=\"panel-body text-center\">              \n" +
+    "\n" +
+    "						<p>Your invoice was paid on 10/29/13 with card ending in 0781</p>\n" +
+    "\n" +
+    "\n" +
+    "						<div class=\"text-center padder-v m-b\">\n" +
+    "							<p class=\"h1\">$19.99</p>\n" +
+    "							<span>@Level 1 usage</span>\n" +
+    "						</div>\n" +
+    "					<div class=\"text-center\">\n" +
+    "						<button class=\"btn btn-white btn-block m-b-s\">Download Invoice</button>\n" +
+    "						<button class=\"btn btn-white btn-block\">View Past Invoices</button>\n" +
+    "					</div>\n" +
+    "				</div>\n" +
+    "			</div>\n" +
+    "\n" +
+    "\n" +
+    "		</section>\n" +
+    "\n" +
+    "	</div>\n" +
+    "</div>\n" +
     "\n" +
     "\n" +
     "\n" +
-    "<section class=\"panel m-t-lg\">\n" +
-    "	<header class=\"panel-heading\">\n" +
-    "		<p class=\"h4 m-n\">Your Activity This Month</p>\n" +
-    "	</header>\n" +
+    "<section class=\"panel m-t-lg hidden\">\n" +
+    "\n" +
     "	<div class=\"panel-body text-center\">              \n" +
     "\n" +
     "		<div class=\"row\">\n" +
@@ -632,7 +723,7 @@ angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$template
     "\n" +
     "\n" +
     "\n" +
-    "<section class=\"panel m-t-lg\">\n" +
+    "<section class=\"panel m-t-lg hidden\">\n" +
     "	<header class=\"panel-heading\">\n" +
     "		<p class=\"h4 m-n\">Site Managers</p>\n" +
     "	</header>\n" +
@@ -679,9 +770,29 @@ angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$template
     "	</div>\n" +
     "</section>\n" +
     "\n" +
-    "\n" +
-    "\n" +
-    "\n" +
+    "<br>\n" +
+    "<br>\n" +
+    "<hr>\n" +
+    " \n" +
+    "		<div class=\"row\">\n" +
+    "			<div class=\"col-lg-4\">\n" +
+    "				<button class=\"btn btn-block btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Transfer Ownership</button>\n" +
+    "			</div>\n" +
+    "			<div class=\"col-lg-8\">\n" +
+    "				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, necessitatibus quisquam nam vel ad labore quos numquam eum.</p>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "		<hr>\n" +
+    "		<div class=\"row\">\n" +
+    "			<div class=\"col-lg-4\">\n" +
+    "				<button class=\"btn btn-block btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Suspend/Delete Site</button>\n" +
+    "			</div>\n" +
+    "			<div class=\"col-lg-8\">\n" +
+    "				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, necessitatibus quisquam nam vel ad labore quos numquam eum.</p>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "		\n" +
+    "<hr>\n" +
     "\n" +
     "\n" +
     "\n" +
@@ -1019,7 +1130,41 @@ angular.module("sites/detail/sites.detail.development.tpl.html", []).run(["$temp
 
 angular.module("sites/detail/sites.detail.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("sites/detail/sites.detail.tpl.html",
-    "<div class=\"wrapper\">\n" +
+    "\n" +
+    "<div class=\"hbox stretch\">\n" +
+    "    <aside class=\"aside-lg\">\n" +
+    "        <div style=\"height:100px; overflow:hidden;\">\n" +
+    "            <img ng-src=\"assets/theme3.jpg\" style=\"display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-20px\">\n" +
+    "        </div>\n" +
+    "    </aside>\n" +
+    "    <section style=\"position:relative;\">\n" +
+    "        <section class=\"\" style=\"position:absolute; bottom:0; left:0; width:100%; padding-bottom:0;\">\n" +
+    "                <p class=\"h1 m-l\">{{site.url}}</p>\n" +
+    "                <header class=\"panel-heading bg-light m-l\">\n" +
+    "\n" +
+    "                    <ul class=\"nav nav-tabs\">\n" +
+    "                        <li ui-route=\"/sites/my-sites/{{site.id}}/account\"  ng-class=\"{active:$uiRoute}\"><a href=\"#/sites/my-sites/{{site.id}}/account\">Account</a></li>\n" +
+    "                        <li ui-route=\"/sites/my-sites/{{site.id}}/wordpress\" ng-class=\"{active:$uiRoute}\"><a href=\"#/sites/my-sites/{{site.id}}/wordpress\">Production Site</a></li>\n" +
+    "                        <li ui-route=\"/sites/my-sites/{{site.id}}/staging\" ng-class=\"{active:$uiRoute}\"><a href=\"#/sites/my-sites/{{site.id}}/account\">Development</a></li>\n" +
+    "                        <li ui-route=\"/sites/my-sites/{{site.id}}/backups\" ng-class=\"{active:$uiRoute}\"><a href=\"#/sites/my-sites/{{site.id}}/account\">Backups</a></li>        \n" +
+    "                        <li ui-route=\"/sites/my-sites/{{site.id}}/users\" ng-class=\"{active:$uiRoute}\"><a href=\"#/sites/my-sites/{{site.id}}/account\">Users</a></li>\n" +
+    "                        <!-- <li class=\"\"><a bs href=\"#activity\" data-toggle=\"tab\">Backups</a></li>\n" +
+    "                        <li class=\"\"><a bs href=\"#activity\" data-toggle=\"tab\">Domain & Email</a></li> -->\n" +
+    "                    </ul>\n" +
+    "\n" +
+    "                </header>\n" +
+    "        </section>     \n" +
+    "    </section>    \n" +
+    "</div>\n" +
+    "\n" +
+    "<div class=\"hbox stretch\">\n" +
+    "    <section>\n" +
+    "        <div ui-view=\"detailContent\"></div>\n" +
+    "    </section>\n" +
+    "</div>\n" +
+    "\n" +
+    "\n" +
+    "<div class=\"wrapper hidden\">\n" +
     "    <table class=\"table m-n no-border\" style=\"\">\n" +
     "        <tbody>\n" +
     "            <tr>\n" +
@@ -1073,6 +1218,122 @@ angular.module("sites/detail/sites.detail.tpl.html", []).run(["$templateCache", 
 
 angular.module("sites/detail/sites.detail.wordpress.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("sites/detail/sites.detail.wordpress.tpl.html",
+    "<div class=\"hbox stretch\">\n" +
+    "	<section>\n" +
+    "			<section class=\"panel\">\n" +
+    "\n" +
+    "				<div class=\"panel-body\">              \n" +
+    "\n" +
+    "					<table class=\"table\">\n" +
+    "						<tbody>\n" +
+    "							<tr>\n" +
+    "								<td width=\"100\" class=\"text-right\">\n" +
+    "									URL\n" +
+    "								</td>\n" +
+    "								<td>http://www.site.com</td>\n" +
+    "							</tr>\n" +
+    "							<tr>\n" +
+    "								<td width=\"100\" class=\"text-right\">\n" +
+    "									FTP\n" +
+    "								</td>\n" +
+    "								<td>\n" +
+    "									<p>ftp.mysite.com</p>\n" +
+    "									<p>user:ftpuser</p>\n" +
+    "									<p>pass:*****</p>\n" +
+    "								</td>\n" +
+    "							</tr>\n" +
+    "							<tr>\n" +
+    "								<td width=\"100\" class=\"text-right\">\n" +
+    "									Remote DB\n" +
+    "								</td>\n" +
+    "								<td>\n" +
+    "									<p>db.mysite.com</p>\n" +
+    "									<p>db name: wpdb9878</p>\n" +
+    "									<p>prefix:wp_39848_</p>\n" +
+    "									<p>user:mysqluser</p>\n" +
+    "									<p>pass:*****</p>\n" +
+    "								</td>\n" +
+    "							</tr>					\n" +
+    "						</tbody>\n" +
+    "					</table>	\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "					<br>\n" +
+    "					<br>\n" +
+    "					<hr>\n" +
+    "\n" +
+    "					<div class=\"row\">\n" +
+    "						<div class=\"col-lg-4\">\n" +
+    "							<button class=\"btn btn-block btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Migrate to Staging</button>\n" +
+    "						</div>\n" +
+    "						<div class=\"col-lg-8\">\n" +
+    "							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, necessitatibus quisquam nam vel ad labore quos numquam eum.</p>\n" +
+    "						</div>\n" +
+    "					</div>\n" +
+    "					<hr>\n" +
+    "					<div class=\"row\">\n" +
+    "						<div class=\"col-lg-4\">\n" +
+    "							<button class=\"btn btn-block btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Maintence Mode</button>	\n" +
+    "						</div>\n" +
+    "						<div class=\"col-lg-8\">\n" +
+    "							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, necessitatibus quisquam nam vel ad labore quos numquam eum.</p>\n" +
+    "						</div>\n" +
+    "					</div>\n" +
+    "					<hr>\n" +
+    "					<div class=\"row\">\n" +
+    "						<div class=\"col-lg-4\">\n" +
+    "							<button class=\"btn btn-block btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Backup Site</button>\n" +
+    "						</div>\n" +
+    "						<div class=\"col-lg-8\">\n" +
+    "							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, necessitatibus quisquam nam vel ad labore quos numquam eum.</p>\n" +
+    "						</div>\n" +
+    "					</div>\n" +
+    "					<hr>\n" +
+    "					<div class=\"row\">\n" +
+    "						<div class=\"col-lg-4\">\n" +
+    "							<button class=\"btn btn-block btn-white btn-lg\" oc-show-option template=\"app/templates/modals/comingsoon.html\">Export Site</button>\n" +
+    "						</div>\n" +
+    "						<div class=\"col-lg-8\">\n" +
+    "							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, necessitatibus quisquam nam vel ad labore quos numquam eum.</p>\n" +
+    "						</div>\n" +
+    "					</div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "				</div>\n" +
+    "			</section>\n" +
+    "	</section>\n" +
+    "	<aside class=\"aside\" style=\"position:relative;\">\n" +
+    "			<div class=\"list-group bg-white no-border\">\n" +
+    "                <a href=\"#\" class=\"no-border list-group-item text-ellipsis active\">\n" +
+    "                	<span class=\"arrow right\"></span>\n" +
+    "                  Overview\n" +
+    "                </a>\n" +
+    "                <a href=\"#\" class=\"no-border list-group-item text-ellipsis\">\n" +
+    "                  WP Settings\n" +
+    "                </a>\n" +
+    "                <a href=\"#\" class=\"no-border list-group-item text-ellipsis\">\n" +
+    "                  Advanced\n" +
+    "                </a>\n" +
+    "                <a href=\"#\" class=\"no-border list-group-item text-ellipsis\">\n" +
+    "                  SSL\n" +
+    "                </a>\n" +
+    "                <a href=\"#\" class=\"no-border list-group-item text-ellipsis\">\n" +
+    "                  Email\n" +
+    "                </a>                \n" +
+    "              </div>\n" +
+    "\n" +
+    "\n" +
+    "	</aside>\n" +
+    "</div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "<div class=\"hidden\">\n" +
+    "	\n" +
+    "\n" +
     "	<div class=\"message-area ng-scope\" ng-show=\"maintence==true\">\n" +
     "		<div class=\"alert alert-warning m-t m-b-lg\">\n" +
     "			<button type=\"button\" class=\"close\" ng-click=\"maintence=!maintence\" aria-hidden=\"true\">×</button>\n" +
@@ -1352,7 +1613,9 @@ angular.module("sites/detail/sites.detail.wordpress.tpl.html", []).run(["$templa
     "\n" +
     "\n" +
     "	</div>\n" +
-    "</section>");
+    "</section>\n" +
+    "\n" +
+    "</div>");
 }]);
 
 angular.module("sites/directive.sitelist.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -2322,7 +2585,6 @@ angular.module("wordpress/themes/wp.themes.tpl.html", []).run(["$templateCache",
     "    	<table class=\"table table-striped\">\n" +
     "    		<tbody>\n" +
     "    			<tr ng-repeat=\"item in themes\">\n" +
-    "                    <td>{{item.attributes.userId}}</td>\n" +
     "    				<td width=\"100\">\n" +
     "    					<img ng-src=\"{{item.attributes.image}}\" alt=\"\" class=\"thumb thumb-lg\">\n" +
     "    				</td>\n" +

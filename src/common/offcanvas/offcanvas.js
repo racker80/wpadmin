@@ -9,7 +9,6 @@ angular.module('offcanvas', [])
                 service.options[item] = false;
             }
             service.options[item] = !service.options[item];
-            console.log(service.options);
         }
     };
 
@@ -22,10 +21,9 @@ angular.module('offcanvas', [])
 .directive('offCanvasContainer', function($rootScope, $http, $compile, $window, offCanvasService){
     return {
         restrict:"A",
-        scope:{},
+        scope:true,
         controller:function($scope){
             $scope.options=offCanvasService.options;
-
         },
         link:function (scope, element, attrs) {
             
@@ -83,9 +81,10 @@ angular.module('offcanvas', [])
             }
 
             element.click(function(e){
+                
                 offCanvasService.toggle('showOption');
                 offCanvasService.toggle('showOverlay');                
-
+                console.log(offCanvasService);
                 if(angular.isUndefined(scope.output)) {
                     scope.output = [];
                 }
@@ -213,9 +212,9 @@ angular.module('offcanvas', [])
                 onComplete:function(){
                     TweenMax.to(element, 0, {
                         left:lFixed(),
-                        transform:'translate3d(0,0,0)',
-                        onComplete:done
+                        transform:'translate3d(0,0,0)'
                     });
+                    return done;
                 }
             });
         },
@@ -227,9 +226,9 @@ angular.module('offcanvas', [])
                 onComplete:function(){
                     TweenMax.to(element, t, {
                         left:'100%',
-                        transform:'translate3d(0,0,0)',
-                        onComplete:done
+                        transform:'translate3d(0,0,0)'
                     });
+                    return done;
                 }
             });
         }

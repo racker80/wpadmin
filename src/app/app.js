@@ -27,8 +27,7 @@ angular.module( 'ngBoilerplate', [
   $urlRouterProvider.otherwise( '/home' );
 })
 
-.run( function run ($rootScope, Auth, User) {
-    Parse.initialize("8fxedtub66Zg4xaQK6lGWL69vWz5J1mea3Pl5dqS", "pB4GLidCL1v8vocZY3H03TlECcE0ab6dFrBg8yz8");
+.run( function run ($rootScope, Auth, User, ParseSDK, ExtendParseSDK) {
     Auth.isAuthenticated();
     $rootScope.logOut = function(){
       Parse.User.logOut();
@@ -39,17 +38,19 @@ angular.module( 'ngBoilerplate', [
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
   });
 })
 
-.factory('User', function(Auth, $rootScope, $q){
+.factory('User', function(Auth, $rootScope, $q, ParseQueryAngular){
   var service = {};
 
   service.resolved = {
-    themes:false
+    themes:false,
+    sites:false
   };
 
   service.add = function(type, obj){
@@ -74,7 +75,9 @@ angular.module( 'ngBoilerplate', [
       myObject.destroy({
         success: function(myObject) {
           console.log('destroyed');
-          location.splice(index,1);
+          if(angular.isDefined(location)) {
+            location.splice(index,1);
+          }
           $rootScope.$apply();
         },
         error: function(myObject, error) {
@@ -83,54 +86,168 @@ angular.module( 'ngBoilerplate', [
           console.log('object deletion failed '+ error);
         }
       });
+      // var destroy = new ParseQueryAngular(myObject,{functionToCall:"destroy"});
+      // console.log(destroy.then(function(results) {
+      //     return results;
+      // }));
   };
-  service.save = {
-    theme: function(item){
-      console.log(item);
-       var Theme = Parse.Object.extend("Theme");
-       var theme = new Theme();
-       item.userId = Auth.currentUser().id;
-
-       theme.save(angular.copy(item), {
-        success: function(theme) {
-          console.log(theme);
-          service.themes.push(theme);
-          $rootScope.$apply();
-        },
-        error: function(theme, error) {
-          console.log(error);
-        }
-      });
-    }
+  service.update = function(type){
+    var typePlural = angular.lowercase(type)+'s';
+    var Update = Parse.Object.extend(type);
+    var query = new Parse.Query(Update);
+    query.equalTo("userId", Auth.currentUser().id);
+    var defer = $q.defer();
+    query.find({
+      success: function(results) {
+        console.log(results);
+        service[typePlural] = results;
+        service.resolved[typePlural] = true;
+        defer.resolve(service[typePlural]);
+      },
+      error: function(error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
+    });
+    return defer.promise;
   };
-
-  service.update = {
-    themes: function(){
-      var Theme = Parse.Object.extend("Theme");
-      var query = new Parse.Query(Theme);
-      query.equalTo("userId", Auth.currentUser().id);
-      var defer = $q.defer();
-      query.find({
-        success: function(results) {
-          console.log('theme query made');
-          service.themes = results;
-          service.resolved.themes = true;
-          defer.resolve(service.themes);
-        },
-        error: function(error) {
-          alert("Error: " + error.code + " " + error.message);
-        }
-      });
-      return defer.promise;
-    }
-  };
+  // service.update = {
+  //   themes: function(){
+  //     var typePlural = angular.lowercase(type)+'s';
+  //     var Update = Parse.Object.extend("type");
+  //     var query = new Parse.Query(Update);
+  //     query.equalTo("userId", Auth.currentUser().id);
+  //     var defer = $q.defer();
+  //     query.find({
+  //       success: function(results) {
+  //         console.log(results);
+  //         service[typePlural] = results;
+  //         service.resolved[typePlural] = true;
+  //         defer.resolve(service[typePlural]);
+  //       },
+  //       error: function(error) {
+  //         alert("Error: " + error.code + " " + error.message);
+  //       }
+  //     });
+  //     return defer.promise;
+  //   }
+  // };
 
   service.themes = [];
+  service.sites = [];
 
 
   return service;
 
 })
+.factory('ParseQueryAngular',['$q','$timeout',function ($q, $timeout) { 
 
+
+  // we use $timeout 0 as a trick to bring resolved promises into the Angular digest
+  var angularWrapper = $timeout;
+
+  return function(query,options) {
+
+      // if unspecified, the default function to call is 'find'
+      var functionToCall = "find";
+      if (!_.isUndefined(options) && !_.isUndefined(options.functionToCall)) {
+        functionToCall = options.functionToCall;
+      }
+
+      // create a promise to return
+      var defer = $q.defer();
+      
+      // this is the boilerplate stuff that you would normally have to write for every Parse call
+      var defaultParams = [{
+        success:function(data) {
+
+          /* We're using $timeout as an "angular wrapper" that will force a digest
+          * and kind of bring back the data in Angular realm.
+          * You could use the classic $scope.$apply as well but here we don't need
+          * to pass any $scope as a parameter.
+          * Another trick is to inject $rootScope and use $apply on it, but well, $timeout is sexy.
+          */
+          angularWrapper(function(){
+            defer.resolve(data);
+          });
+        },
+        error:function(data,err) {
+          angularWrapper(function(){
+            defer.reject(err);
+          });
+        }
+      }];
+      // Pass custom params if needed.
+      if (options && options.params) {
+        defaultParams = options.params.concat(defaultParams);
+      }
+      if (options && options.mergeParams) {
+        defaultParams[0] = _.extend(defaultParams[0],options.mergeParams);
+      }
+
+      // this is where the async call is made outside the Angular digest
+      query[functionToCall].apply(query,defaultParams);
+
+      return defer.promise;
+
+    };
+
+}])
+.factory('ExtendParseSDK', ['ParseAbstractService', function(ParseAbstractService) {
+
+  Parse.Object.extendAngular = function(options) {
+    return ParseAbstractService.EnhanceObject(Parse.Object.extend(options));
+  };
+
+  Parse.Collection.extendAngular = function(options) {
+    return ParseAbstractService.EnhanceCollection(Parse.Collection.extend(options));
+  };
+
+}])
+.factory('ParseAbstractService', ['ParseQueryAngular', function(ParseQueryAngular) {
+  /********
+    This service provides an enhanced Parse.Object and Parse.Collection
+    So we can call load and saveParse from any extending Class and have that wrapped
+    within ParseQueryAngular
+  **********/
+
+
+  var object = function(originalClass) {
+    originalClass.prototype = _.extend(originalClass.prototype,{
+      load:function() {
+        return new ParseQueryAngular(this,{functionToCall:"fetch"});
+      },
+      saveParse:function(data) {
+        if (data && typeof data == "object") {
+          this.set(data);
+        }
+        return new ParseQueryAngular(this,{functionToCall:"save", params:[null]});
+      }
+    });
+    return originalClass;
+  };
+
+  var collection = function(originalClass){
+    originalClass.prototype = _.extend(originalClass.prototype,{
+      load:function() {
+        return new ParseQueryAngular(this,{functionToCall:"fetch"});
+      }
+    });
+    return originalClass;
+  };
+
+
+  return {
+    EnhanceObject:object,
+    EnhanceCollection:collection
+  };
+
+}])
+.factory('ParseSDK', function() {
+
+  // pro-tip: swap these keys out for PROD keys automatically on deploy using grunt-replace
+  Parse.initialize("8fxedtub66Zg4xaQK6lGWL69vWz5J1mea3Pl5dqS", "pB4GLidCL1v8vocZY3H03TlECcE0ab6dFrBg8yz8");
+
+
+})
 ;
 

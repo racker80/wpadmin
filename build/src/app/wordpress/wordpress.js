@@ -27,7 +27,6 @@ angular.module( 'ngBoilerplate.wp', [
 .controller( 'wpCtrl', function WpController( $scope, $rootScope, Auth ) {
   console.log('wpCtrl');
   Auth.isAuthenticated();
-
 })
 .factory('wpData', function(){
   var service = {};
