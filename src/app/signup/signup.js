@@ -29,7 +29,7 @@ angular.module( 'ngBoilerplate.signup', [
       
       $scope.doSignup = function(){
         var user = new Parse.User();
-        $scope.signup.username = $scope.signup.email;
+        $scope.signup.email = $scope.signup.username;
         // user.set("username", $scope.signup.email);
         // user.set("password", $scope.signup.password);
         // user.set("email", $scope.signup.email);

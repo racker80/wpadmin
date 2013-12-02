@@ -441,7 +441,7 @@ angular.module("signup/signup.tpl.html", []).run(["$templateCache", function($te
     "    <form action=\"index.html\" class=\"panel-body\">\n" +
     "      <div class=\"form-group\">\n" +
     "        <label class=\"control-label\">Your email address</label>\n" +
-    "        <input type=\"text\" ng-model=\"signup.email\" placeholder=\"test@example.com\" class=\"form-control\">\n" +
+    "        <input type=\"text\" ng-model=\"signup.username\" placeholder=\"test@example.com\" class=\"form-control\">\n" +
     "      </div>\n" +
     "      <div class=\"form-group\">\n" +
     "        <label class=\"control-label\">Type a password</label>\n" +

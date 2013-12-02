@@ -71,7 +71,11 @@ angular.module( 'ngBoilerplate.sites.new', [
           //       // error is a Parse.Error with an error code and description.
           //     }
           //   });
-          $scope.options.image = $scope.options.themes[0].image;
+          if($scope.options.themes.length === 0) {
+            $scope.options.image = '/assets/theme4.jpg';
+          } else {
+            $scope.options.image = $scope.options.themes[0].image;
+          }
           User.add('Site', $scope.options);
           $state.transitionTo('sites.mine');
 
