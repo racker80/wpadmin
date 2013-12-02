@@ -65,13 +65,13 @@
     		<tbody>
     			<tr ng-repeat="item in plugins">
     				<td width="250">
-    					<h4 class="m-n font-thin">{{item.name}}</h4>
+    					<h4 class="m-n font-thin">{{item.attributes.name}}</h4>
     					<small>by: <span ng-bind-html-unsafe='{item.author}'></span></small>
     				</td>
     				<td>
-    					<p class="font-thin">{{item.short_description}}</p>
+    					<p class="font-thin">{{item.attributes.short_description}}</p>
     				</td>
-    				<td class="text-right v-middle" width="150" style="cursor:pointer;" ng-click="Data.wordpress.plugins.splice($index, 1)"><span><i class="icon-remove"></i> remove</span></td>
+    				<td class="text-right v-middle" width="150" style="cursor:pointer;" ng-click="User.destroy(item, plugins, $index)"><span><i class="icon-remove"></i> remove</span></td>
     			</tr>
 				<!-- <tr>
 					<td width="100">

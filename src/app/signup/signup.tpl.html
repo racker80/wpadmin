@@ -7,23 +7,23 @@
     <form action="index.html" class="panel-body">
       <div class="form-group">
         <label class="control-label">Your email address</label>
-        <input type="email" placeholder="test@example.com" class="form-control">
+        <input type="text" ng-model="signup.email" placeholder="test@example.com" class="form-control">
       </div>
       <div class="form-group">
         <label class="control-label">Type a password</label>
-        <input type="password" id="inputPassword" placeholder="Password" class="form-control">
+        <input type="password" ng-model="signup.password" id="inputPassword" placeholder="Password" class="form-control">
       </div>
       <div class="form-group">
         <label class="control-label">Name</label>
         <div class="row">
-          <div class="col-lg-6"><input type="text" id="" placeholder="first" class="form-control"></div>
-          <div class="col-lg-6"><input type="text" id="" placeholder="last" class="form-control"></div>
+          <div class="col-lg-6"><input type="text" ng-model="signup.firstname" id="" placeholder="first" class="form-control"></div>
+          <div class="col-lg-6"><input type="text" ng-model="signup.lastname" id="" placeholder="last" class="form-control"></div>
         </div>
       </div>    
       <div class="form-group">
         <label class="control-label">Phone</label>
         <div class="row">
-          <div class="col-lg-6"><input type="text" id="" placeholder="555-555-5555" class="form-control"></div>
+          <div class="col-lg-6"><input type="text" id="" ng-model="signup.phone" placeholder="555-555-5555" class="form-control"></div>
         </div>
       </div>         
       <div class="checkbox">
@@ -31,7 +31,7 @@
           <input type="checkbox"> Agree the <a href="#">terms and policy</a>
         </label>
       </div>
-      <a class="btn btn-info btn-block" ng-click="signup()">Sign up</a>
+      <a class="btn btn-info btn-block" ng-click="doSignup()">Sign up</a>
     </form>
   </section>
   </section>

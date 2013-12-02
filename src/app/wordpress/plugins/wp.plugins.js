@@ -31,23 +31,12 @@ angular.module( 'ngBoilerplate.wp.plugins', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'wpPluginsCtrl', function WpPluginsController( $scope, $rootScope, Auth, plugins, $http, $q ) {
+.controller( 'wpPluginsCtrl', function WpPluginsController( $scope, $rootScope, Auth, plugins, $http, $q, User ) {
   console.log('wpPluginsCtrl');
   Auth.isAuthenticated();
 
   $scope.plugins = plugins;
-
-  // var Plugins = $q.defer();
-  // $http.get('search.php', {
-  //                   params: {
-  //                       type:'search',
-  //                       value:'seo',
-  //                       action: 'query_plugins'
-  //                   }
-  //               }).success(function(response){
-  //                   console.log(response);
-  //                   Plugins.resolve(response);
-  //               });
+  $scope.User = User;
 })
 
 .directive('wpSearch', function($http, $rootScope, $q){

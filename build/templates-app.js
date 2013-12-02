@@ -441,23 +441,23 @@ angular.module("signup/signup.tpl.html", []).run(["$templateCache", function($te
     "    <form action=\"index.html\" class=\"panel-body\">\n" +
     "      <div class=\"form-group\">\n" +
     "        <label class=\"control-label\">Your email address</label>\n" +
-    "        <input type=\"email\" placeholder=\"test@example.com\" class=\"form-control\">\n" +
+    "        <input type=\"text\" ng-model=\"signup.email\" placeholder=\"test@example.com\" class=\"form-control\">\n" +
     "      </div>\n" +
     "      <div class=\"form-group\">\n" +
     "        <label class=\"control-label\">Type a password</label>\n" +
-    "        <input type=\"password\" id=\"inputPassword\" placeholder=\"Password\" class=\"form-control\">\n" +
+    "        <input type=\"password\" ng-model=\"signup.password\" id=\"inputPassword\" placeholder=\"Password\" class=\"form-control\">\n" +
     "      </div>\n" +
     "      <div class=\"form-group\">\n" +
     "        <label class=\"control-label\">Name</label>\n" +
     "        <div class=\"row\">\n" +
-    "          <div class=\"col-lg-6\"><input type=\"text\" id=\"\" placeholder=\"first\" class=\"form-control\"></div>\n" +
-    "          <div class=\"col-lg-6\"><input type=\"text\" id=\"\" placeholder=\"last\" class=\"form-control\"></div>\n" +
+    "          <div class=\"col-lg-6\"><input type=\"text\" ng-model=\"signup.firstname\" id=\"\" placeholder=\"first\" class=\"form-control\"></div>\n" +
+    "          <div class=\"col-lg-6\"><input type=\"text\" ng-model=\"signup.lastname\" id=\"\" placeholder=\"last\" class=\"form-control\"></div>\n" +
     "        </div>\n" +
     "      </div>    \n" +
     "      <div class=\"form-group\">\n" +
     "        <label class=\"control-label\">Phone</label>\n" +
     "        <div class=\"row\">\n" +
-    "          <div class=\"col-lg-6\"><input type=\"text\" id=\"\" placeholder=\"555-555-5555\" class=\"form-control\"></div>\n" +
+    "          <div class=\"col-lg-6\"><input type=\"text\" id=\"\" ng-model=\"signup.phone\" placeholder=\"555-555-5555\" class=\"form-control\"></div>\n" +
     "        </div>\n" +
     "      </div>         \n" +
     "      <div class=\"checkbox\">\n" +
@@ -465,7 +465,7 @@ angular.module("signup/signup.tpl.html", []).run(["$templateCache", function($te
     "          <input type=\"checkbox\"> Agree the <a href=\"#\">terms and policy</a>\n" +
     "        </label>\n" +
     "      </div>\n" +
-    "      <a class=\"btn btn-info btn-block\" ng-click=\"signup()\">Sign up</a>\n" +
+    "      <a class=\"btn btn-info btn-block\" ng-click=\"doSignup()\">Sign up</a>\n" +
     "    </form>\n" +
     "  </section>\n" +
     "  </section>\n" +
@@ -1983,11 +1983,11 @@ angular.module("sites/new/sites.new.tpl.html", []).run(["$templateCache", functi
     "                        </div>  \n" +
     "                    </div>\n" +
     "                    <div class=\"col-md-5 col-md-push-1\">\n" +
-    "                        <div class=\"bg-info lter r-l text-center v-middle\">\n" +
+    "                        <!-- <div class=\"bg-info lter r-l text-center v-middle\">\n" +
     "                            <div class=\"wrapper\">\n" +
     "                                <p class=\"font-thin\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, illum totam aliquid!</p>\n" +
     "                            </div>\n" +
-    "                        </div>\n" +
+    "                        </div> -->\n" +
     "                    </div>\n" +
     "                </div>                        \n" +
     "\n" +
@@ -2639,9 +2639,7 @@ angular.module("templates/wp.plugin.search.tpl.html", []).run(["$templateCache",
     "			<table class=\"table table-striped\">\n" +
     "				<tbody>\n" +
     "					<tr ng-repeat=\"item in plugins\" 	>\n" +
-    "						<td class=\"text-right v-middle\" width=\"20\">\n" +
-    "							<input type=\"checkbox\" value=\"{{item}}\" check-list=\"detail.output\">\n" +
-    "						</td>						\n" +
+    "						<td class=\"v-middle\"><button class=\"btn btn-sm btn-white\" ng-click=\"User.add('Plugin', {name:item.name, short_description:item.short_description})\">add</button></td>\n" +
     "						<td width=\"250\">\n" +
     "							<h4 class=\"m-n font-thin\">{{item.name}}</h4>\n" +
     "							<small>by: <span ng-bind-html-unsafe=\"{item.author}\"></span></small>\n" +
@@ -2741,13 +2739,13 @@ angular.module("wordpress/plugins/wp.plugins.tpl.html", []).run(["$templateCache
     "    		<tbody>\n" +
     "    			<tr ng-repeat=\"item in plugins\">\n" +
     "    				<td width=\"250\">\n" +
-    "    					<h4 class=\"m-n font-thin\">{{item.name}}</h4>\n" +
+    "    					<h4 class=\"m-n font-thin\">{{item.attributes.name}}</h4>\n" +
     "    					<small>by: <span ng-bind-html-unsafe='{item.author}'></span></small>\n" +
     "    				</td>\n" +
     "    				<td>\n" +
-    "    					<p class=\"font-thin\">{{item.short_description}}</p>\n" +
+    "    					<p class=\"font-thin\">{{item.attributes.short_description}}</p>\n" +
     "    				</td>\n" +
-    "    				<td class=\"text-right v-middle\" width=\"150\" style=\"cursor:pointer;\" ng-click=\"Data.wordpress.plugins.splice($index, 1)\"><span><i class=\"icon-remove\"></i> remove</span></td>\n" +
+    "    				<td class=\"text-right v-middle\" width=\"150\" style=\"cursor:pointer;\" ng-click=\"User.destroy(item, plugins, $index)\"><span><i class=\"icon-remove\"></i> remove</span></td>\n" +
     "    			</tr>\n" +
     "				<!-- <tr>\n" +
     "					<td width=\"100\">\n" +

@@ -25,9 +25,27 @@ angular.module( 'ngBoilerplate.signup', [
  */
 .controller( 'signupCtrl', function SignupController( $scope, $state, $location, User ) {
   console.log('signupCtrl');
-  $scope.signup = function(){
+  $scope.signup = {};
+      
+      $scope.doSignup = function(){
+        var user = new Parse.User();
+        $scope.signup.username = $scope.signup.email;
+        // user.set("username", $scope.signup.email);
+        // user.set("password", $scope.signup.password);
+        // user.set("email", $scope.signup.email);
 
-  };
+        console.log($scope.signup);
+        user.signUp(angular.copy($scope.signup), {
+          success: function(user) {
+              // Hooray! Let them use the app now.
+              $state.transitionTo('sites.mine');
+          },
+          error: function(user, error) {
+              // Show the error message somewhere and let the user try again.
+              alert("Error: " + error.code + " " + error.message);
+          }
+        }); 
+      };
 })
 ;
 

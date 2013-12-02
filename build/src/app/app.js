@@ -34,13 +34,14 @@ angular.module( 'ngBoilerplate', [
       Parse.User.logOut();
       Auth.isAuthenticated();
     };
-    $rootScope.User = User;
+
 })
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location, $rootScope ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-      $rootScope.location = function() { return $location.path(); };
       $scope.view = toState.name;
+
+      $scope.profile = Parse.User.current().attributes;
 
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;

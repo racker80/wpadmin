@@ -47,7 +47,7 @@ angular.module( 'ngBoilerplate.login', [
         $state.transitionTo('sites.mine');
       },
       error: function(user, error) {
-        alert('Nope');
+        alert('You must use a real email address and password');
       }
     });
   };
