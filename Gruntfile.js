@@ -618,6 +618,17 @@ module.exports = function ( grunt ) {
         });
       }
     });
+    grunt.file.copy('src/search.php', this.data.dir + '/search.php', { 
+      process: function ( contents, path ) {
+        return grunt.template.process( contents, {
+          data: {
+            scripts: jsFiles,
+            styles: cssFiles,
+            version: grunt.config( 'pkg.version' )
+          }
+        });
+      }
+    });    
   });
 
   /**

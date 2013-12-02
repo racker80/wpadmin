@@ -1,19 +1,6 @@
 
 <div new-site>
 
-<div style="
-    position:fixed;
-    top:0;
-    right:0;
-    width:100px;
-    height:auto;
-    background:rgba(0,0,0,.2);
-    color:#fff;
-    white-space:pre-line;
-">
-{{options}}
-</div>
-
 <section class="jumbotron">
     <h2>Create a new site</h2>
 </section>
@@ -103,7 +90,7 @@
     <div class="form-group padder-v">
         <label for="inputEmail1" class="col-lg-2 control-label ">Themes</label>
         <div class="col-lg-10">
-
+            
             <section ng-show="options.themes.length > 0">
                 <div class="row">
                     <div class="col-lg-6">
@@ -129,7 +116,6 @@
                 </div>
 
             </section>
-
             <section>
 
                 <div>
@@ -144,9 +130,10 @@
                     </button>
 
                     <button class="btn btn-white  navbar-btn" 
-                    oc-show-detail 
+                    oc-show-option 
+                    input="wpData.themes" 
                     output="options.themes" 
-                    template="templates/add.themes.tpl.html" 
+                    template="templates/new.upload.themes.tpl.html" 
                     title="my modal">
                     <i class="icon-cloud-upload text"></i> upload
                     </button> 

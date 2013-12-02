@@ -31,16 +31,18 @@ angular.module( 'ngBoilerplate.sites.new', [
   
 })
 
-.directive('newSite', function($http, $compile, $rootScope, $state, User) {
+.directive('newSite', function($http, $compile, $rootScope, $state, User, wpData) {
     return {
       restrict:"A",
       scope:{},
       controller:function($scope){
         console.log('new site directive ctrl');
         $scope.options = {
-          userId: Parse.User.current().id
+          userId: Parse.User.current().id,
+          themes:[]
         };
-
+        $scope.User = User;
+        $scope.wpData = wpData;
         
         $scope.createSite = function() {
           // var scope = $scope;
@@ -69,6 +71,7 @@ angular.module( 'ngBoilerplate.sites.new', [
           //       // error is a Parse.Error with an error code and description.
           //     }
           //   });
+          $scope.options.image = $scope.options.themes[0].image;
           User.add('Site', $scope.options);
           $state.transitionTo('sites.mine');
 

@@ -134,7 +134,7 @@ angular.module('offcanvas', [])
             var tpl = $compile(template)(scope);
             element.html(tpl);
 
-            scope.$watch('detail', function(output){
+            scope.$watch('detail.output', function(output){
                 console.log(output);
             });
 

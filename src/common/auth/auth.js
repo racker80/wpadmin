@@ -4,8 +4,8 @@ angular.module('auth', [])
 .factory('Auth', ['$http', '$q', '$state', function($http, $q, $state){
 // Redirect to the given url (defaults to '/')
 function redirect(url) {
-url = url || '/';
-$location.path(url);
+	url = url || '/';
+	$location.path(url);
 }
 
 	var service = {
@@ -28,6 +28,7 @@ $location.path(url);
 		// Is the current user authenticated?
 		isAuthenticated: function(){
 			if(!Parse.User.current()) {
+				
 				$state.transitionTo('login');
 			} else {
 				return true;
@@ -40,5 +41,5 @@ $location.path(url);
 			return !!(service.currentUser && service.currentUser.admin);
 		}
 	};
-return service;
+	return service;
 }]);

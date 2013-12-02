@@ -16,8 +16,8 @@ angular.module( 'ngBoilerplate.sites.collaborators', [
       }
     },
     resolve: {
-      sites: function($q, Auth){
-          return;
+      collaborators: function($q, Auth){
+          return ;
       }
     },
     data:{ pageTitle: 'Home' }
@@ -26,10 +26,25 @@ angular.module( 'ngBoilerplate.sites.collaborators', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'collaboratorsSitesCtrl', function CollaboratorsSitesController( $scope, $rootScope, Auth, sites ) {
+.controller( 'collaboratorsSitesCtrl', function CollaboratorsSitesController( $scope, $rootScope, Auth, collaborators ) {
   console.log('collaboratorsSitesCtrl');
   Auth.isAuthenticated();
 
-  $scope.sites = sites;
+  $scope.localCollaborators = [
+            {
+              name:'Eric McGregor',
+              email:'eric.mcgregor@rackspace.com',
+              company:"Rackspace",
+              roles:["Site Manager"],
+              status:'active'
+            },
+            {
+              name:'Billy Joe',
+              email:'billy.joe@gmail.com',
+              company:"Rackspace",
+              roles:["Site Manager"],
+              status:'pending'
+            }
+          ];
 })
 ;

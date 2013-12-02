@@ -1,0 +1,56 @@
+<div class="wrapper" ng-init="searchField=detail.input">
+	<section wp-search >
+
+	<heading class="clearfix">
+		<div class="navbar m-n pull-right">
+			<form class="navbar-form navbar-left">
+				<div class="form-group">
+					<input type="text" class="input-sm form-control" placeholder="WordPress.org Plugin Database" ng-model="searchField">
+				</div>
+				<button class="btn btn-sm btn-white" type="button" ng-click="search()">Search</button>
+			</form>
+
+		</div>
+
+		<h3 class="font-thin">Search Results</h3>
+	</heading>
+		
+		<div ng-hide="plugins" class="m-t-lg">
+			<p class="h4 font-thin">Searching for {{searchField}}...</p>
+		</div>
+
+		<div class="table-responsive">
+
+			<table class="table table-striped">
+				<tbody>
+					<tr ng-repeat="item in plugins" 	>
+						<td class="text-right v-middle" width="20">
+							<input type="checkbox" value="{{item}}" check-list="detail.output">
+						</td>						
+						<td width="250">
+							<h4 class="m-n font-thin">{{item.name}}</h4>
+							<small>by: <span ng-bind-html-unsafe="{item.author}"></span></small>
+						</td>
+						<td>
+							<p class="font-thin">{{item.short_description}}</p>
+						</td>
+
+					</tr>
+					<!-- <tr>
+						<td width="100">
+							<img src="app/img/screenshot1.png" alt="" class="thumb thumb-lg">
+						</td>
+						<td>
+							<h3>HTML5 blank theme</h3>
+							<small>by: <a href="#">Anon</a></small>
+						</td>
+						<td class="text-right v-middle"><a bs href="#">activate</a></td>
+					</tr>	 -->			
+				</tbody>
+			</table>
+
+		</div>
+
+
+	</section>
+</div>

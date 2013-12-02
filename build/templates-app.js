@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html', 'sites/collaborators/sites.collaborators.tpl.html', 'sites/detail/sites.detail.account.tpl.html', 'sites/detail/sites.detail.development.tpl.html', 'sites/detail/sites.detail.tpl.html', 'sites/detail/sites.detail.wordpress.tpl.html', 'sites/directive.sitelist.tpl.html', 'sites/managed/sites.managed.tpl.html', 'sites/mine/sites.mine.tpl.html', 'sites/new/sites.new.tpl.html', 'sites/sites.nav.tpl.html', 'sites/sites.tpl.html', 'templates/add.themes.tpl.html', 'templates/upload.themes.tpl.html', 'wordpress/plugins/wp.plugins.tpl.html', 'wordpress/settings/wp.settings.tpl.html', 'wordpress/themes/wp.themes.tpl.html', 'wordpress/wordpress.nav.tpl.html', 'wordpress/wordpress.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html', 'signup/signup.tpl.html', 'sites/collaborators/sites.collaborators.tpl.html', 'sites/detail/sites.detail.account.tpl.html', 'sites/detail/sites.detail.development.tpl.html', 'sites/detail/sites.detail.tpl.html', 'sites/detail/sites.detail.wordpress.tpl.html', 'sites/directive.sitelist.tpl.html', 'sites/managed/sites.managed.tpl.html', 'sites/mine/sites.mine.tpl.html', 'sites/new/sites.new.tpl.html', 'sites/sites.nav.tpl.html', 'sites/sites.tpl.html', 'templates/add.themes.tpl.html', 'templates/new.upload.themes.tpl.html', 'templates/upload.themes.tpl.html', 'templates/wp.plugin.search.tpl.html', 'wordpress/plugins/wp.plugins.tpl.html', 'wordpress/settings/forms/discussion.tpl.html', 'wordpress/settings/forms/general.tpl.html', 'wordpress/settings/forms/media.tpl.html', 'wordpress/settings/forms/permalinks.tpl.html', 'wordpress/settings/forms/reading.tpl.html', 'wordpress/settings/forms/writing.tpl.html', 'wordpress/settings/wp.settings.tpl.html', 'wordpress/themes/wp.themes.tpl.html', 'wordpress/wordpress.nav.tpl.html', 'wordpress/wordpress.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -412,28 +412,71 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
 
 angular.module("login/login.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("login/login.tpl.html",
-    "<div class=\"clear\">\n" +
-    "        <div class=\"wrapper\">\n" +
-    "            <p class=\"lead text-white text-center\">Log In to WP Sites</p>\n" +
-    "        </div>\n" +
-    "      <input type=\"text\" class=\"form-control text-sm\" placeholder=\"Email or username\" ng-model=\"login.email\">\n" +
+    "<div class=\"panel\">\n" +
+    "  <header class=\"panel-heading\">\n" +
+    "    <p class=\"h3\">Log In to WP Sites</p>\n" +
+    "  </header>\n" +
+    "  <section class=\"panel-body\">\n" +
+    "    <input type=\"text\" class=\"form-control text-sm\" placeholder=\"Email or username\" ng-model=\"login.email\">\n" +
     "      <br>\n" +
     "      <input type=\"password\" class=\"form-control text-sm\" placeholder=\"password\" ng-model=\"login.password\">\n" +
     "      <br>\n" +
     "      <div class=\"\">\n" +
-    "                <button class=\"btn btn-success\" type=\"button\" style=\"width:100px\" ng-click=\"login()\"> Login <i class=\"icon-arrow-right\"></i></button>\n" +
+    "                <button class=\"btn btn-success\" type=\"button\" style=\"width:100px\" ng-click=\"login()\"> Login <i class=\"icon-arrow-right\"></i></button> <p class=\"inline  m-l-lg font-thin\">Don't have an account?  No problem, you can <a href=\"#/signup\"><span class=\"text-info\">signup for free</span></a></p>\n" +
     "      </div>\n" +
     "\n" +
-    "      <hr>\n" +
+    "  </section>\n" +
+    "</div>\n" +
+    "");
+}]);
+
+angular.module("signup/signup.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("signup/signup.tpl.html",
+    "<section class=\"panel\">\n" +
+    "  <header class=\"panel-heading\">\n" +
+    "    <p class=\"h3\">Create Your Sites Account</p>\n" +
+    "  </header>\n" +
+    "  <section class=\"panel-body\">\n" +
+    "    <p class=\"\">Create Your account!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, assumenda perspiciatis accusantium?</p>\n" +
+    "    <form action=\"index.html\" class=\"panel-body\">\n" +
+    "      <div class=\"form-group\">\n" +
+    "        <label class=\"control-label\">Your email address</label>\n" +
+    "        <input type=\"email\" placeholder=\"test@example.com\" class=\"form-control\">\n" +
+    "      </div>\n" +
+    "      <div class=\"form-group\">\n" +
+    "        <label class=\"control-label\">Type a password</label>\n" +
+    "        <input type=\"password\" id=\"inputPassword\" placeholder=\"Password\" class=\"form-control\">\n" +
+    "      </div>\n" +
+    "      <div class=\"form-group\">\n" +
+    "        <label class=\"control-label\">Name</label>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"col-lg-6\"><input type=\"text\" id=\"\" placeholder=\"first\" class=\"form-control\"></div>\n" +
+    "          <div class=\"col-lg-6\"><input type=\"text\" id=\"\" placeholder=\"last\" class=\"form-control\"></div>\n" +
+    "        </div>\n" +
+    "      </div>    \n" +
+    "      <div class=\"form-group\">\n" +
+    "        <label class=\"control-label\">Phone</label>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"col-lg-6\"><input type=\"text\" id=\"\" placeholder=\"555-555-5555\" class=\"form-control\"></div>\n" +
+    "        </div>\n" +
+    "      </div>         \n" +
+    "      <div class=\"checkbox\">\n" +
+    "        <label>\n" +
+    "          <input type=\"checkbox\"> Agree the <a href=\"#\">terms and policy</a>\n" +
+    "        </label>\n" +
+    "      </div>\n" +
+    "      <a class=\"btn btn-info btn-block\" ng-click=\"signup()\">Sign up</a>\n" +
+    "    </form>\n" +
+    "  </section>\n" +
+    "  </section>\n" +
     "\n" +
-    "      <div class=\"text-white\">Don't have an account?  No problem, you can <a href=\"#/signup\"><span class=\"text-info\">signup for free</span></a></div>\n" +
-    "    </div>\n" +
-    "  </div>");
+    "        <p class=\"text-muted text-center\"><small>Already have an account?</small> <a href=\"#/\" class=\"\"><span class=\"text-info\">Sign in</span></a></p>\n" +
+    "");
 }]);
 
 angular.module("sites/collaborators/sites.collaborators.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("sites/collaborators/sites.collaborators.tpl.html",
-    "<section ng-hide=\"Data.sites.collaborators.length>0\">\n" +
+    "<section ng-hide=\"collaborators.length>0\">\n" +
     "	<div class=\"text-center empty\">\n" +
     "			<h2 class=\"font-thin\">People You Collaborate With</h2>\n" +
     "			<p class=\"h4 font-thin\">Here is where you find all the people that are linked to your account.  They could be people managing some of your sites, or people who's sites you manage.  This is where you can keep track of it all.</p>\n" +
@@ -472,11 +515,11 @@ angular.module("sites/collaborators/sites.collaborators.tpl.html", []).run(["$te
     "\n" +
     "			<br>\n" +
     "			<hr>\n" +
-    "			<span style=\"cursor:pointer\" ng-click=\"Data.sites.collaborators=Data.data.sites.collaborators\">or pretend you have some collaborators</span>\n" +
+    "			<span style=\"cursor:pointer\" ng-click=\"collaborators=localCollaborators\">or pretend you have some collaborators</span>\n" +
     "\n" +
     "</section>\n" +
     "\n" +
-    "<section ng-show=\"Data.sites.collaborators.length>0\">\n" +
+    "<section ng-show=\"collaborators.length>0\">\n" +
     "<div class=\"message-area\">\n" +
     "	<div class=\"alert alert-warning m-t m-b-lg\">\n" +
     "		<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>\n" +
@@ -513,7 +556,7 @@ angular.module("sites/collaborators/sites.collaborators.tpl.html", []).run(["$te
     "			</tr>\n" +
     "		</thead>\n" +
     "		<tbody>\n" +
-    "			<tr ng-repeat=\"user in Data.sites.collaborators\">\n" +
+    "			<tr ng-repeat=\"user in collaborators\">\n" +
     "				<td class=\"v-middle\">\n" +
     "					<div class=\"btn-group\">\n" +
     "						<button class=\"btn btn-white btn-xs dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"icon-gear\"></i></button>\n" +
@@ -545,9 +588,10 @@ angular.module("sites/collaborators/sites.collaborators.tpl.html", []).run(["$te
 
 angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("sites/detail/sites.detail.account.tpl.html",
-    "<div class=\"row\">\n" +
+    "<br>\n" +
+    "<div class=\"row row-eqh\">\n" +
     "	<div class=\"col-lg-8\">\n" +
-    "		<section class=\"panel m-t-lg\">\n" +
+    "		<section class=\"panel m-n m-b-lg\">\n" +
     "			<header class=\"panel-heading\">\n" +
     "				<p class=\"h4 m-n\">Your Activity For November</p>\n" +
     "			</header>\n" +
@@ -602,7 +646,7 @@ angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$template
     "\n" +
     "		</section>\n" +
     "\n" +
-    "		<section class=\"panel m-t-lg\">\n" +
+    "		<section class=\"panel m-n\">\n" +
     "			<header class=\"panel-heading\">\n" +
     "				<p class=\"h4 m-n\">Your Response Time For November</p>\n" +
     "			</header>\n" +
@@ -617,6 +661,7 @@ angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$template
     "					<div class=\"col-md-4 text-center\">\n" +
     "						<h4 class=\"thin\">Average Response Time</h4>\n" +
     "						<h2 class=\"text-success\">90ms</h2>\n" +
+    "						<p class=\"font-thing\">Hey, that's pretty fast!</p>\n" +
     "					</div>\n" +
     "				</div>\n" +
     "			</div>\n" +
@@ -626,7 +671,7 @@ angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$template
     "\n" +
     "	</div>\n" +
     "	<div class=\"col-lg-4\">\n" +
-    "		<section class=\"panel m-t-lg\">\n" +
+    "		<section class=\"panel m-n\">\n" +
     "			<header class=\"panel-heading\">\n" +
     "				<p class=\"h4 m-n\">Your Last Month's Invoice - October</p>\n" +
     "			</header>	\n" +
@@ -1882,19 +1927,6 @@ angular.module("sites/new/sites.new.tpl.html", []).run(["$templateCache", functi
     "\n" +
     "<div new-site>\n" +
     "\n" +
-    "<div style=\"\n" +
-    "    position:fixed;\n" +
-    "    top:0;\n" +
-    "    right:0;\n" +
-    "    width:100px;\n" +
-    "    height:auto;\n" +
-    "    background:rgba(0,0,0,.2);\n" +
-    "    color:#fff;\n" +
-    "    white-space:pre-line;\n" +
-    "\">\n" +
-    "{{options}}\n" +
-    "</div>\n" +
-    "\n" +
     "<section class=\"jumbotron\">\n" +
     "    <h2>Create a new site</h2>\n" +
     "</section>\n" +
@@ -1984,7 +2016,7 @@ angular.module("sites/new/sites.new.tpl.html", []).run(["$templateCache", functi
     "    <div class=\"form-group padder-v\">\n" +
     "        <label for=\"inputEmail1\" class=\"col-lg-2 control-label \">Themes</label>\n" +
     "        <div class=\"col-lg-10\">\n" +
-    "\n" +
+    "            \n" +
     "            <section ng-show=\"options.themes.length > 0\">\n" +
     "                <div class=\"row\">\n" +
     "                    <div class=\"col-lg-6\">\n" +
@@ -2010,7 +2042,6 @@ angular.module("sites/new/sites.new.tpl.html", []).run(["$templateCache", functi
     "                </div>\n" +
     "\n" +
     "            </section>\n" +
-    "\n" +
     "            <section>\n" +
     "\n" +
     "                <div>\n" +
@@ -2025,9 +2056,10 @@ angular.module("sites/new/sites.new.tpl.html", []).run(["$templateCache", functi
     "                    </button>\n" +
     "\n" +
     "                    <button class=\"btn btn-white  navbar-btn\" \n" +
-    "                    oc-show-detail \n" +
+    "                    oc-show-option \n" +
+    "                    input=\"wpData.themes\" \n" +
     "                    output=\"options.themes\" \n" +
-    "                    template=\"templates/add.themes.tpl.html\" \n" +
+    "                    template=\"templates/new.upload.themes.tpl.html\" \n" +
     "                    title=\"my modal\">\n" +
     "                    <i class=\"icon-cloud-upload text\"></i> upload\n" +
     "                    </button> \n" +
@@ -2471,6 +2503,59 @@ angular.module("templates/add.themes.tpl.html", []).run(["$templateCache", funct
     "</div>");
 }]);
 
+angular.module("templates/new.upload.themes.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/new.upload.themes.tpl.html",
+    "<div class=\"wrapper\">\n" +
+    "	\n" +
+    "	<header class=\"heading \">\n" +
+    "		<p class=\"h4\">Upload a new theme</p>\n" +
+    "		<p class=\"thin\">Add a custom or purchased theme.</p>\n" +
+    "	</header>\n" +
+    "\n" +
+    "<hr>\n" +
+    "	<section ng-init=\"addFile=false\">\n" +
+    "      \n" +
+    "      <div ng-hide=\"addFile==true\">\n" +
+    "        <button class=\"btn btn-white\" ng-click=\"addFile=true\">Select a file to upload</button>\n" +
+    "\n" +
+    "\n" +
+    "      </div>\n" +
+    "      \n" +
+    "      <div ng-show=\"addFile==true\">\n" +
+    "        <div class=\"table-responsive\">\n" +
+    "          <table class=\"table table-striped text-sm table-bordered\">\n" +
+    "\n" +
+    "            <tbody>\n" +
+    "              <tr ng-repeat=\"theme in detail.input\">\n" +
+    "                <td class=\"v-middle\"><img src=\"{{theme.image}}\" class=\"thumb\" alt=\"\"></td>\n" +
+    "                <td class=\"v-middle\"><h5>{{theme.name}}</h5></td>\n" +
+    "                <td class=\"v-middle\">{{theme.description}}</td>\n" +
+    "                <td class=\"v-middle\"><button class=\"btn btn-sm btn-white\" ng-click=\"detail.output.push(theme)\">add</button></td>\n" +
+    "              </tr>\n" +
+    "\n" +
+    "            </tbody>\n" +
+    "          </table>\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "          <div class=\"checkbox\">\n" +
+    "            <label>\n" +
+    "              <input type=\"checkbox\" value=\"\" checked=\"checked\">\n" +
+    "              Save this theme to My Themes\n" +
+    "            </label>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <button class=\"btn btn-primary\" ng-click=\"close()\">Save and Close</button>\n" +
+    "        <button class=\"btn btn-danger\" ng-click=\"close()\">Cancel and Delete</button>\n" +
+    "        \n" +
+    "      </div>\n" +
+    "\n" +
+    "        \n" +
+    "	</section>\n" +
+    "\n" +
+    "\n" +
+    "</div>");
+}]);
+
 angular.module("templates/upload.themes.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/upload.themes.tpl.html",
     "<div class=\"wrapper\">\n" +
@@ -2526,14 +2611,1275 @@ angular.module("templates/upload.themes.tpl.html", []).run(["$templateCache", fu
     "</div>");
 }]);
 
+angular.module("templates/wp.plugin.search.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/wp.plugin.search.tpl.html",
+    "<div class=\"wrapper\" ng-init=\"searchField=detail.input\">\n" +
+    "	<section wp-search >\n" +
+    "\n" +
+    "	<heading class=\"clearfix\">\n" +
+    "		<div class=\"navbar m-n pull-right\">\n" +
+    "			<form class=\"navbar-form navbar-left\">\n" +
+    "				<div class=\"form-group\">\n" +
+    "					<input type=\"text\" class=\"input-sm form-control\" placeholder=\"WordPress.org Plugin Database\" ng-model=\"searchField\">\n" +
+    "				</div>\n" +
+    "				<button class=\"btn btn-sm btn-white\" type=\"button\" ng-click=\"search()\">Search</button>\n" +
+    "			</form>\n" +
+    "\n" +
+    "		</div>\n" +
+    "\n" +
+    "		<h3 class=\"font-thin\">Search Results</h3>\n" +
+    "	</heading>\n" +
+    "		\n" +
+    "		<div ng-hide=\"plugins\" class=\"m-t-lg\">\n" +
+    "			<p class=\"h4 font-thin\">Searching for {{searchField}}...</p>\n" +
+    "		</div>\n" +
+    "\n" +
+    "		<div class=\"table-responsive\">\n" +
+    "\n" +
+    "			<table class=\"table table-striped\">\n" +
+    "				<tbody>\n" +
+    "					<tr ng-repeat=\"item in plugins\" 	>\n" +
+    "						<td class=\"text-right v-middle\" width=\"20\">\n" +
+    "							<input type=\"checkbox\" value=\"{{item}}\" check-list=\"detail.output\">\n" +
+    "						</td>						\n" +
+    "						<td width=\"250\">\n" +
+    "							<h4 class=\"m-n font-thin\">{{item.name}}</h4>\n" +
+    "							<small>by: <span ng-bind-html-unsafe=\"{item.author}\"></span></small>\n" +
+    "						</td>\n" +
+    "						<td>\n" +
+    "							<p class=\"font-thin\">{{item.short_description}}</p>\n" +
+    "						</td>\n" +
+    "\n" +
+    "					</tr>\n" +
+    "					<!-- <tr>\n" +
+    "						<td width=\"100\">\n" +
+    "							<img src=\"app/img/screenshot1.png\" alt=\"\" class=\"thumb thumb-lg\">\n" +
+    "						</td>\n" +
+    "						<td>\n" +
+    "							<h3>HTML5 blank theme</h3>\n" +
+    "							<small>by: <a href=\"#\">Anon</a></small>\n" +
+    "						</td>\n" +
+    "						<td class=\"text-right v-middle\"><a bs href=\"#\">activate</a></td>\n" +
+    "					</tr>	 -->			\n" +
+    "				</tbody>\n" +
+    "			</table>\n" +
+    "\n" +
+    "		</div>\n" +
+    "\n" +
+    "\n" +
+    "	</section>\n" +
+    "</div>\n" +
+    "");
+}]);
+
 angular.module("wordpress/plugins/wp.plugins.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("wordpress/plugins/wp.plugins.tpl.html",
-    "plugins");
+    "<section ng-hide=\"plugins.length>0\">\n" +
+    "    <div class=\"text-center empty\">\n" +
+    "            <br>\n" +
+    "            <p class=\"h2 font-thin\">Automatically add and activate your most used plugins on every site</p>\n" +
+    "            <p class=\"h4 font-thin\">Yes!  you can store all of your most used plugins here and we'll install and activate them for you each time you create a new site.  It's pretty sweet.</p>\n" +
+    "            <br>\n" +
+    "            <hr>\n" +
+    "            <div class=\"wrapper\">\n" +
+    "                <h4 class=\"m-b\">Search for your favorite pluins</h4>\n" +
+    "                <div class=\"input-group\" style=\"width:50%; margin:0 auto;\">\n" +
+    "                    <input type=\"text\" class=\"form-control\" placeholder=\"WordPress Plugin\" ng-model=\"pluginSearchTerm\">\n" +
+    "                    <span class=\"input-group-btn\">\n" +
+    "                        <button class=\"btn btn-default\" type=\"button\" oc-show-option template=\"templates/wp.plugin.search.tpl.html\" input=\"pluginSearchTerm\" output=\"plugins\">Search for plugin</button>\n" +
+    "                    </span>\n" +
+    "                </div>                   \n" +
+    "                <br>\n" +
+    "                                <p class=\"font-thin\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia! </p>\n" +
+    "\n" +
+    "\n" +
+    "            </div>\n" +
+    "            <br>\n" +
+    "            <hr>\n" +
+    "            <div class=\"wrapper\">\n" +
+    "                <h4 class=\"m-b\">Upload a custom plugin</h4>\n" +
+    "                <div style=\"width:75%; margin:0 auto;\"><button class=\"btn btn-success btn-block btn-lg  navbar-btn\" oc-show-option template=\"app/templates/modals/comingsoon.html\">\n" +
+    "                                     <i class=\"icon-cloud-upload text\"></i> upload a plugin\n" +
+    "                                 </button></div> \n" +
+    "                                 <br>\n" +
+    "                                                 <p class=\"font-thin\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia!</p>\n" +
+    "\n" +
+    "            </div>\n" +
+    "\n" +
+    "            <br>\n" +
+    "            <hr>\n" +
+    "            <br>\n" +
+    "            <span style=\"cursor:pointer\" ng-click=\"haveSites=true\">or pretend you have a lot of plugins</span>\n" +
+    "        </div>\n" +
+    "\n" +
+    "</section>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "<section ng-show=\"plugins.length>0\">\n" +
+    "    <div class=\"navbar m-n\">\n" +
+    "        <form class=\"navbar-form navbar-left\">\n" +
+    "            <div class=\"form-group\">\n" +
+    "                <input type=\"text\" class=\"input-sm form-control\" placeholder=\"WordPress Plugin\" ng-model=\"pluginSearchTerm\">\n" +
+    "            </div>\n" +
+    "            <button class=\"btn btn-sm btn-white\" oc-show-option template=\"app/templates/modals/wp.plugin.search.html\" input=\"pluginSearchTerm\" output=\"Data.wordpress.plugins\">Search</button>\n" +
+    "        </form>\n" +
+    "        \n" +
+    "        <ul class=\"nav navbar-nav navbar-right\">\n" +
+    "            <li>\n" +
+    "                <button class=\"btn btn-white  navbar-btn\" oc-show-option template=\"app/templates/modals/comingsoon.html\">\n" +
+    "                    <i class=\"icon-cloud-upload text\"></i> upload a plugin\n" +
+    "                </button> \n" +
+    "                \n" +
+    "            </li>\n" +
+    "\n" +
+    "        </ul>\n" +
+    "    </div>     \n" +
+    "    <div class=\"table-responsive\">\n" +
+    "\n" +
+    "    	<table class=\"table table-striped\">\n" +
+    "    		<tbody>\n" +
+    "    			<tr ng-repeat=\"item in plugins\">\n" +
+    "    				<td width=\"250\">\n" +
+    "    					<h4 class=\"m-n font-thin\">{{item.name}}</h4>\n" +
+    "    					<small>by: <span ng-bind-html-unsafe='{item.author}'></span></small>\n" +
+    "    				</td>\n" +
+    "    				<td>\n" +
+    "    					<p class=\"font-thin\">{{item.short_description}}</p>\n" +
+    "    				</td>\n" +
+    "    				<td class=\"text-right v-middle\" width=\"150\" style=\"cursor:pointer;\" ng-click=\"Data.wordpress.plugins.splice($index, 1)\"><span><i class=\"icon-remove\"></i> remove</span></td>\n" +
+    "    			</tr>\n" +
+    "				<!-- <tr>\n" +
+    "					<td width=\"100\">\n" +
+    "						<img src=\"app/img/screenshot1.png\" alt=\"\" class=\"thumb thumb-lg\">\n" +
+    "					</td>\n" +
+    "					<td>\n" +
+    "						<h3>HTML5 blank theme</h3>\n" +
+    "						<small>by: <a href=\"#\">Anon</a></small>\n" +
+    "					</td>\n" +
+    "					<td class=\"text-right v-middle\"><a bs href=\"#\">activate</a></td>\n" +
+    "				</tr>	 -->			\n" +
+    "			</tbody>\n" +
+    "		</table>\n" +
+    "\n" +
+    "	</div>\n" +
+    "</section>");
+}]);
+
+angular.module("wordpress/settings/forms/discussion.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("wordpress/settings/forms/discussion.tpl.html",
+    "<div class=\"wrap\">\n" +
+    "<div id=\"icon-options-general\" class=\"icon32\"><br></div><h2>Discussion Settings</h2>\n" +
+    "\n" +
+    "<form method=\"post\" action=\"options.php\">\n" +
+    "<input type=\"hidden\" name=\"option_page\" value=\"discussion\"><input type=\"hidden\" name=\"action\" value=\"update\"><input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"c9cc938f6c\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/wp-admin/options-discussion.php\">\n" +
+    "<table class=\"form-table\">\n" +
+    "<tbody><tr valign=\"top\">\n" +
+    "<th scope=\"row\">Default article settings</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Default article settings</span></legend>\n" +
+    "<label for=\"default_pingback_flag\">\n" +
+    "<input name=\"default_pingback_flag\" type=\"checkbox\" id=\"default_pingback_flag\" value=\"1\" checked=\"checked\">\n" +
+    "Attempt to notify any blogs linked to from the article</label>\n" +
+    "<br>\n" +
+    "<label for=\"default_ping_status\">\n" +
+    "<input name=\"default_ping_status\" type=\"checkbox\" id=\"default_ping_status\" value=\"open\" checked=\"checked\">\n" +
+    "Allow link notifications from other blogs (pingbacks and trackbacks)</label>\n" +
+    "<br>\n" +
+    "<label for=\"default_comment_status\">\n" +
+    "<input name=\"default_comment_status\" type=\"checkbox\" id=\"default_comment_status\" value=\"open\" checked=\"checked\">\n" +
+    "Allow people to post comments on new articles</label>\n" +
+    "<br>\n" +
+    "<small><em>(These settings may be overridden for individual articles.)</em></small>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Other comment settings</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Other comment settings</span></legend>\n" +
+    "<label for=\"require_name_email\"><input type=\"checkbox\" name=\"require_name_email\" id=\"require_name_email\" value=\"1\" checked=\"checked\"> Comment author must fill out name and e-mail</label>\n" +
+    "<br>\n" +
+    "<label for=\"comment_registration\">\n" +
+    "<input name=\"comment_registration\" type=\"checkbox\" id=\"comment_registration\" value=\"1\">\n" +
+    "Users must be registered and logged in to comment</label>\n" +
+    "<br>\n" +
+    "\n" +
+    "<label for=\"close_comments_for_old_posts\">\n" +
+    "<input name=\"close_comments_for_old_posts\" type=\"checkbox\" id=\"close_comments_for_old_posts\" value=\"1\">\n" +
+    "Automatically close comments on articles older than </label><label for=\"close_comments_days_old\"><input name=\"close_comments_days_old\" type=\"number\" min=\"0\" step=\"1\" id=\"close_comments_days_old\" value=\"14\" class=\"small-text\"> days</label>\n" +
+    "<br>\n" +
+    "<label for=\"thread_comments\">\n" +
+    "<input name=\"thread_comments\" type=\"checkbox\" id=\"thread_comments\" value=\"1\" checked=\"checked\">\n" +
+    "Enable threaded (nested) comments </label><label for=\"thread_comments_depth\"><select name=\"thread_comments_depth\" id=\"thread_comments_depth\"><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\" selected=\"selected\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option></select> levels deep</label>\n" +
+    "<br>\n" +
+    "<label for=\"page_comments\">\n" +
+    "<input name=\"page_comments\" type=\"checkbox\" id=\"page_comments\" value=\"1\">\n" +
+    "Break comments into pages with </label><label for=\"comments_per_page\"><input name=\"comments_per_page\" type=\"number\" step=\"1\" min=\"0\" id=\"comments_per_page\" value=\"50\" class=\"small-text\"> top level comments per page and the </label><label for=\"default_comments_page\"><select name=\"default_comments_page\" id=\"default_comments_page\"><option value=\"newest\" selected=\"selected\">last</option><option value=\"oldest\">first</option></select> page displayed by default</label>\n" +
+    "<br>\n" +
+    "<label for=\"comment_order\">Comments should be displayed with the <select name=\"comment_order\" id=\"comment_order\"><option value=\"asc\" selected=\"selected\">older</option><option value=\"desc\">newer</option></select> comments at the top of each page</label>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">E-mail me whenever</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>E-mail me whenever</span></legend>\n" +
+    "<label for=\"comments_notify\">\n" +
+    "<input name=\"comments_notify\" type=\"checkbox\" id=\"comments_notify\" value=\"1\" checked=\"checked\">\n" +
+    "Anyone posts a comment </label>\n" +
+    "<br>\n" +
+    "<label for=\"moderation_notify\">\n" +
+    "<input name=\"moderation_notify\" type=\"checkbox\" id=\"moderation_notify\" value=\"1\" checked=\"checked\">\n" +
+    "A comment is held for moderation </label>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Before a comment appears</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Before a comment appears</span></legend>\n" +
+    "<label for=\"comment_moderation\">\n" +
+    "<input name=\"comment_moderation\" type=\"checkbox\" id=\"comment_moderation\" value=\"1\">\n" +
+    "Comment must be manually approved </label>\n" +
+    "<br>\n" +
+    "<label for=\"comment_whitelist\"><input type=\"checkbox\" name=\"comment_whitelist\" id=\"comment_whitelist\" value=\"1\" checked=\"checked\"> Comment author must have a previously approved comment</label>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Comment Moderation</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Comment Moderation</span></legend>\n" +
+    "<p><label for=\"comment_max_links\">Hold a comment in the queue if it contains <input name=\"comment_max_links\" type=\"number\" step=\"1\" min=\"0\" id=\"comment_max_links\" value=\"2\" class=\"small-text\"> or more links. (A common characteristic of comment spam is a large number of hyperlinks.)</label></p>\n" +
+    "\n" +
+    "<p><label for=\"moderation_keys\">When a comment contains any of these words in its content, name, URL, e-mail, or IP, it will be held in the <a href=\"edit-comments.php?comment_status=moderated\">moderation queue</a>. One word or IP per line. It will match inside words, so “press” will match “WordPress”.</label></p>\n" +
+    "<p>\n" +
+    "<textarea name=\"moderation_keys\" rows=\"10\" cols=\"50\" id=\"moderation_keys\" class=\"large-text code\"></textarea>\n" +
+    "</p>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Comment Blacklist</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Comment Blacklist</span></legend>\n" +
+    "<p><label for=\"blacklist_keys\">When a comment contains any of these words in its content, name, URL, e-mail, or IP, it will be marked as spam. One word or IP per line. It will match inside words, so “press” will match “WordPress”.</label></p>\n" +
+    "<p>\n" +
+    "<textarea name=\"blacklist_keys\" rows=\"10\" cols=\"50\" id=\"blacklist_keys\" class=\"large-text code\"></textarea>\n" +
+    "</p>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "<h3 class=\"title\">Avatars</h3>\n" +
+    "\n" +
+    "<p>An avatar is an image that follows you from weblog to weblog appearing beside your name when you comment on avatar enabled sites. Here you can enable the display of avatars for people who comment on your site.</p>\n" +
+    "\n" +
+    "\n" +
+    "<table class=\"form-table\">\n" +
+    "<tbody><tr valign=\"top\">\n" +
+    "<th scope=\"row\">Avatar Display</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Avatar Display</span></legend>\n" +
+    "	<label for=\"show_avatars\">\n" +
+    "		<input type=\"checkbox\" id=\"show_avatars\" name=\"show_avatars\" value=\"1\" checked=\"checked\">\n" +
+    "		Show Avatars	</label>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Maximum Rating</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Maximum Rating</span></legend>\n" +
+    "\n" +
+    "\n" +
+    "	<label><input type=\"radio\" name=\"avatar_rating\" value=\"G\" checked=\"checked\"> G — Suitable for all audiences</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_rating\" value=\"PG\"> PG — Possibly offensive, usually for audiences 13 and above</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_rating\" value=\"R\"> R — Intended for adult audiences above 17</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_rating\" value=\"X\"> X — Even more mature than above</label><br>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Default Avatar</th>\n" +
+    "<td class=\"defaultavatarpicker\"><fieldset><legend class=\"screen-reader-text\"><span>Default Avatar</span></legend>\n" +
+    "\n" +
+    "For users without a custom avatar of their own, you can either display a generic logo or a generated one based on their e-mail address.<br>\n" +
+    "\n" +
+    "\n" +
+    "	<label><input type=\"radio\" name=\"avatar_default\" id=\"avatar_mystery\" value=\"mystery\" checked=\"checked\"> <img alt=\"\" src=\"http://1.gravatar.com/avatar/9fafbf52cb59a733bc51f1c8f1e2aa69?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G&amp;forcedefault=1\" class=\"avatar avatar-32 photo\" height=\"32\" width=\"32\"> Mystery Man</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_default\" id=\"avatar_blank\" value=\"blank\"> <img alt=\"\" src=\"http://1.gravatar.com/avatar/9fafbf52cb59a733bc51f1c8f1e2aa69?s=32&amp;d=blank&amp;r=G&amp;forcedefault=1\" class=\"avatar avatar-32 photo\" height=\"32\" width=\"32\"> Blank</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_default\" id=\"avatar_gravatar_default\" value=\"gravatar_default\"> <img alt=\"\" src=\"http://1.gravatar.com/avatar/9fafbf52cb59a733bc51f1c8f1e2aa69?s=32&amp;d=&amp;r=G&amp;forcedefault=1\" class=\"avatar avatar-32 photo\" height=\"32\" width=\"32\"> Gravatar Logo</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_default\" id=\"avatar_identicon\" value=\"identicon\"> <img alt=\"\" src=\"http://1.gravatar.com/avatar/9fafbf52cb59a733bc51f1c8f1e2aa69?s=32&amp;d=identicon&amp;r=G&amp;forcedefault=1\" class=\"avatar avatar-32 photo\" height=\"32\" width=\"32\"> Identicon (Generated)</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_default\" id=\"avatar_wavatar\" value=\"wavatar\"> <img alt=\"\" src=\"http://1.gravatar.com/avatar/9fafbf52cb59a733bc51f1c8f1e2aa69?s=32&amp;d=wavatar&amp;r=G&amp;forcedefault=1\" class=\"avatar avatar-32 photo\" height=\"32\" width=\"32\"> Wavatar (Generated)</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_default\" id=\"avatar_monsterid\" value=\"monsterid\"> <img alt=\"\" src=\"http://1.gravatar.com/avatar/9fafbf52cb59a733bc51f1c8f1e2aa69?s=32&amp;d=monsterid&amp;r=G&amp;forcedefault=1\" class=\"avatar avatar-32 photo\" height=\"32\" width=\"32\"> MonsterID (Generated)</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_default\" id=\"avatar_retro\" value=\"retro\"> <img alt=\"\" src=\"http://1.gravatar.com/avatar/9fafbf52cb59a733bc51f1c8f1e2aa69?s=32&amp;d=retro&amp;r=G&amp;forcedefault=1\" class=\"avatar avatar-32 photo\" height=\"32\" width=\"32\"> Retro (Generated)</label><br>\n" +
+    "	<label><input type=\"radio\" name=\"avatar_default\" id=\"avatar_http://projects.wp/wp-content/themes/solum/img/gravatar.jpg\" value=\"http://projects.wp/wp-content/themes/solum/img/gravatar.jpg\"> <img alt=\"\" src=\"http://1.gravatar.com/avatar/9fafbf52cb59a733bc51f1c8f1e2aa69?s=32&amp;d=http%3A%2F%2Fprojects.wp%2Fwp-content%2Fthemes%2Fsolum%2Fimg%2Fgravatar.jpg%3Fs%3D32&amp;r=G&amp;forcedefault=1\" class=\"avatar avatar-32 photo\" height=\"32\" width=\"32\"> Custom Gravatar</label><br>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "\n" +
+    "<p class=\"submit\"><input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-primary\" value=\"Save Changes\"></p></form>\n" +
+    "</div>");
+}]);
+
+angular.module("wordpress/settings/forms/general.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("wordpress/settings/forms/general.tpl.html",
+    "<div class=\"wrap\">\n" +
+    "<div id=\"icon-options-general\" class=\"icon32\"><br></div><h2>General Settings</h2>\n" +
+    "\n" +
+    "<form method=\"post\" action=\"options.php\">\n" +
+    "<input type=\"hidden\" name=\"option_page\" value=\"general\"><input type=\"hidden\" name=\"action\" value=\"update\"><input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"17578030c7\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/wp-admin/options-general.php\">\n" +
+    "<table class=\"form-table\">\n" +
+    "<tbody><tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"blogname\">Site Title</label></th>\n" +
+    "<td><input name=\"blogname\" type=\"text\" id=\"blogname\" value=\"solumn\" class=\"regular-text\"></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"blogdescription\">Tagline</label></th>\n" +
+    "<td><input name=\"blogdescription\" type=\"text\" id=\"blogdescription\" value=\"Just another WordPress site\" class=\"regular-text\">\n" +
+    "<p class=\"description\">In a few words, explain what this site is about.</p></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"siteurl\">WordPress Address (URL)</label></th>\n" +
+    "<td><input name=\"siteurl\" type=\"text\" id=\"siteurl\" value=\"http://projects.wp\" class=\"regular-text code\"></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"home\">Site Address (URL)</label></th>\n" +
+    "<td><input name=\"home\" type=\"text\" id=\"home\" value=\"http://projects.wp\" class=\"regular-text code\">\n" +
+    "<p class=\"description\">Enter the address here if you want your site homepage <a href=\"http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory\">to be different from the directory</a> you installed WordPress.</p></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"admin_email\">E-mail Address </label></th>\n" +
+    "<td><input name=\"admin_email\" type=\"text\" id=\"admin_email\" value=\"eric.mcgregor@rackspace.com\" class=\"regular-text ltr\">\n" +
+    "<p class=\"description\">This address is used for admin purposes, like new user notification.</p></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Membership</th>\n" +
+    "<td> <fieldset><legend class=\"screen-reader-text\"><span>Membership</span></legend><label for=\"users_can_register\">\n" +
+    "<input name=\"users_can_register\" type=\"checkbox\" id=\"users_can_register\" value=\"1\">\n" +
+    "Anyone can register</label>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"default_role\">New User Default Role</label></th>\n" +
+    "<td>\n" +
+    "<select name=\"default_role\" id=\"default_role\">\n" +
+    "	<option selected=\"selected\" value=\"subscriber\">Subscriber</option>\n" +
+    "	<option value=\"contributor\">Contributor</option>\n" +
+    "	<option value=\"author\">Author</option>\n" +
+    "	<option value=\"editor\">Editor</option>\n" +
+    "	<option value=\"administrator\">Administrator</option></select>\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "<tr>\n" +
+    "<th scope=\"row\"><label for=\"timezone_string\">Timezone</label></th>\n" +
+    "<td>\n" +
+    "\n" +
+    "<select id=\"timezone_string\" name=\"timezone_string\">\n" +
+    "<optgroup label=\"Africa\">\n" +
+    "<option value=\"Africa/Abidjan\">Abidjan</option>\n" +
+    "<option value=\"Africa/Accra\">Accra</option>\n" +
+    "<option value=\"Africa/Addis_Ababa\">Addis Ababa</option>\n" +
+    "<option value=\"Africa/Algiers\">Algiers</option>\n" +
+    "<option value=\"Africa/Asmara\">Asmara</option>\n" +
+    "<option value=\"Africa/Bamako\">Bamako</option>\n" +
+    "<option value=\"Africa/Bangui\">Bangui</option>\n" +
+    "<option value=\"Africa/Banjul\">Banjul</option>\n" +
+    "<option value=\"Africa/Bissau\">Bissau</option>\n" +
+    "<option value=\"Africa/Blantyre\">Blantyre</option>\n" +
+    "<option value=\"Africa/Brazzaville\">Brazzaville</option>\n" +
+    "<option value=\"Africa/Bujumbura\">Bujumbura</option>\n" +
+    "<option value=\"Africa/Cairo\">Cairo</option>\n" +
+    "<option value=\"Africa/Casablanca\">Casablanca</option>\n" +
+    "<option value=\"Africa/Ceuta\">Ceuta</option>\n" +
+    "<option value=\"Africa/Conakry\">Conakry</option>\n" +
+    "<option value=\"Africa/Dakar\">Dakar</option>\n" +
+    "<option value=\"Africa/Dar_es_Salaam\">Dar es Salaam</option>\n" +
+    "<option value=\"Africa/Djibouti\">Djibouti</option>\n" +
+    "<option value=\"Africa/Douala\">Douala</option>\n" +
+    "<option value=\"Africa/El_Aaiun\">El Aaiun</option>\n" +
+    "<option value=\"Africa/Freetown\">Freetown</option>\n" +
+    "<option value=\"Africa/Gaborone\">Gaborone</option>\n" +
+    "<option value=\"Africa/Harare\">Harare</option>\n" +
+    "<option value=\"Africa/Johannesburg\">Johannesburg</option>\n" +
+    "<option value=\"Africa/Juba\">Juba</option>\n" +
+    "<option value=\"Africa/Kampala\">Kampala</option>\n" +
+    "<option value=\"Africa/Khartoum\">Khartoum</option>\n" +
+    "<option value=\"Africa/Kigali\">Kigali</option>\n" +
+    "<option value=\"Africa/Kinshasa\">Kinshasa</option>\n" +
+    "<option value=\"Africa/Lagos\">Lagos</option>\n" +
+    "<option value=\"Africa/Libreville\">Libreville</option>\n" +
+    "<option value=\"Africa/Lome\">Lome</option>\n" +
+    "<option value=\"Africa/Luanda\">Luanda</option>\n" +
+    "<option value=\"Africa/Lubumbashi\">Lubumbashi</option>\n" +
+    "<option value=\"Africa/Lusaka\">Lusaka</option>\n" +
+    "<option value=\"Africa/Malabo\">Malabo</option>\n" +
+    "<option value=\"Africa/Maputo\">Maputo</option>\n" +
+    "<option value=\"Africa/Maseru\">Maseru</option>\n" +
+    "<option value=\"Africa/Mbabane\">Mbabane</option>\n" +
+    "<option value=\"Africa/Mogadishu\">Mogadishu</option>\n" +
+    "<option value=\"Africa/Monrovia\">Monrovia</option>\n" +
+    "<option value=\"Africa/Nairobi\">Nairobi</option>\n" +
+    "<option value=\"Africa/Ndjamena\">Ndjamena</option>\n" +
+    "<option value=\"Africa/Niamey\">Niamey</option>\n" +
+    "<option value=\"Africa/Nouakchott\">Nouakchott</option>\n" +
+    "<option value=\"Africa/Ouagadougou\">Ouagadougou</option>\n" +
+    "<option value=\"Africa/Porto-Novo\">Porto-Novo</option>\n" +
+    "<option value=\"Africa/Sao_Tome\">Sao Tome</option>\n" +
+    "<option value=\"Africa/Tripoli\">Tripoli</option>\n" +
+    "<option value=\"Africa/Tunis\">Tunis</option>\n" +
+    "<option value=\"Africa/Windhoek\">Windhoek</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"America\">\n" +
+    "<option value=\"America/Adak\">Adak</option>\n" +
+    "<option value=\"America/Anchorage\">Anchorage</option>\n" +
+    "<option value=\"America/Anguilla\">Anguilla</option>\n" +
+    "<option value=\"America/Antigua\">Antigua</option>\n" +
+    "<option value=\"America/Araguaina\">Araguaina</option>\n" +
+    "<option value=\"America/Argentina/Buenos_Aires\">Argentina - Buenos Aires</option>\n" +
+    "<option value=\"America/Argentina/Catamarca\">Argentina - Catamarca</option>\n" +
+    "<option value=\"America/Argentina/Cordoba\">Argentina - Cordoba</option>\n" +
+    "<option value=\"America/Argentina/Jujuy\">Argentina - Jujuy</option>\n" +
+    "<option value=\"America/Argentina/La_Rioja\">Argentina - La Rioja</option>\n" +
+    "<option value=\"America/Argentina/Mendoza\">Argentina - Mendoza</option>\n" +
+    "<option value=\"America/Argentina/Rio_Gallegos\">Argentina - Rio Gallegos</option>\n" +
+    "<option value=\"America/Argentina/Salta\">Argentina - Salta</option>\n" +
+    "<option value=\"America/Argentina/San_Juan\">Argentina - San Juan</option>\n" +
+    "<option value=\"America/Argentina/San_Luis\">Argentina - San Luis</option>\n" +
+    "<option value=\"America/Argentina/Tucuman\">Argentina - Tucuman</option>\n" +
+    "<option value=\"America/Argentina/Ushuaia\">Argentina - Ushuaia</option>\n" +
+    "<option value=\"America/Aruba\">Aruba</option>\n" +
+    "<option value=\"America/Asuncion\">Asuncion</option>\n" +
+    "<option value=\"America/Atikokan\">Atikokan</option>\n" +
+    "<option value=\"America/Bahia\">Bahia</option>\n" +
+    "<option value=\"America/Bahia_Banderas\">Bahia Banderas</option>\n" +
+    "<option value=\"America/Barbados\">Barbados</option>\n" +
+    "<option value=\"America/Belem\">Belem</option>\n" +
+    "<option value=\"America/Belize\">Belize</option>\n" +
+    "<option value=\"America/Blanc-Sablon\">Blanc-Sablon</option>\n" +
+    "<option value=\"America/Boa_Vista\">Boa Vista</option>\n" +
+    "<option value=\"America/Bogota\">Bogota</option>\n" +
+    "<option value=\"America/Boise\">Boise</option>\n" +
+    "<option value=\"America/Cambridge_Bay\">Cambridge Bay</option>\n" +
+    "<option value=\"America/Campo_Grande\">Campo Grande</option>\n" +
+    "<option value=\"America/Cancun\">Cancun</option>\n" +
+    "<option value=\"America/Caracas\">Caracas</option>\n" +
+    "<option value=\"America/Cayenne\">Cayenne</option>\n" +
+    "<option value=\"America/Cayman\">Cayman</option>\n" +
+    "<option value=\"America/Chicago\">Chicago</option>\n" +
+    "<option value=\"America/Chihuahua\">Chihuahua</option>\n" +
+    "<option value=\"America/Costa_Rica\">Costa Rica</option>\n" +
+    "<option value=\"America/Creston\">Creston</option>\n" +
+    "<option value=\"America/Cuiaba\">Cuiaba</option>\n" +
+    "<option value=\"America/Curacao\">Curacao</option>\n" +
+    "<option value=\"America/Danmarkshavn\">Danmarkshavn</option>\n" +
+    "<option value=\"America/Dawson\">Dawson</option>\n" +
+    "<option value=\"America/Dawson_Creek\">Dawson Creek</option>\n" +
+    "<option value=\"America/Denver\">Denver</option>\n" +
+    "<option value=\"America/Detroit\">Detroit</option>\n" +
+    "<option value=\"America/Dominica\">Dominica</option>\n" +
+    "<option value=\"America/Edmonton\">Edmonton</option>\n" +
+    "<option value=\"America/Eirunepe\">Eirunepe</option>\n" +
+    "<option value=\"America/El_Salvador\">El Salvador</option>\n" +
+    "<option value=\"America/Fortaleza\">Fortaleza</option>\n" +
+    "<option value=\"America/Glace_Bay\">Glace Bay</option>\n" +
+    "<option value=\"America/Godthab\">Godthab</option>\n" +
+    "<option value=\"America/Goose_Bay\">Goose Bay</option>\n" +
+    "<option value=\"America/Grand_Turk\">Grand Turk</option>\n" +
+    "<option value=\"America/Grenada\">Grenada</option>\n" +
+    "<option value=\"America/Guadeloupe\">Guadeloupe</option>\n" +
+    "<option value=\"America/Guatemala\">Guatemala</option>\n" +
+    "<option value=\"America/Guayaquil\">Guayaquil</option>\n" +
+    "<option value=\"America/Guyana\">Guyana</option>\n" +
+    "<option value=\"America/Halifax\">Halifax</option>\n" +
+    "<option value=\"America/Havana\">Havana</option>\n" +
+    "<option value=\"America/Hermosillo\">Hermosillo</option>\n" +
+    "<option value=\"America/Indiana/Indianapolis\">Indiana - Indianapolis</option>\n" +
+    "<option value=\"America/Indiana/Knox\">Indiana - Knox</option>\n" +
+    "<option value=\"America/Indiana/Marengo\">Indiana - Marengo</option>\n" +
+    "<option value=\"America/Indiana/Petersburg\">Indiana - Petersburg</option>\n" +
+    "<option value=\"America/Indiana/Tell_City\">Indiana - Tell City</option>\n" +
+    "<option value=\"America/Indiana/Vevay\">Indiana - Vevay</option>\n" +
+    "<option value=\"America/Indiana/Vincennes\">Indiana - Vincennes</option>\n" +
+    "<option value=\"America/Indiana/Winamac\">Indiana - Winamac</option>\n" +
+    "<option value=\"America/Inuvik\">Inuvik</option>\n" +
+    "<option value=\"America/Iqaluit\">Iqaluit</option>\n" +
+    "<option value=\"America/Jamaica\">Jamaica</option>\n" +
+    "<option value=\"America/Juneau\">Juneau</option>\n" +
+    "<option value=\"America/Kentucky/Louisville\">Kentucky - Louisville</option>\n" +
+    "<option value=\"America/Kentucky/Monticello\">Kentucky - Monticello</option>\n" +
+    "<option value=\"America/Kralendijk\">Kralendijk</option>\n" +
+    "<option value=\"America/La_Paz\">La Paz</option>\n" +
+    "<option value=\"America/Lima\">Lima</option>\n" +
+    "<option value=\"America/Los_Angeles\">Los Angeles</option>\n" +
+    "<option value=\"America/Lower_Princes\">Lower Princes</option>\n" +
+    "<option value=\"America/Maceio\">Maceio</option>\n" +
+    "<option value=\"America/Managua\">Managua</option>\n" +
+    "<option value=\"America/Manaus\">Manaus</option>\n" +
+    "<option value=\"America/Marigot\">Marigot</option>\n" +
+    "<option value=\"America/Martinique\">Martinique</option>\n" +
+    "<option value=\"America/Matamoros\">Matamoros</option>\n" +
+    "<option value=\"America/Mazatlan\">Mazatlan</option>\n" +
+    "<option value=\"America/Menominee\">Menominee</option>\n" +
+    "<option value=\"America/Merida\">Merida</option>\n" +
+    "<option value=\"America/Metlakatla\">Metlakatla</option>\n" +
+    "<option value=\"America/Mexico_City\">Mexico City</option>\n" +
+    "<option value=\"America/Miquelon\">Miquelon</option>\n" +
+    "<option value=\"America/Moncton\">Moncton</option>\n" +
+    "<option value=\"America/Monterrey\">Monterrey</option>\n" +
+    "<option value=\"America/Montevideo\">Montevideo</option>\n" +
+    "<option value=\"America/Montreal\">Montreal</option>\n" +
+    "<option value=\"America/Montserrat\">Montserrat</option>\n" +
+    "<option value=\"America/Nassau\">Nassau</option>\n" +
+    "<option value=\"America/New_York\">New York</option>\n" +
+    "<option value=\"America/Nipigon\">Nipigon</option>\n" +
+    "<option value=\"America/Nome\">Nome</option>\n" +
+    "<option value=\"America/Noronha\">Noronha</option>\n" +
+    "<option value=\"America/North_Dakota/Beulah\">North Dakota - Beulah</option>\n" +
+    "<option value=\"America/North_Dakota/Center\">North Dakota - Center</option>\n" +
+    "<option value=\"America/North_Dakota/New_Salem\">North Dakota - New Salem</option>\n" +
+    "<option value=\"America/Ojinaga\">Ojinaga</option>\n" +
+    "<option value=\"America/Panama\">Panama</option>\n" +
+    "<option value=\"America/Pangnirtung\">Pangnirtung</option>\n" +
+    "<option value=\"America/Paramaribo\">Paramaribo</option>\n" +
+    "<option value=\"America/Phoenix\">Phoenix</option>\n" +
+    "<option value=\"America/Port-au-Prince\">Port-au-Prince</option>\n" +
+    "<option value=\"America/Port_of_Spain\">Port of Spain</option>\n" +
+    "<option value=\"America/Porto_Velho\">Porto Velho</option>\n" +
+    "<option value=\"America/Puerto_Rico\">Puerto Rico</option>\n" +
+    "<option value=\"America/Rainy_River\">Rainy River</option>\n" +
+    "<option value=\"America/Rankin_Inlet\">Rankin Inlet</option>\n" +
+    "<option value=\"America/Recife\">Recife</option>\n" +
+    "<option value=\"America/Regina\">Regina</option>\n" +
+    "<option value=\"America/Resolute\">Resolute</option>\n" +
+    "<option value=\"America/Rio_Branco\">Rio Branco</option>\n" +
+    "<option value=\"America/Santa_Isabel\">Santa Isabel</option>\n" +
+    "<option value=\"America/Santarem\">Santarem</option>\n" +
+    "<option value=\"America/Santiago\">Santiago</option>\n" +
+    "<option value=\"America/Santo_Domingo\">Santo Domingo</option>\n" +
+    "<option value=\"America/Sao_Paulo\">Sao Paulo</option>\n" +
+    "<option value=\"America/Scoresbysund\">Scoresbysund</option>\n" +
+    "<option value=\"America/Shiprock\">Shiprock</option>\n" +
+    "<option value=\"America/Sitka\">Sitka</option>\n" +
+    "<option value=\"America/St_Barthelemy\">St Barthelemy</option>\n" +
+    "<option value=\"America/St_Johns\">St Johns</option>\n" +
+    "<option value=\"America/St_Kitts\">St Kitts</option>\n" +
+    "<option value=\"America/St_Lucia\">St Lucia</option>\n" +
+    "<option value=\"America/St_Thomas\">St Thomas</option>\n" +
+    "<option value=\"America/St_Vincent\">St Vincent</option>\n" +
+    "<option value=\"America/Swift_Current\">Swift Current</option>\n" +
+    "<option value=\"America/Tegucigalpa\">Tegucigalpa</option>\n" +
+    "<option value=\"America/Thule\">Thule</option>\n" +
+    "<option value=\"America/Thunder_Bay\">Thunder Bay</option>\n" +
+    "<option value=\"America/Tijuana\">Tijuana</option>\n" +
+    "<option value=\"America/Toronto\">Toronto</option>\n" +
+    "<option value=\"America/Tortola\">Tortola</option>\n" +
+    "<option value=\"America/Vancouver\">Vancouver</option>\n" +
+    "<option value=\"America/Whitehorse\">Whitehorse</option>\n" +
+    "<option value=\"America/Winnipeg\">Winnipeg</option>\n" +
+    "<option value=\"America/Yakutat\">Yakutat</option>\n" +
+    "<option value=\"America/Yellowknife\">Yellowknife</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Antarctica\">\n" +
+    "<option value=\"Antarctica/Casey\">Casey</option>\n" +
+    "<option value=\"Antarctica/Davis\">Davis</option>\n" +
+    "<option value=\"Antarctica/DumontDUrville\">DumontDUrville</option>\n" +
+    "<option value=\"Antarctica/Macquarie\">Macquarie</option>\n" +
+    "<option value=\"Antarctica/Mawson\">Mawson</option>\n" +
+    "<option value=\"Antarctica/McMurdo\">McMurdo</option>\n" +
+    "<option value=\"Antarctica/Palmer\">Palmer</option>\n" +
+    "<option value=\"Antarctica/Rothera\">Rothera</option>\n" +
+    "<option value=\"Antarctica/South_Pole\">South Pole</option>\n" +
+    "<option value=\"Antarctica/Syowa\">Syowa</option>\n" +
+    "<option value=\"Antarctica/Vostok\">Vostok</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Arctic\">\n" +
+    "<option value=\"Arctic/Longyearbyen\">Longyearbyen</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Asia\">\n" +
+    "<option value=\"Asia/Aden\">Aden</option>\n" +
+    "<option value=\"Asia/Almaty\">Almaty</option>\n" +
+    "<option value=\"Asia/Amman\">Amman</option>\n" +
+    "<option value=\"Asia/Anadyr\">Anadyr</option>\n" +
+    "<option value=\"Asia/Aqtau\">Aqtau</option>\n" +
+    "<option value=\"Asia/Aqtobe\">Aqtobe</option>\n" +
+    "<option value=\"Asia/Ashgabat\">Ashgabat</option>\n" +
+    "<option value=\"Asia/Baghdad\">Baghdad</option>\n" +
+    "<option value=\"Asia/Bahrain\">Bahrain</option>\n" +
+    "<option value=\"Asia/Baku\">Baku</option>\n" +
+    "<option value=\"Asia/Bangkok\">Bangkok</option>\n" +
+    "<option value=\"Asia/Beirut\">Beirut</option>\n" +
+    "<option value=\"Asia/Bishkek\">Bishkek</option>\n" +
+    "<option value=\"Asia/Brunei\">Brunei</option>\n" +
+    "<option value=\"Asia/Choibalsan\">Choibalsan</option>\n" +
+    "<option value=\"Asia/Chongqing\">Chongqing</option>\n" +
+    "<option value=\"Asia/Colombo\">Colombo</option>\n" +
+    "<option value=\"Asia/Damascus\">Damascus</option>\n" +
+    "<option value=\"Asia/Dhaka\">Dhaka</option>\n" +
+    "<option value=\"Asia/Dili\">Dili</option>\n" +
+    "<option value=\"Asia/Dubai\">Dubai</option>\n" +
+    "<option value=\"Asia/Dushanbe\">Dushanbe</option>\n" +
+    "<option value=\"Asia/Gaza\">Gaza</option>\n" +
+    "<option value=\"Asia/Harbin\">Harbin</option>\n" +
+    "<option value=\"Asia/Hebron\">Hebron</option>\n" +
+    "<option value=\"Asia/Ho_Chi_Minh\">Ho Chi Minh</option>\n" +
+    "<option value=\"Asia/Hong_Kong\">Hong Kong</option>\n" +
+    "<option value=\"Asia/Hovd\">Hovd</option>\n" +
+    "<option value=\"Asia/Irkutsk\">Irkutsk</option>\n" +
+    "<option value=\"Asia/Jakarta\">Jakarta</option>\n" +
+    "<option value=\"Asia/Jayapura\">Jayapura</option>\n" +
+    "<option value=\"Asia/Jerusalem\">Jerusalem</option>\n" +
+    "<option value=\"Asia/Kabul\">Kabul</option>\n" +
+    "<option value=\"Asia/Kamchatka\">Kamchatka</option>\n" +
+    "<option value=\"Asia/Karachi\">Karachi</option>\n" +
+    "<option value=\"Asia/Kashgar\">Kashgar</option>\n" +
+    "<option value=\"Asia/Kathmandu\">Kathmandu</option>\n" +
+    "<option value=\"Asia/Kolkata\">Kolkata</option>\n" +
+    "<option value=\"Asia/Krasnoyarsk\">Krasnoyarsk</option>\n" +
+    "<option value=\"Asia/Kuala_Lumpur\">Kuala Lumpur</option>\n" +
+    "<option value=\"Asia/Kuching\">Kuching</option>\n" +
+    "<option value=\"Asia/Kuwait\">Kuwait</option>\n" +
+    "<option value=\"Asia/Macau\">Macau</option>\n" +
+    "<option value=\"Asia/Magadan\">Magadan</option>\n" +
+    "<option value=\"Asia/Makassar\">Makassar</option>\n" +
+    "<option value=\"Asia/Manila\">Manila</option>\n" +
+    "<option value=\"Asia/Muscat\">Muscat</option>\n" +
+    "<option value=\"Asia/Nicosia\">Nicosia</option>\n" +
+    "<option value=\"Asia/Novokuznetsk\">Novokuznetsk</option>\n" +
+    "<option value=\"Asia/Novosibirsk\">Novosibirsk</option>\n" +
+    "<option value=\"Asia/Omsk\">Omsk</option>\n" +
+    "<option value=\"Asia/Oral\">Oral</option>\n" +
+    "<option value=\"Asia/Phnom_Penh\">Phnom Penh</option>\n" +
+    "<option value=\"Asia/Pontianak\">Pontianak</option>\n" +
+    "<option value=\"Asia/Pyongyang\">Pyongyang</option>\n" +
+    "<option value=\"Asia/Qatar\">Qatar</option>\n" +
+    "<option value=\"Asia/Qyzylorda\">Qyzylorda</option>\n" +
+    "<option value=\"Asia/Rangoon\">Rangoon</option>\n" +
+    "<option value=\"Asia/Riyadh\">Riyadh</option>\n" +
+    "<option value=\"Asia/Sakhalin\">Sakhalin</option>\n" +
+    "<option value=\"Asia/Samarkand\">Samarkand</option>\n" +
+    "<option value=\"Asia/Seoul\">Seoul</option>\n" +
+    "<option value=\"Asia/Shanghai\">Shanghai</option>\n" +
+    "<option value=\"Asia/Singapore\">Singapore</option>\n" +
+    "<option value=\"Asia/Taipei\">Taipei</option>\n" +
+    "<option value=\"Asia/Tashkent\">Tashkent</option>\n" +
+    "<option value=\"Asia/Tbilisi\">Tbilisi</option>\n" +
+    "<option value=\"Asia/Tehran\">Tehran</option>\n" +
+    "<option value=\"Asia/Thimphu\">Thimphu</option>\n" +
+    "<option value=\"Asia/Tokyo\">Tokyo</option>\n" +
+    "<option value=\"Asia/Ulaanbaatar\">Ulaanbaatar</option>\n" +
+    "<option value=\"Asia/Urumqi\">Urumqi</option>\n" +
+    "<option value=\"Asia/Vientiane\">Vientiane</option>\n" +
+    "<option value=\"Asia/Vladivostok\">Vladivostok</option>\n" +
+    "<option value=\"Asia/Yakutsk\">Yakutsk</option>\n" +
+    "<option value=\"Asia/Yekaterinburg\">Yekaterinburg</option>\n" +
+    "<option value=\"Asia/Yerevan\">Yerevan</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Atlantic\">\n" +
+    "<option value=\"Atlantic/Azores\">Azores</option>\n" +
+    "<option value=\"Atlantic/Bermuda\">Bermuda</option>\n" +
+    "<option value=\"Atlantic/Canary\">Canary</option>\n" +
+    "<option value=\"Atlantic/Cape_Verde\">Cape Verde</option>\n" +
+    "<option value=\"Atlantic/Faroe\">Faroe</option>\n" +
+    "<option value=\"Atlantic/Madeira\">Madeira</option>\n" +
+    "<option value=\"Atlantic/Reykjavik\">Reykjavik</option>\n" +
+    "<option value=\"Atlantic/South_Georgia\">South Georgia</option>\n" +
+    "<option value=\"Atlantic/Stanley\">Stanley</option>\n" +
+    "<option value=\"Atlantic/St_Helena\">St Helena</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Australia\">\n" +
+    "<option value=\"Australia/Adelaide\">Adelaide</option>\n" +
+    "<option value=\"Australia/Brisbane\">Brisbane</option>\n" +
+    "<option value=\"Australia/Broken_Hill\">Broken Hill</option>\n" +
+    "<option value=\"Australia/Currie\">Currie</option>\n" +
+    "<option value=\"Australia/Darwin\">Darwin</option>\n" +
+    "<option value=\"Australia/Eucla\">Eucla</option>\n" +
+    "<option value=\"Australia/Hobart\">Hobart</option>\n" +
+    "<option value=\"Australia/Lindeman\">Lindeman</option>\n" +
+    "<option value=\"Australia/Lord_Howe\">Lord Howe</option>\n" +
+    "<option value=\"Australia/Melbourne\">Melbourne</option>\n" +
+    "<option value=\"Australia/Perth\">Perth</option>\n" +
+    "<option value=\"Australia/Sydney\">Sydney</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Europe\">\n" +
+    "<option value=\"Europe/Amsterdam\">Amsterdam</option>\n" +
+    "<option value=\"Europe/Andorra\">Andorra</option>\n" +
+    "<option value=\"Europe/Athens\">Athens</option>\n" +
+    "<option value=\"Europe/Belgrade\">Belgrade</option>\n" +
+    "<option value=\"Europe/Berlin\">Berlin</option>\n" +
+    "<option value=\"Europe/Bratislava\">Bratislava</option>\n" +
+    "<option value=\"Europe/Brussels\">Brussels</option>\n" +
+    "<option value=\"Europe/Bucharest\">Bucharest</option>\n" +
+    "<option value=\"Europe/Budapest\">Budapest</option>\n" +
+    "<option value=\"Europe/Chisinau\">Chisinau</option>\n" +
+    "<option value=\"Europe/Copenhagen\">Copenhagen</option>\n" +
+    "<option value=\"Europe/Dublin\">Dublin</option>\n" +
+    "<option value=\"Europe/Gibraltar\">Gibraltar</option>\n" +
+    "<option value=\"Europe/Guernsey\">Guernsey</option>\n" +
+    "<option value=\"Europe/Helsinki\">Helsinki</option>\n" +
+    "<option value=\"Europe/Isle_of_Man\">Isle of Man</option>\n" +
+    "<option value=\"Europe/Istanbul\">Istanbul</option>\n" +
+    "<option value=\"Europe/Jersey\">Jersey</option>\n" +
+    "<option value=\"Europe/Kaliningrad\">Kaliningrad</option>\n" +
+    "<option value=\"Europe/Kiev\">Kiev</option>\n" +
+    "<option value=\"Europe/Lisbon\">Lisbon</option>\n" +
+    "<option value=\"Europe/Ljubljana\">Ljubljana</option>\n" +
+    "<option value=\"Europe/London\">London</option>\n" +
+    "<option value=\"Europe/Luxembourg\">Luxembourg</option>\n" +
+    "<option value=\"Europe/Madrid\">Madrid</option>\n" +
+    "<option value=\"Europe/Malta\">Malta</option>\n" +
+    "<option value=\"Europe/Mariehamn\">Mariehamn</option>\n" +
+    "<option value=\"Europe/Minsk\">Minsk</option>\n" +
+    "<option value=\"Europe/Monaco\">Monaco</option>\n" +
+    "<option value=\"Europe/Moscow\">Moscow</option>\n" +
+    "<option value=\"Europe/Oslo\">Oslo</option>\n" +
+    "<option value=\"Europe/Paris\">Paris</option>\n" +
+    "<option value=\"Europe/Podgorica\">Podgorica</option>\n" +
+    "<option value=\"Europe/Prague\">Prague</option>\n" +
+    "<option value=\"Europe/Riga\">Riga</option>\n" +
+    "<option value=\"Europe/Rome\">Rome</option>\n" +
+    "<option value=\"Europe/Samara\">Samara</option>\n" +
+    "<option value=\"Europe/San_Marino\">San Marino</option>\n" +
+    "<option value=\"Europe/Sarajevo\">Sarajevo</option>\n" +
+    "<option value=\"Europe/Simferopol\">Simferopol</option>\n" +
+    "<option value=\"Europe/Skopje\">Skopje</option>\n" +
+    "<option value=\"Europe/Sofia\">Sofia</option>\n" +
+    "<option value=\"Europe/Stockholm\">Stockholm</option>\n" +
+    "<option value=\"Europe/Tallinn\">Tallinn</option>\n" +
+    "<option value=\"Europe/Tirane\">Tirane</option>\n" +
+    "<option value=\"Europe/Uzhgorod\">Uzhgorod</option>\n" +
+    "<option value=\"Europe/Vaduz\">Vaduz</option>\n" +
+    "<option value=\"Europe/Vatican\">Vatican</option>\n" +
+    "<option value=\"Europe/Vienna\">Vienna</option>\n" +
+    "<option value=\"Europe/Vilnius\">Vilnius</option>\n" +
+    "<option value=\"Europe/Volgograd\">Volgograd</option>\n" +
+    "<option value=\"Europe/Warsaw\">Warsaw</option>\n" +
+    "<option value=\"Europe/Zagreb\">Zagreb</option>\n" +
+    "<option value=\"Europe/Zaporozhye\">Zaporozhye</option>\n" +
+    "<option value=\"Europe/Zurich\">Zurich</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Indian\">\n" +
+    "<option value=\"Indian/Antananarivo\">Antananarivo</option>\n" +
+    "<option value=\"Indian/Chagos\">Chagos</option>\n" +
+    "<option value=\"Indian/Christmas\">Christmas</option>\n" +
+    "<option value=\"Indian/Cocos\">Cocos</option>\n" +
+    "<option value=\"Indian/Comoro\">Comoro</option>\n" +
+    "<option value=\"Indian/Kerguelen\">Kerguelen</option>\n" +
+    "<option value=\"Indian/Mahe\">Mahe</option>\n" +
+    "<option value=\"Indian/Maldives\">Maldives</option>\n" +
+    "<option value=\"Indian/Mauritius\">Mauritius</option>\n" +
+    "<option value=\"Indian/Mayotte\">Mayotte</option>\n" +
+    "<option value=\"Indian/Reunion\">Reunion</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Pacific\">\n" +
+    "<option value=\"Pacific/Apia\">Apia</option>\n" +
+    "<option value=\"Pacific/Auckland\">Auckland</option>\n" +
+    "<option value=\"Pacific/Chatham\">Chatham</option>\n" +
+    "<option value=\"Pacific/Chuuk\">Chuuk</option>\n" +
+    "<option value=\"Pacific/Easter\">Easter</option>\n" +
+    "<option value=\"Pacific/Efate\">Efate</option>\n" +
+    "<option value=\"Pacific/Enderbury\">Enderbury</option>\n" +
+    "<option value=\"Pacific/Fakaofo\">Fakaofo</option>\n" +
+    "<option value=\"Pacific/Fiji\">Fiji</option>\n" +
+    "<option value=\"Pacific/Funafuti\">Funafuti</option>\n" +
+    "<option value=\"Pacific/Galapagos\">Galapagos</option>\n" +
+    "<option value=\"Pacific/Gambier\">Gambier</option>\n" +
+    "<option value=\"Pacific/Guadalcanal\">Guadalcanal</option>\n" +
+    "<option value=\"Pacific/Guam\">Guam</option>\n" +
+    "<option value=\"Pacific/Honolulu\">Honolulu</option>\n" +
+    "<option value=\"Pacific/Johnston\">Johnston</option>\n" +
+    "<option value=\"Pacific/Kiritimati\">Kiritimati</option>\n" +
+    "<option value=\"Pacific/Kosrae\">Kosrae</option>\n" +
+    "<option value=\"Pacific/Kwajalein\">Kwajalein</option>\n" +
+    "<option value=\"Pacific/Majuro\">Majuro</option>\n" +
+    "<option value=\"Pacific/Marquesas\">Marquesas</option>\n" +
+    "<option value=\"Pacific/Midway\">Midway</option>\n" +
+    "<option value=\"Pacific/Nauru\">Nauru</option>\n" +
+    "<option value=\"Pacific/Niue\">Niue</option>\n" +
+    "<option value=\"Pacific/Norfolk\">Norfolk</option>\n" +
+    "<option value=\"Pacific/Noumea\">Noumea</option>\n" +
+    "<option value=\"Pacific/Pago_Pago\">Pago Pago</option>\n" +
+    "<option value=\"Pacific/Palau\">Palau</option>\n" +
+    "<option value=\"Pacific/Pitcairn\">Pitcairn</option>\n" +
+    "<option value=\"Pacific/Pohnpei\">Pohnpei</option>\n" +
+    "<option value=\"Pacific/Port_Moresby\">Port Moresby</option>\n" +
+    "<option value=\"Pacific/Rarotonga\">Rarotonga</option>\n" +
+    "<option value=\"Pacific/Saipan\">Saipan</option>\n" +
+    "<option value=\"Pacific/Tahiti\">Tahiti</option>\n" +
+    "<option value=\"Pacific/Tarawa\">Tarawa</option>\n" +
+    "<option value=\"Pacific/Tongatapu\">Tongatapu</option>\n" +
+    "<option value=\"Pacific/Wake\">Wake</option>\n" +
+    "<option value=\"Pacific/Wallis\">Wallis</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"UTC\">\n" +
+    "<option value=\"UTC\">UTC</option>\n" +
+    "</optgroup>\n" +
+    "<optgroup label=\"Manual Offsets\">\n" +
+    "<option value=\"UTC-12\">UTC-12</option>\n" +
+    "<option value=\"UTC-11.5\">UTC-11:30</option>\n" +
+    "<option value=\"UTC-11\">UTC-11</option>\n" +
+    "<option value=\"UTC-10.5\">UTC-10:30</option>\n" +
+    "<option value=\"UTC-10\">UTC-10</option>\n" +
+    "<option value=\"UTC-9.5\">UTC-9:30</option>\n" +
+    "<option value=\"UTC-9\">UTC-9</option>\n" +
+    "<option value=\"UTC-8.5\">UTC-8:30</option>\n" +
+    "<option value=\"UTC-8\">UTC-8</option>\n" +
+    "<option value=\"UTC-7.5\">UTC-7:30</option>\n" +
+    "<option value=\"UTC-7\">UTC-7</option>\n" +
+    "<option value=\"UTC-6.5\">UTC-6:30</option>\n" +
+    "<option value=\"UTC-6\">UTC-6</option>\n" +
+    "<option value=\"UTC-5.5\">UTC-5:30</option>\n" +
+    "<option value=\"UTC-5\">UTC-5</option>\n" +
+    "<option value=\"UTC-4.5\">UTC-4:30</option>\n" +
+    "<option value=\"UTC-4\">UTC-4</option>\n" +
+    "<option value=\"UTC-3.5\">UTC-3:30</option>\n" +
+    "<option value=\"UTC-3\">UTC-3</option>\n" +
+    "<option value=\"UTC-2.5\">UTC-2:30</option>\n" +
+    "<option value=\"UTC-2\">UTC-2</option>\n" +
+    "<option value=\"UTC-1.5\">UTC-1:30</option>\n" +
+    "<option value=\"UTC-1\">UTC-1</option>\n" +
+    "<option value=\"UTC-0.5\">UTC-0:30</option>\n" +
+    "<option selected=\"selected\" value=\"UTC+0\">UTC+0</option>\n" +
+    "<option value=\"UTC+0.5\">UTC+0:30</option>\n" +
+    "<option value=\"UTC+1\">UTC+1</option>\n" +
+    "<option value=\"UTC+1.5\">UTC+1:30</option>\n" +
+    "<option value=\"UTC+2\">UTC+2</option>\n" +
+    "<option value=\"UTC+2.5\">UTC+2:30</option>\n" +
+    "<option value=\"UTC+3\">UTC+3</option>\n" +
+    "<option value=\"UTC+3.5\">UTC+3:30</option>\n" +
+    "<option value=\"UTC+4\">UTC+4</option>\n" +
+    "<option value=\"UTC+4.5\">UTC+4:30</option>\n" +
+    "<option value=\"UTC+5\">UTC+5</option>\n" +
+    "<option value=\"UTC+5.5\">UTC+5:30</option>\n" +
+    "<option value=\"UTC+5.75\">UTC+5:45</option>\n" +
+    "<option value=\"UTC+6\">UTC+6</option>\n" +
+    "<option value=\"UTC+6.5\">UTC+6:30</option>\n" +
+    "<option value=\"UTC+7\">UTC+7</option>\n" +
+    "<option value=\"UTC+7.5\">UTC+7:30</option>\n" +
+    "<option value=\"UTC+8\">UTC+8</option>\n" +
+    "<option value=\"UTC+8.5\">UTC+8:30</option>\n" +
+    "<option value=\"UTC+8.75\">UTC+8:45</option>\n" +
+    "<option value=\"UTC+9\">UTC+9</option>\n" +
+    "<option value=\"UTC+9.5\">UTC+9:30</option>\n" +
+    "<option value=\"UTC+10\">UTC+10</option>\n" +
+    "<option value=\"UTC+10.5\">UTC+10:30</option>\n" +
+    "<option value=\"UTC+11\">UTC+11</option>\n" +
+    "<option value=\"UTC+11.5\">UTC+11:30</option>\n" +
+    "<option value=\"UTC+12\">UTC+12</option>\n" +
+    "<option value=\"UTC+12.75\">UTC+12:45</option>\n" +
+    "<option value=\"UTC+13\">UTC+13</option>\n" +
+    "<option value=\"UTC+13.75\">UTC+13:45</option>\n" +
+    "<option value=\"UTC+14\">UTC+14</option>\n" +
+    "</optgroup></select>\n" +
+    "\n" +
+    "	<span id=\"utc-time\"><abbr title=\"Coordinated Universal Time\">UTC</abbr> time is <code>2013-11-14 18:44:45</code></span>\n" +
+    "<p class=\"description\">Choose a city in the same timezone as you.</p>\n" +
+    "</td>\n" +
+    "\n" +
+    "</tr>\n" +
+    "<tr>\n" +
+    "<th scope=\"row\">Date Format</th>\n" +
+    "<td>\n" +
+    "	<fieldset><legend class=\"screen-reader-text\"><span>Date Format</span></legend>\n" +
+    "	<label title=\"F j, Y\"><input type=\"radio\" name=\"date_format\" value=\"F j, Y\" checked=\"checked\"> <span>November 14, 2013</span></label><br>\n" +
+    "	<label title=\"Y/m/d\"><input type=\"radio\" name=\"date_format\" value=\"Y/m/d\"> <span>2013/11/14</span></label><br>\n" +
+    "	<label title=\"m/d/Y\"><input type=\"radio\" name=\"date_format\" value=\"m/d/Y\"> <span>11/14/2013</span></label><br>\n" +
+    "	<label title=\"d/m/Y\"><input type=\"radio\" name=\"date_format\" value=\"d/m/Y\"> <span>14/11/2013</span></label><br>\n" +
+    "	<label><input type=\"radio\" name=\"date_format\" id=\"date_format_custom_radio\" value=\"\\c\\u\\s\\t\\o\\m\"> Custom: </label><input type=\"text\" name=\"date_format_custom\" value=\"F j, Y\" class=\"small-text\"> <span class=\"example\"> November 14, 2013</span> <span class=\"spinner\"></span>\n" +
+    "	<p><a href=\"http://codex.wordpress.org/Formatting_Date_and_Time\">Documentation on date and time formatting</a>.</p>\n" +
+    "	</fieldset>\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "<tr>\n" +
+    "<th scope=\"row\">Time Format</th>\n" +
+    "<td>\n" +
+    "	<fieldset><legend class=\"screen-reader-text\"><span>Time Format</span></legend>\n" +
+    "	<label title=\"g:i a\"><input type=\"radio\" name=\"time_format\" value=\"g:i a\" checked=\"checked\"> <span>6:44 pm</span></label><br>\n" +
+    "	<label title=\"g:i A\"><input type=\"radio\" name=\"time_format\" value=\"g:i A\"> <span>6:44 PM</span></label><br>\n" +
+    "	<label title=\"H:i\"><input type=\"radio\" name=\"time_format\" value=\"H:i\"> <span>18:44</span></label><br>\n" +
+    "	<label><input type=\"radio\" name=\"time_format\" id=\"time_format_custom_radio\" value=\"\\c\\u\\s\\t\\o\\m\"> Custom: </label><input type=\"text\" name=\"time_format_custom\" value=\"g:i a\" class=\"small-text\"> <span class=\"example\"> 6:44 pm</span> <span class=\"spinner\"></span>\n" +
+    "	</fieldset>\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "<tr>\n" +
+    "<th scope=\"row\"><label for=\"start_of_week\">Week Starts On</label></th>\n" +
+    "<td><select name=\"start_of_week\" id=\"start_of_week\">\n" +
+    "\n" +
+    "	<option value=\"0\">Sunday</option>\n" +
+    "	<option value=\"1\" selected=\"selected\">Monday</option>\n" +
+    "	<option value=\"2\">Tuesday</option>\n" +
+    "	<option value=\"3\">Wednesday</option>\n" +
+    "	<option value=\"4\">Thursday</option>\n" +
+    "	<option value=\"5\">Friday</option>\n" +
+    "	<option value=\"6\">Saturday</option></select></td>\n" +
+    "</tr>\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "\n" +
+    "<p class=\"submit\"><input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-primary\" value=\"Save Changes\"></p></form>\n" +
+    "\n" +
+    "</div>");
+}]);
+
+angular.module("wordpress/settings/forms/media.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("wordpress/settings/forms/media.tpl.html",
+    "<div class=\"wrap\">\n" +
+    "<div id=\"icon-options-general\" class=\"icon32\"><br></div><h2>Media Settings</h2>\n" +
+    "\n" +
+    "<form action=\"options.php\" method=\"post\">\n" +
+    "<input type=\"hidden\" name=\"option_page\" value=\"media\"><input type=\"hidden\" name=\"action\" value=\"update\"><input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"6685bcc51b\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/wp-admin/options-media.php\">\n" +
+    "<h3 class=\"title\">Image sizes</h3>\n" +
+    "<p>The sizes listed below determine the maximum dimensions in pixels to use when adding an image to the Media Library.</p>\n" +
+    "\n" +
+    "<table class=\"form-table\">\n" +
+    "<tbody><tr valign=\"top\">\n" +
+    "<th scope=\"row\">Thumbnail size</th>\n" +
+    "<td>\n" +
+    "<label for=\"thumbnail_size_w\">Width</label>\n" +
+    "<input name=\"thumbnail_size_w\" type=\"number\" step=\"1\" min=\"0\" id=\"thumbnail_size_w\" value=\"150\" class=\"small-text\">\n" +
+    "<label for=\"thumbnail_size_h\">Height</label>\n" +
+    "<input name=\"thumbnail_size_h\" type=\"number\" step=\"1\" min=\"0\" id=\"thumbnail_size_h\" value=\"150\" class=\"small-text\"><br>\n" +
+    "<input name=\"thumbnail_crop\" type=\"checkbox\" id=\"thumbnail_crop\" value=\"1\" checked=\"checked\">\n" +
+    "<label for=\"thumbnail_crop\">Crop thumbnail to exact dimensions (normally thumbnails are proportional)</label>\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Medium size</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Medium size</span></legend>\n" +
+    "<label for=\"medium_size_w\">Max Width</label>\n" +
+    "<input name=\"medium_size_w\" type=\"number\" step=\"1\" min=\"0\" id=\"medium_size_w\" value=\"300\" class=\"small-text\">\n" +
+    "<label for=\"medium_size_h\">Max Height</label>\n" +
+    "<input name=\"medium_size_h\" type=\"number\" step=\"1\" min=\"0\" id=\"medium_size_h\" value=\"300\" class=\"small-text\">\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">Large size</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Large size</span></legend>\n" +
+    "<label for=\"large_size_w\">Max Width</label>\n" +
+    "<input name=\"large_size_w\" type=\"number\" step=\"1\" min=\"0\" id=\"large_size_w\" value=\"1024\" class=\"small-text\">\n" +
+    "<label for=\"large_size_h\">Max Height</label>\n" +
+    "<input name=\"large_size_h\" type=\"number\" step=\"1\" min=\"0\" id=\"large_size_h\" value=\"1024\" class=\"small-text\">\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "\n" +
+    "<h3 class=\"title\">Uploading Files</h3>\n" +
+    "<table class=\"form-table\">\n" +
+    "<tbody><tr>\n" +
+    "<th scope=\"row\" colspan=\"2\" class=\"th-full\">\n" +
+    "<label for=\"uploads_use_yearmonth_folders\">\n" +
+    "<input name=\"uploads_use_yearmonth_folders\" type=\"checkbox\" id=\"uploads_use_yearmonth_folders\" value=\"1\" checked=\"checked\">\n" +
+    "Organize my uploads into month- and year-based folders</label>\n" +
+    "</th>\n" +
+    "</tr>\n" +
+    "\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "\n" +
+    "<p class=\"submit\"><input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-primary\" value=\"Save Changes\"></p>\n" +
+    "</form>\n" +
+    "\n" +
+    "</div>");
+}]);
+
+angular.module("wordpress/settings/forms/permalinks.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("wordpress/settings/forms/permalinks.tpl.html",
+    "<div class=\"wrap\">\n" +
+    "<div id=\"icon-options-general\" class=\"icon32\"><br></div><h2>Permalink Settings</h2>\n" +
+    "\n" +
+    "<form name=\"form\" action=\"options-permalink.php\" method=\"post\">\n" +
+    "<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"c6f1cfbe1a\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/wp-admin/options-permalink.php\">\n" +
+    "  <p>By default WordPress uses web <abbr title=\"Universal Resource Locator\">URL</abbr>s which have question marks and lots of numbers in them; however, WordPress offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links. A <a href=\"http://codex.wordpress.org/Using_Permalinks\">number of tags are available</a>, and here are some examples to get you started.</p>\n" +
+    "\n" +
+    "<h3 class=\"title\">Common Settings</h3>\n" +
+    "<table class=\"form-table permalink-structure\">\n" +
+    "	<tbody><tr>\n" +
+    "		<th><label><input name=\"selection\" type=\"radio\" value=\"\"> Default</label></th>\n" +
+    "		<td><code>http://projects.wp/?p=123</code></td>\n" +
+    "	</tr>\n" +
+    "	<tr>\n" +
+    "		<th><label><input name=\"selection\" type=\"radio\" value=\"/%year%/%monthnum%/%day%/%postname%/\"> Day and name</label></th>\n" +
+    "		<td><code>http://projects.wp/2013/11/14/sample-post/</code></td>\n" +
+    "	</tr>\n" +
+    "	<tr>\n" +
+    "		<th><label><input name=\"selection\" type=\"radio\" value=\"/%year%/%monthnum%/%postname%/\"> Month and name</label></th>\n" +
+    "		<td><code>http://projects.wp/2013/11/sample-post/</code></td>\n" +
+    "	</tr>\n" +
+    "	<tr>\n" +
+    "		<th><label><input name=\"selection\" type=\"radio\" value=\"/archives/%post_id%\"> Numeric</label></th>\n" +
+    "		<td><code>http://projects.wp/archives/123</code></td>\n" +
+    "	</tr>\n" +
+    "	<tr>\n" +
+    "		<th><label><input name=\"selection\" type=\"radio\" value=\"/%postname%/\"> Post name</label></th>\n" +
+    "		<td><code>http://projects.wp/sample-post/</code></td>\n" +
+    "	</tr>\n" +
+    "	<tr>\n" +
+    "		<th>\n" +
+    "			<label><input name=\"selection\" id=\"custom_selection\" type=\"radio\" value=\"custom\" checked=\"checked\">\n" +
+    "			Custom Structure			</label>\n" +
+    "		</th>\n" +
+    "		<td>\n" +
+    "			<code>http://projects.wp</code>\n" +
+    "			<input name=\"permalink_structure\" id=\"permalink_structure\" type=\"text\" value=\"/%category%/%postname%/\" class=\"regular-text code\">\n" +
+    "		</td>\n" +
+    "	</tr>\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "<h3 class=\"title\">Optional</h3>\n" +
+    "<p>If you like, you may enter custom structures for your category and tag <abbr title=\"Universal Resource Locator\">URL</abbr>s here. For example, using <code>topics</code> as your category base would make your category links like <code>http://example.org/topics/uncategorized/</code>. If you leave these blank the defaults will be used.</p>\n" +
+    "\n" +
+    "<table class=\"form-table\">\n" +
+    "	<tbody><tr>\n" +
+    "		<th><label for=\"category_base\">Category base</label></th>\n" +
+    "		<td> <input name=\"category_base\" id=\"category_base\" type=\"text\" value=\"\" class=\"regular-text code\"></td>\n" +
+    "	</tr>\n" +
+    "	<tr>\n" +
+    "		<th><label for=\"tag_base\">Tag base</label></th>\n" +
+    "		<td> <input name=\"tag_base\" id=\"tag_base\" type=\"text\" value=\"\" class=\"regular-text code\"></td>\n" +
+    "	</tr>\n" +
+    "	</tbody></table>\n" +
+    "\n" +
+    "\n" +
+    "<p class=\"submit\"><input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-primary\" value=\"Save Changes\"></p>  </form>\n" +
+    "\n" +
+    "</div>");
+}]);
+
+angular.module("wordpress/settings/forms/reading.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("wordpress/settings/forms/reading.tpl.html",
+    "<div class=\"wrap\">\n" +
+    "<div id=\"icon-options-general\" class=\"icon32\"><br></div><h2>Reading Settings</h2>\n" +
+    "\n" +
+    "<form method=\"post\" action=\"options.php\">\n" +
+    "<input type=\"hidden\" name=\"option_page\" value=\"reading\"><input type=\"hidden\" name=\"action\" value=\"update\"><input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"7e459588b2\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/wp-admin/options-reading.php\">\n" +
+    "<table class=\"form-table\">\n" +
+    "<tbody><tr valign=\"top\">\n" +
+    "<th scope=\"row\">Front page displays</th>\n" +
+    "<td id=\"front-static-pages\"><fieldset><legend class=\"screen-reader-text\"><span>Front page displays</span></legend>\n" +
+    "	<p><label>\n" +
+    "		<input name=\"show_on_front\" type=\"radio\" value=\"posts\" class=\"tog\" checked=\"checked\">\n" +
+    "		Your latest posts	</label>\n" +
+    "	</p>\n" +
+    "	<p><label>\n" +
+    "		<input name=\"show_on_front\" type=\"radio\" value=\"page\" class=\"tog\">\n" +
+    "		A <a href=\"edit.php?post_type=page\">static page</a> (select below)	</label>\n" +
+    "	</p>\n" +
+    "<ul>\n" +
+    "	<li><label for=\"page_on_front\">Front page: <select name=\"page_on_front\" id=\"page_on_front\" disabled=\"\">\n" +
+    "	<option value=\"0\">— Select —</option>\n" +
+    "	<option class=\"level-0\" value=\"39\">Get Involved</option>\n" +
+    "	<option class=\"level-0\" value=\"30\">How it works</option>\n" +
+    "	<option class=\"level-0\" value=\"6\">Overview</option>\n" +
+    "	<option class=\"level-0\" value=\"41\">Resources</option>\n" +
+    "	<option class=\"level-0\" value=\"35\">Who's Talking</option>\n" +
+    "</select>\n" +
+    "</label></li>\n" +
+    "	<li><label for=\"page_for_posts\">Posts page: <select name=\"page_for_posts\" id=\"page_for_posts\" disabled=\"\">\n" +
+    "	<option value=\"0\">— Select —</option>\n" +
+    "	<option class=\"level-0\" value=\"39\">Get Involved</option>\n" +
+    "	<option class=\"level-0\" value=\"30\">How it works</option>\n" +
+    "	<option class=\"level-0\" value=\"6\">Overview</option>\n" +
+    "	<option class=\"level-0\" value=\"41\">Resources</option>\n" +
+    "	<option class=\"level-0\" value=\"35\">Who's Talking</option>\n" +
+    "</select>\n" +
+    "</label></li>\n" +
+    "</ul>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"posts_per_page\">Blog pages show at most</label></th>\n" +
+    "<td>\n" +
+    "<input name=\"posts_per_page\" type=\"number\" step=\"1\" min=\"1\" id=\"posts_per_page\" value=\"10\" class=\"small-text\"> posts</td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"posts_per_rss\">Syndication feeds show the most recent</label></th>\n" +
+    "<td><input name=\"posts_per_rss\" type=\"number\" step=\"1\" min=\"1\" id=\"posts_per_rss\" value=\"10\" class=\"small-text\"> items</td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\">For each article in a feed, show </th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>For each article in a feed, show </span></legend>\n" +
+    "<p><label><input name=\"rss_use_excerpt\" type=\"radio\" value=\"0\" checked=\"checked\"> Full text</label><br>\n" +
+    "<label><input name=\"rss_use_excerpt\" type=\"radio\" value=\"1\"> Summary</label></p>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "\n" +
+    "<tr valign=\"top\" class=\"option-site-visibility\">\n" +
+    "<th scope=\"row\">Search Engine Visibility </th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Search Engine Visibility </span></legend>\n" +
+    "	<label for=\"blog_public\"><input name=\"blog_public\" type=\"checkbox\" id=\"blog_public\" value=\"0\">\n" +
+    "	Discourage search engines from indexing this site</label>\n" +
+    "	<p class=\"description\">It is up to search engines to honor this request.</p>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "\n" +
+    "<p class=\"submit\"><input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-primary\" value=\"Save Changes\"></p></form>\n" +
+    "</div>");
+}]);
+
+angular.module("wordpress/settings/forms/writing.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("wordpress/settings/forms/writing.tpl.html",
+    "<div class=\"wrap\">\n" +
+    "<div id=\"icon-options-general\" class=\"icon32\"><br></div><h2>Writing Settings</h2>\n" +
+    "\n" +
+    "<form method=\"post\" action=\"options.php\">\n" +
+    "<input type=\"hidden\" name=\"option_page\" value=\"writing\"><input type=\"hidden\" name=\"action\" value=\"update\"><input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"83c22402cf\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/wp-admin/options-writing.php\">\n" +
+    "<table class=\"form-table\">\n" +
+    "<tbody><tr valign=\"top\">\n" +
+    "<th scope=\"row\">Formatting</th>\n" +
+    "<td><fieldset><legend class=\"screen-reader-text\"><span>Formatting</span></legend>\n" +
+    "<label for=\"use_smilies\">\n" +
+    "<input name=\"use_smilies\" type=\"checkbox\" id=\"use_smilies\" value=\"1\" checked=\"checked\">\n" +
+    "Convert emoticons like <code>:-)</code> and <code>:-P</code> to graphics on display</label><br>\n" +
+    "<label for=\"use_balanceTags\"><input name=\"use_balanceTags\" type=\"checkbox\" id=\"use_balanceTags\" value=\"1\"> WordPress should correct invalidly nested XHTML automatically</label>\n" +
+    "</fieldset></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"default_category\">Default Post Category</label></th>\n" +
+    "<td>\n" +
+    "<select name=\"default_category\" id=\"default_category\" class=\"postform\">\n" +
+    "	<option class=\"level-0\" value=\"1\" selected=\"selected\">blog</option>\n" +
+    "</select>\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"default_post_format\">Default Post Format</label></th>\n" +
+    "<td>\n" +
+    "	<select name=\"default_post_format\" id=\"default_post_format\">\n" +
+    "		<option value=\"0\">Standard</option>\n" +
+    "		<option value=\"aside\">Aside</option>\n" +
+    "		<option value=\"chat\">Chat</option>\n" +
+    "		<option value=\"gallery\">Gallery</option>\n" +
+    "		<option value=\"link\">Link</option>\n" +
+    "		<option value=\"image\">Image</option>\n" +
+    "		<option value=\"quote\">Quote</option>\n" +
+    "		<option value=\"status\">Status</option>\n" +
+    "		<option value=\"video\">Video</option>\n" +
+    "		<option value=\"audio\">Audio</option>\n" +
+    "	</select>\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "<h3 class=\"title\">Press This</h3>\n" +
+    "<p>Press This is a bookmarklet: a little app that runs in your browser and lets you grab bits of the web.</p>\n" +
+    "<p>Use Press This to clip text, images and videos from any web page. Then edit and add more straight from Press This before you save or publish it in a post on your site.</p>\n" +
+    "<p>Drag-and-drop the following link to your bookmarks bar or right click it and add it to your favorites for a posting shortcut.</p>\n" +
+    "<p class=\"pressthis\"><a onclick=\"return false;\" oncontextmenu=\"if(window.navigator.userAgent.indexOf('WebKit')!=-1||window.navigator.userAgent.indexOf('MSIE')!=-1){jQuery('.pressthis-code').show().find('textarea').focus().select();return false;}\" href=\"javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='http://projects.wp/wp-admin/press-this.php',l=d.location,e=encodeURIComponent,u=f+'?u='+e(l.href)+'&t='+e(d.title)+'&s='+e(s)+'&v=4';a=function(){if(!w.open(u,'t','toolbar=0,resizable=1,scrollbars=1,status=1,width=720,height=570'))l.href=u;};if (/Firefox/.test(navigator.userAgent)) setTimeout(a, 0); else a();void(0)\"><span>Press This</span></a></p>\n" +
+    "<div class=\"pressthis-code\" style=\"display:none;\">\n" +
+    "	<p class=\"description\">If your bookmarks toolbar is hidden: copy the code below, open your Bookmarks manager, create new bookmark, type Press This into the name field and paste the code into the URL field.</p>\n" +
+    "	<p><textarea rows=\"5\" cols=\"120\" readonly=\"readonly\">javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='http://projects.wp/wp-admin/press-this.php',l=d.location,e=encodeURIComponent,u=f+'?u='+e(l.href)+'&amp;t='+e(d.title)+'&amp;s='+e(s)+'&amp;v=4';a=function(){if(!w.open(u,'t','toolbar=0,resizable=1,scrollbars=1,status=1,width=720,height=570'))l.href=u;};if (/Firefox/.test(navigator.userAgent)) setTimeout(a, 0); else a();void(0)</textarea></p>\n" +
+    "</div>\n" +
+    "\n" +
+    "<h3 class=\"title\">Post via e-mail</h3>\n" +
+    "<p>To post to WordPress by e-mail you must set up a secret e-mail account with POP3 access. Any mail received at this address will be posted, so it’s a good idea to keep this address very secret. Here are three random strings you could use: <kbd>rebenYsk</kbd>, <kbd>QSBFhUhm</kbd>, <kbd>jVO38PIu</kbd>.</p>\n" +
+    "\n" +
+    "<table class=\"form-table\">\n" +
+    "<tbody><tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"mailserver_url\">Mail Server</label></th>\n" +
+    "<td><input name=\"mailserver_url\" type=\"text\" id=\"mailserver_url\" value=\"mail.example.com\" class=\"regular-text code\">\n" +
+    "<label for=\"mailserver_port\">Port</label>\n" +
+    "<input name=\"mailserver_port\" type=\"text\" id=\"mailserver_port\" value=\"110\" class=\"small-text\">\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"mailserver_login\">Login Name</label></th>\n" +
+    "<td><input name=\"mailserver_login\" type=\"text\" id=\"mailserver_login\" value=\"login@example.com\" class=\"regular-text ltr\"></td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"mailserver_pass\">Password</label></th>\n" +
+    "<td>\n" +
+    "<input name=\"mailserver_pass\" type=\"text\" id=\"mailserver_pass\" value=\"password\" class=\"regular-text ltr\">\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "<tr valign=\"top\">\n" +
+    "<th scope=\"row\"><label for=\"default_email_category\">Default Mail Category</label></th>\n" +
+    "<td>\n" +
+    "<select name=\"default_email_category\" id=\"default_email_category\" class=\"postform\">\n" +
+    "	<option class=\"level-0\" value=\"1\" selected=\"selected\">blog</option>\n" +
+    "</select>\n" +
+    "</td>\n" +
+    "</tr>\n" +
+    "</tbody></table>\n" +
+    "\n" +
+    "<h3 class=\"title\">Update Services</h3>\n" +
+    "\n" +
+    "\n" +
+    "<p><label for=\"ping_sites\">When you publish a new post, WordPress automatically notifies the following site update services. For more about this, see <a href=\"http://codex.wordpress.org/Update_Services\">Update Services</a> on the Codex. Separate multiple service <abbr title=\"Universal Resource Locator\">URL</abbr>s with line breaks.</label></p>\n" +
+    "\n" +
+    "<textarea name=\"ping_sites\" id=\"ping_sites\" class=\"large-text code\" rows=\"3\">http://rpc.pingomatic.com/</textarea>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "<p class=\"submit\"><input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-primary\" value=\"Save Changes\"></p></form>\n" +
+    "</div>");
 }]);
 
 angular.module("wordpress/settings/wp.settings.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("wordpress/settings/wp.settings.tpl.html",
-    "setting");
+    "<section class=\"panel m-t-lg\">\n" +
+    "	<header class=\"panel-heading\">\n" +
+    "		<p class=\"h4 m-n\">General</p>\n" +
+    "	</header>\n" +
+    "	<div class=\"panel-body\">              \n" +
+    "		\n" +
+    "		<div ng-include src=\"'wordpress/settings/forms/general.tpl.html'\"></div>\n" +
+    "		\n" +
+    "	</div>\n" +
+    "</section>\n" +
+    "\n" +
+    "<section class=\"panel m-t-lg\">\n" +
+    "	<header class=\"panel-heading\">\n" +
+    "		<p class=\"h4 m-n\">Reading</p>\n" +
+    "	</header>\n" +
+    "	<div class=\"panel-body\">              \n" +
+    "		\n" +
+    "		<div ng-include src=\"'wordpress/settings/forms/reading.tpl.html'\"></div>\n" +
+    "		\n" +
+    "	</div>\n" +
+    "</section>\n" +
+    "\n" +
+    "\n" +
+    "<section class=\"panel m-t-lg\">\n" +
+    "	<header class=\"panel-heading\">\n" +
+    "		<p class=\"h4 m-n\">Writing</p>\n" +
+    "	</header>\n" +
+    "	<div class=\"panel-body\">              \n" +
+    "		\n" +
+    "		<div ng-include src=\"'wordpress/settings/forms/writing.tpl.html'\"></div>\n" +
+    "		\n" +
+    "	</div>\n" +
+    "</section>\n" +
+    "\n" +
+    "\n" +
+    "<section class=\"panel m-t-lg\">\n" +
+    "	<header class=\"panel-heading\">\n" +
+    "		<p class=\"h4 m-n\">Discussion</p>\n" +
+    "	</header>\n" +
+    "	<div class=\"panel-body\">              \n" +
+    "		\n" +
+    "		<div ng-include src=\"'wordpress/settings/forms/discussion.tpl.html'\"></div>\n" +
+    "		\n" +
+    "	</div>\n" +
+    "</section>\n" +
+    "\n" +
+    "<section class=\"panel m-t-lg\">\n" +
+    "	<header class=\"panel-heading\">\n" +
+    "		<p class=\"h4 m-n\">Media</p>\n" +
+    "	</header>\n" +
+    "	<div class=\"panel-body\">              \n" +
+    "		\n" +
+    "		<div ng-include src=\"'wordpress/settings/forms/media.tpl.html'\"></div>\n" +
+    "		\n" +
+    "	</div>\n" +
+    "</section>\n" +
+    "\n" +
+    "<section class=\"panel m-t-lg\">\n" +
+    "	<header class=\"panel-heading\">\n" +
+    "		<p class=\"h4 m-n\">Permalinks</p>\n" +
+    "	</header>\n" +
+    "	<div class=\"panel-body\">              \n" +
+    "		\n" +
+    "		<div ng-include src=\"'wordpress/settings/forms/permalinks.tpl.html'\"></div>\n" +
+    "		\n" +
+    "	</div>\n" +
+    "</section>\n" +
+    "");
 }]);
 
 angular.module("wordpress/themes/wp.themes.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -2571,7 +3917,11 @@ angular.module("wordpress/themes/wp.themes.tpl.html", []).run(["$templateCache",
     "\n" +
     "    	<ul class=\"nav navbar-nav navbar-right\">\n" +
     "    		<li>\n" +
-    "    			<button class=\"btn btn-white  navbar-btn\" oc-show-option template=\"templates/upload.themes.tpl.html\" output=\"themes\" input=\"localThemes\">\n" +
+    "    			<button class=\"btn btn-white  navbar-btn\" \n" +
+    "                oc-show-option \n" +
+    "                template=\"templates/upload.themes.tpl.html\" \n" +
+    "                output=\"themes\" \n" +
+    "                input=\"localThemes\">\n" +
     "    				<i class=\"icon-cloud-upload text\"></i> upload a theme\n" +
     "    			</button> \n" +
     "\n" +

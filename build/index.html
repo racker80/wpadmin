@@ -39,6 +39,7 @@
     <script type="text/javascript" src="src/app/app.js"></script>
     <script type="text/javascript" src="src/app/home/home.js"></script>
     <script type="text/javascript" src="src/app/login/login.js"></script>
+    <script type="text/javascript" src="src/app/signup/signup.js"></script>
     <script type="text/javascript" src="src/app/sites/collaborators/sites.collaborators.js"></script>
     <script type="text/javascript" src="src/app/sites/detail/sites.detail.js"></script>
     <script type="text/javascript" src="src/app/sites/managed/sites.managed.js"></script>
@@ -57,10 +58,23 @@
 
 
   </head>
-  <body>
+  <body ng-switch="view">
+
+    <section id="site-container" class="hbox stretch" ng-switch-when="login">
+      <div class="container m-t-lg" style="width:600px;">
+        <div  ui-view="main"></div>
+      </div>
+        
+    </section>
 
 
-    <section id="site-container" class="hbox stretch">
+    <section id="site-container" class="hbox stretch" ng-switch-when="signup">
+      <div class="container m-t-lg" style="width:600px;">
+        <div  ui-view="main"></div>
+      </div>
+    </section>  
+
+    <section ng-switch-default id="site-container" class="hbox stretch">
 
       <aside class="bg-dark aside-lg" id="nav">
         <section class="vbox">

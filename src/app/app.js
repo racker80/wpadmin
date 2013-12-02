@@ -5,6 +5,7 @@ angular.module( 'ngBoilerplate', [
   'templates-common',
   'auth',
   'ngBoilerplate.login',
+  'ngBoilerplate.signup',
   'ngBoilerplate.home',
   'ngBoilerplate.about',
   'ngBoilerplate.sites',
@@ -36,8 +37,10 @@ angular.module( 'ngBoilerplate', [
     $rootScope.User = User;
 })
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
+.controller( 'AppCtrl', function AppCtrl ( $scope, $location, $rootScope ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+      $rootScope.location = function() { return $location.path(); };
+      $scope.view = toState.name;
 
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
@@ -50,7 +53,8 @@ angular.module( 'ngBoilerplate', [
 
   service.resolved = {
     themes:false,
-    sites:false
+    sites:false,
+    plugins:false
   };
 
   service.add = function(type, obj){
@@ -110,30 +114,25 @@ angular.module( 'ngBoilerplate', [
     });
     return defer.promise;
   };
-  // service.update = {
-  //   themes: function(){
-  //     var typePlural = angular.lowercase(type)+'s';
-  //     var Update = Parse.Object.extend("type");
-  //     var query = new Parse.Query(Update);
-  //     query.equalTo("userId", Auth.currentUser().id);
-  //     var defer = $q.defer();
-  //     query.find({
-  //       success: function(results) {
-  //         console.log(results);
-  //         service[typePlural] = results;
-  //         service.resolved[typePlural] = true;
-  //         defer.resolve(service[typePlural]);
-  //       },
-  //       error: function(error) {
-  //         alert("Error: " + error.code + " " + error.message);
-  //       }
-  //     });
-  //     return defer.promise;
-  //   }
-  // };
+
 
   service.themes = [];
+  service.plugins = [];
   service.sites = [];
+
+  service.reset = function(){
+    service.themes = [];
+    service.plugins = [];
+    service.sites = [];
+
+    service.resolved = {
+      themes:false,
+      sites:false,
+      plugins:false
+    };
+    console.log('User reset');
+
+  };
 
 
   return service;
@@ -248,6 +247,20 @@ angular.module( 'ngBoilerplate', [
   Parse.initialize("8fxedtub66Zg4xaQK6lGWL69vWz5J1mea3Pl5dqS", "pB4GLidCL1v8vocZY3H03TlECcE0ab6dFrBg8yz8");
 
 
+})
+
+.directive('rowEqh', function(){
+  return {
+    restrict:"C",
+    link:function(scope, element, attrs) {
+      var h = element.innerHeight();
+      element.find('>div').each(function(){
+        if($(this).innerHeight() < h) {
+          $(this).find('.panel').innerHeight(h);
+        }
+      });
+    }
+  };
 })
 ;
 

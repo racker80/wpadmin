@@ -37,9 +37,9 @@ angular.module( 'ngBoilerplate.login', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'loginCtrl', function LoginController( $scope, $state, $location ) {
+.controller( 'loginCtrl', function LoginController( $scope, $state, $location, User ) {
   console.log('loginCtrl');
-
+  User.reset();
   $scope.login = function(){
     Parse.User.logIn($scope.login.email, $scope.login.password, {
       success: function(user) {

@@ -68,4 +68,5 @@ angular.module( 'ngBoilerplate.wp', [
   return service;
 
 })
+
 ;
