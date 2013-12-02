@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html', 'signup/signup.tpl.html', 'sites/collaborators/sites.collaborators.tpl.html', 'sites/detail/sites.detail.account.tpl.html', 'sites/detail/sites.detail.development.tpl.html', 'sites/detail/sites.detail.tpl.html', 'sites/detail/sites.detail.wordpress.tpl.html', 'sites/directive.sitelist.tpl.html', 'sites/managed/sites.managed.tpl.html', 'sites/mine/sites.mine.tpl.html', 'sites/new/sites.new.tpl.html', 'sites/sites.nav.tpl.html', 'sites/sites.tpl.html', 'templates/add.themes.tpl.html', 'templates/new.upload.themes.tpl.html', 'templates/upload.themes.tpl.html', 'templates/wp.plugin.search.tpl.html', 'wordpress/plugins/wp.plugins.tpl.html', 'wordpress/settings/forms/discussion.tpl.html', 'wordpress/settings/forms/general.tpl.html', 'wordpress/settings/forms/media.tpl.html', 'wordpress/settings/forms/permalinks.tpl.html', 'wordpress/settings/forms/reading.tpl.html', 'wordpress/settings/forms/writing.tpl.html', 'wordpress/settings/wp.settings.tpl.html', 'wordpress/themes/wp.themes.tpl.html', 'wordpress/wordpress.nav.tpl.html', 'wordpress/wordpress.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html', 'signup/signup.tpl.html', 'sites/collaborators/sites.collaborators.tpl.html', 'sites/detail/sites.detail.account.tpl.html', 'sites/detail/sites.detail.development.tpl.html', 'sites/detail/sites.detail.tpl.html', 'sites/detail/sites.detail.wordpress.tpl.html', 'sites/directive.sitelist.tpl.html', 'sites/managed/sites.managed.tpl.html', 'sites/mine/sites.mine.tpl.html', 'sites/new/sites.new.tpl.html', 'sites/sites.nav.tpl.html', 'sites/sites.tpl.html', 'templates/add.themes.tpl.html', 'templates/cc.tpl.html', 'templates/new.upload.themes.tpl.html', 'templates/upload.themes.tpl.html', 'templates/wp.plugin.search.tpl.html', 'wordpress/plugins/wp.plugins.tpl.html', 'wordpress/settings/forms/discussion.tpl.html', 'wordpress/settings/forms/general.tpl.html', 'wordpress/settings/forms/media.tpl.html', 'wordpress/settings/forms/permalinks.tpl.html', 'wordpress/settings/forms/reading.tpl.html', 'wordpress/settings/forms/writing.tpl.html', 'wordpress/settings/wp.settings.tpl.html', 'wordpress/themes/wp.themes.tpl.html', 'wordpress/wordpress.nav.tpl.html', 'wordpress/wordpress.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -1814,13 +1814,28 @@ angular.module("sites/mine/sites.mine.tpl.html", []).run(["$templateCache", func
     "\n" +
     "\n" +
     "<div my-sites sites=\"sites\">\n" +
+    "<section  ng-hide=\"sites.length>0\">\n" +
+    "	<div ng-show=\"billing.completed===false\" class=\"alert alert-warning alert-block text-center\">\n" +
+    "                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" ng-click=\"alert=!alert\"><i class=\"icon-remove\"></i></button>\n" +
+    "                <h4><i class=\"icon-bell-alt\"></i>You need to complete your billing information!</h4>\n" +
+    "                <p>Before you can create any sites, you need to add a Credit Card.</p>\n" +
+    "                <br>\n" +
+    "                <button class=\"btn btn-white btn-sm\" oc-show-option input=\"billing\" output=\"billing\" template=\"templates/cc.tpl.html\">Add Billing</button>\n" +
+    "              </div>\n" +
     "\n" +
-    "<section ng-hide=\"sites.length>0\">\n" +
     "	<div class=\"text-center empty\">\n" +
     "<br><br>\n" +
     "<p class=\"h2 font-thin\">Do you need just one site?</p>\n" +
-    "<div style=\"width:75%; margin:0 auto;\"><a href=\"#/sites/new\" class=\"btn btn-block btn-success btn-lg m-t-lg m-b-lg\">Create your first site now</a></div>\n" +
-    "<p class=\"font-thin\">Setup is quick and easy and you'll be up and running in no time.</p>\n" +
+    "<div style=\"width:75%; margin:0 auto;\"><a href=\"#/sites/new\" ng-class=\"{disabled:billing.completed==false}\" class=\" btn btn-block btn-success btn-lg m-t-lg m-b-lg\">\n" +
+    "	<span ng-show=\"billing.completed==false\">\n" +
+    "		Complete Billing to add your first site\n" +
+    "	</span>\n" +
+    "	<span ng-hide=\"billing.completed==false\">\n" +
+    "		Create your first site now\n" +
+    "	</span>\n" +
+    "</a></div>\n" +
+    "<p class=\"font-thin\" ng-show=\"billing.completed==false\">You'll need to have a valid Credit Card to create your first site.</p>\n" +
+    "<p class=\"font-thin\" ng-hide=\"billing.completed==false\">Setup is quick and easy and you'll be up and running in no time.</p>\n" +
     "\n" +
     "<br><br>\n" +
     "<hr>\n" +
@@ -2354,11 +2369,118 @@ angular.module("sites/new/sites.new.tpl.html", []).run(["$templateCache", functi
     "</section>\n" +
     "\n" +
     "\n" +
+    "<section ng-hide=\"plan===true\" class=\"hbox stretch  bg-dark lter ng-scope\">\n" +
+    "    <section>\n" +
+    "        <div class=\"wrapper\">\n" +
+    "            <h4>Level 1</h4>\n" +
+    "            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, beatae saepe nisi dicta labore cum ad molestias magnam esse tempore.</p>\n" +
+    "            <ul class=\"\">\n" +
+    "                <li>20gb Storage</li>\n" +
+    "                <li>20k Traffic</li>\n" +
+    "                <li class=\"lead\">$19.99 / mo</li>\n" +
+    "            </ul>\n" +
+    "            <form class=\"form-inline ng-pristine ng-valid\">\n" +
+    "                <div class=\"radio m-l-xs m-r-xs\">\n" +
+    "                    <label>\n" +
+    "                        <input type=\"radio\">\n" +
+    "                    </label>\n" +
+    "                </div>\n" +
+    "                <button class=\"btn btn-white\" ng-click=\"plan=true\">Select Plan</button>\n" +
+    "            </form>\n" +
+    "        </div>\n" +
+    "    </section>\n" +
+    "    <section class=\"bg-success\">\n" +
+    "        <div class=\"wrapper\">\n" +
+    "            <h4>Level 2</h4>\n" +
+    "            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, beatae saepe nisi dicta labore cum ad molestias magnam esse tempore.</p>\n" +
+    "            <ul class=\"\">\n" +
+    "                <li>20gb Storage</li>\n" +
+    "                <li>20k Traffic</li>\n" +
+    "                <li class=\"lead\">$25.99 / mo</li>\n" +
+    "            </ul>   \n" +
+    "            <form class=\"form-inline ng-pristine ng-valid\">\n" +
+    "                <div class=\"radio m-l-xs m-r-xs\">\n" +
+    "                    <label>\n" +
+    "                        <input type=\"radio\">\n" +
+    "                    </label>\n" +
+    "                </div>\n" +
+    "                <button class=\"btn btn-white\" ng-click=\"plan=true\">Select Plan</button>\n" +
+    "            </form>\n" +
+    "\n" +
+    "        </div>\n" +
+    "    </section>\n" +
+    "    <section>\n" +
+    "        <div class=\"wrapper\">\n" +
+    "            <h4>Level 3</h4>\n" +
+    "            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, beatae saepe nisi dicta labore cum ad molestias magnam esse tempore.</p>\n" +
+    "            <ul class=\"\">\n" +
+    "                <li>20gb Storage</li>\n" +
+    "                <li>20k Traffic</li>\n" +
+    "                <li class=\"lead\">$45.99 / mo</li>\n" +
+    "            </ul>\n" +
+    "            <form class=\"form-inline ng-pristine ng-valid\">\n" +
+    "                <div class=\"radio m-l-xs m-r-xs\">\n" +
+    "                    <label>\n" +
+    "                        <input type=\"radio\">\n" +
+    "                    </label>\n" +
+    "                </div>\n" +
+    "                <button class=\"btn btn-white\" ng-click=\"plan=true\">Select Plan</button>\n" +
+    "            </form>\n" +
+    "        </div>\n" +
+    "    </section>\n" +
+    "    <section>\n" +
+    "        <div class=\"wrapper\">\n" +
+    "            <h4>Level 4</h4>\n" +
+    "            <p>You can start by setting up a temporary (5 day), private development site.  Kick the tires, show a client, then convert it to a paying plan and go live.</p>\n" +
+    "            <ul class=\"\">\n" +
+    "                <li>5gb Storage</li>\n" +
+    "                <li>1k Traffic</li>\n" +
+    "                <li class=\"lead\">$90.99 / mo</li>\n" +
+    "            </ul>\n" +
+    "            <form class=\"form-inline ng-pristine ng-valid\">\n" +
+    "                <div class=\"radio m-l-xs m-r-xs\">\n" +
+    "                    <label>\n" +
+    "                        <input type=\"radio\">\n" +
+    "                    </label>\n" +
+    "                </div>\n" +
+    "                <button class=\"btn btn-white\" ng-click=\"plan=true\">Start</button>\n" +
+    "            </form>\n" +
+    "        </div>\n" +
+    "    </section>                                        \n" +
+    "</section>\n" +
     "\n" +
     "\n" +
     "\n" +
     "\n" +
-    "<section>\n" +
+    "\n" +
+    "<section class=\"clearfix\" ng-show=\"plan===true\">\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label for=\"inputEmail1\" class=\"col-lg-2 control-label h4\">Plan</label>\n" +
+    "            <div class=\"col-lg-10\">\n" +
+    "                <br>\n" +
+    "                <div class=\"row m-b\">\n" +
+    "                    <div class=\"col-lg-6\">\n" +
+    "                        <label for=\"exampleInputEmail1\">Level 2 Plan</label>\n" +
+    "                        <ul class=\"\">\n" +
+    "                            <li>20gb Storage</li>\n" +
+    "                            <li>20k Traffic</li>\n" +
+    "                            <li class=\"lead\">$25.99 / mo</li>\n" +
+    "                        </ul>  \n" +
+    "                        <button class=\"btn btn-sm btn-white\" ng-click=\"plan=false\">Change Plan</button>\n" +
+    "\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-md-5 col-md-push-1\">\n" +
+    "                    </div>\n" +
+    "                </div>                        \n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "</section>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "<section ng-show=\"plan===true\">\n" +
     "    <div class=\"form-group padder-v\">\n" +
     "        <div class=\"col-lg-12\">\n" +
     "            <label for=\"exampleInputEmail1\" class=\"col-lg-2 control-label\">You're Done!</label>\n" +
@@ -2501,6 +2623,81 @@ angular.module("templates/add.themes.tpl.html", []).run(["$templateCache", funct
     "	<button class=\"btn btn-primary\" ng-click=\"close()\">Done</button>\n" +
     "\n" +
     "</div>");
+}]);
+
+angular.module("templates/cc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/cc.tpl.html",
+    "<div class=\"wrapper\">\n" +
+    "        <p class=\"h2 font-thin\">A credit card is required for you to create new sites.</p>\n" +
+    "        <hr>\n" +
+    "        <h4>Name and Address</h4>\n" +
+    "\n" +
+    "        <div class=\"row m-b\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"First Name\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"Last Name\">\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"row m-b\">\n" +
+    "            <div class=\"col-md-12\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"Street Address\">\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"row m-b\">\n" +
+    "            <div class=\"col-md-4\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"City\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-4\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"State\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-4\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"Zip\">\n" +
+    "            </div>            \n" +
+    "        </div>\n" +
+    "        <div class=\"row m-b\">\n" +
+    "            <div class=\"col-md-8\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"USA\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-4\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"Phone Number\">\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <h4>Credit Card Info</h4>\n" +
+    "        <div class=\"row m-b\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"Credit Card Number\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-3\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"CVV\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-3\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"Expires mm/yyyy\">\n" +
+    "            </div>            \n" +
+    "        </div>\n" +
+    "        <div class=\"row m-b\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"The name on this card\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"Promo Code?\">\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "        \n" +
+    "        <br>\n" +
+    "        <button class=\"btn btn-white btn-lg\" ng-click=\"detail.output.completed=true\">Add Credit Card</button>        \n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "      </div>\n" +
+    "      </div>");
 }]);
 
 angular.module("templates/new.upload.themes.tpl.html", []).run(["$templateCache", function($templateCache) {

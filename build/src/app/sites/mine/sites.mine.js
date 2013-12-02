@@ -49,6 +49,10 @@ angular.module( 'ngBoilerplate.sites.mine', [
       sites:"="
     },
     controller:function($scope){
+        $scope.billing = {
+    completed:false
+  };
+  
       $scope.remove = function(myObject, list, index){
           myObject.destroy({
             success: function(result) {

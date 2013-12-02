@@ -72,7 +72,7 @@ angular.module( 'ngBoilerplate.sites.new', [
           //     }
           //   });
           if($scope.options.themes.length === 0) {
-            $scope.options.image = '/assets/theme4.jpg';
+            $scope.options.image = 'assets/theme4.jpg';
           } else {
             $scope.options.image = $scope.options.themes[0].image;
           }

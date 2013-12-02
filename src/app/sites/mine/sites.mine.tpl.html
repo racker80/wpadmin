@@ -12,13 +12,28 @@
 
 
 <div my-sites sites="sites">
+<section  ng-hide="sites.length>0">
+	<div ng-show="billing.completed===false" class="alert alert-warning alert-block text-center">
+                <button type="button" class="close" data-dismiss="alert" ng-click="alert=!alert"><i class="icon-remove"></i></button>
+                <h4><i class="icon-bell-alt"></i>You need to complete your billing information!</h4>
+                <p>Before you can create any sites, you need to add a Credit Card.</p>
+                <br>
+                <button class="btn btn-white btn-sm" oc-show-option input="billing" output="billing" template="templates/cc.tpl.html">Add Billing</button>
+              </div>
 
-<section ng-hide="sites.length>0">
 	<div class="text-center empty">
 <br><br>
 <p class="h2 font-thin">Do you need just one site?</p>
-<div style="width:75%; margin:0 auto;"><a href="#/sites/new" class="btn btn-block btn-success btn-lg m-t-lg m-b-lg">Create your first site now</a></div>
-<p class="font-thin">Setup is quick and easy and you'll be up and running in no time.</p>
+<div style="width:75%; margin:0 auto;"><a href="#/sites/new" ng-class="{disabled:billing.completed==false}" class=" btn btn-block btn-success btn-lg m-t-lg m-b-lg">
+	<span ng-show="billing.completed==false">
+		Complete Billing to add your first site
+	</span>
+	<span ng-hide="billing.completed==false">
+		Create your first site now
+	</span>
+</a></div>
+<p class="font-thin" ng-show="billing.completed==false">You'll need to have a valid Credit Card to create your first site.</p>
+<p class="font-thin" ng-hide="billing.completed==false">Setup is quick and easy and you'll be up and running in no time.</p>
 
 <br><br>
 <hr>
