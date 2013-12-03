@@ -16,9 +16,6 @@ angular.module( 'ngBoilerplate.sites.mine', [
       }
     },
     resolve: {
-      auth: function(Auth) {
-        Auth.isAuthenticated();
-      },
       sites: function(User){
           if(User.resolved.sites === false) {
               return User.update('Site');
@@ -38,7 +35,7 @@ angular.module( 'ngBoilerplate.sites.mine', [
   Auth.isAuthenticated();
 
   $scope.sites = sites;
-
+  console.log('mySitesCtrl');
 
 })
 

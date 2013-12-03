@@ -39,9 +39,21 @@ angular.module( 'ngBoilerplate', [
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location, $rootScope ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-      $scope.view = toState.name;
+      var stateName = function(){
+        var array = ['login', 'signup'];
+        if(_.indexOf(array, toState.name)===-1) {
+          return 'default';
+        } else {
+          return toState.name;
+        }
+      };
+      $scope.view = stateName();
 
-      $scope.profile = Parse.User.current().attributes;
+    var profile = Parse.User.current();
+    if ( profile !== null ) {
+      $scope.profile = profile.attributes;
+    }
+      
 
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
@@ -250,18 +262,6 @@ angular.module( 'ngBoilerplate', [
 
 })
 
-.directive('rowEqh', function(){
-  return {
-    restrict:"C",
-    link:function(scope, element, attrs) {
-      var h = element.innerHeight();
-      element.find('>div').each(function(){
-        if($(this).innerHeight() < h) {
-          $(this).find('.panel').innerHeight(h);
-        }
-      });
-    }
-  };
-})
+
 ;
 

@@ -5,7 +5,8 @@ angular.module('auth', [])
 // Redirect to the given url (defaults to '/')
 function redirect(url) {
 	url = url || '/';
-	$location.path(url);
+	// $location.path(url);
+	$state.transitionTo(url);
 }
 
 	var service = {

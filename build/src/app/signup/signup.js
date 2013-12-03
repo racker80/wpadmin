@@ -11,7 +11,7 @@ angular.module( 'ngBoilerplate.signup', [
   $stateProvider.state( 'signup', {
     url: '/signup',
     views: {
-      "main": {
+      "signup": {
         controller: 'signupCtrl',
         templateUrl: 'signup/signup.tpl.html'
       }

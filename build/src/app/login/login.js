@@ -25,7 +25,7 @@ angular.module( 'ngBoilerplate.login', [
   $stateProvider.state( 'login', {
     url: '/login',
     views: {
-      "main": {
+      "login": {
         controller: 'loginCtrl',
         templateUrl: 'login/login.tpl.html'
       }

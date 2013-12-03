@@ -14,9 +14,7 @@ angular.module( 'ngBoilerplate.sites', [
       }
     },
     resolve: {
-      auth: function(Auth) {
-        Auth.isAuthenticated();
-      }
+
     },    
     data:{ pageTitle: 'Home' }
   });

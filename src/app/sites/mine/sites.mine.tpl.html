@@ -12,44 +12,44 @@
 
 
 <div my-sites sites="sites">
-<section  ng-hide="sites.length>0">
-	<div ng-show="billing.completed===false" class="alert alert-warning alert-block text-center">
-                <button type="button" class="close" data-dismiss="alert" ng-click="alert=!alert"><i class="icon-remove"></i></button>
-                <h4><i class="icon-bell-alt"></i>You need to complete your billing information!</h4>
-                <p>Before you can create any sites, you need to add a Credit Card.</p>
-                <br>
-                <button class="btn btn-white btn-sm" oc-show-option input="billing" output="billing" template="templates/cc.tpl.html">Add Billing</button>
-              </div>
+	<section  ng-hide="sites.length>0">
+		<div ng-show="billing.completed===false" class="alert alert-warning alert-block text-center">
+			<button type="button" class="close" data-dismiss="alert" ng-click="alert=!alert"><i class="icon-remove"></i></button>
+			<h4><i class="icon-bell-alt"></i>You need to complete your billing information!</h4>
+			<p>Before you can create any sites, you need to add a Credit Card.</p>
+			<br>
+			<button class="btn btn-white btn-sm" oc-show-option input="billing" output="billing" template="templates/cc.tpl.html">Add Billing</button>
+		</div>
 
-	<div class="text-center empty">
-<br><br>
-<p class="h2 font-thin">Do you need just one site?</p>
-<div style="width:75%; margin:0 auto;"><a href="#/sites/new" ng-class="{disabled:billing.completed==false}" class=" btn btn-block btn-success btn-lg m-t-lg m-b-lg">
-	<span ng-show="billing.completed==false">
-		Complete Billing to add your first site
-	</span>
-	<span ng-hide="billing.completed==false">
-		Create your first site now
-	</span>
-</a></div>
-<p class="font-thin" ng-show="billing.completed==false">You'll need to have a valid Credit Card to create your first site.</p>
-<p class="font-thin" ng-hide="billing.completed==false">Setup is quick and easy and you'll be up and running in no time.</p>
+		<div class="text-center empty">
+			<br><br>
+			<p class="h2 font-thin">Do you need just one site?</p>
+			<div style="width:75%; margin:0 auto;"><a href="#/sites/new" ng-class="{disabled:billing.completed==false}" class=" btn btn-block btn-success btn-lg m-t-lg m-b-lg">
+				<span ng-show="billing.completed==false">
+					Complete Billing to add your first site
+				</span>
+				<span ng-hide="billing.completed==false">
+					Create your first site now
+				</span>
+			</a></div>
+			<p class="font-thin" ng-show="billing.completed==false">You'll need to have a valid Credit Card to create your first site.</p>
+			<p class="font-thin" ng-hide="billing.completed==false">Setup is quick and easy and you'll be up and running in no time.</p>
 
-<br><br>
-<hr>
-<br><br>
+			<br><br>
+			<hr>
+			<br><br>
 
-<p class="h2 font-thin">Do you build lots of WordPress sites?</p>
-<div style="width:75%; margin:0 auto;"><a href="#/wordpress/" class="btn btn-block btn-info btn-lg m-t-lg m-b-lg">Configure WordPress Themes, Plugins, and Options</a></div>
-<p class="font-thin">If you use the same themes and plugins on a regular basis, let us manage and install them for you each time.</p>
+			<p class="h2 font-thin">Do you build lots of WordPress sites?</p>
+			<div style="width:75%; margin:0 auto;"><a href="#/wordpress/" class="btn btn-block btn-info btn-lg m-t-lg m-b-lg">Configure WordPress Themes, Plugins, and Options</a></div>
+			<p class="font-thin">If you use the same themes and plugins on a regular basis, let us manage and install them for you each time.</p>
 
-<br>
-<hr>
-	<span style="cursor:pointer" ng-click="Data.sites.mySites=Data.data.sites.mySites">or pretend you have a lot of sites</span>
+			<br>
+			<hr>
+			<span style="cursor:pointer" ng-click="Data.sites.mySites=Data.data.sites.mySites">or pretend you have a lot of sites</span>
 
-</div>
+		</div>
 
-	<div class="text-center empty hidden">
+		<div class="text-center empty hidden">
 			<h2 class="text-thin">Welcome To Your WP Cloud Sites!</h2>
 			<p class="h4 font-thin">So, this is where all of your future WordPress sites will live.  We know, you're excited to get started, but here are some quick pointers:</p>
 			<br>
@@ -67,7 +67,7 @@
 						<h4>Add developers to your sites</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia!</p>
 						<p><a bs href="#"><span class="text-info">Learn More</span></a></p>
-					
+						
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -85,14 +85,14 @@
 			<br><br>
 			<span style="cursor:pointer" ng-click="Data.sites.mySites=Data.data.sites.mySites">or pretend you have a lot of sites</span>
 		</div>
-</section>
+	</section>
 
-<section ng-if="sites.length>0">
-	
+	<section ng-if="sites.length>0">
+		
 
-<div class="table-responsive">
-	
-	<table class="table table-striped table-bordered m-t-lg m-b-lg">
+		<div class="table-responsive">
+			
+			<table class="table table-striped table-bordered m-t-lg m-b-lg">
 		<!-- <thead>
 			<th width="20"></th>
 			<th width="80">Theme</th>

@@ -427,17 +427,75 @@
 
 </section>
 
+<section class="clearfix"  ng-hide="plan===true">
+        <div class="form-group">
+            <label for="inputEmail1" class="col-lg-2 control-label h4">Select a plan</label>
+            <div class="col-lg-10">
+                <br>
+                <div class="row m-b">
+                    <div class="col-lg-3">
+                        <p class="h4">Level 1 Plan</p>
+                        <ul class="list-unstyled">
+                            <li class="h4 font-thin m-b-sm">5gb Storage</li>
+                            <li class="h4 font-thin m-b-sm">20k Traffic</li>
+                            <li class="h4 font-thin m-b-sm">10gb Bandwidth</li>
+                            <li class="lead">$20 / mo</li>
+                        </ul> 
+                        
+                        <button class="btn btn-sm btn-white" ng-click="plan=true">Select Plan</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <p class="h4">Level 2 Plan</p>
+                        <ul class="list-unstyled">
+                            <li class="h4 font-thin m-b-sm">10gb Storage</li>
+                            <li class="h4 font-thin m-b-sm">40k Traffic</li>
+                             <li class="h4 font-thin m-b-sm">20gb Bandwidth</li>
+                           <li class="lead">$30 / mo</li>
+                        </ul> 
+                        
+                        <button class="btn btn-sm btn-white" ng-click="plan=true">Select Plan</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <p class="h4">Level 3 Plan</p>
+                        <ul class="list-unstyled">
+                            <li class="h4 font-thin m-b-sm">20gb Storage</li>
+                            <li class="h4 font-thin m-b-sm">80k Traffic</li>
+                             <li class="h4 font-thin m-b-sm">40gb Bandwidth</li>
+                           <li class="lead">$45 / mo</li>
+                        </ul> 
+                        
+                        <button class="btn btn-sm btn-white" ng-click="plan=true">Select Plan</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <p class="h4">Level 4 Plan</p>
+                        <ul class="list-unstyled">
+                            <li class="h4 font-thin m-b-sm">50gb Storage</li>
+                            <li class="h4 font-thin m-b-sm">200k Traffic</li>
+                             <li class="h4 font-thin m-b-sm">100gb Bandwidth</li>
+                           <li class="lead">$80 / mo</li>
+                        </ul> 
+                        
+                        <button class="btn btn-sm btn-white" ng-click="plan=true">Select Plan</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+</section>
 
-<section ng-hide="plan===true" class="hbox stretch  bg-dark lter ng-scope">
+
+
+<section class="hbox stretch  bg-dark lter ng-scope hidden">
     <section>
         <div class="wrapper">
-            <h4>Level 1</h4>
+            <h4>Level 2</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, beatae saepe nisi dicta labore cum ad molestias magnam esse tempore.</p>
-            <ul class="">
-                <li>20gb Storage</li>
-                <li>20k Traffic</li>
-                <li class="lead">$19.99 / mo</li>
-            </ul>
+                        <ul class="list-unstyled">
+                            <li class="h4 font-thin m-b-sm">10gb Storage</li>
+                            <li class="h4 font-thin m-b-sm">40k Traffic</li>
+                             <li class="h4 font-thin m-b-sm">20gb Bandwidth</li>
+                           <li class="lead">$30 / mo</li>
+                        </ul> 
             <form class="form-inline ng-pristine ng-valid">
                 <div class="radio m-l-xs m-r-xs">
                     <label>
@@ -507,8 +565,6 @@
         </div>
     </section>                                        
 </section>
-
-
 
 
 

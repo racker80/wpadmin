@@ -589,7 +589,7 @@ angular.module("sites/collaborators/sites.collaborators.tpl.html", []).run(["$te
 angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("sites/detail/sites.detail.account.tpl.html",
     "<br>\n" +
-    "<div class=\"row row-eqh\">\n" +
+    "<div class=\"row\">\n" +
     "	<div class=\"col-lg-8\">\n" +
     "		<section class=\"panel m-n m-b-lg\">\n" +
     "			<header class=\"panel-heading\">\n" +
@@ -666,12 +666,13 @@ angular.module("sites/detail/sites.detail.account.tpl.html", []).run(["$template
     "				</div>\n" +
     "			</div>\n" +
     "\n" +
+    "			\n" +
     "\n" +
     "		</section>\n" +
     "\n" +
     "	</div>\n" +
     "	<div class=\"col-lg-4\">\n" +
-    "		<section class=\"panel m-n\">\n" +
+    "		<section class=\"panel m-n center-vertical\">\n" +
     "			<header class=\"panel-heading\">\n" +
     "				<p class=\"h4 m-n\">Your Last Month's Invoice - October</p>\n" +
     "			</header>	\n" +
@@ -1209,56 +1210,7 @@ angular.module("sites/detail/sites.detail.tpl.html", []).run(["$templateCache", 
     "</div>\n" +
     "\n" +
     "\n" +
-    "<div class=\"wrapper hidden\">\n" +
-    "    <table class=\"table m-n no-border\" style=\"\">\n" +
-    "        <tbody>\n" +
-    "            <tr>\n" +
-    "                <td class=\"aside-lg text-center padder-n\" style=\"padding:0; border:0;\">\n" +
-    "                    <div style=\"height:100px; overflow:hidden;\">\n" +
-    "                        <img ng-src=\"{{site.image}}\" style=\"display:block; width:100%; height:auto; margin:0 auto; position:relative; top:-20px\">\n" +
-    "                    </div>\n" +
-    "\n" +
-    "                </td>\n" +
-    "                <td class=\"v-middle\" style=\" border:0;\">\n" +
-    "                    <p class=\"h1\">{{site.url}}</p>\n" +
-    "                <button class=\"btn btn-white\" oc-show-option template=\"app/templates/modals/add.themes.html\">click</button>\n" +
-    "\n" +
-    "                </td>\n" +
-    "\n" +
-    "\n" +
-    "            </tr>\n" +
-    "        </tbody>\n" +
-    "    </table>\n" +
-    "\n" +
-    "    <hr>\n" +
-    "\n" +
-    "\n" +
-    "    <header class=\"panel-heading bg-light\">\n" +
-    "\n" +
-    "        <ul class=\"nav nav-tabs\">\n" +
-    "            <li ui-route=\"/sites/my-sites/{{site.id}}/account\"><a href=\"#/sites/my-sites/{{site.id}}/account\">Account</a></li>\n" +
-    "            <li ui-route=\"/sites/my-sites/{{site.id}}/wordpress\"><a href=\"#/sites/my-sites/{{site.id}}/wordpress\">WordPress</a></li>\n" +
-    "            <li ui-route=\"/sites/my-sites/{{site.id}}/account\"><a href=\"#/sites/my-sites/{{site.id}}/account\">Development</a></li>\n" +
-    "            <!-- <li class=\"\"><a bs href=\"#activity\" data-toggle=\"tab\">Backups</a></li>\n" +
-    "            <li class=\"\"><a bs href=\"#activity\" data-toggle=\"tab\">Domain & Email</a></li> -->\n" +
-    "        </ul>\n" +
-    "\n" +
-    "    </header>\n" +
-    "\n" +
-    "\n" +
-    "    <div class=\"panel-body no-padder\">\n" +
-    "        <div class=\"tab-content\">              \n" +
-    "            <div class=\"tab-pane active\">\n" +
-    "\n" +
-    "                \n" +
-    "                <div ui-view=\"detailContent\"></div>\n" +
-    "\n" +
-    "            </div>\n" +
-    "\n" +
-    "        </div>\n" +
-    "    </div>        	\n" +
-    "\n" +
-    "</div>");
+    "");
 }]);
 
 angular.module("sites/detail/sites.detail.wordpress.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -1814,44 +1766,44 @@ angular.module("sites/mine/sites.mine.tpl.html", []).run(["$templateCache", func
     "\n" +
     "\n" +
     "<div my-sites sites=\"sites\">\n" +
-    "<section  ng-hide=\"sites.length>0\">\n" +
-    "	<div ng-show=\"billing.completed===false\" class=\"alert alert-warning alert-block text-center\">\n" +
-    "                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" ng-click=\"alert=!alert\"><i class=\"icon-remove\"></i></button>\n" +
-    "                <h4><i class=\"icon-bell-alt\"></i>You need to complete your billing information!</h4>\n" +
-    "                <p>Before you can create any sites, you need to add a Credit Card.</p>\n" +
-    "                <br>\n" +
-    "                <button class=\"btn btn-white btn-sm\" oc-show-option input=\"billing\" output=\"billing\" template=\"templates/cc.tpl.html\">Add Billing</button>\n" +
-    "              </div>\n" +
+    "	<section  ng-hide=\"sites.length>0\">\n" +
+    "		<div ng-show=\"billing.completed===false\" class=\"alert alert-warning alert-block text-center\">\n" +
+    "			<button type=\"button\" class=\"close\" data-dismiss=\"alert\" ng-click=\"alert=!alert\"><i class=\"icon-remove\"></i></button>\n" +
+    "			<h4><i class=\"icon-bell-alt\"></i>You need to complete your billing information!</h4>\n" +
+    "			<p>Before you can create any sites, you need to add a Credit Card.</p>\n" +
+    "			<br>\n" +
+    "			<button class=\"btn btn-white btn-sm\" oc-show-option input=\"billing\" output=\"billing\" template=\"templates/cc.tpl.html\">Add Billing</button>\n" +
+    "		</div>\n" +
     "\n" +
-    "	<div class=\"text-center empty\">\n" +
-    "<br><br>\n" +
-    "<p class=\"h2 font-thin\">Do you need just one site?</p>\n" +
-    "<div style=\"width:75%; margin:0 auto;\"><a href=\"#/sites/new\" ng-class=\"{disabled:billing.completed==false}\" class=\" btn btn-block btn-success btn-lg m-t-lg m-b-lg\">\n" +
-    "	<span ng-show=\"billing.completed==false\">\n" +
-    "		Complete Billing to add your first site\n" +
-    "	</span>\n" +
-    "	<span ng-hide=\"billing.completed==false\">\n" +
-    "		Create your first site now\n" +
-    "	</span>\n" +
-    "</a></div>\n" +
-    "<p class=\"font-thin\" ng-show=\"billing.completed==false\">You'll need to have a valid Credit Card to create your first site.</p>\n" +
-    "<p class=\"font-thin\" ng-hide=\"billing.completed==false\">Setup is quick and easy and you'll be up and running in no time.</p>\n" +
+    "		<div class=\"text-center empty\">\n" +
+    "			<br><br>\n" +
+    "			<p class=\"h2 font-thin\">Do you need just one site?</p>\n" +
+    "			<div style=\"width:75%; margin:0 auto;\"><a href=\"#/sites/new\" ng-class=\"{disabled:billing.completed==false}\" class=\" btn btn-block btn-success btn-lg m-t-lg m-b-lg\">\n" +
+    "				<span ng-show=\"billing.completed==false\">\n" +
+    "					Complete Billing to add your first site\n" +
+    "				</span>\n" +
+    "				<span ng-hide=\"billing.completed==false\">\n" +
+    "					Create your first site now\n" +
+    "				</span>\n" +
+    "			</a></div>\n" +
+    "			<p class=\"font-thin\" ng-show=\"billing.completed==false\">You'll need to have a valid Credit Card to create your first site.</p>\n" +
+    "			<p class=\"font-thin\" ng-hide=\"billing.completed==false\">Setup is quick and easy and you'll be up and running in no time.</p>\n" +
     "\n" +
-    "<br><br>\n" +
-    "<hr>\n" +
-    "<br><br>\n" +
+    "			<br><br>\n" +
+    "			<hr>\n" +
+    "			<br><br>\n" +
     "\n" +
-    "<p class=\"h2 font-thin\">Do you build lots of WordPress sites?</p>\n" +
-    "<div style=\"width:75%; margin:0 auto;\"><a href=\"#/wordpress/\" class=\"btn btn-block btn-info btn-lg m-t-lg m-b-lg\">Configure WordPress Themes, Plugins, and Options</a></div>\n" +
-    "<p class=\"font-thin\">If you use the same themes and plugins on a regular basis, let us manage and install them for you each time.</p>\n" +
+    "			<p class=\"h2 font-thin\">Do you build lots of WordPress sites?</p>\n" +
+    "			<div style=\"width:75%; margin:0 auto;\"><a href=\"#/wordpress/\" class=\"btn btn-block btn-info btn-lg m-t-lg m-b-lg\">Configure WordPress Themes, Plugins, and Options</a></div>\n" +
+    "			<p class=\"font-thin\">If you use the same themes and plugins on a regular basis, let us manage and install them for you each time.</p>\n" +
     "\n" +
-    "<br>\n" +
-    "<hr>\n" +
-    "	<span style=\"cursor:pointer\" ng-click=\"Data.sites.mySites=Data.data.sites.mySites\">or pretend you have a lot of sites</span>\n" +
+    "			<br>\n" +
+    "			<hr>\n" +
+    "			<span style=\"cursor:pointer\" ng-click=\"Data.sites.mySites=Data.data.sites.mySites\">or pretend you have a lot of sites</span>\n" +
     "\n" +
-    "</div>\n" +
+    "		</div>\n" +
     "\n" +
-    "	<div class=\"text-center empty hidden\">\n" +
+    "		<div class=\"text-center empty hidden\">\n" +
     "			<h2 class=\"text-thin\">Welcome To Your WP Cloud Sites!</h2>\n" +
     "			<p class=\"h4 font-thin\">So, this is where all of your future WordPress sites will live.  We know, you're excited to get started, but here are some quick pointers:</p>\n" +
     "			<br>\n" +
@@ -1869,7 +1821,7 @@ angular.module("sites/mine/sites.mine.tpl.html", []).run(["$templateCache", func
     "						<h4>Add developers to your sites</h4>\n" +
     "						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit laboriosam laborum ad unde perspiciatis labore officia!</p>\n" +
     "						<p><a bs href=\"#\"><span class=\"text-info\">Learn More</span></a></p>\n" +
-    "					\n" +
+    "						\n" +
     "					</div>\n" +
     "				</div>\n" +
     "				<div class=\"col-md-4\">\n" +
@@ -1887,14 +1839,14 @@ angular.module("sites/mine/sites.mine.tpl.html", []).run(["$templateCache", func
     "			<br><br>\n" +
     "			<span style=\"cursor:pointer\" ng-click=\"Data.sites.mySites=Data.data.sites.mySites\">or pretend you have a lot of sites</span>\n" +
     "		</div>\n" +
-    "</section>\n" +
+    "	</section>\n" +
     "\n" +
-    "<section ng-if=\"sites.length>0\">\n" +
-    "	\n" +
+    "	<section ng-if=\"sites.length>0\">\n" +
+    "		\n" +
     "\n" +
-    "<div class=\"table-responsive\">\n" +
-    "	\n" +
-    "	<table class=\"table table-striped table-bordered m-t-lg m-b-lg\">\n" +
+    "		<div class=\"table-responsive\">\n" +
+    "			\n" +
+    "			<table class=\"table table-striped table-bordered m-t-lg m-b-lg\">\n" +
     "		<!-- <thead>\n" +
     "			<th width=\"20\"></th>\n" +
     "			<th width=\"80\">Theme</th>\n" +
@@ -2368,17 +2320,75 @@ angular.module("sites/new/sites.new.tpl.html", []).run(["$templateCache", functi
     "\n" +
     "</section>\n" +
     "\n" +
+    "<section class=\"clearfix\"  ng-hide=\"plan===true\">\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label for=\"inputEmail1\" class=\"col-lg-2 control-label h4\">Select a plan</label>\n" +
+    "            <div class=\"col-lg-10\">\n" +
+    "                <br>\n" +
+    "                <div class=\"row m-b\">\n" +
+    "                    <div class=\"col-lg-3\">\n" +
+    "                        <p class=\"h4\">Level 1 Plan</p>\n" +
+    "                        <ul class=\"list-unstyled\">\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">5gb Storage</li>\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">20k Traffic</li>\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">10gb Bandwidth</li>\n" +
+    "                            <li class=\"lead\">$20 / mo</li>\n" +
+    "                        </ul> \n" +
+    "                        \n" +
+    "                        <button class=\"btn btn-sm btn-white\" ng-click=\"plan=true\">Select Plan</button>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-lg-3\">\n" +
+    "                        <p class=\"h4\">Level 2 Plan</p>\n" +
+    "                        <ul class=\"list-unstyled\">\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">10gb Storage</li>\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">40k Traffic</li>\n" +
+    "                             <li class=\"h4 font-thin m-b-sm\">20gb Bandwidth</li>\n" +
+    "                           <li class=\"lead\">$30 / mo</li>\n" +
+    "                        </ul> \n" +
+    "                        \n" +
+    "                        <button class=\"btn btn-sm btn-white\" ng-click=\"plan=true\">Select Plan</button>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-lg-3\">\n" +
+    "                        <p class=\"h4\">Level 3 Plan</p>\n" +
+    "                        <ul class=\"list-unstyled\">\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">20gb Storage</li>\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">80k Traffic</li>\n" +
+    "                             <li class=\"h4 font-thin m-b-sm\">40gb Bandwidth</li>\n" +
+    "                           <li class=\"lead\">$45 / mo</li>\n" +
+    "                        </ul> \n" +
+    "                        \n" +
+    "                        <button class=\"btn btn-sm btn-white\" ng-click=\"plan=true\">Select Plan</button>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-lg-3\">\n" +
+    "                        <p class=\"h4\">Level 4 Plan</p>\n" +
+    "                        <ul class=\"list-unstyled\">\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">50gb Storage</li>\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">200k Traffic</li>\n" +
+    "                             <li class=\"h4 font-thin m-b-sm\">100gb Bandwidth</li>\n" +
+    "                           <li class=\"lead\">$80 / mo</li>\n" +
+    "                        </ul> \n" +
+    "                        \n" +
+    "                        <button class=\"btn btn-sm btn-white\" ng-click=\"plan=true\">Select Plan</button>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                \n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "</section>\n" +
     "\n" +
-    "<section ng-hide=\"plan===true\" class=\"hbox stretch  bg-dark lter ng-scope\">\n" +
+    "\n" +
+    "\n" +
+    "<section class=\"hbox stretch  bg-dark lter ng-scope hidden\">\n" +
     "    <section>\n" +
     "        <div class=\"wrapper\">\n" +
-    "            <h4>Level 1</h4>\n" +
+    "            <h4>Level 2</h4>\n" +
     "            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, beatae saepe nisi dicta labore cum ad molestias magnam esse tempore.</p>\n" +
-    "            <ul class=\"\">\n" +
-    "                <li>20gb Storage</li>\n" +
-    "                <li>20k Traffic</li>\n" +
-    "                <li class=\"lead\">$19.99 / mo</li>\n" +
-    "            </ul>\n" +
+    "                        <ul class=\"list-unstyled\">\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">10gb Storage</li>\n" +
+    "                            <li class=\"h4 font-thin m-b-sm\">40k Traffic</li>\n" +
+    "                             <li class=\"h4 font-thin m-b-sm\">20gb Bandwidth</li>\n" +
+    "                           <li class=\"lead\">$30 / mo</li>\n" +
+    "                        </ul> \n" +
     "            <form class=\"form-inline ng-pristine ng-valid\">\n" +
     "                <div class=\"radio m-l-xs m-r-xs\">\n" +
     "                    <label>\n" +
@@ -2448,8 +2458,6 @@ angular.module("sites/new/sites.new.tpl.html", []).run(["$templateCache", functi
     "        </div>\n" +
     "    </section>                                        \n" +
     "</section>\n" +
-    "\n" +
-    "\n" +
     "\n" +
     "\n" +
     "\n" +
