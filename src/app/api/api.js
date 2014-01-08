@@ -18,7 +18,7 @@ angular.module( 'ngBoilerplate.api', [
 })
 .factory('API', function($http, $q){
   var service = function(req) {
-      var proxy ='http://localhost:3000/v0.9';
+      var proxy ='http://localhost:4000/v0.9';
 
       var deffered = $q.defer();
 
