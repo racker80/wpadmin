@@ -9,6 +9,18 @@
       <br>
       <div class="">
                 <button class="btn btn-success" type="button" style="width:100px" ng-click="login()"> Login <i class="icon-arrow-right"></i></button> <p class="inline  m-l-lg font-thin">Don't have an account?  No problem, you can <a href="#/signup"><span class="text-info">signup for free</span></a></p>
+                <br>
+                <button class="btn btn-success" type="button" style="width:100px" ng-click="createUser('/users')"> create user <i class="icon-arrow-right"></i></button> 
+                <br>
+                <br>
+                <button class="btn btn-success" type="button" style="width:100px" ng-click="getUser('/users/798')"> get user <i class="icon-arrow-right"></i></button>   
+                <br>                
+                <button class="btn btn-success" type="button" style="width:100px" ng-click="getQuestions('/users/798')"> get questions <i class="icon-arrow-right"></i></button>                 
+
+                                <br>
+                <button class="btn btn-success" type="button" style="width:100px" ng-click="getTokens('/tokens')"> get token <i class="icon-arrow-right"></i></button>     
+                <br>
+                <button class="btn btn-success" type="button" style="width:100px" ng-click="updateUser('/users/798')"> update user <i class="icon-arrow-right"></i></button>                 
       </div>
 
   </section>

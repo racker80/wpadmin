@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html', 'signup/signup.tpl.html', 'sites/collaborators/sites.collaborators.tpl.html', 'sites/detail/sites.detail.account.tpl.html', 'sites/detail/sites.detail.development.tpl.html', 'sites/detail/sites.detail.tpl.html', 'sites/detail/sites.detail.wordpress.tpl.html', 'sites/directive.sitelist.tpl.html', 'sites/managed/sites.managed.tpl.html', 'sites/mine/sites.mine.tpl.html', 'sites/new/sites.new.tpl.html', 'sites/sites.nav.tpl.html', 'sites/sites.tpl.html', 'templates/add.themes.tpl.html', 'templates/cc.tpl.html', 'templates/new.upload.themes.tpl.html', 'templates/upload.themes.tpl.html', 'templates/wp.plugin.search.tpl.html', 'wordpress/plugins/wp.plugins.tpl.html', 'wordpress/settings/forms/discussion.tpl.html', 'wordpress/settings/forms/general.tpl.html', 'wordpress/settings/forms/media.tpl.html', 'wordpress/settings/forms/permalinks.tpl.html', 'wordpress/settings/forms/reading.tpl.html', 'wordpress/settings/forms/writing.tpl.html', 'wordpress/settings/wp.settings.tpl.html', 'wordpress/themes/wp.themes.tpl.html', 'wordpress/wordpress.nav.tpl.html', 'wordpress/wordpress.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'api/api.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html', 'signup/signup.tpl.html', 'sites/collaborators/sites.collaborators.tpl.html', 'sites/detail/sites.detail.account.tpl.html', 'sites/detail/sites.detail.development.tpl.html', 'sites/detail/sites.detail.tpl.html', 'sites/detail/sites.detail.wordpress.tpl.html', 'sites/directive.sitelist.tpl.html', 'sites/managed/sites.managed.tpl.html', 'sites/mine/sites.mine.tpl.html', 'sites/new/sites.new.tpl.html', 'sites/sites.nav.tpl.html', 'sites/sites.tpl.html', 'templates/add.themes.tpl.html', 'templates/cc.tpl.html', 'templates/new.upload.themes.tpl.html', 'templates/upload.themes.tpl.html', 'templates/wp.plugin.search.tpl.html', 'wordpress/plugins/wp.plugins.tpl.html', 'wordpress/settings/forms/discussion.tpl.html', 'wordpress/settings/forms/general.tpl.html', 'wordpress/settings/forms/media.tpl.html', 'wordpress/settings/forms/permalinks.tpl.html', 'wordpress/settings/forms/reading.tpl.html', 'wordpress/settings/forms/writing.tpl.html', 'wordpress/settings/wp.settings.tpl.html', 'wordpress/themes/wp.themes.tpl.html', 'wordpress/wordpress.nav.tpl.html', 'wordpress/wordpress.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -270,6 +270,115 @@ angular.module("about/about.tpl.html", []).run(["$templateCache", function($temp
     "");
 }]);
 
+angular.module("api/api.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("api/api.tpl.html",
+    "<button class=\"btn btn-primary\" ng-click=\"api.getUsers()\">get users</button>\n" +
+    "<div class=\"row\">\n" +
+    "	<div class=\"col-md-4\">\n" +
+    "		<ul>\n" +
+    "			<li ng-repeat=\"user in users\" style=\"cursor:pointer;\"><span ng-click=\"api.getUser('819')\">{{user.username}}</span></li>\n" +
+    "		</ul>\n" +
+    "	</div>\n" +
+    "	<div class=\"col-md-8\">\n" +
+    "		<ul>\n" +
+    "			<li ng-repeat=\"field in showUser\">{{field}}</li>\n" +
+    "		</ul>\n" +
+    "	</div>\n" +
+    "</div>\n" +
+    "\n" +
+    "<br>\n" +
+    "\n" +
+    "{{token}}\n" +
+    "\n" +
+    "<div class=\"row\">\n" +
+    "	<div class=\"col-lg-4\">\n" +
+    "		<form action=\"\" method=\"POST\" role=\"form\">\n" +
+    "			<legend>Login</legend>\n" +
+    "\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">username</label>\n" +
+    "				<input ng-model=\"login.username\" type=\"text\" class=\"form-control\" id=\"\" placeholder=\"username\">\n" +
+    "			</div>\n" +
+    "\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">password</label>\n" +
+    "				<input ng-model=\"login.password\" type=\"password\" class=\"form-control\" id=\"\" placeholder=\"password\">\n" +
+    "			</div>\n" +
+    "\n" +
+    "			<button class=\"btn btn-primary\" ng-click=\"api.login(login)\">Login</button>\n" +
+    "		</form>\n" +
+    "	</div>\n" +
+    "	<div class=\"col-lg-8\">\n" +
+    "		<div ng-if=\"loggedIn.user\">\n" +
+    "			<h2>Hey {{loggedIn.user.firstname}}, you successfully logged in!</h2>\n" +
+    "			<p>Your token is: {{loggedIn.token.id}}</p>\n" +
+    "\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">Create a Site</label>\n" +
+    "				<input ng-model=\"newSite.name\" type=\"text\" class=\"form-control\" id=\"\" placeholder=\"name\">\n" +
+    "				<br>\n" +
+    "				<input ng-model=\"newSite.domain\" type=\"text\" class=\"form-control\" id=\"\" placeholder=\"domain\">\n" +
+    "			</div>\n" +
+    "			<button class=\"btn btn-primary\" ng-click=\"api.createSite()\">Create Site</button>\n" +
+    "\n" +
+    "			<h3>Sites I own</h3>\n" +
+    "			<ul>\n" +
+    "				<li ng-repeat=\"site in mySites\">{{site.name}} - {{site.domain}}</li>\n" +
+    "			</ul>\n" +
+    "\n" +
+    "		</div>\n" +
+    "	</div>\n" +
+    "</div>\n" +
+    "  \n" +
+    "<div class=\"row\">\n" +
+    "	<div class=\"col-lg-4\">\n" +
+    "		<form action=\"\" method=\"POST\" role=\"form\">\n" +
+    "			<legend>New User</legend>\n" +
+    "\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">username</label>\n" +
+    "				<input ng-model=\"login.username\" type=\"text\" class=\"form-control\" id=\"\" placeholder=\"username\">\n" +
+    "			</div>\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">email</label>\n" +
+    "				<input ng-model=\"login.email\" type=\"text\" class=\"form-control\" id=\"\" placeholder=\"email\">\n" +
+    "			</div>			\n" +
+    "\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">password</label>\n" +
+    "				<input ng-model=\"login.password\" type=\"password\" class=\"form-control\" id=\"\" placeholder=\"password\">\n" +
+    "			</div>\n" +
+    "\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">First Name</label>\n" +
+    "				<input ng-model=\"login.firstname\" type=\"text\" class=\"form-control\" id=\"\" placeholder=\"First\">\n" +
+    "			</div>\n" +
+    "\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">Last Name</label>\n" +
+    "				<input ng-model=\"login.lastname\" type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Last\">\n" +
+    "			</div>\n" +
+    "			<div class=\"form-group\">\n" +
+    "				<label for=\"\">Question</label>\n" +
+    "				<select ng-model=\"login.question.id\" \n" +
+    "				ng-options=\"option.id as option.question for option in questions.questions\"\n" +
+    "				>test</select>\n" +
+    "				<input ng-model=\"login.question.answer\" type=\"text\" class=\"form-control\" id=\"\" placeholder=\"answer\">\n" +
+    "				<input type=\"hidden\" name=\"yourSelect\" value=\"{{signup.question.id}}\" />\n" +
+    "			</div>\n" +
+    "\n" +
+    "			<button class=\"btn btn-primary\" ng-click=\"api.signup()\">signup</button>\n" +
+    "		</form>\n" +
+    "	</div>\n" +
+    "	<div class=\"col-lg-8\">\n" +
+    "		\n" +
+    "	</div>\n" +
+    "</div>\n" +
+    "    \n" +
+    "\n" +
+    "");
+}]);
+
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("home/home.tpl.html",
     "<div class=\"jumbotron\">\n" +
@@ -423,6 +532,18 @@ angular.module("login/login.tpl.html", []).run(["$templateCache", function($temp
     "      <br>\n" +
     "      <div class=\"\">\n" +
     "                <button class=\"btn btn-success\" type=\"button\" style=\"width:100px\" ng-click=\"login()\"> Login <i class=\"icon-arrow-right\"></i></button> <p class=\"inline  m-l-lg font-thin\">Don't have an account?  No problem, you can <a href=\"#/signup\"><span class=\"text-info\">signup for free</span></a></p>\n" +
+    "                <br>\n" +
+    "                <button class=\"btn btn-success\" type=\"button\" style=\"width:100px\" ng-click=\"createUser('/users')\"> create user <i class=\"icon-arrow-right\"></i></button> \n" +
+    "                <br>\n" +
+    "                <br>\n" +
+    "                <button class=\"btn btn-success\" type=\"button\" style=\"width:100px\" ng-click=\"getUser('/users/798')\"> get user <i class=\"icon-arrow-right\"></i></button>   \n" +
+    "                <br>                \n" +
+    "                <button class=\"btn btn-success\" type=\"button\" style=\"width:100px\" ng-click=\"getQuestions('/users/798')\"> get questions <i class=\"icon-arrow-right\"></i></button>                 \n" +
+    "\n" +
+    "                                <br>\n" +
+    "                <button class=\"btn btn-success\" type=\"button\" style=\"width:100px\" ng-click=\"getTokens('/tokens')\"> get token <i class=\"icon-arrow-right\"></i></button>     \n" +
+    "                <br>\n" +
+    "                <button class=\"btn btn-success\" type=\"button\" style=\"width:100px\" ng-click=\"updateUser('/users/798')\"> update user <i class=\"icon-arrow-right\"></i></button>                 \n" +
     "      </div>\n" +
     "\n" +
     "  </section>\n" +

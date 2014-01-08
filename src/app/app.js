@@ -1,9 +1,11 @@
 angular.module( 'ngBoilerplate', [
   'ngSanitize',
+  'ngResource',
   'ngAnimate',
   'templates-app',
   'templates-common',
   'auth',
+  'ngBoilerplate.api',
   'ngBoilerplate.login',
   'ngBoilerplate.signup',
   'ngBoilerplate.home',
