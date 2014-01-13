@@ -10,13 +10,15 @@ var express   = require('express'),
     path = require('path'),
     app = module.exports = express();
 
+var sessions = [];
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser('change this value to something unique'));
-app.use(express.cookieSession());
+app.use(express.cookieSession({ secret: 'tobo!', cookie: { maxAge: 60 * 60 * 1000 }}));
 app.use(express.compress());
 app.use(express.json());
 app.use(express.urlencoded());
@@ -26,6 +28,16 @@ app.use(app.router);
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
+
+app.get('*', function(req, res) {
+    // proxyRequest(req, res);
+    // console.log('WEBSERVER HEADERS:');
+    // console.log(res.headers);
+    // console.log('BROWSER HEADERS:');
+    // console.log(req.headers);
+    // console.log(req.session);
+    res.send(200);
+});
 
 module.exports = app.listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
@@ -53,7 +65,7 @@ proxy.use(express.methodOverride());
 proxy.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, X-Auth-Token, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, X-Auth-Token, Content-Type, Accept, proxy");
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   next();
 });
@@ -68,11 +80,22 @@ var proxyRequest = function(req, res) {
             'Accept':'application/json',
             'Content-Type': 'application/json'
         }
-    };  
+    };
+
+    if(req.headers.proxy) {
+        console.log('proxy header');
+        options.url = req.headers.proxy+req.url;
+        req.body.username='demouser';
+        req.body.password='m04rcl0ud$';
+    }
+    console.log(options.url);
+    // console.log('HEADERS:');
+    // console.log(req.headers);
+
     if(req.method == 'POST') {
         options.json = req.body;
-        console.log('looking at req body...');
-        console.log(req.body);
+        // console.log('looking at req body...');
+        // console.log(req.body);
     };
     if(req.method == 'PUT') {
         options.json = req.body;
@@ -82,10 +105,10 @@ var proxyRequest = function(req, res) {
     };
 
     console.log('Proxing to: ' + options.url);
-    console.dir(options);
+    // console.dir(options);
     
     request(options, function (error, response, body) {
-        console.log(body);
+        // console.log(body);
         if (!error && response.statusCode == 200) {
             // var output = JSON.parse(body);
             // console.log(req.url+' - '+response.statusCode);
@@ -93,8 +116,8 @@ var proxyRequest = function(req, res) {
             res.send(body);
         } else {
             console.log('error');
-            console.dir(error);
-            console.dir(body);
+            // console.dir(error);
+            // console.dir(body);
             res.send(response.statusCode);
 
         }

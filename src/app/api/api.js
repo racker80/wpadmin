@@ -19,9 +19,8 @@ angular.module( 'ngBoilerplate.api', [
 .factory('API', function($http, $q){
   var service = function(req) {
       var proxy ='http://localhost:4000/v0.9';
-
       var deffered = $q.defer();
-
+      
       var options = {
         method: req.method, 
         url: proxy+req.url,
@@ -29,17 +28,14 @@ angular.module( 'ngBoilerplate.api', [
         headers:req.headers
       };
 
-      console.log(options);
-
-      $http(options)
-      .success(function(data, status, headers, config) {
-        console.log(status);
-        console.log(data);
+      $http(options).success(function(data, status, headers, config) {
+        // console.log(status);
+        // console.log(data);
         deffered.resolve(data);
       })
       .error(function(data, status, headers, config) {
-        console.log(status);
-        console.log(data);
+        // console.log(status);
+        // console.log(data);
         deffered.resolve(data);
       });
 
@@ -55,6 +51,9 @@ angular.module( 'ngBoilerplate.api', [
     isToken:function(){
       return token;
     },
+    isLoggedIn:function(){
+      return token;
+    },    
     getUsers: function(url){
       return API({
         url:'/users?size=100', 
@@ -120,20 +119,48 @@ angular.module( 'ngBoilerplate.api', [
 
   return service;
 })
+.factory('WP', function($http, $q, API){
+  var proxy = 'http://162.242.155.59:8080';
+  var service = {
+    getPages:function(){
+      var options = {
+        method: 'GET', 
+        url: 'http://localhost:4000/pages',
+        headers:{
+          proxy:proxy
+        }
+      };
 
-.controller( 'ApiCtrl', function ApiCtrl( $scope, $http, $q, USER ) {
+      var deffered = $q.defer();
+
+      $http(options)
+      .success(function(data, status, headers, config) {
+        // console.log(status);
+        // console.log(data);
+        deffered.resolve(data);
+      })
+      .error(function(data, status, headers, config) {
+        // console.log(status);
+        // console.log(data);
+        deffered.resolve(data);
+      });
+
+      return deffered.promise;
+
+    }
+  };
+  return service;
+})
+.controller( 'ApiCtrl', function ApiCtrl( $scope, $http, $q, USER, WP ) {
   $scope.login = {};
   $scope.newSite = {};
+  $scope.loggedIn = {};
 
-  $scope.token = USER.isToken();
+  // $scope.questions = USER.getQuestions();
 
-  $scope.$watch(function(){
-    return USER.isToken();
-  }, function(result){
-    $scope.token = result;
+  WP.getPages().then(function(results){
+    console.log(results);
   });
-
-  $scope.questions = USER.getQuestions();
 
   $scope.api = {
     getUsers: function() {

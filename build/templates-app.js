@@ -288,7 +288,6 @@ angular.module("api/api.tpl.html", []).run(["$templateCache", function($template
     "\n" +
     "<br>\n" +
     "\n" +
-    "{{token}}\n" +
     "\n" +
     "<div class=\"row\">\n" +
     "	<div class=\"col-lg-4\">\n" +

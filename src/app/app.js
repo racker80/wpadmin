@@ -1,6 +1,7 @@
 angular.module( 'ngBoilerplate', [
   'ngSanitize',
   'ngResource',
+  'ngCookies',
   'ngAnimate',
   'templates-app',
   'templates-common',
@@ -40,6 +41,14 @@ angular.module( 'ngBoilerplate', [
 })
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location, $rootScope ) {
+
+  $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+    // if(userService.isLoggedIn()===false & toState.name != 'login' ) {
+    //   $state.go('login');
+    // }
+  });
+
+
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
       var stateName = function(){
         var array = ['login', 'signup'];
